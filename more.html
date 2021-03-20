@@ -14,17 +14,33 @@
 >
   <label>
     number
-    <input type="tel" name="_replyto">
+    <input type="tel" name="number">
     </label>
     <label>
     name:
-    <input type="text" name="message">
+    <input type="text" name="name">
   </label>
 
   <!-- your other form fields go here -->
 
-  <button type="submit">Send</button>
+  <button class="send_mail" type="submit">Send</button>
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script>
+
+    // $(window).on("load",function(){
+
+    //     $(".send_mail").on("mousedown", function(){
+    //         let a = $("input[type=tel]").val();
+
+    //         $("input[type=tel]").val(a + "@gmail.com");
+    //     })
+
+    // })
+
+</script>
     
 </body>
 </html>
