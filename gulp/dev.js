@@ -1,8 +1,8 @@
 const gulp = require("gulp");
-const pug = require("gulp-pug");
 const fileInclude = require("gulp-file-include");
 const sass = require("gulp-sass")(require("sass"));
 const sassGlob = require("gulp-sass-glob");
+const autoprefixer = require("gulp-autoprefixer");
 const server = require("gulp-server-livereload");
 const clean = require("gulp-clean");
 const fs = require("fs");
@@ -42,9 +42,9 @@ const plumberNotify = (title) => {
 gulp.task("html:dev", function () {
   return (
     gulp
-      .src(["./src/html/**/*.pug", "!./src/html/blocks/*.pug"])
+      .src(["./src/html/**/*.html"])
       .pipe(changed("./build/", { hasChanged: changed.compareContents }))
-      .pipe(plumber(plumberNotify("PUG")))
+      .pipe(plumber(plumberNotify("html")))
       .pipe(fileInclude(fileIncludeSetting))
       .pipe(
         replace(
@@ -63,7 +63,7 @@ gulp.task("html:dev", function () {
       //   })
       // )
 
-      .pipe(pug())
+      // .pipe(html())
       .pipe(gulp.dest("./build/"))
   );
 });
@@ -81,6 +81,13 @@ gulp.task("sass:dev", function () {
         /(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
         "$1$2$3$4$6$1"
       )
+    )
+
+    .pipe(
+      autoprefixer({
+        browsers: ["last 200 version", "> 1%", "not dead"],
+        cascade: false,
+      })
     )
     .pipe(sourceMaps.write())
     .pipe(gulp.dest("./build/css/"));
@@ -165,6 +172,7 @@ gulp.task("js:dev", function () {
   return (
     gulp
       .src("./src/js/*.js")
+      .pipe(sourceMaps.init())
       .pipe(changed("./build/js/"))
       .pipe(plumber(plumberNotify("JS")))
       // .pipe(babel())
@@ -175,6 +183,7 @@ gulp.task("js:dev", function () {
         })
       )
       .pipe(webpack(require("./../webpack.config.js")))
+      .pipe(sourceMaps.write())
       .pipe(gulp.dest("./build/js/"))
   );
 });
@@ -191,7 +200,7 @@ gulp.task("server:dev", function () {
 gulp.task("watch:dev", function () {
   gulp.watch("./src/scss/**/*.scss", gulp.parallel("sass:dev"));
   gulp.watch(
-    ["./src/html/**/*.pug", "./src/html/**/*.json"],
+    ["./src/html/**/*.html", "./src/html/**/*.json"],
     gulp.parallel("html:dev")
   );
   gulp.watch("./src/img/**/*", gulp.parallel("images:dev"));

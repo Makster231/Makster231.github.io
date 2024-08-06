@@ -205,6 +205,17 @@
 		],
 		"description": "HTML section"
 	},
+	"HTML picture": {
+		"prefix": "pic",
+		"body": [
+			"<picture>"
+			"	<source srcset=\"${1:example}\" media='(min-width: 640px)' />"
+			"	<img src=\"${2:example}\" alt='picture' />"
+			"</picture>"
+		],
+		"description": "HTML picture"
+	},
+
 	"CSS BG retina": {
 		"prefix": "mediaBg",
 		"body": [
