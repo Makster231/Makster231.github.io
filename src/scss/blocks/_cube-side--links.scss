@@ -1,0 +1,48 @@
+.links {
+  &_info {
+    max-width: max(300px, 75%);
+  }
+  &_body {
+    p {
+      text-align: center;
+    }
+
+    &-block {
+      margin-bottom: 24px;
+      margin-top: 16px;
+
+      @media (min-width: 640px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 8px;
+      border-radius: 8px;
+      color: var(--color-white);
+      transition: 0.3s ease;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 8px;
+
+      &:hover {
+        background-color: #324ea3;
+      }
+
+      @media (min-width: 640px) {
+        margin-right: 2%;
+        margin-top: 0;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+h2 {
+  font-size: clamp(1.125rem, 0.95rem + 0.875vw, 2rem);
+  margin-bottom: clamp(1rem, 0.8rem + 1vw, 2rem);
+  text-align: center;
+}

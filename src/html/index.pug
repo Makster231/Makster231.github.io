@@ -1,0 +1,19 @@
+doctype html
+html(lang="ru")
+
+  include blocks/head.pug
+    title Главная
+
+  body 
+    canvas#canvas
+
+    main
+      .cube_wrapper
+        #cube.cube
+          include blocks/pages/main.pug
+          include blocks/pages/description.pug
+          include blocks/pages/portfolio.pug
+          include blocks/pages/links.pug
+    
+    link(rel='stylesheet' href='./css/main.css')
+    script(src='./js/index.bundle.js')
