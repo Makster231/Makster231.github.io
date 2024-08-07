@@ -3,12 +3,16 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
-  color: var(--color-black);
+  color: $color-black;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.2;
   word-break: break-word;
   text-wrap: pretty;
+}
+*,
+html,
+body {
+  font-family: $font-main !important;
 }
 
 header,

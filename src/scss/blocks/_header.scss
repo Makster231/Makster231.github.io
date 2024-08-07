@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 15;
+
+  &_logo {
+    text-align: left;
+    width: 104px;
+  }
+  &_burger {
+    cursor: pointer;
+    width: 104px;
+    text-align: right;
+  }
+}

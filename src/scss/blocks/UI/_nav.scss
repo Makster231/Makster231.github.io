@@ -1,0 +1,19 @@
+.header_menu {
+  font-size: 18px;
+
+  &-item {
+    padding: 20px;
+    margin-right: 25px;
+    color: $color-white;
+    @include transition();
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
