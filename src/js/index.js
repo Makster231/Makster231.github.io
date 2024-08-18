@@ -12,7 +12,6 @@ import Modal from "./modules/modal";
 window.addEventListener("load", function () {
   // Переменные
   const body = document.querySelector("body");
-  const dialog3 = document.querySelector(".js_dialog3");
   const images = document.querySelectorAll("img[data-src]");
 
   const swiper = document.querySelector(".js_swiper");
@@ -27,6 +26,7 @@ window.addEventListener("load", function () {
       rootMargin: "100px",
     });
   }
+  // Запускаем Слайдер
   if (swiper) {
     const mySwiper = new Swiper(".js_swiper", {
       // Optional parameters
@@ -36,10 +36,11 @@ window.addEventListener("load", function () {
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
       parallax: true,
+      mousewheel: true,
       keyboard: {
         enabled: true,
       },
-      // allowTouchMove: false,
+      allowTouchMove: true,
 
       pagination: {
         el: ".js_aside_controlls-pagination",
@@ -70,7 +71,6 @@ window.addEventListener("load", function () {
 
       if (e.target.dataset.role === "about") mySwiper.slideTo(0);
       if (e.target.dataset.role === "portfolio") mySwiper.slideTo(1);
-      if (e.target.dataset.role === "skills") mySwiper.slideTo(2);
       if (e.target.dataset.role === "contact") mySwiper.slideTo(3);
     });
   }

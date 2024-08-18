@@ -5,6 +5,9 @@
     padding: 20px;
     margin-right: 25px;
     color: $color-white;
+    text-transform: uppercase;
+    font-weight: 600;
+
     @include transition();
     cursor: pointer;
 
