@@ -1,0 +1,25 @@
+.logo {
+  // padding-top: 30px;
+  text-align: center;
+  @include toVh(padding-top, 30dvh);
+
+  @media screen and (min-width: 1025px) {
+    padding-top: 60px;
+    margin-bottom: 50px;
+    text-align: left;
+    margin-left: 35px;
+  }
+
+  svg {
+    @media screen and (max-width: 1220px) {
+      width: 340px;
+      height: 30px;
+    }
+    @media screen and (max-width: 640px) {
+      // width: 140px;
+      // height: 18px;
+      @include toVh(width, 140dvh);
+      @include toVh(height, 18dvh);
+    }
+  }
+}

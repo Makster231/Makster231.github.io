@@ -1,0 +1,662 @@
+.lvls {
+  .lvl {
+    border-radius: 18px;
+
+    .step_0,
+    .step_1,
+    .step_2,
+    .step_3,
+    .step_4 {
+      padding: 20px 15px;
+      &_wrapper {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        margin-left: 10px;
+        margin-top: 10px;
+
+        @media screen and (min-width: 960px) {
+          width: calc(100% - 30px);
+          height: calc(100% - 40px);
+          margin-left: 15px;
+          margin-top: 20px;
+        }
+      }
+      &_top {
+        border: 10px solid var(--color-white);
+        overflow: hidden;
+        z-index: 6;
+        border-radius: 32px;
+        position: relative;
+
+        @media screen and (max-width: 640px) {
+          @include toVh(border-width, 9dvh);
+          @include toVh(border-radius, 32dvh);
+        }
+      }
+      &_bottom {
+        background-color: var(--color-white);
+        min-height: 158px;
+        border-radius: 0 0 32px 32px;
+        padding-top: 12px;
+        padding-bottom: 27px;
+        z-index: 6;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: 0;
+          border: 18px solid transparent;
+          border-bottom: 18px solid var(--color-white);
+          border-left: 18px solid var(--color-white);
+          @media screen and (max-width: 640px) {
+            @include toVh(border-width, 18dvh);
+            @include toVh(top, -30dvh);
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -30px;
+          right: 0;
+          border: 18px solid transparent;
+          border-right: 18px solid var(--color-white);
+          border-bottom: 18px solid var(--color-white);
+          @media screen and (max-width: 640px) {
+            @include toVh(border-width, 18dvh);
+            @include toVh(top, -30dvh);
+          }
+        }
+      }
+      &_bg {
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .step_0 {
+      &_top {
+        @media screen and (max-width: 1025px) {
+          height: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-bottom: 20px;
+        }
+        @media screen and (max-width: 1025px) and (orientation: landscape) {
+          padding-bottom: 0;
+        }
+        @media screen and (max-width: 640px) {
+          @include toVh(padding-bottom, 20dvh);
+        }
+
+        &-content {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+          }
+        }
+
+        &-left {
+          .h1 {
+            @media screen and (max-width: 1025px) {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 30px;
+
+              br {
+                display: none;
+              }
+            }
+
+            @media screen and (max-width: 640px) {
+              margin-bottom: 1.19vh;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        &-left,
+        &-right {
+          @media screen and (max-width: 1025px) {
+            width: 100%;
+            max-width: 60%;
+            margin: 0 auto;
+          }
+          @media screen and (max-width: 960px) {
+            max-width: 80%;
+          }
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+          }
+        }
+
+        &-right {
+          .block_pros {
+            @media screen and (max-width: 1025px) and (orientation: landscape) {
+              padding-bottom: 10px;
+              padding-top: 10px;
+            }
+
+            @media screen and (max-width: 640px) {
+              // padding: 13px 16px 13px 65px;
+              @include toVh(padding-top, 13dvh);
+              @include toVh(padding-right, 16dvh);
+              @include toVh(padding-bottom, 13dvh);
+              @include toVh(padding-left, 65dvh);
+              @include toVh(margin-bottom, 10dvh);
+            }
+
+            p {
+              @media screen and (max-width: 640px) {
+                @include toVh(font-size, 14dvh);
+                @include toVh(line-height, 18dvh);
+
+                br {
+                  display: none;
+                }
+              }
+            }
+
+            &-icon {
+              @media screen and (max-width: 640px) {
+                @include toVh(width, 54dvh);
+                @include toVh(height, 45dvh);
+              }
+
+              svg {
+                @media screen and (max-width: 640px) {
+                  @include toVh(width, 25dvh);
+                  @include toVh(height, 25dvh);
+                }
+              }
+            }
+          }
+        }
+
+        &-picture {
+          @media screen and (max-width: 1025px) {
+            display: none;
+          }
+        }
+      }
+
+      &_bottom {
+        @media screen and (max-width: 1025px) {
+          min-height: unset;
+        }
+        @media screen and (max-width: 640px) {
+          @include toVh(padding-top, 20dvh);
+          @include toVh(padding-bottom, 30dvh);
+        }
+
+        &-info {
+          @media screen and (max-width: 1025px) and (orientation: portrait) {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .h4 {
+            @media screen and (max-width: 1025px) and (orientation: portrait) {
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            @media screen and (max-width: 1025px) and (orientation: landscape) {
+              font-size: 24px;
+            }
+            @media screen and (max-width: 640px) {
+              width: 100%;
+              margin-bottom: 2.39vh;
+            }
+          }
+
+          .btn {
+            @media screen and (max-width: 1025px) and (orientation: portrait) {
+              max-width: 60%;
+            }
+            @media screen and (max-width: 640px) {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &_img {
+        @media screen and (max-width: 1025px) {
+          padding-left: 0;
+          margin: 0 auto;
+        }
+        @media screen and (max-width: 960px) {
+          width: 190px;
+        }
+        @media screen and (max-width: 780px) {
+          width: 120px;
+        }
+        @media screen and (max-width: 1025px) and (orientation: landscape) {
+          width: 120px;
+        }
+        @media screen and (max-width: 640px) {
+          // width: 14.3vh;
+          @include toVh(width, 120dvh);
+        }
+
+        &-block {
+          @media screen and (max-width: 1367px) {
+            width: 30%;
+            transform: translateX(-50%);
+          }
+          @media screen and (max-width: 1220px) and (orientation: landscape) {
+            transform: translateX(-60%);
+          }
+
+          @media screen and (max-width: 1025px) {
+            margin-left: 0;
+            padding-left: 0;
+            height: unset;
+            bottom: unset;
+            width: 250px;
+            transform: translateX(-40%);
+            top: 140px;
+          }
+
+          @media screen and (max-width: 1025px) and (orientation: landscape) {
+            top: 100px;
+            transform: translateX(-50%);
+          }
+
+          @media screen and (max-width: 960px) {
+            top: 120px;
+          }
+          @media screen and (max-width: 780px) {
+            transform: translateX(-50%);
+          }
+          @media screen and (max-width: 640px) {
+            @include toVh(width, 192dvh);
+            @include toVh(top, 90dvh);
+          }
+
+          .block-slogan {
+            @media screen and (max-width: 1367px) {
+              transform: translate(-35%, 50%);
+            }
+
+            @media screen and (max-width: 1025px) {
+              z-index: 7;
+              transform: none;
+              top: 100%;
+              max-width: 100%;
+              min-width: 100%;
+              width: 100%;
+              padding-left: 36px;
+              padding-right: 36px;
+              transform: translateY(-100%);
+            }
+
+            @media screen and (max-width: 640px) {
+              min-width: auto;
+              // width: 192px;
+              // max-width: 192px;
+              @include toVh(width, 192dvh);
+              @include toVh(max-width, 192dvh);
+              @include toVh(height, 66dvh);
+              // height: 8.02vh;
+              // padding: 15px;
+              @include toVh(padding, 15dvh);
+              text-align: center;
+            }
+
+            .h5 {
+              @media screen and (max-width: 640px) {
+                @include toVh(font-size, 16dvh);
+                // font-size: 16px;
+                line-height: 1;
+              }
+            }
+            .icon-svg {
+              @media screen and (max-width: 640px) {
+                @include toVh(margin-top, 10dvh);
+                @include toVh(height, 14dvh);
+              }
+              svg {
+                @media screen and (max-width: 640px) {
+                  @include toVh(width, 114dvh);
+                  @include toVh(height, 14dvh);
+                  // width: 114px;
+                  // height: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .step_1 {
+      &_top {
+        &-content {
+          &--tablet {
+            @media screen and (max-width: 640px) {
+              max-width: 100%;
+            }
+            .h3 {
+              @media screen and (max-width: 640px) {
+                @include toVh(margin-bottom, 10dvh);
+              }
+            }
+            p {
+              @media screen and (max-width: 640px) {
+                @include toVh(margin-bottom, 30dvh);
+              }
+            }
+          }
+        }
+        &-left,
+        &-right {
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+          }
+        }
+
+        &-right {
+          &--item {
+            @media screen and (max-width: 640px) {
+              @include toVh(padding-left, 12dvh);
+              @include toVh(padding-right, 12dvh);
+              @include toVh(padding-top, 16dvh);
+              @include toVh(padding-bottom, 10dvh);
+              @include toVh(min-height, 150dvh);
+              flex-direction: column-reverse;
+              align-items: center;
+              justify-content: flex-end;
+
+              &:nth-of-type(1),
+              &:nth-of-type(2) {
+                @include toVh(margin-bottom, 8dvh);
+              }
+
+              &:nth-of-type(1),
+              &:nth-of-type(3) {
+                @include toVh(margin-left, 10dvh);
+              }
+            }
+            .icon-svg {
+              svg {
+                @media screen and (max-width: 640px) {
+                  @include toVh(width, 50dvh);
+                  @include toVh(height, 50dvh);
+                  @include toVh(margin-bottom, 8dvh);
+                }
+              }
+            }
+            p {
+              @media screen and (max-width: 640px) {
+                text-align: center;
+              }
+            }
+          }
+          &--item {
+            @media screen and (max-width: 640px) and (max-height: 668px) {
+              min-height: unset;
+            }
+          }
+        }
+        &-left {
+          .block_media-text {
+            @media screen and (max-width: 640px) {
+              @include toVh(left, 20dvh);
+              @include toVh(bottom, 20dvh);
+            }
+
+            p {
+              @media screen and (max-width: 640px) {
+                @include toVh(font-size, 16dvh);
+              }
+            }
+          }
+        }
+      }
+      &_bottom {
+        min-height: unset;
+        padding-bottom: 50px;
+        padding-top: 40px;
+        @media screen and (max-width: 1025px) {
+          padding-top: 10px;
+          padding-bottom: 20px;
+          min-height: unset;
+        }
+        @media screen and (max-width: 640px) {
+          @include toVh(padding-top, 10dvh);
+          @include toVh(padding-bottom, 20dvh);
+        }
+
+        &-info {
+          * {
+            @media screen and (max-width: 640px) {
+              width: 100%;
+            }
+          }
+        }
+
+        &-btn {
+          @media screen and (max-width: 640px) {
+            margin-top: 0;
+            border: 0;
+            @include toVh(padding-top, 22dvh);
+            @include toVh(padding-bottom, 22dvh);
+            @include toVh(font-size, 18dvh);
+          }
+        }
+      }
+    }
+
+    .step_2 {
+      &_top {
+        .importants_list {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            width: 100%;
+            padding-right: 0;
+          }
+
+          &_btn {
+            @media screen and (max-width: 1025px) and (min-width: 640px) {
+              transform: unset !important;
+              margin: 0 auto 10px !important;
+              width: 100%;
+              min-width: unset !important;
+              max-width: 50%;
+            }
+            @media screen and (max-width: 640px) {
+              transform: unset !important;
+              @include toVh(margin-bottom, 10vh, !important);
+              @include toVh(font-size, 18vh, !important);
+              @include toVh(min-height, 70vh, !important);
+              margin-left: auto;
+              margin-right: auto;
+              width: 100%;
+              min-width: unset !important;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &_bottom {
+        @media screen and (max-width: 640px) {
+          @include toVh(padding-top, 20dvh);
+          @include toVh(padding-bottom, 30dvh);
+        }
+        &-info {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            max-width: 100%;
+            text-align: left;
+          }
+
+          .h3 {
+            @media screen and (max-width: 1025px) {
+              margin-right: 0;
+              margin-bottom: 15px;
+              text-align: center;
+            }
+
+            @media screen and (max-width: 640px) {
+              @include toVh(font-size, 30dvh);
+              @include toVh(margin-bottom, 10dvh);
+              text-align: left;
+              // @include toVh(padding-bottom, 30dvh);
+            }
+          }
+
+          .h6 {
+            @media screen and (max-width: 640px) {
+              @include toVh(font-size, 18dvh);
+              text-align: left;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .step_3 {
+      &_top {
+        &-content {
+          @media screen and (max-width: 640px) {
+            padding: 0;
+          }
+        }
+        .h2 {
+          @media screen and (max-width: 1025px) {
+            max-width: 100%;
+          }
+          @media screen and (max-width: 640px) {
+            @include toVh(font-size, 30dvh);
+          }
+        }
+
+        .step_3_btn {
+          @media screen and (max-width: 1025px) {
+            transform: unset;
+          }
+
+          @media screen and (max-width: 640px) {
+            @include toVh(margin-top, 20dvh);
+            @include toVh(width, 60dvh);
+            @include toVh(height, 60dvh);
+          }
+        }
+      }
+    }
+
+    .step_4 {
+      &_top {
+        .step_4_cards {
+          @media screen and (max-width: 640px) {
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .card {
+            @media screen and (max-width: 640px) {
+              margin-right: 0;
+              max-width: 100%;
+              @include toVh(height, 145dvh);
+              @include toVh(margin-bottom, 10dvh);
+
+              &.js_active {
+                .card_media::after {
+                  background-color: rgba(0, 0, 0, 0.5);
+                }
+              }
+            }
+            &_media::after {
+              @media screen and (max-width: 640px) {
+                background-color: rgba(0, 0, 0, 0.2);
+                opacity: 1;
+              }
+            }
+            &_info {
+              @media screen and (max-width: 640px) {
+                @include toVh(min-height, 50dvh);
+                @include toVh(padding-bottom, 20dvh);
+              }
+
+              .h5 {
+                @media screen and (max-width: 640px) {
+                  @include toVh(font-size, 20dvh);
+                }
+              }
+            }
+          }
+        }
+      }
+      &_bottom {
+        @media screen and (max-width: 640px) {
+          @include toVh(padding-top, 20dvh);
+          @include toVh(padding-bottom, 30dvh);
+          @include toVh(min-height, 194dvh);
+        }
+        &-info {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            width: 100%;
+          }
+        }
+        .h3 {
+          @media screen and (max-width: 1025px) {
+            margin-bottom: 30px;
+            margin-right: 0;
+          }
+          @media screen and (max-width: 640px) {
+            text-align: left;
+            width: 100%;
+            @include toVh(margin-bottom, 10dvh);
+          }
+        }
+        .h6 {
+          @media screen and (max-width: 640px) {
+            @include toVh(font-size, 18dvh);
+            text-align: left;
+            width: 100%;
+            max-width: 70%;
+            margin-right: auto;
+
+            br {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &.step_0,
+    &.step_1,
+    &.step_2,
+    &.step_3,
+    &.step_4 {
+      transform: translateY(100dvh);
+      z-index: 1;
+    }
+  }
+
+  .lvl_2,
+  .lvl_3,
+  .lvl_4,
+  .lvl_5 {
+    .step_1 {
+      transform: translateY(0) !important;
+      border-radius: 32px;
+    }
+  }
+}

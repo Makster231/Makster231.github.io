@@ -1,0 +1,26 @@
+:root {
+  --font-main: CoFoSans, sans-serif;
+
+  --color-white: #fff;
+  --color-black: #282d3c;
+  --color-grey-w: #f4f6fb;
+  --color-grey-m: #8c94a8;
+  --color-grey-b: #99999961;
+
+  --color-blue: #007cfb;
+  --color-blue2: #0f80e9;
+  --color-green: #ddffda;
+  --color-green-l: #ccffc8;
+  
+}
+
+$font-main: var(--font-main);
+
+$color-white: var(--color-white);
+$color-black: var(--color-black);
+
+$color-grey-w: var(--color-grey-w);
+$color-grey-m: var(--color-grey-m);
+$color-grey-b: var(--color-grey-b);
+
+$color-green: var(--color-green);
