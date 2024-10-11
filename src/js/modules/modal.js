@@ -33,4 +33,3 @@ export default class Modal {
     body.classList.remove("js_scroll-disable");
   }
 }
-``;

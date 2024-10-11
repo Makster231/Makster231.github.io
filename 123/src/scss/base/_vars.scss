@@ -1,0 +1,22 @@
+:root {
+  --font-main: "Montserrat", sans-serif;
+
+  --color-white: #e4e5ea;
+  --color-black: #0c151c;
+  --color-grey: #d2d2d4;
+  --color-grey: #99999961;
+
+  --color-primary: #16354d;
+  --color-attention: #e33368;
+  --color-secondary: #6b99c3;
+}
+
+$font-main: var(--font-main);
+
+$color-white: var(--color-white);
+$color-black: var(--color-black);
+$color-grey: var(--color-grey);
+
+$color-primary: var(--color-primary);
+$color-attention: var(--color-attention);
+$color-secondary: var(--color-secondary);

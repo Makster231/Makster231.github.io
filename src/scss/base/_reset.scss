@@ -164,7 +164,6 @@ a:not([class]) {
 img,
 picture {
   display: block;
-  max-width: 100%;
 }
 
 input,
@@ -229,7 +228,7 @@ textarea {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield !important;
+  // -moz-appearance: textfield !important;
 }
 
 input::-webkit-inner-spin-button,

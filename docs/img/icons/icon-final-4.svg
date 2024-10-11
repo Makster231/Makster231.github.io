@@ -1,0 +1,21 @@
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.4" d="M20.3261 0.798828H5.67383C2.98137 0.798828 0.798706 2.98149 0.798706 5.67395V20.3263C0.798706 23.0187 2.98137 25.2014 5.67383 25.2014H20.3261C23.0186 25.2014 25.2013 23.0187 25.2013 20.3263V5.67395C25.2013 2.98149 23.0186 0.798828 20.3261 0.798828Z" fill="url(#paint0_radial_16_17839)"/>
+<path d="M20.3261 0.798828H5.67383C2.98137 0.798828 0.798706 2.98149 0.798706 5.67395V20.3263C0.798706 23.0187 2.98137 25.2014 5.67383 25.2014H20.3261C23.0186 25.2014 25.2013 23.0187 25.2013 20.3263V5.67395C25.2013 2.98149 23.0186 0.798828 20.3261 0.798828Z" stroke="#0F80E9" stroke-miterlimit="10"/>
+<path d="M20.9431 10.2063C10.1522 13.5315 8.9353 20.3459 8.9353 20.3459C10.0616 20.8895 11.3716 21.2176 12.7086 21.2176C17.4515 21.2176 21.2933 17.3733 21.2933 12.6328C21.2933 11.7024 21.2174 11.0437 20.9431 10.2063Z" stroke="#0F80E9" stroke-miterlimit="10"/>
+<path d="M16.3913 7.03291C16.1465 6.69256 15.7498 6.38159 15.1132 6.38159C13.8423 6.38159 13.2596 7.47611 13.2596 7.47611C13.2596 7.47611 12.6768 6.38159 11.406 6.38159C10.7694 6.38159 10.3727 6.69256 10.1279 7.03291C9.7924 7.50059 9.70914 8.1005 9.84626 8.65877C10.0642 9.54761 10.8037 11.0461 13.2596 12.1333C15.7131 11.0461 16.4525 9.54761 16.6729 8.65877C16.81 8.1005 16.7268 7.50059 16.3913 7.03291Z" stroke="#0F80E9" stroke-miterlimit="10"/>
+<path d="M12.6767 13.6072C12.6767 13.6072 7.84325 10.8036 4.56215 10.0862C4.56215 10.0862 2.45148 15.8844 8.23502 19.9809C8.23502 19.9809 8.73698 16.6214 12.6767 13.6072Z" stroke="#0F80E9" stroke-miterlimit="10"/>
+<defs>
+<radialGradient id="paint0_radial_16_17839" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(13 13.0001) scale(12.2013)">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.15" stop-color="white" stop-opacity="0.01"/>
+<stop offset="0.28" stop-color="white" stop-opacity="0.05"/>
+<stop offset="0.4" stop-color="white" stop-opacity="0.12"/>
+<stop offset="0.52" stop-color="white" stop-opacity="0.22"/>
+<stop offset="0.63" stop-color="white" stop-opacity="0.34"/>
+<stop offset="0.74" stop-color="white" stop-opacity="0.5"/>
+<stop offset="0.85" stop-color="white" stop-opacity="0.68"/>
+<stop offset="0.95" stop-color="white" stop-opacity="0.88"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+</defs>
+</svg>

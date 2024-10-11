@@ -1,0 +1,745 @@
+.lvls {
+  .lvl {
+    border-radius: 18px;
+
+    .step_0,
+    .step_1,
+    .step_2,
+    .step_3,
+    .step_4 {
+      padding: 20px 15px;
+      &_wrapper {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        margin-left: 10px;
+        margin-top: 10px;
+
+        @media screen and (min-width: 960px) {
+          width: calc(100% - 30px);
+          height: calc(100% - 40px);
+          margin-left: 15px;
+          margin-top: 20px;
+        }
+      }
+      &_top {
+        border: 10px solid var(--color-white);
+        overflow: hidden;
+        z-index: 6;
+        border-radius: 32px;
+        position: relative;
+
+        @media screen and (max-width: 640px) {
+          // @include toVh(border-width, 9svh);
+          // @include toVh(border-radius, 32svh);
+          @include setProp(border-width, 9px, 9dvh, 9svh);
+          @include setProp(border-radius, 32px, 32dvh, 32svh);
+        }
+      }
+      &_bottom {
+        background-color: var(--color-white);
+        min-height: 158px;
+        border-radius: 0 0 32px 32px;
+        padding-top: 12px;
+        padding-bottom: 27px;
+        z-index: 6;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: 0;
+          border: 18px solid transparent;
+          border-bottom: 18px solid var(--color-white);
+          border-left: 18px solid var(--color-white);
+          @media screen and (max-width: 640px) {
+            // @include toVh(border-width, 18svh);
+            // @include toVh(top, -30svh);
+            @include setProp(border-width, 18px, 18dvh, 18svh);
+            @include setProp(top, -30px, -30dvh, -30svh);
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -30px;
+          right: 0;
+          border: 18px solid transparent;
+          border-right: 18px solid var(--color-white);
+          border-bottom: 18px solid var(--color-white);
+          @media screen and (max-width: 640px) {
+            // @include toVh(border-width, 18svh);
+            // @include toVh(top, -30svh);
+            @include setProp(border-width, 18px, 18dvh, 18svh);
+            @include setProp(top, -30px, -30dvh, -30svh);
+          }
+        }
+      }
+      &_bg {
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .step_0 {
+      &_top {
+        @media screen and (max-width: 1025px) {
+          height: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-bottom: 20px;
+        }
+        @media screen and (max-width: 1025px) and (orientation: landscape) {
+          padding-bottom: 0;
+        }
+        @media screen and (max-width: 640px) {
+          // @include toVh(padding-bottom, 20svh);
+          @include setProp(padding-bottom, 20px, 20dvh, 20svh);
+        }
+
+        &-content {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+          }
+        }
+
+        &-left {
+          .h1 {
+            @media screen and (max-width: 1025px) {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 30px;
+
+              br {
+                display: none;
+              }
+            }
+
+            @media screen and (max-width: 640px) {
+              margin-bottom: 1.19vh;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        &-left,
+        &-right {
+          @media screen and (max-width: 1025px) {
+            width: 100%;
+            max-width: 60%;
+            margin: 0 auto;
+          }
+          @media screen and (max-width: 960px) {
+            max-width: 80%;
+          }
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+          }
+        }
+
+        &-right {
+          .block_pros {
+            @media screen and (max-width: 1025px) and (orientation: landscape) {
+              padding-bottom: 10px;
+              padding-top: 10px;
+            }
+
+            @media screen and (max-width: 640px) {
+              // padding: 13px 16px 13px 65px;
+              // @include toVh(padding-top, 13svh);
+              // @include toVh(padding-right, 16svh);
+              // @include toVh(padding-bottom, 13svh);
+              // @include toVh(padding-left, 65svh);
+              // @include toVh(margin-bottom, 10svh);
+
+              @include setProp(padding-top, 13px, 13dvh, 13svh);
+              @include setProp(padding-right, 16px, 16dvh, 16svh);
+              @include setProp(padding-bottom, 13px, 13dvh, 13svh);
+              @include setProp(padding-left, 65px, 65dvh, 65svh);
+              @include setProp(margin-bottom, 10px, 10dvh, 10svh);
+            }
+
+            p {
+              @media screen and (max-width: 640px) {
+                // @include toVh(font-size, 14svh);
+                // @include toVh(line-height, 18svh);
+                @include setProp(font-size, 14px, 14dvh, 14svh);
+                @include setProp(line-height, 18px, 18dvh, 18svh);
+
+                br {
+                  display: none;
+                }
+              }
+            }
+
+            &-icon {
+              @media screen and (max-width: 640px) {
+                // @include toVh(width, 54svh);
+                // @include toVh(height, 45svh);
+                @include setProp(width, 54px, 54dvh, 54svh);
+                @include setProp(height, 45px, 45dvh, 45svh);
+              }
+
+              svg {
+                @media screen and (max-width: 640px) {
+                  // @include toVh(width, 25svh);
+                  // @include toVh(height, 25svh);
+                  @include setProp(width, 25px, 25dvh, 25svh);
+                  @include setProp(height, 25px, 25dvh, 25svh);
+                }
+              }
+            }
+          }
+        }
+
+        &-picture {
+          @media screen and (max-width: 1025px) {
+            display: none;
+          }
+        }
+      }
+
+      &_bottom {
+        @media screen and (max-width: 1025px) {
+          min-height: unset;
+        }
+        @media screen and (max-width: 640px) {
+          // @include toVh(padding-top, 20svh);
+          // @include toVh(padding-bottom, 30svh);
+
+          @include setProp(padding-top, 20px, 20dvh, 20svh);
+          @include setProp(padding-bottom, 30px, 30dvh, 30svh);
+        }
+
+        &-info {
+          @media screen and (max-width: 1025px) and (orientation: portrait) {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .h4 {
+            @media screen and (max-width: 1025px) and (orientation: portrait) {
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            @media screen and (max-width: 1025px) and (orientation: landscape) {
+              font-size: 24px;
+            }
+            @media screen and (max-width: 640px) {
+              width: 100%;
+              margin-bottom: 2.39vh;
+            }
+          }
+
+          .btn {
+            @media screen and (max-width: 1025px) and (orientation: portrait) {
+              max-width: 60%;
+            }
+            @media screen and (max-width: 640px) {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &_img {
+        @media screen and (max-width: 1025px) {
+          padding-left: 0;
+          margin: 0 auto;
+        }
+        @media screen and (max-width: 960px) {
+          width: 190px;
+        }
+        @media screen and (max-width: 780px) {
+          width: 120px;
+        }
+        @media screen and (max-width: 1025px) and (orientation: landscape) {
+          width: 120px;
+        }
+        @media screen and (max-width: 640px) {
+          // width: 14.3vh;
+          // @include toVh(width, 120svh);
+
+          @include setProp(width, 120px, 120dvh, 120svh);
+        }
+
+        &-block {
+          @media screen and (max-width: 1367px) {
+            width: 30%;
+            transform: translateX(-50%);
+          }
+          @media screen and (max-width: 1220px) and (orientation: landscape) {
+            transform: translateX(-60%);
+          }
+
+          @media screen and (max-width: 1025px) {
+            margin-left: 0;
+            padding-left: 0;
+            height: unset;
+            bottom: unset;
+            width: 250px;
+            transform: translateX(-40%);
+            top: 140px;
+          }
+
+          @media screen and (max-width: 1025px) and (orientation: landscape) {
+            top: 100px;
+            transform: translateX(-50%);
+          }
+
+          @media screen and (max-width: 960px) {
+            top: 120px;
+          }
+          @media screen and (max-width: 780px) {
+            transform: translateX(-50%);
+          }
+          @media screen and (max-width: 640px) {
+            // @include toVh(width, 192svh);
+            // @include toVh(top, 90svh);
+            @include setProp(width, 192px, 192dvh, 192svh);
+            @include setProp(top, 90px, 90dvh, 90svh);
+          }
+
+          .block-slogan {
+            @media screen and (max-width: 1367px) {
+              transform: translate(-35%, 50%);
+            }
+
+            @media screen and (max-width: 1025px) {
+              z-index: 7;
+              transform: none;
+              top: 100%;
+              max-width: 100%;
+              min-width: 100%;
+              width: 100%;
+              padding-left: 36px;
+              padding-right: 36px;
+              transform: translateY(-100%);
+            }
+
+            @media screen and (max-width: 640px) {
+              min-width: auto;
+              // width: 192px;
+              // max-width: 192px;
+              // @include toVh(width, 192svh);
+              // @include toVh(max-width, 192svh);
+              // @include toVh(height, 66svh);
+              // height: 8.02vh;
+              // padding: 15px;
+              // @include toVh(padding, 15svh);
+
+              text-align: center;
+
+              @include setProp(width, 192px, 192dvh, 192svh);
+              @include setProp(max-width, 192px, 192dvh, 192svh);
+              @include setProp(padding, 15px, 15dvh, 15svh);
+              @include setProp(height, 66px, 66dvh, 66svh);
+            }
+
+            .h5 {
+              @media screen and (max-width: 640px) {
+                // @include toVh(font-size, 16svh);
+                @include setProp(font-size, 16px, 16dvh, 16svh);
+                // font-size: 16px;
+                line-height: 1;
+              }
+            }
+            .icon-svg {
+              @media screen and (max-width: 640px) {
+                // @include toVh(margin-top, 10svh);
+                // @include toVh(height, 14svh);
+                @include setProp(margin-top, 10px, 10dvh, 10svh);
+                @include setProp(height, 14px, 14dvh, 14svh);
+              }
+              svg {
+                @media screen and (max-width: 640px) {
+                  // @include toVh(width, 114svh);
+                  // @include toVh(height, 14svh);
+                  @include setProp(width, 114px, 114dvh, 114svh);
+                  @include setProp(height, 14px, 14dvh, 14svh);
+                  // width: 114px;
+                  // height: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .step_1 {
+      &_top {
+        &-content {
+          &--tablet {
+            @media screen and (max-width: 640px) {
+              max-width: 100%;
+            }
+            .h3 {
+              @media screen and (max-width: 640px) {
+                // @include toVh(margin-bottom, 10svh);
+                @include setProp(margin-bottom, 10px, 10dvh, 10svh);
+              }
+            }
+            p {
+              @media screen and (max-width: 640px) {
+                // @include toVh(margin-bottom, 30svh);
+                @include setProp(margin-bottom, 30px, 30dvh, 30svh);
+              }
+            }
+          }
+        }
+        &-left,
+        &-right {
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+          }
+        }
+
+        &-right {
+          &--item {
+            @media screen and (max-width: 640px) {
+              // @include toVh(padding-left, 12svh);
+              // @include toVh(padding-right, 12svh);
+              // @include toVh(padding-top, 16svh);
+              // @include toVh(padding-bottom, 10svh);
+              // @include toVh(min-height, 150svh);
+
+              @include setProp(padding-top, 16px, 16dvh, 16svh);
+              @include setProp(padding-right, 12px, 12dvh, 12svh);
+              @include setProp(padding-bottom, 10px, 10dvh, 10svh);
+              @include setProp(padding-left, 12px, 12dvh, 12svh);
+              @include setProp(min-height, 150px, 150dvh, 150svh);
+
+              flex-direction: column-reverse;
+              align-items: center;
+              justify-content: flex-end;
+
+              &:nth-of-type(1),
+              &:nth-of-type(2) {
+                // @include toVh(margin-bottom, 8svh);
+                @include setProp(margin-bottom, 8px, 8dvh, 8svh);
+              }
+
+              &:nth-of-type(1),
+              &:nth-of-type(3) {
+                // @include toVh(margin-left, 10svh);
+                @include setProp(margin-left, 10px, 10dvh, 10svh);
+              }
+            }
+            .icon-svg {
+              svg {
+                @media screen and (max-width: 640px) {
+                  // @include toVh(width, 50svh);
+                  // @include toVh(height, 50svh);
+                  // @include toVh(margin-bottom, 8svh);
+                  @include setProp(width, 50px, 50dvh, 50svh);
+                  @include setProp(height, 50px, 50dvh, 50svh);
+                  @include setProp(margin-bottom, 8px, 8dvh, 8svh);
+                }
+              }
+            }
+            p {
+              @media screen and (max-width: 640px) {
+                text-align: center;
+              }
+            }
+          }
+          &--item {
+            @media screen and (max-width: 640px) and (max-height: 668px) {
+              min-height: unset;
+            }
+          }
+        }
+        &-left {
+          .block_media-text {
+            @media screen and (max-width: 640px) {
+              // @include toVh(left, 20svh);
+              // @include toVh(bottom, 20svh);
+              @include setProp(left, 20px, 20dvh, 20svh);
+              @include setProp(bottom, 20px, 20dvh, 20svh);
+            }
+
+            p {
+              @media screen and (max-width: 640px) {
+                // @include toVh(font-size, 16svh);
+                @include setProp(font-size, 16px, 16dvh, 16svh);
+              }
+            }
+          }
+        }
+      }
+      &_bottom {
+        min-height: unset;
+        padding-bottom: 50px;
+        padding-top: 40px;
+        @media screen and (max-width: 1025px) {
+          padding-top: 10px;
+          padding-bottom: 20px;
+          min-height: unset;
+        }
+        @media screen and (max-width: 640px) {
+          // @include toVh(padding-top, 10svh);
+          // @include toVh(padding-bottom, 20svh);
+          @include setProp(padding-top, 10px, 10dvh, 10svh);
+          @include setProp(padding-bottom, 20px, 20dvh, 20svh);
+        }
+
+        &-info {
+          * {
+            @media screen and (max-width: 640px) {
+              width: 100%;
+            }
+          }
+        }
+
+        &-btn {
+          @media screen and (max-width: 640px) {
+            margin-top: 0;
+            border: 0;
+            // @include toVh(padding-top, 22svh);
+            // @include toVh(padding-bottom, 22svh);
+            // @include toVh(font-size, 18svh);
+
+            @include setProp(font-size, 18px, 18dvh, 18svh);
+            @include setProp(padding-top, 22px, 22dvh, 22svh);
+            @include setProp(padding-bottom, 22px, 22dvh, 22svh);
+          }
+        }
+      }
+    }
+
+    .step_2 {
+      &_top {
+        .importants_list {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            width: 100%;
+            padding-right: 0;
+          }
+
+          &_btn {
+            @media screen and (max-width: 1025px) and (min-width: 640px) {
+              transform: unset !important;
+              margin: 0 auto 10px !important;
+              width: 100%;
+              min-width: unset !important;
+              max-width: 50%;
+            }
+            @media screen and (max-width: 640px) {
+              transform: unset !important;
+              // @include toVh(margin-bottom, 10vh, !important);
+              // @include toVh(font-size, 18vh, !important);
+              // @include toVh(min-height, 70vh, !important);
+              @include setProp(font-size, 18px, 18dvh, 18svh);
+              @include setProp(min-height, 70px, 70dvh, 70svh);
+              @include setProp(margin-bottom, 10px, 10dvh, 10vh, !important);
+              margin-left: auto;
+              margin-right: auto;
+              width: 100%;
+              min-width: unset !important;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &_bottom {
+        @media screen and (max-width: 640px) {
+          // @include toVh(padding-top, 20svh);
+          // @include toVh(padding-bottom, 30svh);
+
+          @include setProp(padding-top, 20px, 20dvh, 20svh);
+          @include setProp(padding-bottom, 30px, 30dvh, 30svh);
+        }
+        &-info {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            max-width: 100%;
+            text-align: left;
+          }
+
+          .h3 {
+            @media screen and (max-width: 1025px) {
+              margin-right: 0;
+              margin-bottom: 15px;
+              text-align: center;
+            }
+
+            @media screen and (max-width: 640px) {
+              // @include toVh(font-size, 30svh);
+              // @include toVh(margin-bottom, 10svh);
+              @include setProp(font-size, 30px, 30dvh, 30svh);
+              @include setProp(margin-bottom, 10px, 10dvh, 10svh);
+              text-align: left;
+              // @include toVh(padding-bottom, 30svh);
+            }
+          }
+
+          .h6 {
+            @media screen and (max-width: 640px) {
+              // @include toVh(font-size, 18svh);
+              @include setProp(font-size, 18px, 18dvh, 18svh);
+              text-align: left;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .step_3 {
+      &_top {
+        &-content {
+          @media screen and (max-width: 640px) {
+            padding: 0;
+          }
+        }
+        .h2 {
+          @media screen and (max-width: 1025px) {
+            max-width: 100%;
+          }
+          @media screen and (max-width: 640px) {
+            // @include toVh(font-size, 30svh);
+            @include setProp(font-size, 30px, 30dvh, 30svh);
+          }
+        }
+
+        .step_3_btn {
+          @media screen and (max-width: 1025px) {
+            transform: unset;
+          }
+
+          @media screen and (max-width: 640px) {
+            // @include toVh(margin-top, 20svh);
+            // @include toVh(width, 60svh);
+            // @include toVh(height, 60svh);
+            @include setProp(height, 60px, 60dvh, 60svh);
+            @include setProp(width, 60px, 60dvh, 60svh);
+            @include setProp(margin-top, 20px, 20dvh, 20svh);
+          }
+        }
+      }
+    }
+
+    .step_4 {
+      &_top {
+        .step_4_cards {
+          @media screen and (max-width: 640px) {
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .card {
+            @media screen and (max-width: 640px) {
+              margin-right: 0;
+              max-width: 100%;
+              // @include toVh(height, 145svh);
+              // @include toVh(margin-bottom, 10svh);
+              @include setProp(height, 145px, 145dvh, 145svh);
+              @include setProp(margin-bottom, 10px, 10dvh, 10svh);
+
+              &.js_active {
+                .card_media::after {
+                  background-color: rgba(0, 0, 0, 0.5);
+                }
+              }
+            }
+            &_media::after {
+              @media screen and (max-width: 640px) {
+                background-color: rgba(0, 0, 0, 0.2);
+                opacity: 1;
+              }
+            }
+            &_info {
+              @media screen and (max-width: 640px) {
+                // @include toVh(min-height, 50svh);
+                // @include toVh(padding-bottom, 20svh);
+                @include setProp(min-height, 50px, 50dvh, 50svh);
+                @include setProp(padding-bottom, 20px, 20dvh, 20svh);
+              }
+
+              .h5 {
+                @media screen and (max-width: 640px) {
+                  // @include toVh(font-size, 20svh);
+                  @include setProp(font-size, 20px, 20dvh, 20svh);
+                }
+              }
+            }
+          }
+        }
+      }
+      &_bottom {
+        @media screen and (max-width: 640px) {
+          // @include toVh(padding-top, 20svh);
+          // @include toVh(padding-bottom, 30svh);
+          // @include toVh(min-height, 194svh);
+          @include setProp(padding-top, 20px, 20dvh, 20svh);
+          @include setProp(padding-bottom, 30px, 30dvh, 30svh);
+          @include setProp(min-height, 194px, 194dvh, 194svh);
+        }
+        &-info {
+          @media screen and (max-width: 1025px) {
+            flex-direction: column;
+            width: 100%;
+          }
+        }
+        .h3 {
+          @media screen and (max-width: 1025px) {
+            margin-bottom: 30px;
+            margin-right: 0;
+          }
+          @media screen and (max-width: 640px) {
+            text-align: left;
+            width: 100%;
+            // @include toVh(margin-bottom, 10svh);
+            @include setProp(margin-bottom, 10px, 10dvh, 10svh);
+          }
+        }
+        .h6 {
+          @media screen and (max-width: 640px) {
+            // @include toVh(font-size, 18svh);
+            @include setProp(font-size, 18px, 18dvh, 18svh);
+            text-align: left;
+            width: 100%;
+            max-width: 70%;
+            margin-right: auto;
+
+            br {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &.step_0,
+    &.step_1,
+    &.step_2,
+    &.step_3,
+    &.step_4 {
+      transform: translateY(100svh);
+      z-index: 1;
+    }
+  }
+
+  .lvl_2,
+  .lvl_3,
+  .lvl_4,
+  .lvl_5 {
+    .step_1 {
+      transform: translateY(0) !important;
+      border-radius: 32px;
+    }
+  }
+}

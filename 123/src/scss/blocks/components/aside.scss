@@ -1,0 +1,121 @@
+.aside {
+  position: fixed;
+  z-index: 10;
+  padding-bottom: 40px;
+
+  &_controlls {
+    top: 0;
+    right: 20px;
+    height: 100%;
+
+    &-pagination {
+      margin-top: 15px;
+      color: $color-grey;
+      text-align: right;
+      .swiper {
+        &-pagination {
+          &-total,
+          &-current {
+            &::before {
+              content: "0";
+            }
+          }
+          &-current {
+            font-size: 32px;
+            font-weight: 600;
+            color: $color-white;
+          }
+          &-total {
+            font-size: 18px;
+            color: $color-grey;
+          }
+        }
+      }
+    }
+
+    .swiper {
+      &-scrollbar {
+        height: 330px;
+        width: 2px;
+        left: unset;
+        background-color: $color-grey;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &-drag {
+          background-color: $color-white;
+        }
+      }
+    }
+
+    &-btns {
+      .prev,
+      .next {
+        &:not(.swiper-button-disabled) {
+          cursor: pointer;
+
+          path {
+            fill: $color-white;
+            @include transition();
+          }
+
+          &:hover {
+            path {
+              fill: $color-attention;
+            }
+          }
+        }
+        &.swiper-button-disabled {
+          cursor: unset;
+
+          path {
+            fill: $color-grey;
+          }
+        }
+      }
+    }
+  }
+
+  &_links {
+    left: 20px;
+    top: 0;
+    height: 100%;
+    padding-bottom: 40px;
+
+    nav {
+      li {
+        margin-bottom: 16px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      .icon-svg {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+        @include transition();
+
+        svg {
+          @include transition();
+          width: 28px;
+          height: 28px;
+        }
+
+        &:hover {
+          border-color: transparent;
+
+          svg {
+            transform: scale(1.4);
+          }
+        }
+      }
+    }
+  }
+}

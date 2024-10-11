@@ -1,22 +1,26 @@
 :root {
-  --font-main: "Montserrat", sans-serif;
+  --font-main: CoFoSans, sans-serif;
 
-  --color-white: #e4e5ea;
-  --color-black: #0c151c;
-  --color-grey: #d2d2d4;
-  --color-grey: #99999961;
+  --color-white: #fff;
+  --color-black: #282d3c;
+  --color-grey-w: #f4f6fb;
+  --color-grey-m: #8c94a8;
+  --color-grey-b: #99999961;
 
-  --color-primary: #16354d;
-  --color-attention: #e33368;
-  --color-secondary: #6b99c3;
+  --color-blue: #007cfb;
+  --color-blue2: #0f80e9;
+  --color-green: #ddffda;
+  --color-green-l: #ccffc8;
+  
 }
 
 $font-main: var(--font-main);
 
 $color-white: var(--color-white);
 $color-black: var(--color-black);
-$color-grey: var(--color-grey);
 
-$color-primary: var(--color-primary);
-$color-attention: var(--color-attention);
-$color-secondary: var(--color-secondary);
+$color-grey-w: var(--color-grey-w);
+$color-grey-m: var(--color-grey-m);
+$color-grey-b: var(--color-grey-b);
+
+$color-green: var(--color-green);

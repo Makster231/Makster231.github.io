@@ -2,107 +2,50 @@
 // isAvifWebp({ mode: 'webp' });
 
 // import Swiper bundle with all modules installed
-import Swiper from "swiper/bundle";
+// import Swiper from "swiper/bundle";
 // import styles bundle
-import "swiper/css/bundle";
+// import "swiper/css/bundle";
 
 import LazyLoad from "./modules/lazyLoad.js";
 import Modal from "./modules/modal";
+import steps from "./modules/steps";
+import finalSteps from "./modules/finalSteps";
 
 window.addEventListener("load", function () {
   // Переменные
   const body = document.querySelector("body");
   const images = document.querySelectorAll("img[data-src]");
 
-  const swiper = document.querySelector(".js_swiper");
+  steps();
+  finalSteps();
 
-  // Запускаем функционал
+  var plyr_options = {
+    // autoplay: true,
+    // clickToPlay: true,
+    // showPosterOnEnd: true,
+    // controls: ["play"],
+    // controls: ["mute", "progress", "play"],
+  };
 
-  // Ленивая загрузка
-  if (images) {
-    new LazyLoad(images, {
-      root: null,
-      // За сколько px или % загружать изображения
-      rootMargin: "100px",
-    });
-  }
-  // Запускаем Слайдер
-  if (swiper) {
-    const mySwiper = new Swiper(".js_swiper", {
-      // Optional parameters
-      slidesPerView: 1,
-      spaceBetween: 0,
-      direction: "vertical",
-      watchSlidesProgress: true,
-      watchSlidesVisibility: true,
-      parallax: true,
-      mousewheel: true,
-      keyboard: {
-        enabled: true,
-      },
-      allowTouchMove: true,
+  const video1 = new Plyr("#video-1", plyr_options);
+  const video2 = new Plyr("#video-2", plyr_options);
+  const video3 = new Plyr("#video-3", plyr_options);
+  const video4 = new Plyr("#video-4", plyr_options);
+  const video5 = new Plyr("#video-5", plyr_options);
 
-      pagination: {
-        el: ".js_aside_controlls-pagination",
-        type: "fraction",
-      },
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-      // Navigation arrows
-      navigation: {
-        nextEl: ".js_aside_controlls-btns .next",
-        prevEl: ".js_aside_controlls-btns .prev",
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".js_aside_controlls-scrollbar",
-      },
-
-      // === new change
-      runCallbacksOnInit: true,
-
-      on: {},
-    });
-
-    const headerMenu = document.querySelector(".js_header_menu");
-
-    headerMenu.addEventListener("click", function (e) {
-      if (!e.target.classList.contains("js_header_menu-item")) return;
-
-      if (e.target.dataset.role === "about") mySwiper.slideTo(0);
-      if (e.target.dataset.role === "portfolio") mySwiper.slideTo(1);
-      if (e.target.dataset.role === "contact") mySwiper.slideTo(3);
-    });
-  }
-
-  // Модальные окна
-  // if (dialog3) {
-  //   const dialog3Btn = document.querySelectorAll(".js_dialog3_open");
-  //   new Modal(dialog3, {
-  //     openBtn: dialog3Btn,
-  //   });
-  //   let activeSlideInit = 0;
-
-  //   dialog3Btn.forEach((item) => {
-  //     item.addEventListener("click", function (e) {
-  //       activeSlideInit = e.target.dataset.slide;
-  //       const swiperLeads = new Swiper(".js_swiper-leads", {
-  //         effect: "cards",
-  //         grabCursor: false,
-  //         initialSlide: activeSlideInit,
-  //         cardsEffect: {
-  //           perSlideOffset: 10,
-  //         },
-
-  //         navigation: {
-  //           nextEl: ".swiper-button-next",
-  //           prevEl: ".swiper-button-prev",
-  //         },
-  //       });
-  //     });
-  //   });
-  // }
+  // We listen to the resize event
+  window.addEventListener("resize", () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
 
   // Показываем страницу после загрузки
+  body.classList.remove("js_load");
   body.style.opacity = 1;
 });

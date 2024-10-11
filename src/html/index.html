@@ -6,16 +6,56 @@
     <title>Главная</title>
   </head>
 
-  <body id="body">
+  <body id="body" class="js_load js_active_lvl_1 js_active_1_0">
     @@include('blocks/header.html')
-    @@include('blocks/components/aside_links.html')
 
-    <main>
-      <!-- prettier-ignore -->
-      @@include('blocks/components/slider.html')
-    </main>
+    <div class="wrapper">
+      <div class="container">@@include('blocks/components/aside.html')</div>
 
-    @@include('blocks/components/aside_controlls.html')
+      <main>
+        <!-- prettier-ignore -->
+        <div class="lvls js_lvls">
+          <!-- lvl 5 -->
+          <div class="lvl_5 js_lvl_5 ">
+            @@include('blocks/components/lvls/lvl_5_1.html')
+          </div>
+          <!-- lvl 5 END -->
+          <!-- lvl 4 -->
+          <div class="lvl_4 js_lvl_4 ">
+            @@include('blocks/components/lvls/lvl_4_1.html')
+            @@include('blocks/components/lvls/lvl_4_2.html')
+            @@include('blocks/components/lvls/lvl_4_3.html')
+            @@include('blocks/components/lvls/lvl_4_4.html')
+          </div>
+          <!-- lvl 4 END -->
+          <!-- lvl 3 -->
+          <div class="lvl_3 js_lvl_3 ">
+            @@include('blocks/components/lvls/lvl_3_1.html')
+            @@include('blocks/components/lvls/lvl_3_2.html')
+            @@include('blocks/components/lvls/lvl_3_3.html')
+            @@include('blocks/components/lvls/lvl_3_4.html')
+          </div>
+          <!-- lvl 3 END -->
+          <!-- lvl 2 -->
+          <div class="lvl_2 js_lvl_2 ">
+            @@include('blocks/components/lvls/lvl_2_1.html')
+            @@include('blocks/components/lvls/lvl_2_2.html')
+            @@include('blocks/components/lvls/lvl_2_3.html')
+            @@include('blocks/components/lvls/lvl_2_4.html')
+          </div>
+          <!-- lvl 2 END -->
+          <!-- lvl 1 -->
+          <div class="lvl_1 js_lvl_1 ">
+            @@include('blocks/components/lvls/lvl_1_0.html')
+            @@include('blocks/components/lvls/lvl_1_1.html')
+            @@include('blocks/components/lvls/lvl_1_2.html')
+            @@include('blocks/components/lvls/lvl_1_3.html')
+            @@include('blocks/components/lvls/lvl_1_4.html')
+          </div>
+          <!-- lvl 1 END -->
+        </div>
+      </main>
+    </div>
 
     <!-- prettier-ignore -->
     @@include('blocks/footer.html')

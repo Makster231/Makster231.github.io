@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -7,8 +8,11 @@ body {
   font-size: 16px;
   line-height: 1.2;
   word-break: break-word;
+  overflow: hidden;
   text-wrap: pretty;
+  background-color: var(--color-white);
 }
+
 *,
 html,
 body {
@@ -19,6 +23,11 @@ body {
   user-select: none; /* Стандартный синтаксис */
 }
 
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
 header,
 footer {
   flex-shrink: 0;
@@ -27,4 +36,15 @@ footer {
 main {
   /* Занять всё оставшееся пространство */
   flex-grow: 1;
+}
+
+body,
+html,
+main,
+.wrapper,
+.lvls {
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  min-height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(var(--vh, 1vh) * 100);
 }

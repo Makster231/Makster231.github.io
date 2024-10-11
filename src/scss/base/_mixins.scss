@@ -19,3 +19,18 @@
 @mixin transition() {
   transition: 0.3s ease;
 }
+@mixin toVh($property, $value, $important: "") {
+  #{$property}: calc($value / 8.35) #{$important};
+}
+
+@mixin setProp(
+  $property,
+  $value1: "",
+  $value2: "",
+  $value3: "",
+  $important: ""
+) {
+  #{$property}: $value1;
+  #{$property}: calc($value2 / 8.35) #{$important};
+  #{$property}: calc($value3 / 8.35) #{$important};
+}
