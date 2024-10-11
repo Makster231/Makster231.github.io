@@ -135,8 +135,8 @@
         // @include toVh(border-width, 9svh);
         // @include toVh(border-radius, 32svh);
 
-        @include setProp(border-width, 9px, 9dvh, 9svh);
-        @include setProp(border-radius, 32px, 32dvh, 32svh);
+        @include setProp(border-width, 9vh, 9dvh, 9svh);
+        @include setProp(border-radius, 32vh, 32dvh, 32svh);
       }
 
       &,

@@ -99,15 +99,15 @@
           // @include toVh(padding-top, 30svh);
           // @include toVh(padding-top, 30svh);
 
-          @include setProp(margin-bottom, 30px, 30dvh, 30svh);
-          @include setProp(padding-top, 30px, 30dvh, 30svh);
+          @include setProp(margin-bottom, 30vh, 30dvh, 30svh);
+          @include setProp(padding-top, 30vh, 30dvh, 30svh);
         }
 
         @media screen and (max-width: 640px) {
           // @include toVh(width, 140svh);
           // @include toVh(height, 18svh);
-          @include setProp(width, 140px, 140dvh, 140svh);
-          @include setProp(width, 18px, 18dvh, 18svh);
+          @include setProp(width, 140vh, 140dvh, 140svh);
+          @include setProp(width, 18vh, 18dvh, 18svh);
         }
       }
 
@@ -146,7 +146,7 @@
             // @include toVh(margin-bottom, 20svh);
             // @include toVh(margin-bottom, 20svh);
 
-            @include setProp(margin-bottom, 20px, 20dvh, 20svh);
+            @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
 
             max-width: 75%;
             margin-left: auto;

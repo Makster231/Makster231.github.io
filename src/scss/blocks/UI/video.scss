@@ -22,8 +22,8 @@
       // @include toVh(width, 40dvh, !important);
       // @include toVh(height, 40dvh, !important);
 
-      @include setProp(width, 40px, 40dvh, 40vh, !important);
-      @include setProp(height, 40px, 40dvh, 40vh, !important);
+      @include setProp(width, 40vh, 40dvh, 40vh, !important);
+      @include setProp(height, 40vh, 40dvh, 40vh, !important);
     }
   }
 

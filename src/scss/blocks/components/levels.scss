@@ -42,7 +42,7 @@
 
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 14svh);
-      @include setProp(font-size, 14px, 14dvh, 14svh);
+      @include setProp(font-size, 14vh, 14dvh, 14svh);
     }
   }
 
@@ -69,7 +69,7 @@
 
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 40svh);
-      @include setProp(font-size, 40px, 40dvh, 40svh);
+      @include setProp(font-size, 40vh, 40dvh, 40svh);
     }
   }
   .h2 {
@@ -90,7 +90,7 @@
 
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 30svh);
-      @include setProp(font-size, 30px, 30dvh, 30svh);
+      @include setProp(font-size, 30vh, 30dvh, 30svh);
     }
   }
   .h4 {
@@ -98,7 +98,7 @@
     line-height: 1.3;
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 18svh);
-      @include setProp(font-size, 18px, 18dvh, 18svh);
+      @include setProp(font-size, 18vh, 18dvh, 18svh);
     }
   }
   .h5 {
@@ -110,7 +110,7 @@
     line-height: 1.3;
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 16svh);
-      @include setProp(font-size, 16px, 16dvh, 16svh);
+      @include setProp(font-size, 16vh, 16dvh, 16svh);
     }
   }
 

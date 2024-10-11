@@ -38,13 +38,10 @@ main {
   flex-grow: 1;
 }
 
-body,
-html,
-main,
-.wrapper,
-.lvls {
+body {
   height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  min-height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: 100dvh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: 100svh; /* Use vh as a fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
-  min-height: calc(var(--vh, 1vh) * 100);
+  // min-height: calc(var(--vh, 1vh) * 100);
 }

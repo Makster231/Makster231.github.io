@@ -8,10 +8,8 @@
   margin-right: auto;
 
   @media screen and (max-width: 640px) {
-    // @include toVh(padding-left, 20svh);
-    // @include toVh(padding-right, 20svh);
-    @include setProp(padding-left, 20px, 20dvh, 20svh);
-    @include setProp(padding-right, 20px, 20dvh, 20svh);
+    @include setProp(padding-left, 20vh, 20dvh, 20svh);
+    @include setProp(padding-right, 20vh, 20dvh, 20svh);
   }
 }
 
