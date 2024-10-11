@@ -40,6 +40,13 @@
       &_bottom {
         padding: 0 !important;
         min-height: unset !important;
+
+        @media screen and (max-width: 640px) {
+          &::before,
+          &::after {
+            content: none !important;
+          }
+        }
       }
     }
   }

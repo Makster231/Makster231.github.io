@@ -45,7 +45,7 @@
         position: relative;
 
         &::before {
-          // content: "";
+          content: "";
           position: absolute;
           top: -30px;
           left: 0;
@@ -61,7 +61,7 @@
         }
 
         &::after {
-          // content: "";
+          content: "";
           position: absolute;
           top: -30px;
           right: 0;
