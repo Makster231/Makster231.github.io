@@ -30,7 +30,7 @@
   $value3: "",
   $important: ""
 ) {
-  #{$property}: calc($value1 / 9) #{$important};
-  #{$property}: calc($value2 / 9) #{$important};
-  #{$property}: calc($value3 / 9) #{$important};
+  #{$property}: calc($value1 / 8.35) #{$important};
+  #{$property}: calc($value2 / 8.35) #{$important};
+  #{$property}: calc($value3 / 8.35) #{$important};
 }

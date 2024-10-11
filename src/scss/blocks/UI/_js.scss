@@ -417,17 +417,17 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     }
   }
   // ================= LVL 5 step 1 active =================
-  // &.js_active_5_1 {
-  //   // .js_lvl_5-1 {
-  //   //   transform: translateY(0);
-  //   // }
-  // }
-  // ================= LVL 5 step 2 active =================
-  &.js_active_5_2 {
+  &.js_active_5_1 {
     .js_lvl_5-1 {
       transform: translateY(0);
     }
   }
+  // ================= LVL 5 step 2 active =================
+  // &.js_active_5_2 {
+  //   .js_lvl_5-1 {
+  //     transform: translateY(0);
+  //   }
+  // }
 }
 // ================= ASIDE  =================
 #body {

@@ -6,14 +6,6 @@
     opacity: 1;
   }
 }
-@keyframes width {
-  from {
-    width: 60px;
-  }
-  to {
-    width: 120px;
-  }
-}
 
 .final_mob_tabs {
   @media screen and (max-width: 1025px) {
@@ -64,6 +56,25 @@
       width: 0;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
+    button {
+      @include setProp(width, 60vh, 60dvh, 60svh);
+      @include setProp(height, 60vh, 60dvh, 60svh);
+      @include setProp(margin-right, 15vh, 15dvh, 15svh);
+    }
+
+    .icon-svg {
+      @include setProp(width, 26vh, 26dvh, 26svh);
+      @include setProp(height, 26vh, 26dvh, 26svh);
+
+      svg {
+        @include setProp(width, 26vh, 26dvh, 26svh);
+        @include setProp(height, 26vh, 26dvh, 26svh);
+      }
+    }
+  }
 }
 
 .final_4_bg,
@@ -94,20 +105,19 @@
 
         @media screen and (max-width: 1025px) {
           text-align: center;
-          // @include toVh(margin-bottom, 30svh);
-          // @include toVh(margin-bottom, 30svh);
-          // @include toVh(padding-top, 30svh);
-          // @include toVh(padding-top, 30svh);
-
           @include setProp(margin-bottom, 30vh, 30dvh, 30svh);
-          @include setProp(padding-top, 30vh, 30dvh, 30svh);
+          @include setProp(padding-top, 50vh, 50dvh, 50svh);
         }
 
         @media screen and (max-width: 640px) {
-          // @include toVh(width, 140svh);
-          // @include toVh(height, 18svh);
           @include setProp(width, 140vh, 140dvh, 140svh);
-          @include setProp(width, 18vh, 18dvh, 18svh);
+          height: unset;
+          margin-left: auto;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
 
@@ -133,6 +143,11 @@
             text-align: center;
             margin-bottom: 20px;
           }
+          @media screen and (max-width: 640px) {
+            max-width: 100% !important;
+            @include setProp(font-size, 36vh, 36dvh, 36svh);
+            @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
+          }
         }
 
         h4 {
@@ -142,15 +157,21 @@
           color: var(--color-grey-m);
           display: block;
           @media screen and (max-width: 1024px) {
-            text-align: center;
-            // @include toVh(margin-bottom, 20svh);
-            // @include toVh(margin-bottom, 20svh);
-
             @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
-
+            text-align: center;
             max-width: 75%;
             margin-left: auto;
             margin-right: auto;
+          }
+
+          @media screen and (max-width: 640px) {
+            @include setProp(font-size, 18vh, 18dvh, 18svh);
+            @include setProp(margin-bottom, 30vh, 30dvh, 30svh);
+            max-width: 100% !important;
+
+            br {
+              display: none;
+            }
           }
         }
       }
@@ -240,6 +261,17 @@
         }
       }
     }
+
+    @media screen and (max-width: 640px) {
+      .final_mob_tabs button:nth-of-type(1) {
+        @include setProp(width, 120vh, 120dvh, 120svh);
+        padding-right: 0;
+        p {
+          @include setProp(width, 70vh, 70dvh, 70svh);
+          padding: 0;
+        }
+      }
+    }
   }
 
   &[data-tab="2"] {
@@ -276,6 +308,17 @@
         }
       }
     }
+
+    @media screen and (max-width: 640px) {
+      .final_mob_tabs button:nth-of-type(2) {
+        @include setProp(width, 120vh, 120dvh, 120svh);
+        padding-right: 0;
+        p {
+          @include setProp(width, 70vh, 70dvh, 70svh);
+          padding: 0;
+        }
+      }
+    }
   }
 
   &[data-tab="3"] {
@@ -309,6 +352,16 @@
           display: block;
           visibility: visible;
           width: 70px;
+        }
+      }
+    }
+    @media screen and (max-width: 640px) {
+      .final_mob_tabs button:nth-of-type(3) {
+        @include setProp(width, 120vh, 120dvh, 120svh);
+        padding-right: 0;
+        p {
+          @include setProp(width, 70vh, 70dvh, 70svh);
+          padding: 0;
         }
       }
     }
@@ -349,12 +402,25 @@
         }
       }
     }
+    @media screen and (max-width: 640px) {
+      .final_mob_tabs button:nth-of-type(4) {
+        @include setProp(width, 120vh, 120dvh, 120svh);
+        padding-right: 0;
+        p {
+          @include setProp(width, 70vh, 70dvh, 70svh);
+          padding: 0;
+        }
+      }
+    }
   }
 
   //  CONTENT
   &[data-tab="1"] {
+    overflow-y: scroll;
     .final {
       &_left {
+        @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
+
         h2 {
           @media screen and (max-width: 1024px) {
             br {
@@ -378,14 +444,13 @@
       }
     }
     .final_1 {
-      &_left {
-        // display: block;
-        // opacity: 1;
-        // animation: fadeIn 2s ease-in-out;
-      }
       &_list {
         display: flex;
         width: 100%;
+
+        @media screen and (max-width: 640px) {
+          flex-direction: column;
+        }
 
         &-item {
           position: relative;
@@ -397,6 +462,11 @@
           border-radius: 24px;
           display: flex;
           flex-direction: column;
+
+          @media screen and (max-width: 640px) {
+            @include setProp(min-height, 427vh, 427dvh, 427svh);
+            @include setProp(padding, 20vh, 20dvh, 20svh);
+          }
 
           &:hover {
             .final_1_list-item--bg {
@@ -411,12 +481,22 @@
             min-height: 300px;
             max-width: 65%;
             width: 100%;
+
+            @media screen and (max-width: 640px) {
+              max-width: 100%;
+              margin-right: 0;
+            }
           }
 
           &--secondary {
             width: 100%;
             min-height: 145px;
             max-width: 34%;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(min-height, 427vh, 427dvh, 427svh);
+              max-width: 100%;
+            }
 
             .final_1_list {
               &-item:nth-of-type(2) {
@@ -427,7 +507,9 @@
                 &--bottom {
                   .icon-svg,
                   &_duration {
-                    display: none;
+                    @media screen and (min-width: 640px) {
+                      display: none;
+                    }
                   }
                 }
                 &--tips {
@@ -440,6 +522,10 @@
                       display: block;
                     }
                   }
+                }
+
+                @media screen and (max-width: 640px) {
+                  @include setProp(margin-top, 10vh, 10dvh, 10svh);
                 }
               }
             }
@@ -472,6 +558,10 @@
           &--tips {
             display: flex;
 
+            @media screen and (max-width: 640px) {
+              flex-wrap: wrap;
+            }
+
             li {
               margin-right: 2px;
               padding: 6px 12px;
@@ -487,6 +577,11 @@
               &:last-of-type {
                 margin-right: 0;
               }
+
+              @media screen and (max-width: 640px) {
+                margin-bottom: 5px;
+                margin-right: 5px;
+              }
             }
           }
 
@@ -498,6 +593,12 @@
             flex: 1 1 0;
             align-items: flex-end;
             color: var(--color-white);
+
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 24vh, 24dvh, 24svh);
+              @include setProp(padding-right, 100vh, 100dvh, 100svh);
+              margin-bottom: 5px;
+            }
           }
 
           &--bottom {
@@ -505,6 +606,10 @@
             * {
               font-size: 14px !important;
               color: var(--color-white);
+
+              @media screen and (max-width: 640px) {
+                @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+              }
             }
 
             &_str {
@@ -513,6 +618,12 @@
 
             &_price {
               margin-left: auto;
+
+              @media screen and (max-width: 640px) {
+                transform: translateY(-30px);
+                margin-left: auto;
+                text-align: right;
+              }
             }
             .icon-svg {
               margin-right: 10px;
@@ -535,11 +646,6 @@
       }
     }
     .final_2 {
-      &_left {
-        // display: block;
-        // opacity: 1;
-        // animation: fadeIn 2s ease-in-out;
-      }
       &_list {
         display: none;
         margin-bottom: 20px;
@@ -657,6 +763,14 @@
             &.js_active {
               background-color: var(--color-blue);
             }
+          }
+
+          @media screen and (max-width: 640px) {
+            @include setProp(font-size, 12vh, 12dvh, 12svh, !important);
+            @include setProp(height, 47vh, 47dvh, 47svh, !important);
+            @include setProp(margin-right, 4vh, 4dvh, 4svh, !important);
+            margin-left: 0;
+            padding: 0 !important;
           }
         }
       }
