@@ -778,8 +778,11 @@
   }
 
   &[data-tab="3"] {
+    overflow-y: scroll;
     .final {
       &_left {
+        @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
+
         h2 {
           @media screen and (max-width: 860px) {
             max-width: 50%;
@@ -796,15 +799,14 @@
       }
     }
     .final_3 {
-      // &_left {
-      //   display: block;
-      //   opacity: 1;
-
-      //   animation: fadeIn 2s ease-in-out;
-      // }
       &_list {
         display: flex;
         margin-bottom: 20px;
+
+        @media screen and (max-width: 640px) {
+          flex-direction: column;
+          @include setProp(margin-bottom, 10vh, 10dvh, 10svh, !important);
+        }
 
         &-item {
           display: flex;
@@ -823,6 +825,16 @@
             background-color: var(--color-grey-w);
           }
 
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            @include setProp(margin-top, 10vh, 10dvh, 10svh);
+            @include setProp(min-height, 160vh, 160dvh, 160svh);
+            @include setProp(padding, 20vh, 20dvh, 20svh);
+            position: relative;
+          }
+
           &--title {
             font-size: 24px !important;
             line-height: 1.3;
@@ -830,6 +842,12 @@
             display: block;
             transition: 0.3s ease;
             margin-bottom: 10px;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 20vh, 20dvh, 20svh, !important);
+              font-weight: 500;
+              @include setProp(margin-bottom, 5vh, 5dvh, 5svh, !important);
+            }
           }
 
           &--content {
@@ -838,6 +856,11 @@
             color: var(--color-grey-m);
             transition: 0.3s ease;
             flex: auto;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+              @include setProp(margin-bottom, 20vh, 20dvh, 20svh, !important);
+            }
           }
 
           &:first-of-type {
@@ -851,6 +874,17 @@
               }
               &--content {
                 opacity: 0.6;
+              }
+            }
+
+            & {
+              .btn {
+                @media screen and (max-width: 640px) {
+                  padding: 0;
+                  @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+                  @include setProp(width, 142vh, 142dvh, 142svh, !important);
+                  @include setProp(height, 46vh, 46dvh, 46svh, !important);
+                }
               }
             }
 
@@ -877,9 +911,26 @@
                   background-color: var(--color-white);
                 }
 
+                @media screen and (max-width: 640px) {
+                  position: absolute;
+                  margin-right: 0;
+                  @include setProp(right, 20vh, 20dvh, 20svh);
+                  @include setProp(bottom, 20vh, 20dvh, 20svh);
+                }
+
                 svg {
                   width: 8px;
                   height: 16px;
+                }
+              }
+              &:last-of-type {
+                @media screen and (max-width: 640px) {
+                  @include setProp(width, 40vh, 40dvh, 40svh);
+                  @include setProp(height, 40vh, 40dvh, 40svh);
+                  svg {
+                    width: 100%;
+                    height: 100%;
+                  }
                 }
               }
 
@@ -889,6 +940,33 @@
                 path {
                   transition: 0.3s ease;
                 }
+              }
+            }
+
+            .final_3_list-item--title {
+              @media screen and (max-width: 640px) {
+                @include setProp(margin-top, 10vh, 10dvh, 10svh);
+                margin-bottom: 0 !important;
+                order: 2;
+                display: flex;
+                flex: 1;
+                align-items: flex-end;
+              }
+            }
+
+            .final_3_list-item--content {
+              @media screen and (max-width: 640px) {
+                @include setProp(margin-top, 5vh, 5dvh, 5svh);
+                @include setProp(padding-right, 65vh, 65dvh, 65svh);
+                margin-bottom: 0 !important;
+                order: 3;
+                flex: 0;
+              }
+            }
+
+            .d-flex {
+              @media screen and (max-width: 640px) {
+                order: 1;
               }
             }
           }
@@ -917,6 +995,10 @@
         @media screen and (min-width: 1025px) {
           background-color: var(--color-grey-w);
         }
+        @media screen and (max-width: 640px) {
+          @include setProp(padding-top, 5vh, 5dvh, 5svh, !important);
+          @include setProp(padding-bottom, 5vh, 5dvh, 5svh, !important);
+        }
 
         &-icon {
           border-radius: 50%;
@@ -928,11 +1010,24 @@
           @media screen and (min-width: 1025px) {
             background-color: var(--color-white);
           }
+          @media screen and (max-width: 640px) {
+            @include setProp(width, 56vh, 56dvh, 56svh, !important);
+            @include setProp(height, 56vh, 56dvh, 56svh, !important);
+            @include setProp(min-width, 56vh, 56dvh, 56svh, !important);
+            @include setProp(min-height, 56vh, 56dvh, 56svh, !important);
+            @include setProp(margin-right, 10vh, 10dvh, 10svh, !important);
+          }
 
           .icon-svg {
             display: block;
             width: 36px;
             height: 36px;
+            @media screen and (max-width: 640px) {
+              @include setProp(width, 36vh, 36dvh, 36svh, !important);
+              @include setProp(height, 36vh, 36dvh, 36svh, !important);
+              @include setProp(min-width, 36vh, 36dvh, 36svh, !important);
+              @include setProp(min-height, 36vh, 36dvh, 36svh, !important);
+            }
             svg {
               width: 100%;
               height: 100%;
@@ -944,6 +1039,9 @@
           color: var(--color-grey-m);
           font-size: 16px !important;
           line-height: 1.3;
+          @media screen and (max-width: 640px) {
+            @include setProp(font-size, 12vh, 12dvh, 12svh, !important);
+          }
         }
 
         .btn {
@@ -960,6 +1058,17 @@
 
             &:hover {
               max-width: 260px;
+            }
+          }
+          @media screen and (max-width: 640px) {
+            @include setProp(font-size, 13vh, 13dvh, 13svh, !important);
+            @include setProp(width, 146vh, 146dvh, 146svh, !important);
+            @include setProp(min-width, 146vh, 146dvh, 146svh, !important);
+            padding-left: 0;
+            padding-right: 0;
+
+            &:hover {
+              max-width: unset;
             }
           }
         }

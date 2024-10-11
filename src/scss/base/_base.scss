@@ -1,6 +1,5 @@
 html {
   scroll-behavior: smooth;
-  background: rgb(62, 45, 45);
   // overflow: hidden;
 }
 
@@ -37,11 +36,6 @@ body {
   right: 0;
   bottom: 0 !important;
   width: 100%;
-  // height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  // height: 100dvh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  // height: 100svh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  // height: calc(var(--vh, 1vh) * 100);
-  // // min-height: calc(var(--vh, 1vh) * 100);
 }
 
 body,
