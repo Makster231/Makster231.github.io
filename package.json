@@ -56,6 +56,7 @@
     "avif-webp-checker": "^1.0.0",
     "gulp-pug": "^5.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-version-number": "^0.2.4",
     "swiper": "^11.0.6"
   }
 }
