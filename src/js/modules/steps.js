@@ -51,7 +51,7 @@ export default function steps() {
     return +level;
   };
 
-  const disableAllClikable = async (btns = all_btns, time = 1000) => {
+  const disableAllClikable = async (btns = all_btns, time = 500) => {
     btns.forEach((btn) => btn.setAttribute("disabled", true));
     await sleep(time);
     btns.forEach((btn) => btn.removeAttribute("disabled"));
@@ -133,22 +133,20 @@ export default function steps() {
     animationProcessing = true;
     // БЛокируем кнопки
     disableAllClikable();
-    // Запускаем анимацию (кнопки, свайп и прокрутка не работают)
     // level = getCurLvl();
 
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
       level++;
-    }
 
-    // если моб, то доб анимацию и паузу
-    if (isMobile) addClass(body, "js_aside_animation");
-    await sleep(isMobile ? 1000 : 0);
+      if (isMobile) addClass(body, "js_aside_animation");
+      // если моб, то доб анимацию и паузу
+      await sleep(isMobile ? 500 : 0);
+    }
 
     // Удаление Всех классов состояний
     removeAllStates();
-
     // Если меняем этаж
     if (changeLvl) {
       // Добавляем классы
@@ -163,11 +161,11 @@ export default function steps() {
     setClassState();
 
     // Завершаем Анимацию
-    await sleep(isMobile ? 2000 : 500);
+    await sleep(isMobile ? 1500 : 500);
     // В моб версии ждем окончания анимаци и удаляем класс анимации
     removeClass(body, "js_aside_animation");
     // Небольшая пауза на моб устройствах для избежания мгновенного скролла
-    await sleep(isMobile ? 700 : 0);
+    // await sleep(isMobile ? 700 : 0);
 
     if (changeLvl) await sleep(isMobile ? 0 : 1500);
 
