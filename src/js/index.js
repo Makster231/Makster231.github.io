@@ -48,6 +48,4 @@ window.addEventListener("load", function () {
   // Показываем страницу после загрузки
   body.classList.remove("js_load");
   body.style.opacity = 1;
-
-  alert(1);
 });
