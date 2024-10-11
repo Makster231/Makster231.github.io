@@ -139,7 +139,9 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     .lvls {
       .lvl_1 {
         z-index: 5;
+        transform: translateY(-100vh);
         transform: translateY(-100dvh);
+        transform: translateY(-100svh);
       }
     }
   }
@@ -203,7 +205,9 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     }
 
     .lvls {
+      transform: translateY(200vh);
       transform: translateY(200dvh);
+      transform: translateY(200svh);
 
       .lvl_2 {
         z-index: 5;
@@ -261,6 +265,8 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     }
 
     .lvls {
+      transform: translateY(300vh);
+      transform: translateY(300svh);
       transform: translateY(300dvh);
 
       .lvl_3 {
@@ -315,7 +321,9 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
   &.js_active_lvl_4 {
     transition: $animation-delay_lvl_prevLvl;
     .lvls {
+      transform: translateY(400vh);
       transform: translateY(400dvh);
+      transform: translateY(400svh);
       .lvl-3 {
         transition: 0s;
         border-color: var(--color-white);
@@ -376,7 +384,9 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     transition: $animation-delay_lvl_prevLvl;
 
     .lvls {
+      transform: translateY(500vh);
       transform: translateY(500dvh);
+      transform: translateY(500svh);
       .lvl {
         border-radius: 0;
       }
@@ -461,6 +471,8 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     &.js_active_4_2 {
       .aside_container {
         top: 35vh;
+        top: 35dvh;
+        top: 35svh;
       }
     }
 
@@ -470,6 +482,8 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     &.js_active_4_3 {
       .aside_container {
         top: 25vh;
+        top: 25dvh;
+        top: 25svh;
       }
 
       .aside_btn.js_active {
@@ -485,6 +499,8 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     &.js_active_4_4 {
       .aside_container {
         top: 15vh;
+        top: 15dvh;
+        top: 15svh;
       }
     }
   }
