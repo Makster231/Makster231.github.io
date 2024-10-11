@@ -154,6 +154,8 @@
     &_5 {
       position: absolute;
       min-height: 100vh;
+      min-height: 100dvh;
+      min-height: 100svh;
 
       // overflow: hidden;
       top: 0;
