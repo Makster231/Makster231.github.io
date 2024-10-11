@@ -84,12 +84,12 @@ gulp.task("sass:dev", function () {
         )
       )
 
-      // .pipe(
-      //   autoprefixer({
-      //     browsers: ["last 200 version", "> 1%", "not dead"],
-      //     cascade: false,
-      //   })
-      // )
+      .pipe(
+        autoprefixer({
+          browsers: ["last 200 version", "> 1%", "not dead"],
+          cascade: false,
+        })
+      )
       .pipe(sourceMaps.write())
       .pipe(gulp.dest("./build/css/"))
   );
@@ -171,23 +171,21 @@ gulp.task("files:dev", function () {
 });
 
 gulp.task("js:dev", function () {
-  return (
-    gulp
-      .src("./src/js/*.js")
-      .pipe(sourceMaps.init())
-      .pipe(changed("./build/js/"))
-      // .pipe(plumber(plumberNotify("JS")))
-      // .pipe(babel())
-      .pipe(
-        babel({
-          plugins: ["@babel/transform-runtime"],
-          presets: ["@babel/preset-env"],
-        })
-      )
-      .pipe(webpack(require("./../webpack.config.js")))
-      .pipe(sourceMaps.write())
-      .pipe(gulp.dest("./build/js/"))
-  );
+  return gulp
+    .src("./src/js/*.js")
+    .pipe(sourceMaps.init())
+    .pipe(changed("./build/js/"))
+    .pipe(plumber(plumberNotify("JS")))
+    .pipe(babel())
+    .pipe(
+      babel({
+        plugins: ["@babel/transform-runtime"],
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(webpack(require("./../webpack.config.js")))
+    .pipe(sourceMaps.write())
+    .pipe(gulp.dest("./build/js/"));
 });
 
 const serverOptions = {
