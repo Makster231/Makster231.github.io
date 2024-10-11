@@ -1,7 +1,30 @@
+// import Swiper bundle with all modules installed
+import Swiper from "swiper/bundle";
+// import styles bundle
+import "swiper/css/bundle";
+
 const finalSteps = function () {
+  let isMobile = window.innerWidth <= 640;
+
+  const config = {
+    slidesPerView: 1.05,
+    spaceBetween: 10,
+    loop: false,
+    pagination: false,
+    navigation: false,
+  };
+
+  const swiper = document.querySelectorAll(".js_swiper");
+
+  if (isMobile) {
+    swiper.forEach((el) => {
+      new Swiper(el, config);
+    });
+  }
+
   const final_2_tabs = document.querySelector(".js_final_2_tabs");
   const final_2_tabs_btn = document.querySelectorAll(".js_final_2_tabs_btn");
-  const final_2_lists = document.querySelectorAll(".js_final_2_list");
+  const final_2_lists = document.querySelectorAll(".js_final_2_tab_content");
 
   if (final_2_tabs) {
     final_2_tabs.addEventListener("click", function (e) {
@@ -14,12 +37,9 @@ const finalSteps = function () {
     });
   }
 
-  // js_lvl_5-1
   const lvl_5_1 = document.querySelector(".js_lvl_5-1");
   const final_tabs = document.querySelector(".js_final_right_btns");
   const final_mob_tabs = document.querySelectorAll(".js_final_mob_tabs--btn");
-
-  // При Изменении размеров экрана
 
   if (final_tabs) {
     final_tabs.addEventListener("click", function (e) {

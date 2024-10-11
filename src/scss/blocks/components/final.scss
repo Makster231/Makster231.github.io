@@ -111,6 +111,7 @@
 
         @media screen and (max-width: 640px) {
           @include setProp(width, 140vh, 140dvh, 140svh);
+          @include setProp(padding-top, 30vh, 30dvh, 30svh);
           height: unset;
           margin-left: auto;
 
@@ -647,11 +648,14 @@
     }
     .final_2 {
       &_list {
-        display: none;
+        display: none !important;
         margin-bottom: 20px;
         width: 100%;
-
         animation: fadeIn 1s linear;
+
+        @media screen and (max-width: 640px) {
+          width: calc(100vw - 30px);
+        }
 
         &-item {
           display: flex;
@@ -665,6 +669,12 @@
           overflow: hidden;
           padding: 30px 20px 20px 30px;
           cursor: pointer;
+
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+            margin-left: 0;
+            @include setProp(min-height, 320vh, 320dvh, 320svh, !important);
+          }
 
           &--bg {
             position: absolute;
@@ -744,10 +754,6 @@
             }
           }
         }
-
-        &.js_active {
-          display: flex;
-        }
       }
 
       &_tabs {
@@ -773,6 +779,26 @@
             padding: 0 !important;
           }
         }
+      }
+    }
+    .js_final_2_tab_content {
+      &.js_active {
+        .final_2_list {
+          display: flex !important;
+        }
+      }
+    }
+
+    .swiper {
+      @media screen and (max-width: 640px) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    .slider-cards-js {
+      @media screen and (max-width: 640px) {
+        // width: calc(115vw);
+        // transform: translateX(-8vw);
       }
     }
   }
@@ -826,7 +852,7 @@
           }
 
           @media screen and (max-width: 640px) {
-            max-width: 100%;
+            max-width: 100vw;
             margin-right: 0;
             margin-left: 0;
             @include setProp(margin-top, 10vh, 10dvh, 10svh);
@@ -1154,6 +1180,17 @@
             margin-right: 0;
           }
 
+          @media screen and (max-width: 640px) {
+            max-width: 100%;
+          }
+
+          @media screen and (max-width: 640px) {
+            @include setProp(padding-top, 30vh, 30dvh, 30svh);
+            @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+            @include setProp(padding-left, 20vh, 20dvh, 20svh);
+            @include setProp(padding-right, 20vh, 20dvh, 20svh);
+          }
+
           &--pic {
             width: 100%;
             min-height: 120px;
@@ -1161,10 +1198,22 @@
             display: block;
             margin-top: 15px;
             margin-bottom: 15px;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(margin-top, 15vh, 15dvh, 15svh);
+              @include setProp(margin-bottom, 15vh, 15dvh, 15svh);
+              @include setProp(min-height, 170vh, 170dvh, 170svh);
+              @include setProp(height, 170vh, 170dvh, 170svh);
+              flex: 1;
+            }
             img {
               width: 100%;
               height: 100%;
               object-fit: cover;
+
+              @media screen and (max-width: 640px) {
+                object-fit: fill;
+              }
             }
           }
 
@@ -1179,6 +1228,11 @@
               font-size: 20px !important;
               line-height: 1.3;
               color: var(--color-black);
+
+              @media screen and (max-width: 640px) {
+                @include setProp(font-size, 22vh, 22dvh, 22svh, !important);
+                flex: 0;
+              }
             }
           }
 
@@ -1190,10 +1244,18 @@
             letter-spacing: 0.0015em;
             color: var(--color-grey-m);
             margin-bottom: 20px;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+            }
           }
 
           &--description {
+            @media screen and (max-width: 640px) {
+              justify-content: flex-start;
+            }
             p {
+              position: relative;
               font-size: 14px !important;
               line-height: 1;
               color: var(--color-black);
@@ -1203,6 +1265,25 @@
               }
               @media screen and (max-width: 960px) {
                 font-size: 12px !important;
+              }
+              @media screen and (max-width: 640px) {
+                @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+                @include setProp(margin-right, 20vh, 20dvh, 20svh, !important);
+              }
+
+              &:not(:first-of-type) {
+                &:before {
+                  content: "";
+                  width: 6px;
+                  height: 6px;
+                  background-color: #f1f6ff;
+                  display: block;
+                  position: absolute;
+                  left: -9px;
+                  top: 0;
+
+                  border-radius: 50%;
+                }
               }
             }
           }
