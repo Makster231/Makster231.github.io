@@ -3,7 +3,10 @@
   min-height: calc(100vh - 30px);
   transform: translateY(100svh);
   transition: 2s ease-in;
-  // background-color: var(--color-white);
+
+  @media screen and (max-width: 640px) {
+    @include setProp(min-height, 100vh, 100dvh, 100svh);
+  }
 
   .w-460 {
     max-width: 460px;
