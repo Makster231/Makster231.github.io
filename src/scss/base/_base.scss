@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  background: red;
   // overflow: hidden;
 }
 
@@ -21,37 +22,13 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE/Edge */
   user-select: none; /* Стандартный синтаксис */
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
 .wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: -webkit-fill-available;
-}
-
-header,
-footer {
-  flex-shrink: 0;
-}
-
-main {
-  /* Занять всё оставшееся пространство */
-  flex-grow: 1;
-}
-
-html {
-  background: saddlebrown;
-}
-
-body,
-.wrapper,
-main {
-  height: 100vh;
-  min-height: 100vh;
-  height: -webkit-fill-available;
-  min-height: -webkit-fill-available;
 }
 
 body {
@@ -66,4 +43,19 @@ body {
   // height: 100svh; /* Use vh as a fallback for browsers that do not support Custom Properties */
   // height: calc(var(--vh, 1vh) * 100);
   // // min-height: calc(var(--vh, 1vh) * 100);
+}
+
+body,
+.wrapper,
+main {
+  height: 100vh;
+  min-height: 100vh;
+
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
+
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: fill-available;
 }
