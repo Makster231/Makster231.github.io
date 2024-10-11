@@ -1105,6 +1105,21 @@
   &[data-tab="4"] {
     .final {
       &_left {
+        @media screen and (max-width: 640px) {
+          position: relative;
+
+          .swiper-pagination {
+            transform: translateY(40px);
+            &-bullet {
+              background-color: var(--color-white);
+
+              &-active {
+                background-color: var(--color-blue);
+              }
+            }
+          }
+        }
+
         h2 {
           @media screen and (max-width: 1024px) {
             max-width: 75%;

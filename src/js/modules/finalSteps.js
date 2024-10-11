@@ -6,18 +6,20 @@ import "swiper/css/bundle";
 const finalSteps = function () {
   let isMobile = window.innerWidth <= 640;
 
-  const config = {
+  let config = {
     slidesPerView: 1.05,
     spaceBetween: 10,
     loop: false,
-    pagination: false,
-    navigation: false,
   };
 
   const swiper = document.querySelectorAll(".js_swiper");
 
   if (isMobile) {
     swiper.forEach((el) => {
+      const a = el.classList.contains("final_left-bottom");
+      if (!a) return new Swiper(el, config);
+
+      config.pagination = { el: ".swiper-pagination" };
       new Swiper(el, config);
     });
   }
