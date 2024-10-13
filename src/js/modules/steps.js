@@ -30,7 +30,7 @@ export default function steps() {
   //  Step
   let step = 0;
   let level = 1;
-  let firstLoad = true;
+  let firstLoad = false;
   //  Animation flag
   let animationProcessing = false;
 
@@ -91,6 +91,7 @@ export default function steps() {
 
   const stepCalc = (dir) => {
     if (animationProcessing) return;
+    if (level === 5 && step === 2) return;
     let flag_start_screen = false;
 
     dir === "down" ? step++ : step--;
@@ -100,7 +101,7 @@ export default function steps() {
       return false;
     }
 
-    if (level === 1 && step === 1 && firstLoad && isMobile) {
+    if (level === 1 && step === 1 && firstLoad) {
       changeSteps(true);
       firstLoad = false;
       return;
@@ -123,7 +124,7 @@ export default function steps() {
       }
     }
 
-    if (step < 3) {
+    if (level !== 5 && step < 3) {
       if (data_info.step_2_values[level - 1]) {
         step = 3;
         return false;
@@ -146,7 +147,6 @@ export default function steps() {
     if (changeLvl) {
       step = 1;
       firstLoad ? level : level++;
-
       if (isMobile) addClass(body, "js_aside_animation");
       // если моб, то доб анимацию и паузу
       await sleep(isMobile ? 8500 : 0);

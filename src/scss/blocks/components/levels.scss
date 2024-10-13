@@ -154,6 +154,10 @@
       transform: translateY(-500vh);
       transform: translateY(-500dvh);
       transform: translateY(-500svh);
+
+      &-2 {
+        background-color: var(--color-white);
+      }
     }
 
     &_0,
@@ -181,7 +185,7 @@
 
     &_5 {
       &_2 {
-        position: relative;
+        position: absolute;
 
         &_info {
           width: 100%;

@@ -399,12 +399,16 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
         z-index: 5;
       }
 
+      .lvl_4 {
+        z-index: 15;
+      }
+
       .lvl_1,
       .lvl_2,
       .lvl_3,
       .lvl_4 {
         transition-delay: $animation-delay_lvl;
-        visibility: hidden;
+        // visibility: hidden;
       }
     }
 
@@ -423,19 +427,24 @@ $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
     }
   }
   // ================= LVL 5 step 2 active =================
-  // &.js_active_5_2 {
-  //   .js_lvl_5-1 {
-  //     transform: translateY(0);
-  //   }
-  // }
+  &.js_active_5_2 {
+    .js_lvl_5-1,
+    .js_lvl_5-2 {
+      transform: translateY(0);
+    }
+  }
 }
 // ================= ASIDE  =================
 #body {
   // ================= ASIDE STATES =================
-  &.js_active_5_1 {
+  &.js_active_5_1,
+  &.js_active_5_2 {
     .aside {
-      display: none !important;
+      // display: none !important;
     }
+  }
+  &.js_active_5_2 {
+    // display: none;
   }
   @media screen and (min-width: 640px) {
     &.js_active_lvl_1:not(.js_active_1_0),

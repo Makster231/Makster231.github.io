@@ -39,14 +39,14 @@ const finalSteps = function () {
     });
   }
 
-  const lvl_5_1 = document.querySelector(".js_lvl_5-1");
+  const lvl_5_2 = document.querySelector(".js_lvl_5-2");
   const final_tabs = document.querySelector(".js_final_right_btns");
   const final_mob_tabs = document.querySelectorAll(".js_final_mob_tabs--btn");
 
   if (final_tabs) {
     final_tabs.addEventListener("click", function (e) {
       if (!e.target.classList.contains("btn")) return;
-      lvl_5_1.dataset.tab = e.target.dataset.role;
+      lvl_5_2.dataset.tab = e.target.dataset.role;
     });
   }
 
@@ -54,7 +54,7 @@ const finalSteps = function () {
     final_mob_tabs.forEach((el) => {
       el.addEventListener("click", function (e) {
         if (!e.target.closest(".js_final_mob_tabs--btn")) return;
-        lvl_5_1.dataset.tab = e.target.closest(
+        lvl_5_2.dataset.tab = e.target.closest(
           ".js_final_mob_tabs--btn"
         ).dataset.role;
       });

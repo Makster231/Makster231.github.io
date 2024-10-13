@@ -417,7 +417,9 @@
 
   //  CONTENT
   &[data-tab="1"] {
-    overflow-y: scroll;
+    @media screen and (max-width: 640px) {
+      overflow-y: auto;
+    }
     .final {
       &_left {
         @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
@@ -776,6 +778,7 @@
           max-width: 190px;
           margin-right: 10px;
           font-size: 16px !important;
+          white-space: nowrap;
 
           @media screen and (max-width: 1025px) {
             background-color: var(--color-white);
@@ -818,7 +821,9 @@
   }
 
   &[data-tab="3"] {
-    overflow-y: scroll;
+    @media screen and (max-width: 640px) {
+      overflow-y: auto;
+    }
     .final {
       &_left {
         @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
