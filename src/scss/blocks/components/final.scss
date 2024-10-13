@@ -648,7 +648,7 @@
     }
     .final_2 {
       &_list {
-        display: none !important;
+        display: flex !important;
         margin-bottom: 20px;
         width: 100%;
         animation: fadeIn 1s linear;
@@ -709,6 +709,12 @@
             display: flex;
             flex: auto;
             margin-bottom: 10px;
+
+            @media screen and (max-width: 640px) {
+              align-items: flex-end;
+              margin-bottom: 0;
+              @include setProp(font-size, 20vh, 20dvh, 20svh, !important);
+            }
           }
 
           &--content {
@@ -716,6 +722,10 @@
             font-size: 16px !important;
             color: var(--color-white);
             margin-right: auto;
+
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 16vh, 16dvh, 16svh, !important);
+            }
           }
 
           .icon-svg {
@@ -728,6 +738,11 @@
             svg {
               width: 8px;
               height: 16px;
+            }
+
+            @media screen and (max-width: 640px) {
+              @include setProp(width, 50vh, 50dvh, 50svh, !important);
+              @include setProp(height, 50vh, 50dvh, 50svh, !important);
             }
           }
 
@@ -782,10 +797,9 @@
       }
     }
     .js_final_2_tab_content {
+      display: none;
       &.js_active {
-        .final_2_list {
-          display: flex !important;
-        }
+        display: flex !important;
       }
     }
 

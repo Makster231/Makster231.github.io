@@ -98,7 +98,7 @@ export default function steps() {
       return false;
     }
 
-    if (level > 1 && step === 0) {
+    if (step === 0) {
       step = 1;
       return false;
     }
