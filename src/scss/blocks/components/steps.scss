@@ -413,12 +413,6 @@
         &-right {
           &--item {
             @media screen and (max-width: 640px) {
-              // @include toVh(padding-left, 12svh);
-              // @include toVh(padding-right, 12svh);
-              // @include toVh(padding-top, 16svh);
-              // @include toVh(padding-bottom, 10svh);
-              // @include toVh(min-height, 150svh);
-
               @include setProp(padding-top, 16vh, 16dvh, 16svh);
               @include setProp(padding-right, 12vh, 12dvh, 12svh);
               @include setProp(padding-bottom, 10vh, 10dvh, 10svh);
@@ -431,22 +425,17 @@
 
               &:nth-of-type(1),
               &:nth-of-type(2) {
-                // @include toVh(margin-bottom, 8svh);
                 @include setProp(margin-bottom, 8vh, 8dvh, 8svh);
               }
 
               &:nth-of-type(1),
               &:nth-of-type(3) {
-                // @include toVh(margin-left, 10svh);
                 @include setProp(margin-left, 10vh, 10dvh, 10svh);
               }
             }
             .icon-svg {
               svg {
                 @media screen and (max-width: 640px) {
-                  // @include toVh(width, 50svh);
-                  // @include toVh(height, 50svh);
-                  // @include toVh(margin-bottom, 8svh);
                   @include setProp(width, 50vh, 50dvh, 50svh);
                   @include setProp(height, 50vh, 50dvh, 50svh);
                   @include setProp(margin-bottom, 8vh, 8dvh, 8svh);
@@ -468,15 +457,12 @@
         &-left {
           .block_media-text {
             @media screen and (max-width: 640px) {
-              // @include toVh(left, 20svh);
-              // @include toVh(bottom, 20svh);
               @include setProp(left, 20vh, 20dvh, 20svh);
               @include setProp(bottom, 20vh, 20dvh, 20svh);
             }
 
             p {
               @media screen and (max-width: 640px) {
-                // @include toVh(font-size, 16svh);
                 @include setProp(font-size, 16vh, 16dvh, 16svh);
               }
             }

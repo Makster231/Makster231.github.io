@@ -41,61 +41,32 @@ const plumberNotify = (title) => {
 };
 
 gulp.task("html:dev", function () {
-  return gulp
-    .src(["./src/html/**/**/*.html"])
-    .pipe(changed("./build/", { hasChanged: changed.compareContents }))
-    .pipe(plumber(plumberNotify("html")))
-    .pipe(fileInclude(fileIncludeSetting))
-    .pipe(
-      replace(
-        /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
-        "$1./$4$5$7$1"
+  return (
+    gulp
+      .src(["./src/html/**/**/*.html"])
+      .pipe(changed("./build/", { hasChanged: changed.compareContents }))
+      .pipe(plumber(plumberNotify("html")))
+      .pipe(fileInclude(fileIncludeSetting))
+      .pipe(
+        replace(
+          /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+          "$1./$4$5$7$1"
+        )
       )
-    )
 
-    .pipe(
-      version({
-        value: "%MDS%",
-        replaces: ["#{VERSION_REPlACE}#", [/#{VERSION_REPlACE}#/g, "%TS%"]],
-        append: {
-          key: "_v",
-          cover: 0,
-          to: ["css", "js", "image", "%TS%"],
-        },
-      })
+      // .pipe(
       // version({
       //   value: "%MDS%",
-
       //   replaces: ["#{VERSION_REPlACE}#", [/#{VERSION_REPlACE}#/g, "%TS%"]],
-
       //   append: {
       //     key: "_v",
-
       //     cover: 0,
-
-      //     to: [
-      //       ["image", "%TS%"],
-
-      //       {
-      //         type: "js",
-      //         attr: ["src", "custom-src"], // String or Array, undefined this will use default. css: "href", js: ...
-      //         key: "_v",
-      //         value: "%DATE%",
-      //         cover: 1,
-      //         files: ["build.js", /dependency.js/], // Array [{String|Regex}] of explicit files to append to
-      //       },
-      //     ],
-      //   },
-
-      //   /**
-      //    * Output to config file
-      //    */
-      //   output: {
-      //     file: "version.json",
+      //     to: ["css", "js", "image", "%TS%"],
       //   },
       // })
-    )
-    .pipe(gulp.dest("./build/"));
+      // )
+      .pipe(gulp.dest("./build/"))
+  );
 });
 
 gulp.task("sass:dev", function () {
