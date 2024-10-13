@@ -145,7 +145,7 @@ export default function steps() {
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
-      level++;
+      firstLoad ? level : level++;
 
       if (isMobile) addClass(body, "js_aside_animation");
       // если моб, то доб анимацию и паузу
