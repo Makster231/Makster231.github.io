@@ -1,6 +1,6 @@
 .lvls {
   .lvl {
-    border-radius: 18px;
+    // border-radius: 18px;
 
     .step_0,
     .step_1,
@@ -721,6 +721,33 @@
       transform: translateY(100svh);
       z-index: 1;
     }
+
+    &.step_1,
+    &.step_2,
+    &.step_3,
+    &.step_4 {
+      @media screen and (min-width: 640px) {
+        background: url("../img/main-bg.jpg") center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .step_1,
+    .step_2,
+    .step_3,
+    .step_4 {
+      &_bg {
+        &:after {
+          content: "";
+          background: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 
   .lvl_2,
@@ -729,7 +756,7 @@
   .lvl_5 {
     .step_1 {
       transform: translateY(0) !important;
-      border-radius: 32px;
+      // border-radius: 32px;
     }
   }
 }
