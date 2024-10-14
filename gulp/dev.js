@@ -54,17 +54,17 @@ gulp.task("html:dev", function () {
         )
       )
 
-      // .pipe(
-      // version({
-      //   value: "%MDS%",
-      //   replaces: ["#{VERSION_REPlACE}#", [/#{VERSION_REPlACE}#/g, "%TS%"]],
-      //   append: {
-      //     key: "_v",
-      //     cover: 0,
-      //     to: ["css", "js", "image", "%TS%"],
-      //   },
-      // })
-      // )
+      .pipe(
+      version({
+        value: "%MDS%",
+        replaces: ["#{VERSION_REPlACE}#", [/#{VERSION_REPlACE}#/g, "%TS%"]],
+        append: {
+          key: "_v",
+          cover: 0,
+          to: ["css", "js", "image", "%TS%"],
+        },
+      })
+      )
       .pipe(gulp.dest("./build/"))
   );
 });
