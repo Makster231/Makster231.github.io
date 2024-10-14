@@ -1,7 +1,7 @@
 .lvls {
   position: relative;
   min-height: calc(100vh - 30px);
-  transform: translateY(100svh);
+  // transform: translateY(100svh);
   transition: 2s ease-in;
 
   @media screen and (max-width: 640px) {
@@ -127,33 +127,25 @@
     transition: 1s ease-in;
 
     &_1 {
-      transform: translateY(-100vh);
-      transform: translateY(-100dvh);
-      transform: translateY(-100svh);
+      // transform: translateY(0);
+      // transform: translateY(-100dvh);
+      transform: translateY(0svh);
     }
 
     &_2 {
-      transform: translateY(-200vh);
-      transform: translateY(-200dvh);
-      transform: translateY(-200svh);
+      transform: translateY(-100svh);
     }
 
     &_3 {
-      transform: translateY(-300vh);
-      transform: translateY(-300dvh);
-      transform: translateY(-300svh);
+      transform: translateY(-200svh);
     }
 
     &_4 {
-      transform: translateY(-400vh);
-      transform: translateY(-400dvh);
-      transform: translateY(-400svh);
+      transform: translateY(-300svh);
     }
 
     &_5 {
-      transform: translateY(-500vh);
-      transform: translateY(-500dvh);
-      transform: translateY(-500svh);
+      transform: translateY(-400svh);
 
       &-2 {
         background-color: var(--color-white);
@@ -171,6 +163,10 @@
       min-height: 100dvh;
       min-height: 100svh;
 
+      height: 100vh;
+      height: 100dvh;
+      height: 100svh;
+
       // overflow: hidden;
       top: 0;
       right: 0;
@@ -178,9 +174,6 @@
       width: 100%;
 
       transition: 1.5s ease;
-
-      // border: 9px solid var(--color-white);
-      // border-radius: 32px;
     }
 
     &_5 {

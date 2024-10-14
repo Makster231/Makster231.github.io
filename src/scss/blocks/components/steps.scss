@@ -718,36 +718,36 @@
     &.step_2,
     &.step_3,
     &.step_4 {
-      transform: translateY(100svh);
+      // transform: translateY(100svh);
       z-index: 1;
     }
 
-    &.step_1,
-    &.step_2,
-    &.step_3,
-    &.step_4 {
-      @media screen and (min-width: 640px) {
-        background: url("../img/main-bg.jpg") center no-repeat;
-        background-size: cover;
-      }
-    }
+    // &.step_1,
+    // &.step_2,
+    // &.step_3,
+    // &.step_4 {
+    //   @media screen and (min-width: 640px) {
+    //     background: url("../img/main-bg.jpg") center no-repeat;
+    //     background-size: cover;
+    //   }
+    // }
 
-    .step_1,
-    .step_2,
-    .step_3,
-    .step_4 {
-      &_bg {
-        &:after {
-          content: "";
-          background: rgba(0, 0, 0, 0.5);
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
+    // .step_1,
+    // .step_2,
+    // .step_3,
+    // .step_4 {
+    //   &_bg {
+    //     &:after {
+    //       content: "";
+    //       background: rgba(0, 0, 0, 0.5);
+    //       position: absolute;
+    //       left: 0;
+    //       top: 0;
+    //       width: 100%;
+    //       height: 100%;
+    //     }
+    //   }
+    // }
   }
 
   .lvl_2,
@@ -755,8 +755,38 @@
   .lvl_4,
   .lvl_5 {
     .step_1 {
-      transform: translateY(0) !important;
+      // transform: translateY(0) !important;
       // border-radius: 32px;
     }
   }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.step_1_wrapper {
+  // animation:
+  //   hidden 1s linear infinite,
+  //   show 1s linear forwards 4s;
+  // animation: fadeOut 2s linear forwards 0s;
+  // animation: fadeIn 2s linear forwards 0s;
 }

@@ -1,23 +1,24 @@
-.js_scroll-disable {
-  overflow-y: hidden;
-}
+// .js_scroll-disable {
+//   overflow-y: hidden;
+// }
 
-.js_hidden {
-  display: none;
-}
+// .js_hidden {
+//   display: none;
+// }
 
-// ================= LIFT ANIMATION =================
+// // ================= LIFT ANIMATION =================
 
 @keyframes lift {
   0% {
-    top: 15vh;
+    top: 55vh;
   }
+
   50% {
-    top: 0;
+    top: -15vh;
   }
 
   100% {
-    top: calc(100vh - 485px);
+    top: 55vh;
   }
 }
 
@@ -33,484 +34,680 @@
   }
 }
 
-// ================= Phone landscape =================
-#body {
-  @media only screen and (hover: none) and (pointer: coarse) and (max-width: 960px) and (orientation: landscape) {
-    &::after {
-      content: "";
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: var(--color-blue);
-      background-image: url(../img/mobile-orientation.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 20%;
-      pointer-events: none !important;
-    }
+// // ================= Phone landscape =================
+// #body {
+//   @media only screen and (hover: none) and (pointer: coarse) and (max-width: 960px) and (orientation: landscape) {
+//     &::after {
+//       content: "";
+//       position: fixed;
+//       width: 100%;
+//       height: 100%;
+//       left: 0;
+//       top: 0;
+//       background-color: var(--color-blue);
+//       background-image: url(../img/mobile-orientation.png);
+//       background-position: center;
+//       background-repeat: no-repeat;
+//       background-size: 20%;
+//       pointer-events: none !important;
+//     }
 
-    * {
-      display: none !important;
-      transform: none !important;
-      transition: 0s !important;
-      pointer-events: none !important;
-    }
-  }
-}
+//     * {
+//       display: none !important;
+//       transform: none !important;
+//       transition: 0s !important;
+//       pointer-events: none !important;
+//     }
+//   }
+// }
 
-// ================= Transition =================
+// // ================= Transition =================
 #body {
   &.js_load {
     &,
     * {
       transition-delay: 0s !important;
       transition-duration: 0s !important;
+      animation-delay: 0s !important;
+      animation-duration: 0s !important;
     }
   }
 }
-// ================= Swipe =================
+// // ================= Swipe =================
 
-// VARS
-$animation-delay_lvl: 2s;
-$animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
-#body {
-  // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
-  &.js_active_1_1,
-  &.js_active_2_1,
-  &.js_active_3_1,
-  &.js_active_4_1,
-  &.js_active_5_1 {
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4,
-    .lvl_5 {
-      background-color: var(--color-white);
-      transition-delay: 1s;
-    }
-  }
-  &.js_active_1_2,
-  &.js_active_2_2,
-  &.js_active_3_2,
-  &.js_active_4_2,
-  &.js_active_5_2 {
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4,
-    .lvl_5 {
-      border: none;
-    }
-  }
-  &.js_active_1_3,
-  &.js_active_2_3,
-  &.js_active_3_3,
-  &.js_active_4_3 {
-    background-color: var(--color-white);
-    transition: 1s ease;
+// // VARS
+// $animation-delay_lvl: 2s;
+// $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
+// #body {
+//   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
+//   // &.js_active_1_1,
+//   // &.js_active_2_1,
+//   // &.js_active_3_1,
+//   // &.js_active_4_1,
+//   // &.js_active_5_1 {
+//   //   .lvl_1,
+//   //   .lvl_2,
+//   //   .lvl_3,
+//   //   .lvl_4,
+//   //   .lvl_5 {
+//   //     background-color: var(--color-white);
+//   //     transition-delay: 1s;
+//   //   }
+//   // }
+//   // &.js_active_1_2,
+//   // &.js_active_2_2,
+//   // &.js_active_3_2,
+//   // &.js_active_4_2,
+//   // &.js_active_5_2 {
+//   //   .lvl_1,
+//   //   .lvl_2,
+//   //   .lvl_3,
+//   //   .lvl_4,
+//   //   .lvl_5 {
+//   //     border: none;
+//   //   }
+//   // }
+//   // &.js_active_1_3,
+//   // &.js_active_2_3,
+//   // &.js_active_3_3,
+//   // &.js_active_4_3 {
+//   //   background-color: var(--color-white);
+//   //   transition: 1s ease;
 
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4 {
-      border-color: var(--color-blue);
-    }
-  }
-  &.js_active_1_4,
-  &.js_active_2_4,
-  &.js_active_3_4,
-  &.js_active_4_4 {
-    background-color: var(--color-white);
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4 {
-      transition-delay: 1s;
-      background-color: var(--color-blue);
-      border-color: var(--color-blue);
-    }
-  }
-  // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
+//   //   .lvl_1,
+//   //   .lvl_2,
+//   //   .lvl_3,
+//   //   .lvl_4 {
+//   //     border-color: var(--color-blue);
+//   //   }
+//   // }
+//   // &.js_active_1_4,
+//   // &.js_active_2_4,
+//   // &.js_active_3_4,
+//   // &.js_active_4_4 {
+//   //   background-color: var(--color-white);
+//   //   .lvl_1,
+//   //   .lvl_2,
+//   //   .lvl_3,
+//   //   .lvl_4 {
+//   //     transition-delay: 1s;
+//   //     background-color: var(--color-blue);
+//   //     border-color: var(--color-blue);
+//   //   }
+//   // }
+//   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
 
-  // ================= LVL 1 =================
-  &.js_active_lvl_1 {
-    .lvls {
-      .lvl_1 {
-        z-index: 5;
-        transform: translateY(-100vh);
-        transform: translateY(-100dvh);
-        transform: translateY(-100svh);
-      }
+//   // ================= LVL 1 =================
+//   &.js_active_lvl_1 {
+//     // .lvls {
+//     //   .lvl_1 {
+//     //     z-index: 5;
+//     //     transform: translateY(-100vh);
+//     //     transform: translateY(-100dvh);
+//     //     transform: translateY(-100svh);
+//     //   }
+//     // }
+//   }
+
+//   // ================= LVL 1 step 0 active =================
+//   &.js_active_1_0 {
+//     .js_lvl_1-0 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 1 step 1 active =================
+//   &.js_active_1_1 {
+//     .js_lvl_1-0 {
+//       transform: translateY(-100vh);
+//       .step_1_wrapper {
+//         animation: fadeOut 2s linear forwards;
+//       }
+//     }
+//     .js_lvl_1-1 {
+//       transform: translateY(0);
+//       transition-delay: 1s;
+//     }
+//   }
+//   // ================= LVL 1 step 2 active =================
+//   &.js_active_1_2 {
+//     .js_lvl_1-0,
+//     .js_lvl_1-1 {
+//       transform: translateY(-100vh);
+//     }
+//     .js_lvl_1-2 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 1 step 3 active =================
+//   &.js_active_1_3 {
+//     .js_lvl_1-0,
+//     .js_lvl_1-1,
+//     .js_lvl_1-2 {
+//       transform: translateY(-100vh);
+//     }
+//     .js_lvl_1-3 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 1 step 4 active =================
+//   &.js_active_1_4 {
+//     .js_lvl_1-0,
+//     .js_lvl_1-1,
+//     .js_lvl_1-2,
+//     .js_lvl_1-3 {
+//       // transition-delay: 1s;
+//       // transition-duration: 0.5s;
+//       // background-color: var(--color-blue);
+//     }
+//     .js_lvl_1-0,
+//     .js_lvl_1-1,
+//     .js_lvl_1-2,
+//     .js_lvl_1-3 {
+//       transform: translateY(-100vh);
+//     }
+//     .js_lvl_1-4 {
+//       transform: translateY(0);
+//     }
+//   }
+
+//   // ================= LVL 2 =================
+//   &.js_active_lvl_2 {
+//     transition: $animation-delay_lvl_prevLvl;
+
+//     .lvl-1 {
+//       transition: 0s;
+//       border-color: var(--color-white);
+//     }
+
+//     .lvls {
+//       transform: translateY(200vh);
+//       transform: translateY(200dvh);
+//       transform: translateY(200svh);
+
+//       .lvl_2 {
+//         z-index: 5;
+//       }
+
+//       .lvl_1 {
+//         transition-delay: $animation-delay_lvl;
+//         visibility: hidden;
+//       }
+//     }
+
+//     // ================= PREVIOS LVLS ACTIVE =================
+//     .js_lvl_1-4 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 2 step 1 active =================
+//   &.js_active_2_1 {
+//     .js_lvl_2-1 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 2 step 2 active =================
+//   &.js_active_2_2 {
+//     .js_lvl_2-1,
+//     .js_lvl_2-2 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 2 step 3 active =================
+//   &.js_active_2_3 {
+//     .js_lvl_2-1,
+//     .js_lvl_2-2,
+//     .js_lvl_2-3 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 2 step 4 active =================
+//   &.js_active_2_4 {
+//     .js_lvl_2-1,
+//     .js_lvl_2-2,
+//     .js_lvl_2-3,
+//     .js_lvl_2-4 {
+//       transform: translateY(0);
+//     }
+//   }
+
+//   // ================= LVL 3 =================
+//   &.js_active_lvl_3 {
+//     transition: $animation-delay_lvl_prevLvl;
+
+//     .lvl-2 {
+//       transition: 0s;
+//       border-color: var(--color-white);
+//     }
+
+//     .lvls {
+//       transform: translateY(300vh);
+//       transform: translateY(300svh);
+//       transform: translateY(300dvh);
+
+//       .lvl_3 {
+//         z-index: 5;
+//       }
+
+//       .lvl_1,
+//       .lvl_2 {
+//         transition-delay: $animation-delay_lvl;
+//         visibility: hidden;
+//       }
+//     }
+
+//     // ================= PREVIOS LVLS ACTIVE =================
+//     .js_lvl_1-4,
+//     .js_lvl_2-4 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 3 step 1 active =================
+//   &.js_active_3_1 {
+//     .js_lvl_3-1 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 3 step 2 active =================
+//   &.js_active_3_2 {
+//     .js_lvl_3-1,
+//     .js_lvl_3-2 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 3 step 3 active =================
+//   &.js_active_3_3 {
+//     .js_lvl_3-1,
+//     .js_lvl_3-2,
+//     .js_lvl_3-3 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 3 step 4 active =================
+//   &.js_active_3_4 {
+//     .js_lvl_3-1,
+//     .js_lvl_3-2,
+//     .js_lvl_3-3,
+//     .js_lvl_3-4 {
+//       transform: translateY(0);
+//     }
+//   }
+
+//   // ================= LVL 4 =================
+//   &.js_active_lvl_4 {
+//     transition: $animation-delay_lvl_prevLvl;
+//     .lvls {
+//       transform: translateY(400vh);
+//       transform: translateY(400dvh);
+//       transform: translateY(400svh);
+//       .lvl-3 {
+//         transition: 0s;
+//         border-color: var(--color-white);
+//       }
+
+//       .lvl_4 {
+//         z-index: 5;
+//       }
+
+//       .lvl_1,
+//       .lvl_2,
+//       .lvl_3 {
+//         transition-delay: $animation-delay_lvl;
+//         visibility: hidden;
+//       }
+//     }
+
+//     // ================= PREVIOS LVLS ACTIVE =================
+//     .js_lvl_1-4,
+//     .js_lvl_2-4,
+//     .js_lvl_3-4 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 4 step 1 active =================
+//   &.js_active_4_1 {
+//     .js_lvl_4-1 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 4 step 2 active =================
+//   &.js_active_4_2 {
+//     .js_lvl_4-1,
+//     .js_lvl_4-2 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 4 step 3 active =================
+//   &.js_active_4_3 {
+//     .js_lvl_4-1,
+//     .js_lvl_4-2,
+//     .js_lvl_4-3 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 4 step 4 active =================
+//   &.js_active_4_4 {
+//     .js_lvl_4-1,
+//     .js_lvl_4-2,
+//     .js_lvl_4-3,
+//     .js_lvl_4-4 {
+//       transform: translateY(0);
+//     }
+//   }
+
+//   // ================= LVL 5 =================
+//   &.js_active_lvl_5 {
+//     transition: $animation-delay_lvl_prevLvl;
+
+//     .lvls {
+//       transform: translateY(500vh);
+//       transform: translateY(500dvh);
+//       transform: translateY(500svh);
+//       .lvl {
+//         border-radius: 0;
+//       }
+//       .lvl-4 {
+//         transition: 0s;
+//         border-color: var(--color-white);
+//       }
+
+//       .lvl_5 {
+//         z-index: 5;
+//       }
+
+//       .lvl_4 {
+//         z-index: 15;
+//       }
+
+//       .lvl_1,
+//       .lvl_2,
+//       .lvl_3,
+//       .lvl_4 {
+//         transition-delay: $animation-delay_lvl;
+//         // visibility: hidden;
+//       }
+//     }
+
+//     // ================= PREVIOS LVLS ACTIVE =================
+//     .js_lvl_1-4,
+//     .js_lvl_2-4,
+//     .js_lvl_3-4,
+//     .js_lvl_4-4 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 5 step 1 active =================
+//   &.js_active_5_1 {
+//     .js_lvl_5-1 {
+//       transform: translateY(0);
+//     }
+//   }
+//   // ================= LVL 5 step 2 active =================
+//   &.js_active_5_2 {
+//     .js_lvl_5-1,
+//     .js_lvl_5-2 {
+//       transform: translateY(0);
+//     }
+//   }
+// }
+// // ================= ASIDE  =================
+// #body {
+//   // ================= ASIDE STATES =================
+//   &.js_active_5_1,
+//   &.js_active_5_2 {
+//     .aside {
+//       // display: none !important;
+//     }
+//   }
+//   &.js_active_5_2 {
+//     // display: none;
+//   }
+//   @media screen and (min-width: 640px) {
+//     &.js_active_lvl_1:not(.js_active_1_0),
+//     &.js_active_lvl_2,
+//     &.js_active_lvl_3,
+//     &.js_active_lvl_4 {
+//       .aside {
+//         &_container,
+//         &_line {
+//           opacity: 1;
+//           visibility: visible;
+//         }
+
+//         &_container {
+//           transform: translate(-50%);
+//         }
+//       }
+//     }
+
+//     // ================= ASIDE LIFT PROGRESS =================
+//     &.js_active_1_1,
+//     &.js_active_2_1,
+//     &.js_active_3_1,
+//     &.js_active_4_1 {
+//       .aside_container {
+//         top: calc(100vh - 485px);
+//       }
+//     }
+
+//     &.js_active_1_2,
+//     &.js_active_2_2,
+//     &.js_active_3_2,
+//     &.js_active_4_2 {
+//       .aside_container {
+//         top: 35vh;
+//         top: 35dvh;
+//         top: 35svh;
+//       }
+//     }
+
+//     &.js_active_1_3,
+//     &.js_active_2_3,
+//     &.js_active_3_3,
+//     &.js_active_4_3 {
+//       .aside_container {
+//         top: 25vh;
+//         top: 25dvh;
+//         top: 25svh;
+//       }
+
+//       .aside_btn.js_active {
+//         transition-delay: 0s !important;
+//         visibility: hidden !important;
+//         opacity: 0 !important;
+//       }
+//     }
+
+//     &.js_active_1_4,
+//     &.js_active_2_4,
+//     &.js_active_3_4,
+//     &.js_active_4_4 {
+//       .aside_container {
+//         top: 15vh;
+//         top: 15dvh;
+//         top: 15svh;
+//       }
+//     }
+//   }
+// }
+.js_active_1_1,
+.js_active_2_1,
+.js_active_3_1,
+.js_active_4_1 {
+  .step_1 {
+    transition-delay: 0.5s;
+    transform: translateY(0);
+
+    .step_1_bottom-info,
+    .step_1_top-content {
+      opacity: 0;
+
+      animation: fadeIn 0.5s linear forwards 1.7s;
     }
   }
 
-  // ================= LVL 1 step 0 active =================
-  &.js_active_1_0 {
-    .js_lvl_1-0 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 1 step 1 active =================
-  &.js_active_1_1 {
-    .js_lvl_1-0,
-    .js_lvl_1-1 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 1 step 2 active =================
-  &.js_active_1_2 {
-    .js_lvl_1-0,
-    .js_lvl_1-1,
-    .js_lvl_1-2 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 1 step 3 active =================
-  &.js_active_1_3 {
-    .js_lvl_1-0,
-    .js_lvl_1-1,
-    .js_lvl_1-2,
-    .js_lvl_1-3 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 1 step 4 active =================
-  &.js_active_1_4 {
-    .js_lvl_1-0,
-    .js_lvl_1-1,
-    .js_lvl_1-2,
-    .js_lvl_1-3 {
-      // transition-delay: 1s;
-      // transition-duration: 0.5s;
-      // background-color: var(--color-blue);
-    }
-    .js_lvl_1-0,
-    .js_lvl_1-1,
-    .js_lvl_1-2,
-    .js_lvl_1-3,
-    .js_lvl_1-4 {
-      transform: translateY(0);
-    }
+  .step_2 {
+    animation: fadeOut 0.5s linear forwards 0s;
+    transition-delay: 0.5s;
   }
 
-  // ================= LVL 2 =================
-  &.js_active_lvl_2 {
-    transition: $animation-delay_lvl_prevLvl;
+  .step_2,
+  .step_3,
+  .step_4 {
+    transform: translateY(100vh);
+  }
+}
 
-    .lvl-1 {
-      transition: 0s;
-      border-color: var(--color-white);
+.js_active_1_2,
+.js_active_2_2,
+.js_active_3_2,
+.js_active_4_2 {
+  .step_1 {
+    animation: fadeOut 0.5s linear forwards 0s;
+    transition-delay: 0.5s;
+
+    transform: translateY(-100vh);
+  }
+  .step_2 {
+    transition-delay: 0.5s;
+    transform: translateY(0);
+
+    .bg_sky,
+    .step_2_bottom-info,
+    .step_2_top-content,
+    .step_2_top-bg {
+      opacity: 0;
     }
 
-    .lvls {
-      transform: translateY(200vh);
-      transform: translateY(200dvh);
-      transform: translateY(200svh);
-
-      .lvl_2 {
-        z-index: 5;
-      }
-
-      .lvl_1 {
-        transition-delay: $animation-delay_lvl;
-        visibility: hidden;
-      }
+    .step_2_bottom-info,
+    .step_2_top-content {
+      animation: fadeIn 0.5s linear forwards 2.2s;
+      z-index: 5;
     }
 
-    // ================= PREVIOS LVLS ACTIVE =================
-    .js_lvl_1-4 {
-      transform: translateY(0);
+    .bg_sky,
+    .step_2_top-bg {
+      animation: fadeIn 0.5s linear forwards 1.7s;
     }
   }
-  // ================= LVL 2 step 1 active =================
-  &.js_active_2_1 {
-    .js_lvl_2-1 {
-      transform: translateY(0);
-    }
+  .step_3,
+  .step_4 {
+    transform: translateY(100vh);
   }
-  // ================= LVL 2 step 2 active =================
-  &.js_active_2_2 {
-    .js_lvl_2-1,
-    .js_lvl_2-2 {
-      transform: translateY(0);
-    }
+}
+
+.js_active_1_3,
+.js_active_2_3,
+.js_active_3_3,
+.js_active_4_3 {
+  .step_1,
+  .step_2 {
+    transform: translateY(-100vh);
   }
-  // ================= LVL 2 step 3 active =================
-  &.js_active_2_3 {
-    .js_lvl_2-1,
-    .js_lvl_2-2,
-    .js_lvl_2-3 {
-      transform: translateY(0);
-    }
+
+  .step_4,
+  .step_2 {
+    transition-delay: 0.5s;
+    animation: fadeOut 0.5s linear forwards 0s;
   }
-  // ================= LVL 2 step 4 active =================
-  &.js_active_2_4 {
-    .js_lvl_2-1,
-    .js_lvl_2-2,
-    .js_lvl_2-3,
-    .js_lvl_2-4 {
-      transform: translateY(0);
+
+  .step_3 {
+    transition-delay: 0.5s;
+    transform: translateY(0);
+
+    .step_3_top-content {
+      opacity: 0;
+      animation: fadeIn 0.5s linear forwards 2s;
     }
   }
 
-  // ================= LVL 3 =================
-  &.js_active_lvl_3 {
-    transition: $animation-delay_lvl_prevLvl;
-
-    .lvl-2 {
-      transition: 0s;
-      border-color: var(--color-white);
-    }
-
-    .lvls {
-      transform: translateY(300vh);
-      transform: translateY(300svh);
-      transform: translateY(300dvh);
-
-      .lvl_3 {
-        z-index: 5;
-      }
-
-      .lvl_1,
-      .lvl_2 {
-        transition-delay: $animation-delay_lvl;
-        visibility: hidden;
-      }
-    }
-
-    // ================= PREVIOS LVLS ACTIVE =================
-    .js_lvl_1-4,
-    .js_lvl_2-4 {
-      transform: translateY(0);
-    }
+  .step_4 {
+    transform: translateY(100vh);
   }
-  // ================= LVL 3 step 1 active =================
-  &.js_active_3_1 {
-    .js_lvl_3-1 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 3 step 2 active =================
-  &.js_active_3_2 {
-    .js_lvl_3-1,
-    .js_lvl_3-2 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 3 step 3 active =================
-  &.js_active_3_3 {
-    .js_lvl_3-1,
-    .js_lvl_3-2,
-    .js_lvl_3-3 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 3 step 4 active =================
-  &.js_active_3_4 {
-    .js_lvl_3-1,
-    .js_lvl_3-2,
-    .js_lvl_3-3,
-    .js_lvl_3-4 {
-      transform: translateY(0);
-    }
+}
+
+.js_active_1_4,
+.js_active_2_4,
+.js_active_3_4,
+.js_active_4_4 {
+  .step_1,
+  .step_2,
+  .step_3 {
+    transform: translateY(-100vh);
   }
 
-  // ================= LVL 4 =================
-  &.js_active_lvl_4 {
-    transition: $animation-delay_lvl_prevLvl;
-    .lvls {
-      transform: translateY(400vh);
-      transform: translateY(400dvh);
-      transform: translateY(400svh);
-      .lvl-3 {
-        transition: 0s;
-        border-color: var(--color-white);
-      }
-
-      .lvl_4 {
-        z-index: 5;
-      }
-
-      .lvl_1,
-      .lvl_2,
-      .lvl_3 {
-        transition-delay: $animation-delay_lvl;
-        visibility: hidden;
-      }
-    }
-
-    // ================= PREVIOS LVLS ACTIVE =================
-    .js_lvl_1-4,
-    .js_lvl_2-4,
-    .js_lvl_3-4 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 4 step 1 active =================
-  &.js_active_4_1 {
-    .js_lvl_4-1 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 4 step 2 active =================
-  &.js_active_4_2 {
-    .js_lvl_4-1,
-    .js_lvl_4-2 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 4 step 3 active =================
-  &.js_active_4_3 {
-    .js_lvl_4-1,
-    .js_lvl_4-2,
-    .js_lvl_4-3 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 4 step 4 active =================
-  &.js_active_4_4 {
-    .js_lvl_4-1,
-    .js_lvl_4-2,
-    .js_lvl_4-3,
-    .js_lvl_4-4 {
-      transform: translateY(0);
-    }
+  .step_3 {
+    transition-delay: 0.5s;
+    animation: fadeOut 0.5s linear forwards 0s;
   }
 
-  // ================= LVL 5 =================
-  &.js_active_lvl_5 {
-    transition: $animation-delay_lvl_prevLvl;
+  .step_4 {
+    transform: translateY(0);
+    transition-delay: 0.5s;
 
-    .lvls {
-      transform: translateY(500vh);
-      transform: translateY(500dvh);
-      transform: translateY(500svh);
-      .lvl {
-        border-radius: 0;
-      }
-      .lvl-4 {
-        transition: 0s;
-        border-color: var(--color-white);
-      }
+    .step_4_bottom-info,
+    .step_4_top-content {
+      opacity: 0;
 
-      .lvl_5 {
-        z-index: 5;
-      }
-
-      .lvl_4 {
-        z-index: 15;
-      }
-
-      .lvl_1,
-      .lvl_2,
-      .lvl_3,
-      .lvl_4 {
-        transition-delay: $animation-delay_lvl;
-        // visibility: hidden;
-      }
-    }
-
-    // ================= PREVIOS LVLS ACTIVE =================
-    .js_lvl_1-4,
-    .js_lvl_2-4,
-    .js_lvl_3-4,
-    .js_lvl_4-4 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 5 step 1 active =================
-  &.js_active_5_1 {
-    .js_lvl_5-1 {
-      transform: translateY(0);
-    }
-  }
-  // ================= LVL 5 step 2 active =================
-  &.js_active_5_2 {
-    .js_lvl_5-1,
-    .js_lvl_5-2 {
-      transform: translateY(0);
+      animation: fadeIn 0.5s linear forwards 1.7s;
+      z-index: 5;
     }
   }
 }
-// ================= ASIDE  =================
-#body {
-  // ================= ASIDE STATES =================
-  &.js_active_5_1,
-  &.js_active_5_2 {
-    .aside {
-      // display: none !important;
-    }
+
+.js_active_lvl_1 {
+  .lvls {
+    transform: translateY(0);
   }
-  &.js_active_5_2 {
-    // display: none;
+
+  .js_lvl_0 {
+    display: none;
   }
-  @media screen and (min-width: 640px) {
-    &.js_active_lvl_1:not(.js_active_1_0),
-    &.js_active_lvl_2,
-    &.js_active_lvl_3,
-    &.js_active_lvl_4 {
-      .aside {
-        &_container,
-        &_line {
-          opacity: 1;
-          visibility: visible;
-        }
+}
 
-        &_container {
-          transform: translate(-50%);
-        }
-      }
-    }
+.js_active_lvl_2 {
+  .lvls {
+    transform: translateY(100vh);
 
-    // ================= ASIDE LIFT PROGRESS =================
-    &.js_active_1_1,
-    &.js_active_2_1,
-    &.js_active_3_1,
-    &.js_active_4_1 {
-      .aside_container {
-        top: calc(100vh - 485px);
-      }
-    }
+    
+  }
 
-    &.js_active_1_2,
-    &.js_active_2_2,
-    &.js_active_3_2,
-    &.js_active_4_2 {
-      .aside_container {
-        top: 35vh;
-        top: 35dvh;
-        top: 35svh;
-      }
-    }
+  .js_lvl_1 {
+    display: none;
+  }
+}
 
-    &.js_active_1_3,
-    &.js_active_2_3,
-    &.js_active_3_3,
-    &.js_active_4_3 {
-      .aside_container {
-        top: 25vh;
-        top: 25dvh;
-        top: 25svh;
-      }
+.js_active_lvl_3 {
+  .lvls {
+    transform: translateY(200vh);
+  }
 
-      .aside_btn.js_active {
-        transition-delay: 0s !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-      }
-    }
+  .js_lvl_1,
+  .js_lvl_2 {
+    display: none;
+  }
+}
 
-    &.js_active_1_4,
-    &.js_active_2_4,
-    &.js_active_3_4,
-    &.js_active_4_4 {
-      .aside_container {
-        top: 15vh;
-        top: 15dvh;
-        top: 15svh;
-      }
-    }
+.js_active_lvl_4 {
+  .lvls {
+    transform: translateY(300vh);
+  }
+
+  .js_lvl_1,
+  .js_lvl_2,
+  .js_lvl_3 {
+    display: none;
+  }
+}
+
+.js_active_lvl_5 {
+  .lvls {
+    transform: translateY(400vh);
+  }
+
+  .js_lvl_1,
+  .js_lvl_2,
+  .js_lvl_3,
+  .js_lvl_4 {
+    display: none;
   }
 }

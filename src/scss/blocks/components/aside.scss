@@ -4,7 +4,6 @@
   left: 38px;
   z-index: 5;
   transition: 0.3s ease;
-  opacity: 1;
 
   @media screen and (min-width: 1200px) {
     left: 18px;
@@ -45,12 +44,12 @@
     transition-timing-function: ease;
     position: absolute;
     z-index: 5;
-    top: calc(100vh - 300px);
     left: 0;
-    transform: translateX(-50%);
     width: 65px;
     height: 181px;
-    opacity: 0;
+
+    top: 55vh;
+    transform: translate(-50%, -50%);
 
     @media screen and (max-width: 640px) {
       left: 50%;
@@ -87,7 +86,6 @@
     border: 1px solid rgba(244, 246, 251, 0.2);
     height: calc(100vh + 60px);
     position: absolute;
-    opacity: 0;
     transition: 0.3s ease;
 
     @media screen and (max-width: 640px) {

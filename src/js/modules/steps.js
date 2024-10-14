@@ -28,7 +28,7 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
+  let step = 1;
   let level = 1;
   let firstLoad = true;
   //  Animation flag
@@ -90,47 +90,58 @@ export default function steps() {
   };
 
   const stepCalc = (dir) => {
+    console.log(1);
     if (animationProcessing) return;
+    console.log(2);
     if (level === 5 && step === 2) return;
     let flag_start_screen = false;
 
     dir === "down" ? step++ : step--;
 
     if (level === 1 && step === -1) {
+      console.log(3);
       step = 0;
       return false;
     }
 
-    if (level === 1 && step === 1 && firstLoad) {
+    if (level === 0 && step === 0 && firstLoad) {
+      console.log(3123);
       changeSteps(true);
       firstLoad = false;
       return;
     }
 
     if (step === 0) {
+      console.log(4);
       step = 1;
       return false;
     }
 
     if (step > 4) {
+      console.log(5);
       step = 4;
       return false;
     }
 
     if (step > 2) {
+      console.log(6);
       if (!data_info.step_2_values[level - 1]) {
+        console.log(7);
         step = 2;
         return false;
       }
     }
 
     if (level !== 5 && step < 3) {
+      console.log(8);
       if (data_info.step_2_values[level - 1]) {
+        console.log(9);
         step = 3;
         return false;
       }
     }
 
+    console.log(10);
     return true;
   };
 
@@ -146,7 +157,8 @@ export default function steps() {
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
-      firstLoad ? level : level++;
+      firstLoad ? level : (level = 1);
+
       if (isMobile) addClass(body, "js_aside_animation");
       // если моб, то доб анимацию и паузу
       await sleep(isMobile ? 8500 : 0);
@@ -197,13 +209,13 @@ export default function steps() {
 
   // ---------------------- EVENTS ----------------------
   // LVL 1 STEP 0
-  step_0_btn.addEventListener("click", function () {
-    // Подсчёт Шага
-    let flag = !stepCalc("down");
-    if (flag) return;
-    // Определение Слайда
-    changeSteps();
-  });
+  // step_0_btn.addEventListener("click", function () {
+  //   // Подсчёт Шага
+  //   let flag = !stepCalc("down");
+  //   if (flag) return;
+  //   // Определение Слайда
+  //   changeSteps();
+  // });
 
   // STEP 1
   step_1_btns.forEach((btn) => {
@@ -253,8 +265,7 @@ export default function steps() {
 
     data_info.step_4_values.push(btn_val);
 
-    // level++;
-    console.log(2);
+    level++;
     changeSteps(true);
   };
 
@@ -283,7 +294,6 @@ export default function steps() {
     // Блокируем карточки для избежания повторного нажатия на них
     step_4_btns.forEach((btn) => btn.setAttribute("disabled", true));
     // Переход на след уровень
-    console.log(1);
     saveAndGo();
   });
 
