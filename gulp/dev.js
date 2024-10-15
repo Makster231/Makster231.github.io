@@ -41,20 +41,19 @@ const plumberNotify = (title) => {
 };
 
 gulp.task("html:dev", function () {
-  return (
-    gulp
-      .src(["./src/html/**/**/*.html"])
-      .pipe(changed("./build/", { hasChanged: changed.compareContents }))
-      .pipe(plumber(plumberNotify("html")))
-      .pipe(fileInclude(fileIncludeSetting))
-      .pipe(
-        replace(
-          /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
-          "$1./$4$5$7$1"
-        )
+  return gulp
+    .src(["./src/html/**/**/*.html"])
+    .pipe(changed("./build/", { hasChanged: changed.compareContents }))
+    .pipe(plumber(plumberNotify("html")))
+    .pipe(fileInclude(fileIncludeSetting))
+    .pipe(
+      replace(
+        /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+        "$1./$4$5$7$1"
       )
+    )
 
-      .pipe(
+    .pipe(
       version({
         value: "%MDS%",
         replaces: ["#{VERSION_REPlACE}#", [/#{VERSION_REPlACE}#/g, "%TS%"]],
@@ -64,9 +63,8 @@ gulp.task("html:dev", function () {
           to: ["css", "js", "image", "%TS%"],
         },
       })
-      )
-      .pipe(gulp.dest("./build/"))
-  );
+    )
+    .pipe(gulp.dest("./build/"));
 });
 
 gulp.task("sass:dev", function () {

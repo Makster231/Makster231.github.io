@@ -14,7 +14,7 @@
 
 @keyframes show_f_r {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100px);
     opacity: 0;
   }
 
@@ -25,7 +25,7 @@
 }
 @keyframes show_f_l {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100px);
     opacity: 0;
   }
 
@@ -36,7 +36,7 @@
 }
 @keyframes show_f_t {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-100px);
     opacity: 0;
   }
 
@@ -47,7 +47,7 @@
 }
 @keyframes show_f_b {
   0% {
-    transform: translateY(100%);
+    transform: translateY(100px);
     opacity: 0;
   }
 
@@ -71,7 +71,7 @@
   0% {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-50%);
+    transform: translateY(-50px);
   }
 
   100% {

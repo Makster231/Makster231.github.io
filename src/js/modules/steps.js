@@ -30,11 +30,11 @@ export default function steps() {
   //  Step
   let step = 0;
   let level = 0;
-  // let firstLoad = false;
+  let firstLoad = true;
 
   // let step = 0;
   // let level = 0;
-  let firstLoad = true;
+  // let firstLoad = true;
 
   //  Animation flag
   let animationProcessing = false;

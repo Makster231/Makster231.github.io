@@ -1,10 +1,10 @@
-// .js_scroll-disable {
-//   overflow-y: hidden;
-// }
+.js_scroll-disable {
+  overflow-y: hidden;
+}
 
-// .js_hidden {
-//   display: none;
-// }
+.js_hidden {
+  display: none;
+}
 
 // // ================= LIFT ANIMATION =================
 
@@ -38,32 +38,32 @@
   }
 }
 
-// // ================= Phone landscape =================
-// #body {
-//   @media only screen and (hover: none) and (pointer: coarse) and (max-width: 960px) and (orientation: landscape) {
-//     &::after {
-//       content: "";
-//       position: fixed;
-//       width: 100%;
-//       height: 100%;
-//       left: 0;
-//       top: 0;
-//       background-color: var(--color-blue);
-//       background-image: url(../img/mobile-orientation.png);
-//       background-position: center;
-//       background-repeat: no-repeat;
-//       background-size: 20%;
-//       pointer-events: none !important;
-//     }
+// ================= Phone landscape =================
+#body {
+  @media only screen and (hover: none) and (pointer: coarse) and (max-width: 960px) and (orientation: landscape) {
+    &::after {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: var(--color-blue);
+      background-image: url(../img/mobile-orientation.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 20%;
+      pointer-events: none !important;
+    }
 
-//     * {
-//       display: none !important;
-//       transform: none !important;
-//       transition: 0s !important;
-//       pointer-events: none !important;
-//     }
-//   }
-// }
+    * {
+      display: none !important;
+      transform: none !important;
+      transition: 0s !important;
+      pointer-events: none !important;
+    }
+  }
+}
 
 // // ================= Transition =================
 #body {
@@ -81,7 +81,7 @@
 
 // // VARS
 // $animation-delay_lvl: 2s;
-// $animation-delay_lvl_prevLvl: 2s cubic-bezier(0, 0, 1, 1) 0.7s;
+// $animation-delay_lvl_prevLvl: 2s cubic-bezier(.52,1.05,.92,.92) 0.7s;
 // #body {
 //   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
 //   // &.js_active_1_1,
@@ -164,7 +164,7 @@
 //     .js_lvl_1-0 {
 //       transform: translateY(-100vh);
 //       .step_1_wrapper {
-//         animation: fadeOut 2s linear forwards;
+//         animation: fadeOut 2s cubic-bezier(.52,1.05,.92,.92) forwards;
 //       }
 //     }
 //     .js_lvl_1-1 {
@@ -541,16 +541,17 @@
   .step_1 {
     transition-delay: 0.5s;
     transform: translateY(0);
-    animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+    animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
 
     .step_1_top-content {
       opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        1.7s;
     }
   }
 
   .step_2 {
-    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
     transition-delay: 0.5s;
   }
 
@@ -564,10 +565,9 @@
 .js_active_1_2,
 .js_active_2_2,
 .js_active_3_2,
-.js_active_4_2,
-.js_active_5_2 {
+.js_active_4_2 {
   .step_1 {
-    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
@@ -585,13 +585,14 @@
 
     // .step_2_bottom-info,
     .step_2_top-content {
-      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 2.2s;
+      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        2.2s;
       z-index: 5;
     }
 
     .bg_sky,
     .step_2_top-bg {
-      animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.5s;
+      animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
     }
   }
   .step_3,
@@ -601,9 +602,23 @@
 }
 
 .js_active_5_2 {
+  .step_1 {
+    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    transition-delay: 0.5s;
+
+    transform: translateY(-100vh);
+  }
   .aside {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .lvl_5-2 {
+    opacity: 0;
+    // z-index: -1;
+    transform: translateY(0);
+    transition: 0s !important;
+    animation: fadeIn 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0.5s;
   }
 }
 
@@ -624,7 +639,7 @@
   .step_4,
   .step_2 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
   }
 
   .step_3 {
@@ -633,7 +648,8 @@
 
     .step_3_top-content {
       opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        1.7s;
     }
   }
 
@@ -652,7 +668,7 @@
       visibility: hidden;
       transition-delay: 0.5s;
       animation:
-        fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s,
+        fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s,
         pulse 2s infinite;
     }
   }
@@ -664,7 +680,7 @@
 
   .step_3 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
   }
 
   .step_4 {
@@ -675,7 +691,8 @@
     .step_4_top-content {
       opacity: 0;
 
-      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        1.7s;
       z-index: 5;
     }
   }
@@ -829,18 +846,18 @@
       transition-duration: 0s;
       transition-delay: 2s;
 
-      animation: fadeIn 2s ease-out forwards 2s;
+      animation: fadeIn 2s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 2s;
     }
 
     .step_0_img-block,
     .step_0_bottom,
     .step_0_top {
-      animation: fadeOut 0.5s linear forwards 0s;
+      animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
     }
 
     .step_0_bg {
       opacity: 1;
-      animation: fadeOut 1s linear forwards 3s;
+      animation: fadeOut 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 3s;
     }
 
     .step_1,
@@ -854,7 +871,7 @@
   &.lift {
     .step_1_wrapper {
       opacity: 0;
-      animation: fadeIn 0.5s linear forwards 0s;
+      animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
     }
   }
 }
@@ -876,13 +893,15 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
           visibility: hidden;
           opacity: 0;
         }
@@ -893,7 +912,8 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
     }
@@ -909,7 +929,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0, 0, 1, 1) 0s;
+          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
         }
       }
     }
@@ -923,7 +943,7 @@
         display: none;
       }
       .step_4 {
-        animation: hidden 4s cubic-bezier(0, 0, 1, 1) infinite;
+        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
       }
     }
   }
@@ -937,7 +957,7 @@
         }
 
         // .step_1_top-content {
-        //   animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+        //   animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         //   animation-delay: 1.7s;
         // }
       }
@@ -962,13 +982,15 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
           visibility: hidden;
           opacity: 0;
         }
@@ -979,7 +1001,8 @@
         .step_3,
         .step_4 {
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
       .lvl_1,
@@ -992,7 +1015,8 @@
           display: none;
           transition-delay: 0s !important;
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
     }
@@ -1005,7 +1029,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0, 0, 1, 1) 0s;
+          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
         }
       }
     }
@@ -1018,7 +1042,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0, 0, 1, 1) infinite;
+        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
       }
     }
 
@@ -1027,10 +1051,10 @@
         // transition-delay: 0.5s;
         // opacity: 0;
         // animation-iteration-count: 1;
-        // animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards;
+        // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
 
         .step_1_top-content {
-          // animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+          // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         }
       }
     }
@@ -1066,13 +1090,15 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
           visibility: hidden;
           opacity: 0;
         }
@@ -1082,7 +1108,8 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
 
@@ -1097,7 +1124,8 @@
           display: none;
           transition-delay: 0s !important;
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
     }
@@ -1110,7 +1138,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0, 0, 1, 1) 0s;
+          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
         }
       }
     }
@@ -1124,7 +1152,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0, 0, 1, 1) infinite;
+        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
       }
     }
 
@@ -1133,10 +1161,10 @@
         // transition-delay: 0.5s;
         // opacity: 0;
         // animation-iteration-count: 1;
-        // animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards;
+        // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
 
         .step_1_top-content {
-          // animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+          // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         }
       }
     }
@@ -1173,13 +1201,15 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
           visibility: hidden;
           opacity: 0;
         }
@@ -1189,7 +1219,8 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+            0s;
         }
       }
     }
@@ -1206,7 +1237,7 @@
         display: none;
         transition-delay: 0s !important;
         opacity: 0;
-        animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
+        animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
       }
     }
   }
@@ -1218,7 +1249,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0, 0, 1, 1) 0s;
+          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
         }
       }
     }
@@ -1233,7 +1264,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0, 0, 1, 1) infinite;
+        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
       }
     }
 
@@ -1242,10 +1273,10 @@
         // transition-delay: 0.5s;
         // opacity: 0;
         // animation-iteration-count: 1;
-        // animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards;
+        // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
 
         .step_1_top-content {
-          // animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
+          // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         }
       }
     }

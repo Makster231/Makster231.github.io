@@ -224,26 +224,31 @@
       img {
         &:nth-of-type(1) {
           animation:
-            blinker 1s linear infinite,
-            hide 1s linear forwards 4s;
+            blinker 0.5s linear infinite,
+            hide 0.5s linear forwards 3s;
         }
 
         &:nth-of-type(2) {
           animation:
-            hidden 1s linear infinite,
-            show 1s linear forwards 4s;
+            hidden 0.5s linear infinite,
+            show 0.5s linear forwards 3.5s;
         }
 
         &:nth-of-type(3) {
           animation:
-            hidden 1s linear infinite,
-            show 1s linear forwards 5.5s;
+            hidden 0.5s linear infinite,
+            show 0.5s linear forwards 4s;
         }
 
         &:nth-of-type(4) {
           animation:
-            hidden 1s linear infinite,
-            show 1s linear forwards 6.5s;
+            hidden 0.5s linear infinite,
+            show 0.5s linear forwards 4.5s;
+        }
+        &:nth-of-type(5) {
+          animation:
+            hidden 0.5s linear infinite,
+            show 0.5s linear forwards 5s;
         }
       }
     }
