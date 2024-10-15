@@ -634,8 +634,6 @@
             @media screen and (max-width: 640px) {
               margin-right: 0;
               max-width: 100%;
-              // @include toVh(height, 145svh);
-              // @include toVh(margin-bottom, 10svh);
               @include setProp(height, 145vh, 145dvh, 145svh);
               @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
 
@@ -653,15 +651,12 @@
             }
             &_info {
               @media screen and (max-width: 640px) {
-                // @include toVh(min-height, 50svh);
-                // @include toVh(padding-bottom, 20svh);
                 @include setProp(min-height, 50vh, 50dvh, 50svh);
                 @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
               }
 
               .h5 {
                 @media screen and (max-width: 640px) {
-                  // @include toVh(font-size, 20svh);
                   @include setProp(font-size, 20vh, 20dvh, 20svh);
                 }
               }
@@ -671,9 +666,6 @@
       }
       &_bottom {
         @media screen and (max-width: 640px) {
-          // @include toVh(padding-top, 20svh);
-          // @include toVh(padding-bottom, 30svh);
-          // @include toVh(min-height, 194svh);
           @include setProp(padding-top, 20vh, 20dvh, 20svh);
           @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
           @include setProp(min-height, 194vh, 194dvh, 194svh);
@@ -692,13 +684,11 @@
           @media screen and (max-width: 640px) {
             text-align: left;
             width: 100%;
-            // @include toVh(margin-bottom, 10svh);
             @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
           }
         }
         .h6 {
           @media screen and (max-width: 640px) {
-            // @include toVh(font-size, 18svh);
             @include setProp(font-size, 18vh, 18dvh, 18svh);
             text-align: left;
             width: 100%;
@@ -718,52 +708,8 @@
     &.step_2,
     &.step_3,
     &.step_4 {
-      // transform: translateY(100svh);
       z-index: 1;
     }
 
-    // &.step_1,
-    // &.step_2,
-    // &.step_3,
-    // &.step_4 {
-    //   @media screen and (min-width: 640px) {
-    //     background: url("../img/main-bg.jpg") center no-repeat;
-    //     background-size: cover;
-    //   }
-    // }
-
-    // .step_1,
-    // .step_2,
-    // .step_3,
-    // .step_4 {
-    //   &_bg {
-    //     &:after {
-    //       content: "";
-    //       background: rgba(0, 0, 0, 0.5);
-    //       position: absolute;
-    //       left: 0;
-    //       top: 0;
-    //       width: 100%;
-    //       height: 100%;
-    //     }
-    //   }
-    // }
   }
-
-  .lvl_2,
-  .lvl_3,
-  .lvl_4,
-  .lvl_5 {
-    .step_1 {
-      // transform: translateY(0) !important;
-      // border-radius: 32px;
-    }
-  }
-}
-.step_1_wrapper {
-  // animation:
-  //   hidden 1s linear infinite,
-  //   show 1s linear forwards 4s;
-  // animation: fadeOut 2s linear forwards 0s;
-  // animation: fadeIn 2s linear forwards 0s;
 }
