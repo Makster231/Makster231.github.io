@@ -28,9 +28,14 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
-  let level = 0;
-  let firstLoad = true;
+  let step = 4;
+  let level = 1;
+  let firstLoad = false;
+
+  // let step = 0;
+  // let level = 0;
+  // let firstLoad = true;
+
   //  Animation flag
   let animationProcessing = false;
 
@@ -181,6 +186,7 @@ export default function steps() {
       // Если не мобильный, то доб анимацию для десктоп
       if (!isMobile) addClass(body, `lift`);
       addClass(body, `js_change_lvl`);
+      addClass(body, `js_content_animation_hidden`);
       // Удаляем классы
       removeClass(body, `js_active_lvl_${level - 1}`);
     }
@@ -199,6 +205,7 @@ export default function steps() {
     removeClass(body, "js_aside_animation");
     await sleep(1000);
     removeClass(body, `js_change_lvl`);
+    removeClass(body, `js_content_animation_hidden`);
     await sleep(2000);
     removeClass(body, `lift`);
   };
