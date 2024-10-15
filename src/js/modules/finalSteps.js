@@ -16,11 +16,17 @@ const finalSteps = function () {
 
   if (isMobile) {
     swiper.forEach((el) => {
-      const a = el.classList.contains("final_left-bottom");
-      if (!a) return new Swiper(el, config);
+      const lastScreenSwiper = el.classList.contains("final_left-bottom");
+      if (!lastScreenSwiper) return new Swiper(el, config);
 
+      // LAST screen slider
       config.pagination = { el: ".swiper-pagination" };
-      new Swiper(el, config);
+      const slider = new Swiper(el, config);
+
+      // LAST screen slider update state
+      slider.on("slideChange", function (e) {
+        lvl_5_2.dataset.bg = slider.activeIndex + 1;
+      });
     });
   }
 
@@ -57,6 +63,16 @@ const finalSteps = function () {
         lvl_5_2.dataset.tab = e.target.closest(
           ".js_final_mob_tabs--btn"
         ).dataset.role;
+      });
+    });
+  }
+
+  // FINAL SCREEN 4
+  if (!isMobile) {
+    const final_4_cards = document.querySelectorAll(".js_final_4_list-item");
+    final_4_cards.forEach((el) => {
+      el.addEventListener("mouseover", function () {
+        lvl_5_2.dataset.bg = [].indexOf.call(el.parentElement.children, el) + 1;
       });
     });
   }

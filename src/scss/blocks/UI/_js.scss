@@ -618,7 +618,7 @@
     // z-index: -1;
     transform: translateY(0);
     transition: 0s !important;
-    animation: fadeIn 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0.5s;
+    animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0.5s;
   }
 }
 
