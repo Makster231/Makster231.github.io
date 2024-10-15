@@ -67,6 +67,19 @@
     visibility: visible;
   }
 }
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -76,5 +89,18 @@
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@keyframes fadeOutTop {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
   }
 }

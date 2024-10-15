@@ -33,7 +33,7 @@
     }
 
     button {
-      // pointer-events: none !important;
+      pointer-events: none !important;
     }
   }
 }
@@ -81,7 +81,7 @@
 
 // // VARS
 // $animation-delay_lvl: 2s;
-// $animation-delay_lvl_prevLvl: 2s ease-in 0.7s;
+// $animation-delay_lvl_prevLvl: 2s cubic-bezier(0, 0, 1, 1) 0.7s;
 // #body {
 //   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
 //   // &.js_active_1_1,
@@ -543,18 +543,17 @@
 
     .step_1_wrapper {
       // opacity: 0;
-      // animation: fadeIn 0.5s ease-in forwards 0.5s;
+      // animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 0.5s;
     }
-    .step_1_bottom-info,
+    // .step_1_bottom-info,
     .step_1_top-content {
       opacity: 0;
-
-      animation: fadeIn 0.5s ease-in forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
     }
   }
 
   .step_2 {
-    animation: fadeOut 0.5s ease-in forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
     transition-delay: 0.5s;
   }
 
@@ -570,7 +569,7 @@
 .js_active_3_2,
 .js_active_4_2 {
   .step_1 {
-    animation: fadeOut 0.5s ease-in forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
@@ -580,21 +579,21 @@
     transform: translateY(0);
 
     .bg_sky,
-    .step_2_bottom-info,
+    // .step_2_bottom-info,
     .step_2_top-content,
     .step_2_top-bg {
       opacity: 0;
     }
 
-    .step_2_bottom-info,
+    // .step_2_bottom-info,
     .step_2_top-content {
-      animation: fadeIn 0.5s ease-in forwards 2.2s;
+      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 2.2s;
       z-index: 5;
     }
 
     .bg_sky,
     .step_2_top-bg {
-      animation: fadeIn 0.5s ease-in forwards 1.5s;
+      animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.5s;
     }
   }
   .step_3,
@@ -607,6 +606,11 @@
 .js_active_2_3,
 .js_active_3_3,
 .js_active_4_3 {
+  .aside_btn {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .step_1,
   .step_2 {
     transform: translateY(-100vh);
@@ -615,7 +619,7 @@
   .step_4,
   .step_2 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s ease-in forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
   }
 
   .step_3 {
@@ -624,7 +628,7 @@
 
     .step_3_top-content {
       opacity: 0;
-      animation: fadeIn 0.5s ease-in forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
     }
   }
 
@@ -637,6 +641,12 @@
 .js_active_2_4,
 .js_active_3_4,
 .js_active_4_4 {
+  .aside_btn {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0.5s;
+    animation: fadeIn 0.5s cubic-bezier(0, 0, 1, 1) forwards 2s, pulse 2s infinite;
+  }
   .step_1,
   .step_2,
   .step_3 {
@@ -645,18 +655,18 @@
 
   .step_3 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s ease-in forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0, 0, 1, 1) forwards 0s;
   }
 
   .step_4 {
     transform: translateY(0);
     transition-delay: 0.5s;
 
-    .step_4_bottom-info,
+    // .step_4_bottom-info,
     .step_4_top-content {
       opacity: 0;
 
-      animation: fadeIn 0.5s ease-in forwards 1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0, 0, 1, 1) forwards 1.7s;
       z-index: 5;
     }
   }
@@ -734,8 +744,8 @@
   }
 }
 
-.js_change_lvl {
-  &.js_active_lvl_1 {
+.js_active_lvl_1 {
+  &.js_change_lvl {
     .aside_container {
       top: 120vh;
     }
@@ -764,6 +774,13 @@
     .step_3,
     .step_4 {
       display: none;
+    }
+  }
+
+  &.lift {
+    .step_1_wrapper {
+      opacity: 0;
+      animation: fadeIn 0.5s linear forwards 0s;
     }
   }
 }

@@ -145,11 +145,6 @@
         fill: #a9ff40;
       }
     }
-    &.js_active {
-      opacity: 1;
-      visibility: visible;
-      animation: pulse 2s infinite;
-    }
 
     @media screen and (max-width: 640px) {
       display: none !important;
