@@ -1,12 +1,14 @@
 .aside {
-  position: absolute;
+  position: fixed;
+  // position: absolute;
   top: -30px;
-  left: 38px;
+  // left: 38px;
+  left: unset;
   z-index: 5;
   transition: 0.3s ease;
 
   @media screen and (min-width: 1200px) {
-    left: 18px;
+    left: unset;
   }
 
   @media screen and (max-width: 640px) {
@@ -48,7 +50,7 @@
     width: 65px;
     height: 181px;
 
-    top: 55vh;
+    top: 120vh;
     transform: translate(-50%, -50%);
 
     @media screen and (max-width: 640px) {
@@ -180,11 +182,13 @@
   }
 
   &_icons {
-    // display: none;
+    display: none;
     position: absolute;
     top: calc(50% - 20px);
     left: calc(50% - 40px);
     @media screen and (max-width: 640px) {
+      display: block;
+
       .icon-svg {
         width: 80px;
         height: 80px;

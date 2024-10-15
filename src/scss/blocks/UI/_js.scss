@@ -10,11 +10,15 @@
 
 @keyframes lift {
   0% {
-    top: 55vh;
+    // top: 55vh;
   }
 
-  50% {
+  40% {
     top: -15vh;
+  }
+
+  65% {
+    top: 45vh;
   }
 
   100% {
@@ -25,11 +29,11 @@
 #body {
   &.lift {
     .aside_container {
-      animation: lift 2s ease-in forwards;
+      animation: lift 4s ease-in-out forwards;
     }
 
     button {
-      pointer-events: none !important;
+      // pointer-events: none !important;
     }
   }
 }
@@ -537,16 +541,20 @@
     transition-delay: 0.5s;
     transform: translateY(0);
 
+    .step_1_wrapper {
+      // opacity: 0;
+      // animation: fadeIn 0.5s ease-in forwards 0.5s;
+    }
     .step_1_bottom-info,
     .step_1_top-content {
       opacity: 0;
 
-      animation: fadeIn 0.5s linear forwards 1.7s;
+      animation: fadeIn 0.5s ease-in forwards 1.7s;
     }
   }
 
   .step_2 {
-    animation: fadeOut 0.5s linear forwards 0s;
+    animation: fadeOut 0.5s ease-in forwards 0s;
     transition-delay: 0.5s;
   }
 
@@ -562,7 +570,7 @@
 .js_active_3_2,
 .js_active_4_2 {
   .step_1 {
-    animation: fadeOut 0.5s linear forwards 0s;
+    animation: fadeOut 0.5s ease-in forwards 0s;
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
@@ -580,13 +588,13 @@
 
     .step_2_bottom-info,
     .step_2_top-content {
-      animation: fadeIn 0.5s linear forwards 2.2s;
+      animation: fadeIn 0.5s ease-in forwards 2.2s;
       z-index: 5;
     }
 
     .bg_sky,
     .step_2_top-bg {
-      animation: fadeIn 0.5s linear forwards 1.7s;
+      animation: fadeIn 0.5s ease-in forwards 1.5s;
     }
   }
   .step_3,
@@ -607,7 +615,7 @@
   .step_4,
   .step_2 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s linear forwards 0s;
+    animation: fadeOut 0.5s ease-in forwards 0s;
   }
 
   .step_3 {
@@ -616,7 +624,7 @@
 
     .step_3_top-content {
       opacity: 0;
-      animation: fadeIn 0.5s linear forwards 2s;
+      animation: fadeIn 0.5s ease-in forwards 1.7s;
     }
   }
 
@@ -637,7 +645,7 @@
 
   .step_3 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s linear forwards 0s;
+    animation: fadeOut 0.5s ease-in forwards 0s;
   }
 
   .step_4 {
@@ -648,27 +656,31 @@
     .step_4_top-content {
       opacity: 0;
 
-      animation: fadeIn 0.5s linear forwards 1.7s;
+      animation: fadeIn 0.5s ease-in forwards 1.7s;
       z-index: 5;
     }
   }
 }
 
 .js_active_lvl_1 {
+  &:not(.js_change_lvl) {
+    .aside_container {
+      top: 55vh !important;
+      z-index: 99;
+    }
+  }
   .lvls {
-    transform: translateY(0);
+    transform: translateY(100vh);
   }
 
   .js_lvl_0 {
-    display: none;
+    // display: none;
   }
 }
 
 .js_active_lvl_2 {
   .lvls {
-    transform: translateY(100vh);
-
-    
+    transform: translateY(200vh);
   }
 
   .js_lvl_1 {
@@ -678,7 +690,7 @@
 
 .js_active_lvl_3 {
   .lvls {
-    transform: translateY(200vh);
+    transform: translateY(300vh);
   }
 
   .js_lvl_1,
@@ -689,7 +701,7 @@
 
 .js_active_lvl_4 {
   .lvls {
-    transform: translateY(300vh);
+    transform: translateY(400vh);
   }
 
   .js_lvl_1,
@@ -701,7 +713,7 @@
 
 .js_active_lvl_5 {
   .lvls {
-    transform: translateY(400vh);
+    transform: translateY(500vh);
   }
 
   .js_lvl_1,
@@ -709,5 +721,80 @@
   .js_lvl_3,
   .js_lvl_4 {
     display: none;
+  }
+}
+
+.js_active_lvl_1,
+.js_active_lvl_2,
+.js_active_lvl_3,
+.js_active_lvl_4,
+.js_active_lvl_5 {
+  .aside_container {
+    top: 55vh;
+  }
+}
+
+.js_change_lvl {
+  &.js_active_lvl_1 {
+    .aside_container {
+      top: 120vh;
+    }
+    .lvls {
+      opacity: 0;
+      transform: translateY(100vh);
+      transition-duration: 0s;
+      transition-delay: 2s;
+
+      animation: fadeIn 2s ease-out forwards 2s;
+    }
+
+    .step_0_img-block,
+    .step_0_bottom,
+    .step_0_top {
+      animation: fadeOut 0.5s linear forwards 0s;
+    }
+
+    .step_0_bg {
+      opacity: 1;
+      animation: fadeOut 1s linear forwards 3s;
+    }
+
+    .step_1,
+    .step_2,
+    .step_3,
+    .step_4 {
+      display: none;
+    }
+  }
+}
+
+.js_change_lvl {
+  &.js_active_lvl_2 {
+    .lvls {
+      opacity: 0;
+      transform: translateY(200vh);
+      transition-duration: 0s;
+      transition-delay: 2s;
+
+      animation: fadeIn 2s linear forwards 2s;
+    }
+
+    // .step_0_img-block,
+    // .step_0_bottom,
+    // .step_0_top {
+    //   animation: fadeOut 0.5s linear forwards 0s;
+    // }
+
+    // .step_0_bg {
+    //   opacity: 1;
+    //   animation: fadeOut 1s linear forwards 3s;
+    // }
+
+    .step_1,
+    .step_2,
+    .step_3,
+    .step_4 {
+      display: none;
+    }
   }
 }

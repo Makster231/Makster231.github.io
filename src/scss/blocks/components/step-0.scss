@@ -3,6 +3,7 @@
     .step_0 {
       &_top {
         &-left {
+          animation: show_f_l 0.5s linear forwards 0.5s;
           .h1 {
             color: var(--color-white);
             margin-bottom: 50px;
@@ -10,10 +11,13 @@
         }
 
         &-picture {
+          animation: show_f_b 0.5s linear forwards 0.5s;
           width: 280px;
         }
 
         &-right {
+          animation: show_f_r 0.5s linear forwards 0.5s;
+
           .block_pros {
             background-color: rgba(255, 255, 255, 0.08);
             -webkit-backdrop-filter: blur(10px);
@@ -53,6 +57,10 @@
         }
       }
       &_bottom {
+        &-info {
+          opacity: 0;
+          animation: show_f_b 0.5s linear forwards 0.5s;
+        }
         &-btn {
           max-width: 300px;
         }
@@ -63,6 +71,8 @@
         padding-left: 80px;
         position: relative;
         z-index: 5;
+        opacity: 0;
+        animation: show_f_b 0.5s linear forwards 0.5s;
 
         @media screen and (min-width: 1367px) {
           height: 87%;
@@ -90,6 +100,9 @@
             margin-left: auto;
             max-width: 270px;
             z-index: 4;
+
+            opacity: 0;
+            animation: fadeIn 0.5s linear forwards 1s;
 
             .h5 {
               color: var(--color-white);

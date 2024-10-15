@@ -28,8 +28,8 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 1;
-  let level = 1;
+  let step = 0;
+  let level = 0;
   let firstLoad = true;
   //  Animation flag
   let animationProcessing = false;
@@ -60,6 +60,7 @@ export default function steps() {
   const removeAllStates = () => {
     body.classList.remove(
       ...[
+        "js_active_0_0",
         "js_active_1_0",
         "js_active_1_1",
         "js_active_1_2",
@@ -71,7 +72,7 @@ export default function steps() {
         "js_active_2_3",
         "js_active_2_4",
 
-        "lift",
+        // "lift",
 
         "js_active_3_1",
         "js_active_3_2",
@@ -94,6 +95,13 @@ export default function steps() {
     if (animationProcessing) return;
     console.log(2);
     if (level === 5 && step === 2) return;
+
+    if (firstLoad) {
+      changeSteps(true);
+      firstLoad = false;
+      return;
+    }
+
     let flag_start_screen = false;
 
     dir === "down" ? step++ : step--;
@@ -102,13 +110,6 @@ export default function steps() {
       console.log(3);
       step = 0;
       return false;
-    }
-
-    if (level === 0 && step === 0 && firstLoad) {
-      console.log(3123);
-      changeSteps(true);
-      firstLoad = false;
-      return;
     }
 
     if (step === 0) {
@@ -157,12 +158,18 @@ export default function steps() {
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
-      firstLoad ? level : (level = 1);
+      firstLoad ? (level = 1) : level++;
 
       if (isMobile) addClass(body, "js_aside_animation");
+
+      console.log("step " + step);
+      console.log("level " + level);
       // если моб, то доб анимацию и паузу
       await sleep(isMobile ? 8500 : 0);
     }
+
+    console.log("step " + step);
+    console.log("level " + level);
 
     // Удаление Всех классов состояний
     removeAllStates();
@@ -173,6 +180,7 @@ export default function steps() {
       addClass(body, `js_active_lvl_${level}`);
       // Если не мобильный, то доб анимацию для десктоп
       if (!isMobile) addClass(body, `lift`);
+      addClass(body, `js_change_lvl`);
       // Удаляем классы
       removeClass(body, `js_active_lvl_${level - 1}`);
     }
@@ -188,8 +196,11 @@ export default function steps() {
     // Завершаем Анимацию
     enableAllClikable();
     animationProcessing = false;
-    removeClass(body, `lift`);
     removeClass(body, "js_aside_animation");
+    await sleep(1000);
+    removeClass(body, `js_change_lvl`);
+    await sleep(2000);
+    removeClass(body, `lift`);
   };
 
   // ---------------------- BODY SCROLL ----------------------
@@ -209,13 +220,13 @@ export default function steps() {
 
   // ---------------------- EVENTS ----------------------
   // LVL 1 STEP 0
-  // step_0_btn.addEventListener("click", function () {
-  //   // Подсчёт Шага
-  //   let flag = !stepCalc("down");
-  //   if (flag) return;
-  //   // Определение Слайда
-  //   changeSteps();
-  // });
+  step_0_btn.addEventListener("click", function () {
+    // Подсчёт Шага
+    let flag = !stepCalc("down");
+    if (flag) return;
+    // Определение Слайда
+    // changeSteps();
+  });
 
   // STEP 1
   step_1_btns.forEach((btn) => {
@@ -265,7 +276,6 @@ export default function steps() {
 
     data_info.step_4_values.push(btn_val);
 
-    level++;
     changeSteps(true);
   };
 
