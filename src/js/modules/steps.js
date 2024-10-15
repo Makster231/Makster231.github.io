@@ -207,7 +207,9 @@ export default function steps() {
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
     await sleep(2000);
-    removeClass(body, `lift`);
+
+    if (changeLvl) await sleep(isMobile ? 1000 : 1500);
+    if (changeLvl) removeClass(body, `lift`);
   };
 
   // ---------------------- BODY SCROLL ----------------------
@@ -279,11 +281,12 @@ export default function steps() {
     // Переход на следующий уровень
     let btn_val = document.querySelector(
       `.js_lvl_${level} .js_step_4_cards .js_card.js_active`
-    ).dataset.value;
+    );
 
-    data_info.step_4_values.push(btn_val);
-
-    changeSteps(true);
+    if (btn_val) {
+      data_info.step_4_values.push(btn_val.dataset.value);
+      changeSteps(true);
+    }
   };
 
   // STEP 4
