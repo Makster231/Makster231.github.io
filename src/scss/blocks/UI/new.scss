@@ -20,7 +20,9 @@
 
 .lvl_3_bg {
   img {
-    margin-left: 1.5%;
+    @media screen and (min-width: 640px) {
+      margin-left: 1.5%;
+    }
   }
 }
 .lvl_5_bg {
@@ -39,13 +41,12 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: -5px;
+    top: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
     background: url("../img/bg_levels/main-bg.jpg") center no-repeat;
     background-position: bottom;
-    transform: scale(1.01);
     background-size: cover;
     img {
       width: 100%;
@@ -60,7 +61,7 @@
     &_4 {
       .bg_sky {
         background-position: top;
-        transform: scaleY(-1) scale(1.01);
+        transform: scaleY(-1);
       }
     }
   }

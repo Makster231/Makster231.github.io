@@ -518,7 +518,9 @@
                   padding: 0;
 
                   li {
-                    display: none;
+                    @media screen and (min-width: 640px) {
+                      display: none;
+                    }
 
                     &:first-of-type {
                       display: block;

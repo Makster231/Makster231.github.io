@@ -27,6 +27,18 @@
 }
 
 #body {
+  &:not(.js_active_lvl_1) {
+    &.lift {
+      .aside_container {
+        animation: lift 4s ease-in-out forwards 1s;
+      }
+
+      button {
+        // pointer-events: none !important;
+      }
+    }
+  }
+
   &.lift {
     .aside_container {
       animation: lift 4s ease-in-out forwards;
@@ -78,461 +90,6 @@
   }
 }
 // // ================= Swipe =================
-
-// // VARS
-// $animation-delay_lvl: 2s;
-// $animation-delay_lvl_prevLvl: 2s cubic-bezier(.52,1.05,.92,.92) 0.7s;
-// #body {
-//   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
-//   // &.js_active_1_1,
-//   // &.js_active_2_1,
-//   // &.js_active_3_1,
-//   // &.js_active_4_1,
-//   // &.js_active_5_1 {
-//   //   .lvl_1,
-//   //   .lvl_2,
-//   //   .lvl_3,
-//   //   .lvl_4,
-//   //   .lvl_5 {
-//   //     background-color: var(--color-white);
-//   //     transition-delay: 1s;
-//   //   }
-//   // }
-//   // &.js_active_1_2,
-//   // &.js_active_2_2,
-//   // &.js_active_3_2,
-//   // &.js_active_4_2,
-//   // &.js_active_5_2 {
-//   //   .lvl_1,
-//   //   .lvl_2,
-//   //   .lvl_3,
-//   //   .lvl_4,
-//   //   .lvl_5 {
-//   //     border: none;
-//   //   }
-//   // }
-//   // &.js_active_1_3,
-//   // &.js_active_2_3,
-//   // &.js_active_3_3,
-//   // &.js_active_4_3 {
-//   //   background-color: var(--color-white);
-//   //   transition: 1s ease;
-
-//   //   .lvl_1,
-//   //   .lvl_2,
-//   //   .lvl_3,
-//   //   .lvl_4 {
-//   //     border-color: var(--color-blue);
-//   //   }
-//   // }
-//   // &.js_active_1_4,
-//   // &.js_active_2_4,
-//   // &.js_active_3_4,
-//   // &.js_active_4_4 {
-//   //   background-color: var(--color-white);
-//   //   .lvl_1,
-//   //   .lvl_2,
-//   //   .lvl_3,
-//   //   .lvl_4 {
-//   //     transition-delay: 1s;
-//   //     background-color: var(--color-blue);
-//   //     border-color: var(--color-blue);
-//   //   }
-//   // }
-//   // ================= SAME STATES OF ALL LVLS FOR SLIDES =================
-
-//   // ================= LVL 1 =================
-//   &.js_active_lvl_1 {
-//     // .lvls {
-//     //   .lvl_1 {
-//     //     z-index: 5;
-//     //     transform: translateY(-100vh);
-//     //     transform: translateY(-100dvh);
-//     //     transform: translateY(-100svh);
-//     //   }
-//     // }
-//   }
-
-//   // ================= LVL 1 step 0 active =================
-//   &.js_active_1_0 {
-//     .js_lvl_1-0 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 1 step 1 active =================
-//   &.js_active_1_1 {
-//     .js_lvl_1-0 {
-//       transform: translateY(-100vh);
-//       .step_1_wrapper {
-//         animation: fadeOut 2s cubic-bezier(.52,1.05,.92,.92) forwards;
-//       }
-//     }
-//     .js_lvl_1-1 {
-//       transform: translateY(0);
-//       transition-delay: 1s;
-//     }
-//   }
-//   // ================= LVL 1 step 2 active =================
-//   &.js_active_1_2 {
-//     .js_lvl_1-0,
-//     .js_lvl_1-1 {
-//       transform: translateY(-100vh);
-//     }
-//     .js_lvl_1-2 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 1 step 3 active =================
-//   &.js_active_1_3 {
-//     .js_lvl_1-0,
-//     .js_lvl_1-1,
-//     .js_lvl_1-2 {
-//       transform: translateY(-100vh);
-//     }
-//     .js_lvl_1-3 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 1 step 4 active =================
-//   &.js_active_1_4 {
-//     .js_lvl_1-0,
-//     .js_lvl_1-1,
-//     .js_lvl_1-2,
-//     .js_lvl_1-3 {
-//       // transition-delay: 1s;
-//       // transition-duration: 0.5s;
-//       // background-color: var(--color-blue);
-//     }
-//     .js_lvl_1-0,
-//     .js_lvl_1-1,
-//     .js_lvl_1-2,
-//     .js_lvl_1-3 {
-//       transform: translateY(-100vh);
-//     }
-//     .js_lvl_1-4 {
-//       transform: translateY(0);
-//     }
-//   }
-
-//   // ================= LVL 2 =================
-//   &.js_active_lvl_2 {
-//     transition: $animation-delay_lvl_prevLvl;
-
-//     .lvl-1 {
-//       transition: 0s;
-//       border-color: var(--color-white);
-//     }
-
-//     .lvls {
-//       transform: translateY(200vh);
-//       transform: translateY(200dvh);
-//       transform: translateY(200svh);
-
-//       .lvl_2 {
-//         z-index: 5;
-//       }
-
-//       .lvl_1 {
-//         transition-delay: $animation-delay_lvl;
-//         visibility: hidden;
-//       }
-//     }
-
-//     // ================= PREVIOS LVLS ACTIVE =================
-//     .js_lvl_1-4 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 2 step 1 active =================
-//   &.js_active_2_1 {
-//     .js_lvl_2-1 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 2 step 2 active =================
-//   &.js_active_2_2 {
-//     .js_lvl_2-1,
-//     .js_lvl_2-2 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 2 step 3 active =================
-//   &.js_active_2_3 {
-//     .js_lvl_2-1,
-//     .js_lvl_2-2,
-//     .js_lvl_2-3 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 2 step 4 active =================
-//   &.js_active_2_4 {
-//     .js_lvl_2-1,
-//     .js_lvl_2-2,
-//     .js_lvl_2-3,
-//     .js_lvl_2-4 {
-//       transform: translateY(0);
-//     }
-//   }
-
-//   // ================= LVL 3 =================
-//   &.js_active_lvl_3 {
-//     transition: $animation-delay_lvl_prevLvl;
-
-//     .lvl-2 {
-//       transition: 0s;
-//       border-color: var(--color-white);
-//     }
-
-//     .lvls {
-//       transform: translateY(300vh);
-//       transform: translateY(300svh);
-//       transform: translateY(300dvh);
-
-//       .lvl_3 {
-//         z-index: 5;
-//       }
-
-//       .lvl_1,
-//       .lvl_2 {
-//         transition-delay: $animation-delay_lvl;
-//         visibility: hidden;
-//       }
-//     }
-
-//     // ================= PREVIOS LVLS ACTIVE =================
-//     .js_lvl_1-4,
-//     .js_lvl_2-4 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 3 step 1 active =================
-//   &.js_active_3_1 {
-//     .js_lvl_3-1 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 3 step 2 active =================
-//   &.js_active_3_2 {
-//     .js_lvl_3-1,
-//     .js_lvl_3-2 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 3 step 3 active =================
-//   &.js_active_3_3 {
-//     .js_lvl_3-1,
-//     .js_lvl_3-2,
-//     .js_lvl_3-3 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 3 step 4 active =================
-//   &.js_active_3_4 {
-//     .js_lvl_3-1,
-//     .js_lvl_3-2,
-//     .js_lvl_3-3,
-//     .js_lvl_3-4 {
-//       transform: translateY(0);
-//     }
-//   }
-
-//   // ================= LVL 4 =================
-//   &.js_active_lvl_4 {
-//     transition: $animation-delay_lvl_prevLvl;
-//     .lvls {
-//       transform: translateY(400vh);
-//       transform: translateY(400dvh);
-//       transform: translateY(400svh);
-//       .lvl-3 {
-//         transition: 0s;
-//         border-color: var(--color-white);
-//       }
-
-//       .lvl_4 {
-//         z-index: 5;
-//       }
-
-//       .lvl_1,
-//       .lvl_2,
-//       .lvl_3 {
-//         transition-delay: $animation-delay_lvl;
-//         visibility: hidden;
-//       }
-//     }
-
-//     // ================= PREVIOS LVLS ACTIVE =================
-//     .js_lvl_1-4,
-//     .js_lvl_2-4,
-//     .js_lvl_3-4 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 4 step 1 active =================
-//   &.js_active_4_1 {
-//     .js_lvl_4-1 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 4 step 2 active =================
-//   &.js_active_4_2 {
-//     .js_lvl_4-1,
-//     .js_lvl_4-2 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 4 step 3 active =================
-//   &.js_active_4_3 {
-//     .js_lvl_4-1,
-//     .js_lvl_4-2,
-//     .js_lvl_4-3 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 4 step 4 active =================
-//   &.js_active_4_4 {
-//     .js_lvl_4-1,
-//     .js_lvl_4-2,
-//     .js_lvl_4-3,
-//     .js_lvl_4-4 {
-//       transform: translateY(0);
-//     }
-//   }
-
-//   // ================= LVL 5 =================
-//   &.js_active_lvl_5 {
-//     transition: $animation-delay_lvl_prevLvl;
-
-//     .lvls {
-//       transform: translateY(500vh);
-//       transform: translateY(500dvh);
-//       transform: translateY(500svh);
-//       .lvl {
-//         border-radius: 0;
-//       }
-//       .lvl-4 {
-//         transition: 0s;
-//         border-color: var(--color-white);
-//       }
-
-//       .lvl_5 {
-//         z-index: 5;
-//       }
-
-//       .lvl_4 {
-//         z-index: 15;
-//       }
-
-//       .lvl_1,
-//       .lvl_2,
-//       .lvl_3,
-//       .lvl_4 {
-//         transition-delay: $animation-delay_lvl;
-//         // visibility: hidden;
-//       }
-//     }
-
-//     // ================= PREVIOS LVLS ACTIVE =================
-//     .js_lvl_1-4,
-//     .js_lvl_2-4,
-//     .js_lvl_3-4,
-//     .js_lvl_4-4 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 5 step 1 active =================
-//   &.js_active_5_1 {
-//     .js_lvl_5-1 {
-//       transform: translateY(0);
-//     }
-//   }
-//   // ================= LVL 5 step 2 active =================
-//   &.js_active_5_2 {
-//     .js_lvl_5-1,
-//     .js_lvl_5-2 {
-//       transform: translateY(0);
-//     }
-//   }
-// }
-// // ================= ASIDE  =================
-// #body {
-//   // ================= ASIDE STATES =================
-//   &.js_active_5_1,
-//   &.js_active_5_2 {
-//     .aside {
-//       // display: none !important;
-//     }
-//   }
-//   &.js_active_5_2 {
-//     // display: none;
-//   }
-//   @media screen and (min-width: 640px) {
-//     &.js_active_lvl_1:not(.js_active_1_0),
-//     &.js_active_lvl_2,
-//     &.js_active_lvl_3,
-//     &.js_active_lvl_4 {
-//       .aside {
-//         &_container,
-//         &_line {
-//           opacity: 1;
-//           visibility: visible;
-//         }
-
-//         &_container {
-//           transform: translate(-50%);
-//         }
-//       }
-//     }
-
-//     // ================= ASIDE LIFT PROGRESS =================
-//     &.js_active_1_1,
-//     &.js_active_2_1,
-//     &.js_active_3_1,
-//     &.js_active_4_1 {
-//       .aside_container {
-//         top: calc(100vh - 485px);
-//       }
-//     }
-
-//     &.js_active_1_2,
-//     &.js_active_2_2,
-//     &.js_active_3_2,
-//     &.js_active_4_2 {
-//       .aside_container {
-//         top: 35vh;
-//         top: 35dvh;
-//         top: 35svh;
-//       }
-//     }
-
-//     &.js_active_1_3,
-//     &.js_active_2_3,
-//     &.js_active_3_3,
-//     &.js_active_4_3 {
-//       .aside_container {
-//         top: 25vh;
-//         top: 25dvh;
-//         top: 25svh;
-//       }
-
-//       .aside_btn.js_active {
-//         transition-delay: 0s !important;
-//         visibility: hidden !important;
-//         opacity: 0 !important;
-//       }
-//     }
-
-//     &.js_active_1_4,
-//     &.js_active_2_4,
-//     &.js_active_3_4,
-//     &.js_active_4_4 {
-//       .aside_container {
-//         top: 15vh;
-//         top: 15dvh;
-//         top: 15svh;
-//       }
-//     }
-//   }
-// }
 .js_active_1_1,
 .js_active_2_1,
 .js_active_3_1,
@@ -706,38 +263,39 @@
     }
   }
   .lvls {
+    transition-delay: 0s;
+    transition-duration: 0s;
     transform: translateY(100vh);
   }
 
   .lvl_1_bg {
-    transition-delay: 2s;
-    transition-duration: 2s;
+    transition-delay: 2.5s;
+    transition-duration: 1.5s;
     transform: translateY(-50vh);
   }
   .js_lvl_0 {
+    // animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
     // display: none;
   }
 }
 
 .js_active_lvl_2 {
   .lvls {
+    transition-delay: 2s !important;
     transform: translateY(200vh);
   }
 
   .lvl_1_bg {
-    transition-delay: 0.5s;
-    transition-duration: 1.5s;
+    transition-delay: 0s;
+    transition-duration: 2s;
     transform: translateY(0);
   }
 
   .lvl_2_bg {
-    transition-delay: 2s;
+    transition-delay: 1.5s;
     transition-duration: 2s;
     transform: translateY(-50vh);
   }
-  // .js_lvl_1 {
-  //   display: none;
-  // }
 }
 
 .js_active_lvl_3 {
@@ -746,16 +304,28 @@
   }
 
   .lvl_2_bg {
-    transition-delay: 0.5s;
-    transition-duration: 1.5s;
+    transition-delay: 0s;
+    transition-duration: 2s;
     transform: translateY(0);
   }
 
   .lvl_3_bg {
-    transition-delay: 2s;
+    transition-delay: 1.5s;
     transition-duration: 2s;
     transform: translateY(-50vh);
   }
+
+  // .lvl_2_bg {
+  //   transition-delay: 0.5s;
+  //   transition-duration: 1.5s;
+  //   transform: translateY(0);
+  // }
+
+  // .lvl_3_bg {
+  //   transition-delay: 2s;
+  //   transition-duration: 2s;
+  //   transform: translateY(-50vh);
+  // }
 
   // .js_lvl_1,
   // .js_lvl_2 {
@@ -768,18 +338,29 @@
     transform: translateY(400vh);
   }
 
+  // .lvl_3_bg {
+  //   transition-delay: 0.5s;
+  //   transition-duration: 1.5s;
+  //   transform: translateY(0);
+  // }
+
+  // .lvl_4_bg {
+  //   transition-delay: 2s;
+  //   transition-duration: 2s;
+  //   transform: translateY(-50vh);
+  // }
+
   .lvl_3_bg {
-    transition-delay: 0.5s;
-    transition-duration: 1.5s;
+    transition-delay: 0s;
+    transition-duration: 2s;
     transform: translateY(0);
   }
 
   .lvl_4_bg {
-    transition-delay: 2s;
+    transition-delay: 1.5s;
     transition-duration: 2s;
     transform: translateY(-50vh);
   }
-
   // .js_lvl_1,
   // .js_lvl_2,
   // .js_lvl_3 {
@@ -793,8 +374,8 @@
   }
 
   .lvl_4_bg {
-    transition-delay: 0.5s;
-    transition-duration: 1.5s;
+    transition-delay: 0s;
+    transition-duration: 2s;
     transform: translateY(0);
   }
 
@@ -802,20 +383,31 @@
     transition-delay: 0s;
     transition-duration: 0s;
     // transform: translateY(-50vh);
-
-    // height: 100vh;
-    // bottom: 0 !important;
-    // transform: none;
-    // top: unset;
-
-    // img {
-    //   object-fit: contain;
-
-    //   object-position: bottom;
-    //   margin: 0 auto;
-    //   max-width: 52%;
-    // }
   }
+  // .lvl_4_bg {
+  //   transition-delay: 0.5s;
+  //   transition-duration: 1.5s;
+  //   transform: translateY(0);
+  // }
+
+  // .lvl_5_bg {
+  //   transition-delay: 0s;
+  //   transition-duration: 0s;
+  //   // transform: translateY(-50vh);
+
+  //   // height: 100vh;
+  //   // bottom: 0 !important;
+  //   // transform: none;
+  //   // top: unset;
+
+  //   // img {
+  //   //   object-fit: contain;
+
+  //   //   object-position: bottom;
+  //   //   margin: 0 auto;
+  //   //   max-width: 52%;
+  //   // }
+  // }
 
   // .js_lvl_1,
   // .js_lvl_2,
@@ -841,12 +433,22 @@
       top: 120vh;
     }
     .lvls {
-      opacity: 0;
+      // opacity: 0;
       transform: translateY(100vh);
       transition-duration: 0s;
-      transition-delay: 2s;
-
-      animation: fadeIn 2s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 2s;
+      transition-delay: 1.5s;
+      // animation: fadeInHalf 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
+      // animation: fadeIn 2s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 2s;
+    }
+    .bg_sky {
+      opacity: 0;
+      animation: fadeInHalf 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        1.5s;
+    }
+    .lvl_1_bg {
+      opacity: 0;
+      animation: fadeInHalf 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+        1.5s;
     }
 
     .step_0_img-block,
@@ -856,8 +458,7 @@
     }
 
     .step_0_bg {
-      opacity: 1;
-      animation: fadeOut 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 3s;
+      // animation: fadeOut 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 3s;
     }
 
     .step_1,

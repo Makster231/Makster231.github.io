@@ -30,11 +30,7 @@ export default function steps() {
   //  Step
   let step = 0;
   let level = 0;
-  let firstLoad = true;
-
-  // let step = 0;
-  // let level = 0;
-  // let firstLoad = true;
+  let firstLoad = 1;
 
   //  Animation flag
   let animationProcessing = false;
@@ -170,7 +166,7 @@ export default function steps() {
       console.log("step " + step);
       console.log("level " + level);
       // если моб, то доб анимацию и паузу
-      await sleep(isMobile ? 8500 : 0);
+      // await sleep(isMobile ? 8500 : 0);
     }
 
     console.log("step " + step);
@@ -195,9 +191,10 @@ export default function steps() {
     setClassState();
 
     // Ждем для избежания прыжка конткнта после смены уровня
-    if (changeLvl) await sleep(isMobile ? 1000 : 1500);
+    // if (changeLvl) await sleep(isMobile ? 1000 : 3500);
+    if (changeLvl) await sleep(3500);
     // Ждем 1 сек для избежания прыжка конткнта на моб
-    await sleep(1500);
+    // await sleep(1500);
 
     // Завершаем Анимацию
     enableAllClikable();
@@ -208,7 +205,7 @@ export default function steps() {
     removeClass(body, `js_content_animation_hidden`);
     await sleep(2000);
 
-    if (changeLvl) await sleep(isMobile ? 1000 : 1500);
+    if (changeLvl) await sleep(1500);
     if (changeLvl) removeClass(body, `lift`);
   };
 
