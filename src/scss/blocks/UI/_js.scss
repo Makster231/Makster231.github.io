@@ -43,7 +43,7 @@
   &:not(.js_active_lvl_1) {
     &.lift {
       .aside_container {
-        animation: lift 5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+        animation: lift 4.2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
       }
 
       button {
@@ -54,7 +54,8 @@
 
   &.lift {
     .aside_container {
-      animation: liftStart 3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1s;
+      animation: liftStart 2.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+        0.5s;
     }
 
     button {
@@ -299,7 +300,6 @@
     transform: translateY(200vh);
   }
 
-  // 25% - 1 sek
   @keyframes lvl2_anim_bg {
     0% {
       transform: translateY(-800vh);
@@ -316,21 +316,10 @@
   }
 
   .lvl_all_bgs {
-    // transition-delay: 1s !important;
-    // transition-duration: 2s !important;
-    // transform: translateY(-600vh);
-    animation: lvl2_anim_bg 5s forwards linear 0s;
-
-    img {
-      &:nth-of-type(4) {
-        // transform: translateY(-50vh);
-      }
-      &:nth-of-type(5) {
-        // transition-delay: 1s !important;
-        // transition-duration: 2s !important;
-        // transform: translateY(100vh);
-      }
-    }
+    animation: lvl2_anim_bg 4s forwards linear 0s;
+    transition-delay: 4s !important;
+    transition-duration: 0s !important;
+    transform: translateY(-600vh);
   }
 }
 
@@ -341,7 +330,25 @@
     transform: translateY(300vh);
   }
 
+  @keyframes lvl3_anim_bg {
+    0% {
+      transform: translateY(-600vh);
+    }
+    20% {
+      transform: translateY(-600vh);
+    }
+    60% {
+      transform: translateY(-500vh);
+    }
+    100% {
+      transform: translateY(-400vh);
+    }
+  }
+
   .lvl_all_bgs {
+    animation: lvl3_anim_bg 4s forwards linear 0s;
+    transition-delay: 4s !important;
+    transition-duration: 0s !important;
     transform: translateY(-400vh);
   }
 }
@@ -353,8 +360,23 @@
     transform: translateY(400vh);
   }
 
+  @keyframes lvl4_anim_bg {
+    0% {
+      transform: translateY(-400vh);
+    }
+    20% {
+      transform: translateY(-400vh);
+    }
+    60% {
+      transform: translateY(-300vh);
+    }
+    100% {
+      transform: translateY(-200vh);
+    }
+  }
+
   .lvl_all_bgs {
-    transform: translateY(-200vh);
+    animation: lvl4_anim_bg 4s forwards linear 0s;
   }
 }
 
@@ -365,8 +387,23 @@
     transform: translateY(500vh);
   }
 
+  @keyframes lvl5_anim_bg {
+    0% {
+      transform: translateY(-200vh);
+    }
+    20% {
+      transform: translateY(-200vh);
+    }
+    60% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(0vh);
+    }
+  }
+
   .lvl_all_bgs {
-    transform: translateY(0vh);
+    animation: lvl5_anim_bg 4s forwards linear 0s;
   }
 }
 

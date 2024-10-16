@@ -28,9 +28,9 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 4;
-  let level = 1;
-  let firstLoad = false;
+  let step = 0;
+  let level = 0;
+  let firstLoad = true;
 
   //  Animation flag
   let animationProcessing = false;
@@ -92,14 +92,11 @@ export default function steps() {
   };
 
   const stepCalc = (dir) => {
-    console.log(1);
     if (animationProcessing) return;
-    console.log(2);
     if (level === 5 && step === 2) return;
 
     if (firstLoad) {
       changeSteps(true);
-      firstLoad = false;
       return;
     }
 
@@ -108,36 +105,29 @@ export default function steps() {
     dir === "down" ? step++ : step--;
 
     if (level === 1 && step === -1) {
-      console.log(3);
       step = 0;
       return false;
     }
 
     if (step === 0) {
-      console.log(4);
       step = 1;
       return false;
     }
 
     if (step > 4) {
-      console.log(5);
       step = 4;
       return false;
     }
 
     if (step > 2) {
-      console.log(6);
       if (!data_info.step_2_values[level - 1]) {
-        console.log(7);
         step = 2;
         return false;
       }
     }
 
     if (level !== 5 && step < 3) {
-      console.log(8);
       if (data_info.step_2_values[level - 1]) {
-        console.log(9);
         step = 3;
         return false;
       }
@@ -163,14 +153,9 @@ export default function steps() {
 
       if (isMobile) addClass(body, "js_aside_animation");
 
-      console.log("step " + step);
-      console.log("level " + level);
       // если моб, то доб анимацию и паузу
       // await sleep(isMobile ? 8500 : 0);
     }
-
-    console.log("step " + step);
-    console.log("level " + level);
 
     // Удаление Всех классов состояний
     removeAllStates();
@@ -190,11 +175,9 @@ export default function steps() {
     // задаем состояние уровня Слайда
     setClassState();
 
-    // Ждем для избежания прыжка конткнта после смены уровня
-    // if (changeLvl) await sleep(isMobile ? 1000 : 3500);
-    if (changeLvl) await sleep(4000);
-    // Ждем 1 сек для избежания прыжка конткнта на моб
-    // await sleep(1500);
+    //  Анимация
+    if (changeLvl) await sleep(firstLoad ? 2500 : 4000);
+    firstLoad = false;
 
     // Завершаем Анимацию
     enableAllClikable();
@@ -203,10 +186,11 @@ export default function steps() {
     await sleep(750);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
-    // await sleep(2000);
 
-    if (changeLvl) await sleep(500);
-    if (changeLvl) removeClass(body, `lift`);
+    if (changeLvl) {
+      await sleep(500);
+      removeClass(body, `lift`);
+    }
   };
 
   // ---------------------- BODY SCROLL ----------------------
