@@ -14,7 +14,7 @@
   }
 
   40% {
-    top: -5vh;
+    top: -15vh;
   }
 
   65% {
@@ -97,17 +97,17 @@
   .step_1 {
     transition-delay: 0.5s;
     transform: translateY(0);
-    animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
 
     .step_1_top-content {
       opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
-        1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+        1.3s;
     }
   }
 
   .step_2 {
-    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
   }
 
@@ -122,7 +122,7 @@
   .step_1 {
     .step_1_top-content {
       opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
     }
   }
@@ -137,7 +137,7 @@
 .js_active_3_2,
 .js_active_4_2 {
   .step_1 {
-    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
@@ -147,22 +147,20 @@
     transform: translateY(0);
 
     .bg_sky,
-    // .step_2_bottom-info,
     .step_2_top-content,
     .step_2_top-bg {
       opacity: 0;
     }
 
-    // .step_2_bottom-info,
     .step_2_top-content {
-      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         2.2s;
       z-index: 5;
     }
 
     .bg_sky,
     .step_2_top-bg {
-      animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
+      animation: fadeIn 0.8s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.7s;
     }
   }
   .step_3,
@@ -173,7 +171,7 @@
 
 .js_active_5_2 {
   .step_1 {
-    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
@@ -188,7 +186,7 @@
     // z-index: -1;
     transform: translateY(0);
     transition: 0s !important;
-    animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0.5s;
+    animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0.5s;
   }
 }
 
@@ -209,7 +207,7 @@
   .step_4,
   .step_2 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
   .step_3 {
@@ -218,7 +216,7 @@
 
     .step_3_top-content {
       opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
     }
   }
@@ -238,7 +236,7 @@
       visibility: hidden;
       transition-delay: 0.5s;
       animation:
-        fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s,
+        fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s,
         pulse 2s infinite;
     }
   }
@@ -250,7 +248,7 @@
 
   .step_3 {
     transition-delay: 0.5s;
-    animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
   .step_4 {
@@ -261,7 +259,7 @@
     .step_4_top-content {
       opacity: 0;
 
-      animation: fadeInTop 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
       z-index: 5;
     }
@@ -281,14 +279,8 @@
     transform: translateY(100vh);
   }
 
-  .lvl_1_bg {
-    transition-delay: 2.5s;
-    transition-duration: 1.5s;
-    transform: translateY(-50vh);
-  }
-  .js_lvl_0 {
-    // animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
-    // display: none;
+  .lvl_all_bgs {
+    transform: translateY(-650vh);
   }
 }
 
@@ -299,171 +291,45 @@
     transform: translateY(200vh);
   }
 
-  .lvl_1_bg {
-    transition-delay: 0s;
-    transition-duration: 2s;
-    transform: translateY(0);
-  }
-  
-  .lvl_2_bg {
-    transition-delay: 3s !important;
-    transition-duration: 1.5s !important;
-    transform: translateY(-50vh);
+  .lvl_all_bgs {
+    transform: translateY(-500vh);
   }
 }
 
 .js_active_lvl_3 {
   .lvls {
+    transition-delay: 1.5s !important;
+    transition-duration: 1.5s !important;
     transform: translateY(300vh);
   }
 
-  .lvl_2_bg {
-    transition-delay: 0s;
-    transition-duration: 2s;
-    transform: translateY(0);
+  .lvl_all_bgs {
+    transform: translateY(-350vh);
   }
-
-  .lvl_3_bg {
-    transition-delay: 3s !important;
-    transition-duration: 1.5s !important;
-    transform: translateY(-50vh);
-  }
-
-  // .lvl_2_bg {
-  //   transition-delay: 0s;
-  //   transition-duration: 2s;
-  //   transform: translateY(0);
-  // }
-
-  // .lvl_3_bg {
-  //   transition-delay: 1.5s;
-  //   transition-duration: 2s;
-  //   transform: translateY(-50vh);
-  // }
-
-  // .lvl_2_bg {
-  //   transition-delay: 0.5s;
-  //   transition-duration: 1.5s;
-  //   transform: translateY(0);
-  // }
-
-  // .lvl_3_bg {
-  //   transition-delay: 2s;
-  //   transition-duration: 2s;
-  //   transform: translateY(-50vh);
-  // }
-
-  // .js_lvl_1,
-  // .js_lvl_2 {
-  //   display: none;
-  // }
 }
 
 .js_active_lvl_4 {
   .lvls {
+    transition-delay: 1.5s !important;
+    transition-duration: 1.5s !important;
     transform: translateY(400vh);
   }
-  .lvl_3_bg {
-    transition-delay: 0s;
-    transition-duration: 2s;
-    transform: translateY(0);
+
+  .lvl_all_bgs {
+    transform: translateY(-200vh);
   }
-
-  .lvl_4_bg {
-    transition-delay: 3s !important;
-    transition-duration: 1.5s !important;
-    transform: translateY(-50vh);
-  }
-
-  // .lvl_3_bg {
-  //   transition-delay: 0.5s;
-  //   transition-duration: 1.5s;
-  //   transform: translateY(0);
-  // }
-
-  // .lvl_4_bg {
-  //   transition-delay: 2s;
-  //   transition-duration: 2s;
-  //   transform: translateY(-50vh);
-  // }
-
-  // .lvl_3_bg {
-  //   transition-delay: 0s;
-  //   transition-duration: 2s;
-  //   transform: translateY(0);
-  // }
-
-  // .lvl_4_bg {
-  //   transition-delay: 1.5s;
-  //   transition-duration: 2s;
-  //   transform: translateY(-50vh);
-  // }
-  // .js_lvl_1,
-  // .js_lvl_2,
-  // .js_lvl_3 {
-  //   display: none;
-  // }
 }
 
 .js_active_lvl_5 {
   .lvls {
-    transform: translateY(500vh);
+    transition-delay: 1.5s !important;
+    transition-duration: 1.5s !important;
+    transform: translateY(0vh);
   }
 
-  .lvl_4_bg {
-    transition-delay: 0s;
-    transition-duration: 2s;
-    transform: translateY(0);
+  .lvl_all_bgs {
+    transform: translateY(-50vh);
   }
-
-  // .lvl_4_bg {
-  //   transition-delay: 3s !important;
-  //   transition-duration: 1.5s !important;
-  //   transform: translateY(-50vh);
-  // }
-
-  // .lvl_4_bg {
-  //   transition-delay: 0s;
-  //   transition-duration: 2s;
-  //   transform: translateY(0);
-  // }
-
-  .lvl_5_bg {
-    transition-delay: 0s;
-    transition-duration: 0s;
-    // transform: translateY(-50vh);
-  }
-  // .lvl_4_bg {
-  //   transition-delay: 0.5s;
-  //   transition-duration: 1.5s;
-  //   transform: translateY(0);
-  // }
-
-  // .lvl_5_bg {
-  //   transition-delay: 0s;
-  //   transition-duration: 0s;
-  //   // transform: translateY(-50vh);
-
-  //   // height: 100vh;
-  //   // bottom: 0 !important;
-  //   // transform: none;
-  //   // top: unset;
-
-  //   // img {
-  //   //   object-fit: contain;
-
-  //   //   object-position: bottom;
-  //   //   margin: 0 auto;
-  //   //   max-width: 52%;
-  //   // }
-  // }
-
-  // .js_lvl_1,
-  // .js_lvl_2,
-  // .js_lvl_3,
-  // .js_lvl_4 {
-  //   display: none;
-  // }
 }
 
 .js_active_lvl_1,
@@ -482,34 +348,26 @@
       top: 120vh;
     }
     .lvls {
-      // opacity: 0;
       transform: translateY(100vh);
       transition-duration: 0s;
-      transition-delay: 1.5s;
-      // animation: fadeInHalf 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 1.5s;
-      // animation: fadeIn 2s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 2s;
+      transition-delay: 1.7s;
     }
     .bg_sky {
       opacity: 0;
-      animation: fadeInHalf 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
-        1.5s;
+      animation: fadeInHalf 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+        1s;
     }
     .lvl_1_bg {
       opacity: 0;
-      animation: fadeInHalf 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
-        1.5s;
+      animation: fadeInHalf 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+        1s;
     }
 
     .step_0_img-block,
     .step_0_bottom,
     .step_0_top {
-      animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+      animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
-
-    .step_0_bg {
-      // animation: fadeOut 1s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 3s;
-    }
-
     .step_1,
     .step_2,
     .step_3,
@@ -521,7 +379,7 @@
   &.lift {
     .step_1_wrapper {
       opacity: 0;
-      animation: fadeIn 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
+      animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
   }
 }
@@ -543,14 +401,14 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
           opacity: 0;
@@ -562,7 +420,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
       }
@@ -579,7 +437,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
+          animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
     }
@@ -593,7 +451,7 @@
         display: none;
       }
       .step_4 {
-        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
+        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
   }
@@ -632,14 +490,14 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
           opacity: 0;
@@ -651,7 +509,7 @@
         .step_3,
         .step_4 {
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
       }
@@ -665,7 +523,7 @@
           display: none;
           transition-delay: 0s !important;
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
       }
@@ -679,7 +537,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
+          animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
     }
@@ -692,7 +550,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
+        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
 
@@ -740,14 +598,14 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
           opacity: 0;
@@ -758,7 +616,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
       }
@@ -774,7 +632,7 @@
           display: none;
           transition-delay: 0s !important;
           opacity: 0;
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
       }
@@ -788,7 +646,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
+          animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
     }
@@ -802,7 +660,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
+        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
 
@@ -851,14 +709,14 @@
         }
         .step_4 {
           transform: translateY(0);
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
         .step_1,
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
           opacity: 0;
@@ -869,25 +727,9 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards
+          animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-      }
-    }
-
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4 {
-      .step_1,
-      .step_2,
-      .step_3,
-      .step_4 {
-        visibility: hidden;
-        display: none;
-        transition-delay: 0s !important;
-        opacity: 0;
-        animation: fadeOut 0.5s cubic-bezier(0.52, 1.05, 0.92, 0.92) forwards 0s;
       }
     }
   }
@@ -899,7 +741,7 @@
         .step_2,
         .step_3,
         .step_4 {
-          animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) 0s;
+          animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
     }
@@ -914,7 +756,7 @@
       .step_2,
       .step_3,
       .step_4 {
-        animation: hidden 4s cubic-bezier(0.52, 1.05, 0.92, 0.92) infinite;
+        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
 
@@ -933,6 +775,24 @@
   }
 
   &.js_active_5_1 {
+    .lvl_0,
+    .lvl_1,
+    .lvl_2,
+    .lvl_3,
+    .lvl_4 {
+      .step_0,
+      .step_1,
+      .step_2,
+      .step_3,
+      .step_4 {
+        visibility: hidden;
+        display: none;
+        transition-delay: 0s !important;
+        opacity: 0;
+        animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+      }
+    }
+
     .lvls {
       .lvl_1,
       .lvl_2,

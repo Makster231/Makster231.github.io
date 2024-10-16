@@ -6,26 +6,19 @@
     <title>Главная</title>
   </head>
 
-  <body id="body" class="js_load js_active_lvl_1 js_active_1_4 ">
+  <body id="body" class="js_load js_active_lvl_4 js_active_4_4 ">
     @@include('blocks/header.html')
 
     <div class="wrapper">
-      <div class="container">@@include('blocks/components/aside.html')</div>
+      <div class="container z-10">@@include('blocks/components/aside.html')</div>
 
-      <main>
+      <main class="z-5">
         <!-- prettier-ignore -->
         <div class="lvls js_lvls">
           <!-- lvl 5 -->
           <div class="lvl_5 js_lvl_5 ">
             @@include('blocks/components/lvls/lvl_5_1.html')
             @@include('blocks/components/lvls/lvl_5_2.html')
-
-            <div class="bg_sky"></div>
-
-            <picture class="lvl_5_bg ">
-              <source srcset="./img/bg_levels/lvl-bg-5-1.png" media="(min-width: 640px)" />
-              <img src="./img/bg_levels/lvl-bg-5-1-m.jpg" alt="image" />
-            </picture>
           </div>
           <!-- lvl 5 END -->
           <!-- lvl 4 -->
@@ -35,12 +28,6 @@
             @@include('blocks/components/lvls/lvl_4_3.html')
             @@include('blocks/components/lvls/lvl_4_4.html')
 
-            <div class="bg_sky"></div>
-
-            <picture class="lvl_4_bg ">
-              <source srcset="./img/bg_levels/lvl-bg-4-1.png" media="(min-width: 640px)" />
-              <img src="./img/bg_levels/lvl-bg-4-1-m.jpg" alt="image" />
-            </picture>
           </div>
           <!-- lvl 4 END -->
           <!-- lvl 3 -->
@@ -49,13 +36,6 @@
             @@include('blocks/components/lvls/lvl_3_2.html')
             @@include('blocks/components/lvls/lvl_3_3.html')
             @@include('blocks/components/lvls/lvl_3_4.html')
-
-            <div class="bg_sky"></div>
-
-            <picture class="lvl_3_bg ">
-              <source srcset="./img/bg_levels/lvl-bg-3-1.png" media="(min-width: 640px)" />
-              <img src="./img/bg_levels/lvl-bg-3-1-m.jpg" alt="image" />
-            </picture>
           </div>
           <!-- lvl 3 END -->
           <!-- lvl 2 -->
@@ -64,13 +44,6 @@
             @@include('blocks/components/lvls/lvl_2_2.html')
             @@include('blocks/components/lvls/lvl_2_3.html')
             @@include('blocks/components/lvls/lvl_2_4.html')
-
-            <div class="bg_sky"></div>
-
-            <picture class="lvl_2_bg ">
-              <source srcset="./img/bg_levels/lvl-bg-2-1.png" media="(min-width: 640px)" />
-              <img src="./img/bg_levels/lvl-bg-2-1-m.jpg" alt="image" />
-            </picture>
           </div>
           <!-- lvl 2 END -->
           <!-- lvl 1 -->
@@ -80,12 +53,6 @@
             @@include('blocks/components/lvls/lvl_1_3.html')
             @@include('blocks/components/lvls/lvl_1_4.html')
 
-            <div class="bg_sky"></div>
-
-            <picture class="lvl_1_bg ">
-              <source srcset="./img/bg_levels/lvl-bg-1-1.png" media="(min-width: 640px)" />
-              <img src="./img/bg_levels/lvl-bg-1-1-m.jpg" alt="image" />
-            </picture>
           </div>
           <!-- lvl 1 END -->
           <!-- lvl 1 -->
@@ -94,8 +61,20 @@
           </div>
 
 
+
           <!-- lvl 1 END -->
       </main>
+      
+          
+      <div class="bg_sky"></div>
+
+      <picture class="lvl_all_bgs ">
+        <img src="./img/bg_levels/lvl-bg-5-1.png" alt="image" />
+        <img src="./img/bg_levels/lvl-bg-4-1.png" alt="image" />
+        <img src="./img/bg_levels/lvl-bg-3-1.png" alt="image" />
+        <img src="./img/bg_levels/lvl-bg-2-1.png" alt="image" />
+        <img src="./img/bg_levels/lvl-bg-1-1.png" alt="image" />
+      </picture>
     </div>
 
     <!-- prettier-ignore -->

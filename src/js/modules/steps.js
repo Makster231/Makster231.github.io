@@ -29,7 +29,7 @@ export default function steps() {
 
   //  Step
   let step = 4;
-  let level = 1;
+  let level = 4;
   let firstLoad = 0;
 
   //  Animation flag
@@ -205,7 +205,7 @@ export default function steps() {
     removeClass(body, `js_content_animation_hidden`);
     await sleep(2000);
 
-    if (changeLvl) await sleep(1500);
+    if (changeLvl) await sleep(500);
     if (changeLvl) removeClass(body, `lift`);
   };
 
