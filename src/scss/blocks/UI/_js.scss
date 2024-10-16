@@ -10,15 +10,36 @@
 
 @keyframes lift {
   0% {
-    // top: 55vh;
+    top: 55vh;
+    opacity: 1;
   }
 
-  40% {
+  25% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
     top: -15vh;
   }
 
-  65% {
-    top: 45vh;
+  50% {
+    opacity: 0;
+    top: 120vh;
+  }
+
+  55% {
+    opacity: 1;
+    top: 120vh;
+  }
+
+  100% {
+    top: 55vh;
+  }
+}
+@keyframes liftStart {
+  0% {
+    top: 120vh;
   }
 
   100% {
@@ -30,7 +51,7 @@
   &:not(.js_active_lvl_1) {
     &.lift {
       .aside_container {
-        animation: lift 4s ease-in-out forwards 1s;
+        animation: lift 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
       }
 
       button {
@@ -41,7 +62,7 @@
 
   &.lift {
     .aside_container {
-      animation: lift 4s ease-in-out forwards;
+      animation: liftStart 2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.5s;
     }
 
     button {
@@ -275,7 +296,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-600vh);
+    transform: translateY(-550vh);
   }
 }
 
