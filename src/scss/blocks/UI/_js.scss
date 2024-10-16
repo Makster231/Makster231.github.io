@@ -93,7 +93,8 @@
 .js_active_1_1,
 .js_active_2_1,
 .js_active_3_1,
-.js_active_4_1 {
+.js_active_4_1,
+.js_active_5_1 {
   .step_1 {
     transition-delay: 0.5s;
     transform: translateY(0);
@@ -121,14 +122,8 @@
 .js_active_5_1 {
   .step_1 {
     .step_1_top-content {
-      opacity: 0;
-      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
-        1.7s;
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 5s !important;
     }
-  }
-
-  .step_2 {
-    transform: translateY(100vh);
   }
 }
 
@@ -280,7 +275,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-650vh);
+    transform: translateY(-600vh);
   }
 }
 
@@ -292,7 +287,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-500vh);
+    transform: translateY(-450vh);
   }
 }
 
@@ -304,7 +299,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-350vh);
+    transform: translateY(-300vh);
   }
 }
 
@@ -316,7 +311,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-200vh);
+    transform: translateY(-150vh);
   }
 }
 
@@ -324,11 +319,11 @@
   .lvls {
     transition-delay: 1.5s !important;
     transition-duration: 1.5s !important;
-    transform: translateY(0vh);
+    transform: translateY(500vh);
   }
 
   .lvl_all_bgs {
-    transform: translateY(-50vh);
+    transform: translateY(0vh);
   }
 }
 
@@ -663,19 +658,6 @@
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
-
-    .lvl_4 {
-      .step_1 {
-        // transition-delay: 0.5s;
-        // opacity: 0;
-        // animation-iteration-count: 1;
-        // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
-
-        .step_1_top-content {
-          // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
-        }
-      }
-    }
   }
 
   &.js_active_4_1 {
@@ -748,33 +730,6 @@
   }
 
   .lvls {
-    .lvl_1,
-    .lvl_2,
-    .lvl_3,
-    .lvl_4 {
-      .step_1,
-      .step_2,
-      .step_3,
-      .step_4 {
-        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
-      }
-    }
-
-    .lvl_5 {
-      .step_1 {
-        // transition-delay: 0.5s;
-        // opacity: 0;
-        // animation-iteration-count: 1;
-        // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
-
-        .step_1_top-content {
-          // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
-        }
-      }
-    }
-  }
-
-  &.js_active_5_1 {
     .lvl_0,
     .lvl_1,
     .lvl_2,
@@ -785,19 +740,14 @@
       .step_2,
       .step_3,
       .step_4 {
-        visibility: hidden;
-        display: none;
-        transition-delay: 0s !important;
-        opacity: 0;
-        animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+        animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
+  }
 
+  &.js_active_5_1 {
     .lvls {
-      .lvl_1,
-      .lvl_2,
-      .lvl_3,
-      .lvl_4 {
+      .lvl_5 {
         .step_1 {
           opacity: 0;
         }
