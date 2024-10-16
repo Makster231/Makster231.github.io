@@ -5,7 +5,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  transform: translateY(-600vh);
+  transform: translateY(-800vh);
   transition-delay: 1s;
   transition-duration: 3s;
   transition-timing-function: cubic-bezier(0.25, 0.37, 0.67, 0.94);
@@ -13,7 +13,9 @@
   img {
     width: 100%;
     object-fit: cover;
-    height: 150vh;
+    height: 200vh;
+    transition-duration: 1.5s;
+    transition-timing-function: linear;
 
     &:nth-of-type(3) {
       margin-left: 1.5%;
@@ -26,9 +28,12 @@
       margin-left: -25%;
       height: 100vh;
     }
+
+    &:nth-of-type(5) {
+      transform: translateY(0);
+    }
   }
 }
-
 .bg_sky {
   @media screen and (min-width: 640px) {
     position: fixed;

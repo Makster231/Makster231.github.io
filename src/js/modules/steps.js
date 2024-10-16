@@ -28,9 +28,9 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
-  let level = 0;
-  let firstLoad = 1;
+  let step = 4;
+  let level = 1;
+  let firstLoad = false;
 
   //  Animation flag
   let animationProcessing = false;
@@ -192,7 +192,7 @@ export default function steps() {
 
     // Ждем для избежания прыжка конткнта после смены уровня
     // if (changeLvl) await sleep(isMobile ? 1000 : 3500);
-    if (changeLvl) await sleep(3500);
+    if (changeLvl) await sleep(4000);
     // Ждем 1 сек для избежания прыжка конткнта на моб
     // await sleep(1500);
 
@@ -200,10 +200,10 @@ export default function steps() {
     enableAllClikable();
     animationProcessing = false;
     removeClass(body, "js_aside_animation");
-    await sleep(1000);
+    await sleep(750);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
-    await sleep(2000);
+    // await sleep(2000);
 
     if (changeLvl) await sleep(500);
     if (changeLvl) removeClass(body, `lift`);

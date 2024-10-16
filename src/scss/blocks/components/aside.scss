@@ -47,11 +47,11 @@
     position: absolute;
     z-index: 5;
     left: 0;
+    top: 0;
     width: 65px;
     height: 181px;
 
-    top: 120vh;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 120vh);
 
     @media screen and (max-width: 640px) {
       left: 50%;

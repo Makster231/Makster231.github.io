@@ -8,42 +8,34 @@
 
 // // ================= LIFT ANIMATION =================
 
+// 10% - 0.5 sek
 @keyframes lift {
   0% {
-    top: 55vh;
-    opacity: 1;
+    transform: translate(-50%, 50vh);
   }
 
-  25% {
-    opacity: 1;
+  10% {
+    transform: translate(-50%, 50vh);
   }
 
   30% {
-    opacity: 0;
-    top: -15vh;
+    transform: translate(-50%, 10vh);
   }
-
-  50% {
-    opacity: 0;
-    top: 120vh;
-  }
-
-  55% {
-    opacity: 1;
-    top: 120vh;
+  75% {
+    transform: translate(-50%, 10vh);
   }
 
   100% {
-    top: 55vh;
+    transform: translate(-50%, 50vh);
   }
 }
 @keyframes liftStart {
   0% {
-    top: 120vh;
+    transform: translate(-50%, 120vh);
   }
 
   100% {
-    top: 55vh;
+    transform: translate(-50%, 50vh);
   }
 }
 
@@ -51,7 +43,7 @@
   &:not(.js_active_lvl_1) {
     &.lift {
       .aside_container {
-        animation: lift 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+        animation: lift 5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
       }
 
       button {
@@ -62,7 +54,7 @@
 
   &.lift {
     .aside_container {
-      animation: liftStart 2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.5s;
+      animation: liftStart 3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1s;
     }
 
     button {
@@ -285,7 +277,7 @@
 .js_active_lvl_1 {
   &:not(.js_change_lvl) {
     .aside_container {
-      top: 55vh !important;
+      transform: translate(-50%, 50vh) !important;
       z-index: 99;
     }
   }
@@ -296,7 +288,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-550vh);
+    transform: translateY(-800vh);
   }
 }
 
@@ -307,8 +299,38 @@
     transform: translateY(200vh);
   }
 
+  // 25% - 1 sek
+  @keyframes lvl2_anim_bg {
+    0% {
+      transform: translateY(-800vh);
+    }
+    20% {
+      transform: translateY(-800vh);
+    }
+    60% {
+      transform: translateY(-700vh);
+    }
+    100% {
+      transform: translateY(-600vh);
+    }
+  }
+
   .lvl_all_bgs {
-    transform: translateY(-450vh);
+    // transition-delay: 1s !important;
+    // transition-duration: 2s !important;
+    // transform: translateY(-600vh);
+    animation: lvl2_anim_bg 5s forwards linear 0s;
+
+    img {
+      &:nth-of-type(4) {
+        // transform: translateY(-50vh);
+      }
+      &:nth-of-type(5) {
+        // transition-delay: 1s !important;
+        // transition-duration: 2s !important;
+        // transform: translateY(100vh);
+      }
+    }
   }
 }
 
@@ -320,7 +342,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-300vh);
+    transform: translateY(-400vh);
   }
 }
 
@@ -332,7 +354,7 @@
   }
 
   .lvl_all_bgs {
-    transform: translateY(-150vh);
+    transform: translateY(-200vh);
   }
 }
 
@@ -354,14 +376,14 @@
 .js_active_lvl_4,
 .js_active_lvl_5 {
   .aside_container {
-    top: 55vh;
+    transform: translate(-50%, 50vh);
   }
 }
 // 1111111111111111111111111111111111111111111111111111111111
 .js_active_lvl_1 {
   &.js_change_lvl {
     .aside_container {
-      top: 120vh;
+      transform: translate(-50%, 120vh);
     }
     .lvls {
       transform: translateY(100vh);
@@ -370,8 +392,7 @@
     }
     .bg_sky {
       opacity: 0;
-      animation: fadeInHalf 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
-        1s;
+      animation: fadeInHalf 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards;
     }
     .lvl_1_bg {
       opacity: 0;
@@ -379,6 +400,7 @@
         1s;
     }
 
+    .step_0_bg,
     .step_0_img-block,
     .step_0_bottom,
     .step_0_top {
