@@ -180,7 +180,7 @@ export default function steps() {
     if (changeLvl) {
       await sleep(firstLoad ? 2500 : 4000);
       if (isMobile) {
-        await sleep(firstLoad ? 3500 : 2500);
+        await sleep(firstLoad ? 3500 : 3000);
       }
     }
 
