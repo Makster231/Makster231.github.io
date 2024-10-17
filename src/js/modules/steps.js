@@ -30,7 +30,7 @@ export default function steps() {
   //  Step
   let step = 0;
   let level = 0;
-  let firstLoad = true;
+  let firstLoad = 1;
 
   //  Animation flag
   let animationProcessing = false;
@@ -133,7 +133,6 @@ export default function steps() {
       }
     }
 
-    console.log(10);
     return true;
   };
 
@@ -151,7 +150,9 @@ export default function steps() {
       step = 1;
       firstLoad ? (level = 1) : level++;
 
-      if (isMobile) addClass(body, "js_aside_animation");
+      if (isMobile) {
+        addClass(body, "js_aside_animation");
+      }
 
       // если моб, то доб анимацию и паузу
       // await sleep(isMobile ? 8500 : 0);
@@ -176,7 +177,13 @@ export default function steps() {
     setClassState();
 
     //  Анимация
-    if (changeLvl) await sleep(firstLoad ? 2500 : 4000);
+    if (changeLvl) {
+      await sleep(firstLoad ? 2500 : 4000);
+      if (isMobile) {
+        await sleep(firstLoad ? 3500 : 2500);
+      }
+    }
+
     firstLoad = false;
 
     // Завершаем Анимацию
@@ -187,7 +194,7 @@ export default function steps() {
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
 
-    if (changeLvl) {
+    if (changeLvl & !isMobile) {
       await sleep(500);
       removeClass(body, `lift`);
     }
