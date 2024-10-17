@@ -190,7 +190,7 @@ export default function steps() {
     enableAllClikable();
     animationProcessing = false;
     removeClass(body, "js_aside_animation");
-    await sleep(750);
+    await sleep(500);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
 
