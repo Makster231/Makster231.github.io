@@ -173,7 +173,7 @@ export default function steps() {
 
     // задаем состояние уровня Слайда
     setClassState();
-    
+
     await sleep(1000);
     enableAllClikable();
 
@@ -181,7 +181,7 @@ export default function steps() {
     if (changeLvl) {
       await sleep(firstLoad ? 1500 : 3000);
       if (isMobile) {
-        await sleep(firstLoad ? 3000 : 2500);
+        await sleep(firstLoad ? 4000 : 3000);
       }
     }
 
