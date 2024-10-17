@@ -17,6 +17,10 @@
     transition-duration: 1.5s;
     transition-timing-function: linear;
 
+    @media screen and (max-width: 1181px) {
+      object-fit: unset;
+    }
+
     &:nth-of-type(3) {
       margin-left: 1.5%;
     }

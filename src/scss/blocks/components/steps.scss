@@ -430,21 +430,31 @@
 
               &:nth-of-type(1),
               &:nth-of-type(3) {
-                @include setProp(margin-left, 10vh, 10dvh, 10svh);
+                margin-left: 2%;
+                // @include setProp(margin-left, 10vh, 10dvh, 10svh);
               }
             }
             .icon-svg {
+              @media screen and (max-width: 640px) {
+                @include setProp(width, 50vh, 50dvh, 50svh);
+                @include setProp(height, 50vh, 50dvh, 50svh);
+                @include setProp(margin-bottom, 8vh, 8dvh, 8svh);
+                display: block;
+              }
               svg {
                 @media screen and (max-width: 640px) {
-                  @include setProp(width, 50vh, 50dvh, 50svh);
-                  @include setProp(height, 50vh, 50dvh, 50svh);
-                  @include setProp(margin-bottom, 8vh, 8dvh, 8svh);
+                  width: 100%;
+                  height: 100%;
                 }
               }
             }
             p {
               @media screen and (max-width: 640px) {
                 text-align: center;
+
+                br {
+                  display: none;
+                }
               }
             }
           }
@@ -710,6 +720,5 @@
     &.step_4 {
       z-index: 1;
     }
-
   }
 }

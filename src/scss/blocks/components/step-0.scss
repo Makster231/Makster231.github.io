@@ -9,6 +9,10 @@
             margin-bottom: 50px;
           }
         }
+        &-logo {
+          opacity: 0;
+          animation: fadeInTop 0.5s linear forwards 0.5s;
+        }
 
         &-picture {
           animation: show_f_b 0.5s linear forwards 0.5s;

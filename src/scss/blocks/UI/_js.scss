@@ -11,11 +11,11 @@
 // 10% - 0.5 sek
 @keyframes lift {
   0% {
-    transform: translate(-50%, 50vh);
+    transform: translate(-50%, 45vh);
   }
 
   10% {
-    transform: translate(-50%, 50vh);
+    transform: translate(-50%, 45vh);
   }
 
   30% {
@@ -26,7 +26,7 @@
   }
 
   100% {
-    transform: translate(-50%, 50vh);
+    transform: translate(-50%, 45vh);
   }
 }
 @keyframes liftStart {
@@ -35,7 +35,7 @@
   }
 
   100% {
-    transform: translate(-50%, 50vh);
+    transform: translate(-50%, 45vh);
   }
 }
 
@@ -117,7 +117,7 @@
     .step_1_top-content {
       opacity: 0;
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
-        1.3s;
+        1.7s;
     }
   }
 
@@ -278,7 +278,7 @@
 .js_active_lvl_1 {
   &:not(.js_change_lvl) {
     .aside_container {
-      transform: translate(-50%, 50vh) !important;
+      transform: translate(-50%, 45vh) !important;
       z-index: 99;
     }
   }
@@ -413,7 +413,7 @@
 .js_active_lvl_4,
 .js_active_lvl_5 {
   .aside_container {
-    transform: translate(-50%, 50vh);
+    transform: translate(-50%, 45vh);
   }
 }
 // 1111111111111111111111111111111111111111111111111111111111

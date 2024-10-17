@@ -42,6 +42,7 @@
         }
         &-left {
           max-width: 70%;
+          width: 100%;
           @media screen and (min-width: 960px) {
             max-width: 45%;
             margin-right: 5%;
@@ -59,8 +60,9 @@
             border-radius: 24px;
             overflow: hidden;
             position: relative;
-            aspect-ratio: 16 / 9;
+            // aspect-ratio: 16 / 9;
             margin-bottom: 3%;
+            @include setProp(height, 180vh, 180dvh, 180svh);
 
             @media screen and (min-width: 960px) {
               margin-bottom: unset;
