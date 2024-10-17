@@ -348,8 +348,13 @@
 
     #arrowAnim {
       animation:
-        visible 0.5s linear forwards 0s,
-        hidden 0.3s linear forwards 4s;
+        visible 1s linear forwards 0s,
+        hidden 0.1s linear forwards 4s;
+
+      transition-delay: 4s;
+      transition-duration: 0.4s;
+      opacity: 0;
+      visibility: hidden;
     }
   }
 
