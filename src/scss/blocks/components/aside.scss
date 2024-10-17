@@ -68,24 +68,23 @@
       opacity: 1;
       visibility: visible;
       top: 0;
-      // @keyframes sprite {
-      //   from {
-      //     background-position-x: 4000px;
-      //   }
-      //   to {
-      //     background-position-x: 0px;
-      //   }
-      // }
+      @keyframes sprite {
+        from {
+          background-position-x: 0;
+        }
+        to {
+          background-position-x: -4000px;
+        }
+      }
       // &:after {
       //   content: "";
       //   position: absolute;
-      //   top: -36px;
+      //   top: 10px;
       //   width: 20px;
       //   left: 45%;
-      //   height: 120px;
+      //   height: 30px;
       //   background: url(../img/lift/lift-arr-anim.png);
-      //   transform: rotate(90deg);
-      //   animation: sprite 10s infinite;
+      //   animation: sprite 40s infinite;
       // }
     }
   }
@@ -259,6 +258,9 @@
     }
     &_picture {
       img {
+        display: block;
+        opacity: 1;
+        visibility: visible;
         &:nth-of-type(1) {
           animation:
             blinker 0.5s linear infinite,
@@ -287,6 +289,10 @@
           animation:
             hidden 0.5s linear infinite,
             show 0.3s linear forwards 4.9s;
+          transition-delay: 5s;
+          display: block;
+          opacity: 1;
+          visibility: visible;
         }
       }
     }
@@ -442,6 +448,7 @@
     visibility: hidden;
   }
 }
+
 @keyframes blinker {
   from {
     opacity: 1;
