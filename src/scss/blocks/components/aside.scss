@@ -58,6 +58,8 @@
     height: 181px;
 
     transform: translate(-50%, 120vh);
+    transform: translate(-50%, 120dvh);
+    transform: translate(-50%, 120svh);
 
     @media screen and (max-width: 640px) {
       height: 415px;
@@ -177,6 +179,8 @@
       height: 400dvh;
       height: 400svh;
       transform: translateY(-300vh);
+      transform: translateY(-300dvh);
+      transform: translateY(-300svh);
       img {
         width: 100%;
         height: 100%;

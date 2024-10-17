@@ -12,30 +12,44 @@
 @keyframes lift {
   0% {
     transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
   }
 
   10% {
     transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
   }
 
   30% {
     transform: translate(-50%, 10vh);
+    transform: translate(-50%, 10dvh);
+    transform: translate(-50%, 10svh);
   }
   75% {
     transform: translate(-50%, 10vh);
+    transform: translate(-50%, 10dvh);
+    transform: translate(-50%, 10svh);
   }
 
   100% {
     transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
   }
 }
 @keyframes liftStart {
   0% {
     transform: translate(-50%, 120vh);
+    transform: translate(-50%, 120dvh);
+    transform: translate(-50%, 120svh);
   }
 
   100% {
     transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
   }
 }
 
@@ -135,6 +149,8 @@
   .step_3,
   .step_4 {
     transform: translateY(100vh);
+    transform: translateY(100dvh);
+    transform: translateY(100svh);
   }
 }
 
@@ -155,6 +171,8 @@
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
+    transform: translateY(-100dvh);
+    transform: translateY(-100svh);
   }
   .step_2 {
     transition-delay: 0.5s;
@@ -180,6 +198,8 @@
   .step_3,
   .step_4 {
     transform: translateY(100vh);
+    transform: translateY(100dvh);
+    transform: translateY(100svh);
   }
 }
 
@@ -189,6 +209,8 @@
     transition-delay: 0.5s;
 
     transform: translateY(-100vh);
+    transform: translateY(-100dvh);
+    transform: translateY(-100svh);
   }
   .aside {
     opacity: 0;
@@ -216,6 +238,8 @@
   .step_1,
   .step_2 {
     transform: translateY(-100vh);
+    transform: translateY(-100dvh);
+    transform: translateY(-100svh);
   }
 
   .step_4,
@@ -237,6 +261,8 @@
 
   .step_4 {
     transform: translateY(100vh);
+    transform: translateY(100dvh);
+    transform: translateY(100svh);
   }
 }
 
@@ -258,6 +284,8 @@
   .step_2,
   .step_3 {
     transform: translateY(-100vh);
+    transform: translateY(-100dvh);
+    transform: translateY(-100svh);
   }
 
   .step_3 {
@@ -284,10 +312,14 @@
   &:not(.js_change_lvl) {
     .aside_container {
       transform: translate(-50%, 45vh) !important;
+      transform: translate(-50%, 45dvh) !important;
+      transform: translate(-50%, 45svh) !important;
       z-index: 99;
 
       @media screen and (max-width: 640px) {
         transform: translate(-50%, 30vh) !important;
+        transform: translate(-50%, 30dvh) !important;
+        transform: translate(-50%, 30svh) !important;
       }
     }
   }
@@ -295,10 +327,14 @@
     transition-delay: 0s;
     transition-duration: 0s;
     transform: translateY(100vh);
+    transform: translateY(100dvh);
+    transform: translateY(100svh);
   }
 
   .lvl_all_bgs {
     transform: translateY(-800vh);
+    transform: translateY(-800dvh);
+    transform: translateY(-800svh);
   }
 }
 
@@ -307,20 +343,30 @@
     transition-delay: 1.5s !important;
     transition-duration: 1.5s !important;
     transform: translateY(200vh);
+    transform: translateY(200dvh);
+    transform: translateY(200svh);
   }
 
   @keyframes lvl2_anim_bg {
     0% {
       transform: translateY(-800vh);
+      transform: translateY(-800dvh);
+      transform: translateY(-800svh);
     }
     20% {
       transform: translateY(-800vh);
+      transform: translateY(-800dvh);
+      transform: translateY(-800svh);
     }
     60% {
       transform: translateY(-700vh);
+      transform: translateY(-700dvh);
+      transform: translateY(-700svh);
     }
     100% {
       transform: translateY(-600vh);
+      transform: translateY(-600dvh);
+      transform: translateY(-600svh);
     }
   }
 
@@ -329,6 +375,8 @@
     transition-delay: 4s !important;
     transition-duration: 0s !important;
     transform: translateY(-600vh);
+    transform: translateY(-600dvh);
+    transform: translateY(-600svh);
   }
 }
 
@@ -337,20 +385,30 @@
     transition-delay: 1.5s !important;
     transition-duration: 1.5s !important;
     transform: translateY(300vh);
+    transform: translateY(300dvh);
+    transform: translateY(300svh);
   }
 
   @keyframes lvl3_anim_bg {
     0% {
       transform: translateY(-600vh);
+      transform: translateY(-600dvh);
+      transform: translateY(-600svh);
     }
     20% {
       transform: translateY(-600vh);
+      transform: translateY(-600dvh);
+      transform: translateY(-600svh);
     }
     60% {
       transform: translateY(-500vh);
+      transform: translateY(-500dvh);
+      transform: translateY(-500svh);
     }
     100% {
       transform: translateY(-400vh);
+      transform: translateY(-400dvh);
+      transform: translateY(-400svh);
     }
   }
 
@@ -359,6 +417,8 @@
     transition-delay: 4s !important;
     transition-duration: 0s !important;
     transform: translateY(-400vh);
+    transform: translateY(-400dvh);
+    transform: translateY(-400svh);
   }
 }
 
@@ -367,20 +427,30 @@
     transition-delay: 1.5s !important;
     transition-duration: 1.5s !important;
     transform: translateY(400vh);
+    transform: translateY(400dvh);
+    transform: translateY(400svh);
   }
 
   @keyframes lvl4_anim_bg {
     0% {
       transform: translateY(-400vh);
+      transform: translateY(-400dvh);
+      transform: translateY(-400svh);
     }
     20% {
       transform: translateY(-400vh);
+      transform: translateY(-400dvh);
+      transform: translateY(-400svh);
     }
     60% {
       transform: translateY(-300vh);
+      transform: translateY(-300dvh);
+      transform: translateY(-300svh);
     }
     100% {
       transform: translateY(-200vh);
+      transform: translateY(-200dvh);
+      transform: translateY(-200svh);
     }
   }
 
@@ -394,17 +464,25 @@
     transition-delay: 1.5s !important;
     transition-duration: 1.5s !important;
     transform: translateY(500vh);
+    transform: translateY(500dvh);
+    transform: translateY(500svh);
   }
 
   @keyframes lvl5_anim_bg {
     0% {
       transform: translateY(-200vh);
+      transform: translateY(-200dvh);
+      transform: translateY(-200svh);
     }
     20% {
       transform: translateY(-200vh);
+      transform: translateY(-200dvh);
+      transform: translateY(-200svh);
     }
     60% {
       transform: translateY(-100vh);
+      transform: translateY(-100dvh);
+      transform: translateY(-100svh);
     }
     100% {
       transform: translateY(0vh);
@@ -423,6 +501,8 @@
 .js_active_lvl_5 {
   .aside_container {
     transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
   }
 }
 // 1111111111111111111111111111111111111111111111111111111111
@@ -430,13 +510,19 @@
   &.js_change_lvl {
     .aside_container {
       transform: translate(-50%, 120vh);
+      transform: translate(-50%, 120dvh);
+      transform: translate(-50%, 120svh);
 
       @media screen and (max-width: 640px) {
         transform: translate(-50%, 30vh) !important;
+        transform: translate(-50%, 30dvh) !important;
+        transform: translate(-50%, 30svh) !important;
       }
     }
     .lvls {
       transform: translateY(100vh);
+      transform: translateY(100dvh);
+      transform: translateY(100svh);
       transition-duration: 0s;
       transition-delay: 1.7s;
     }
@@ -476,6 +562,8 @@
   .aside_container {
     @media screen and (max-width: 640px) {
       transform: translate(-50%, 30vh) !important;
+      transform: translate(-50%, 30dvh) !important;
+      transform: translate(-50%, 30svh) !important;
     }
   }
 
@@ -492,6 +580,8 @@
         .step_2,
         .step_3 {
           transform: translateY(-100vh);
+          transform: translateY(-100dvh);
+          transform: translateY(-100svh);
         }
         .step_4 {
           transform: translateY(0);
@@ -571,6 +661,8 @@
   .aside_container {
     @media screen and (max-width: 640px) {
       transform: translate(-50%, 30vh) !important;
+      transform: translate(-50%, 30dvh) !important;
+      transform: translate(-50%, 30svh) !important;
     }
   }
   &.js_change_lvl {
@@ -586,6 +678,8 @@
         .step_2,
         .step_3 {
           transform: translateY(-100vh);
+          transform: translateY(-100dvh);
+          transform: translateY(-100svh);
         }
         .step_4 {
           transform: translateY(0);
@@ -683,6 +777,8 @@
   .aside_container {
     @media screen and (max-width: 640px) {
       transform: translate(-50%, 30vh) !important;
+      transform: translate(-50%, 30dvh) !important;
+      transform: translate(-50%, 30svh) !important;
     }
   }
   &.js_change_lvl {
@@ -699,6 +795,8 @@
         .step_2,
         .step_3 {
           transform: translateY(-100vh);
+          transform: translateY(-100dvh);
+          transform: translateY(-100svh);
         }
         .step_4 {
           transform: translateY(0);
@@ -785,6 +883,8 @@
   .aside_container {
     @media screen and (max-width: 640px) {
       transform: translate(-50%, 30vh) !important;
+      transform: translate(-50%, 30dvh) !important;
+      transform: translate(-50%, 30svh) !important;
     }
   }
   &.js_change_lvl {
@@ -802,6 +902,8 @@
         .step_2,
         .step_3 {
           transform: translateY(-100vh);
+          transform: translateY(-100dvh);
+          transform: translateY(-100svh);
         }
         .step_4 {
           transform: translateY(0);
