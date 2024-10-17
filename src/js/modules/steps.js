@@ -313,76 +313,76 @@ export default function steps() {
   });
 
   // Свайп на мобильных устройствах
-  // if (isTouchEnabled()) {
-  //   let touchstartX = 0;
-  //   let touchstartY = 0;
-  //   let touchendX = 0;
-  //   let touchendY = 0;
+  if (isTouchEnabled()) {
+    let touchstartX = 0;
+    let touchstartY = 0;
+    let touchendX = 0;
+    let touchendY = 0;
 
-  //   // Узнаем направление свайпа
-  //   const handleGesture = function (
-  //     touchstartX,
-  //     touchstartY,
-  //     touchendX,
-  //     touchendY
-  //   ) {
-  //     const delx = touchendX - touchstartX;
-  //     const dely = touchendY - touchstartY;
+    // Узнаем направление свайпа
+    const handleGesture = function (
+      touchstartX,
+      touchstartY,
+      touchendX,
+      touchendY
+    ) {
+      const delx = touchendX - touchstartX;
+      const dely = touchendY - touchstartY;
 
-  //     if (Math.abs(delx) > Math.abs(dely)) {
-  //       if (delx > 0) {
-  //         return "right";
-  //       } else {
-  //         return "left";
-  //       }
-  //     } else if (Math.abs(delx) < Math.abs(dely)) {
-  //       if (dely > 0) {
-  //         return "down";
-  //       } else {
-  //         return "up";
-  //       }
-  //     } else {
-  //       return "tap";
-  //     }
-  //   };
+      if (Math.abs(delx) > Math.abs(dely)) {
+        if (delx > 0) {
+          return "right";
+        } else {
+          return "left";
+        }
+      } else if (Math.abs(delx) < Math.abs(dely)) {
+        if (dely > 0) {
+          return "down";
+        } else {
+          return "up";
+        }
+      } else {
+        return "tap";
+      }
+    };
 
-  //   // Узнаем начальные точки свайпа
-  //   body.addEventListener(
-  //     "touchstart",
-  //     function (event) {
-  //       touchstartX = event.changedTouches[0].screenX;
-  //       touchstartY = event.changedTouches[0].screenY;
-  //     },
-  //     false
-  //   );
+    // Узнаем начальные точки свайпа
+    body.addEventListener(
+      "touchstart",
+      function (event) {
+        touchstartX = event.changedTouches[0].screenX;
+        touchstartY = event.changedTouches[0].screenY;
+      },
+      false
+    );
 
-  //   // Узнаем конечные точки свайпа
-  //   body.addEventListener(
-  //     "touchend",
-  //     function (event) {
-  //       touchendX = event.changedTouches[0].screenX;
-  //       touchendY = event.changedTouches[0].screenY;
-  //       let reverseDir = "";
+    // Узнаем конечные точки свайпа
+    body.addEventListener(
+      "touchend",
+      function (event) {
+        touchendX = event.changedTouches[0].screenX;
+        touchendY = event.changedTouches[0].screenY;
+        let reverseDir = "";
 
-  //       const direction = handleGesture(
-  //         touchstartX,
-  //         touchstartY,
-  //         touchendX,
-  //         touchendY
-  //       );
+        const direction = handleGesture(
+          touchstartX,
+          touchstartY,
+          touchendX,
+          touchendY
+        );
 
-  //       if (direction === "tap") return;
-  //       if (direction === "up") reverseDir = "down";
-  //       if (direction === "down") reverseDir = "up";
+        if (direction === "tap") return;
+        if (direction === "up") reverseDir = "down";
+        if (direction === "down") reverseDir = "up";
 
-  //       // Подсчёт Шага
-  //       let flag = !stepCalc(reverseDir);
-  //       if (flag) return;
+        // Подсчёт Шага
+        let flag = !stepCalc(reverseDir);
+        if (flag) return;
 
-  //       // Определение Слайда
-  //       changeSteps();
-  //     },
-  //     false
-  //   );
-  // }
+        // Определение Слайда
+        changeSteps();
+      },
+      false
+    );
+  }
 }

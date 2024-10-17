@@ -83,12 +83,12 @@ gulp.task("sass:dev", function () {
         )
       )
 
-      // .pipe(
-      //   autoprefixer({
-      //     browsers: ["last 200 version", "> 1%", "not dead"],
-      //     cascade: false,
-      //   })
-      // )
+      .pipe(
+        autoprefixer({
+          browsers: ["last 200 version", "> 1%", "not dead"],
+          cascade: false,
+        })
+      )
       .pipe(sourceMaps.write())
       .pipe(gulp.dest("./build/css/"))
   );
