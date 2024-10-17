@@ -73,8 +73,6 @@ export default function steps() {
         "js_active_2_3",
         "js_active_2_4",
 
-        // "lift",
-
         "js_active_3_1",
         "js_active_3_2",
         "js_active_3_3",
@@ -175,19 +173,21 @@ export default function steps() {
 
     // задаем состояние уровня Слайда
     setClassState();
+    
+    await sleep(1000);
+    enableAllClikable();
 
     //  Анимация
     if (changeLvl) {
-      await sleep(firstLoad ? 2500 : 4000);
+      await sleep(firstLoad ? 1500 : 3000);
       if (isMobile) {
-        await sleep(firstLoad ? 3500 : 3000);
+        await sleep(firstLoad ? 3000 : 2500);
       }
     }
 
     firstLoad = false;
-
-    // Завершаем Анимацию
     enableAllClikable();
+    // Завершаем Анимацию
     animationProcessing = false;
     removeClass(body, "js_aside_animation");
     await sleep(isMobile ? 0 : 750);
