@@ -6,7 +6,7 @@
     <title>Главная</title>
   </head>
 
-  <body id="body" class="js_load js_active_lvl_0 js_active_0_0">
+  <body id="body" class="js_load js_active_lvl_5 js_active_5_2">
     @@include('blocks/header.html')
 
     <div class="wrapper">
@@ -68,25 +68,34 @@
           
       <div class="bg_sky"></div>
 
-      <picture class="lvl_all_bgs mob-hide">
-        <img src="./img/bg_levels/lvl-bg-5-1.png" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-4-1.png" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-3-1.png" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-2-1.png" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-1-1.png" loading="lazy" decoding="async" alt="image" />
-      </picture>
-
-      <picture class="lvl_all_bgs mob-show">
-        <img src="./img/bg_levels/lvl-bg-5-1-m.jpg" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-4-1-m.jpg" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-3-1-m.jpg" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-2-1-m.jpg" loading="lazy" decoding="async" alt="image" />
-        <img src="./img/bg_levels/lvl-bg-1-1-m.jpg" loading="lazy" decoding="async" alt="image" />
-      </picture>
+      <div class="lvl_all_bgs">
+        <picture>
+          <source srcset="./img/bg_levels/lvl-bg-5-1.png" media="(min-width: 640px)" />
+          <img src="./img/bg_levels/lvl-bg-5-1-m.jpg" alt="image" />
+        </picture>
+        <picture>
+          <source srcset="./img/bg_levels/lvl-bg-4-1.png" media="(min-width: 640px)" />
+          <img src="./img/bg_levels/lvl-bg-4-1-m.jpg" alt="image" />
+        </picture>
+        <picture>
+          <source srcset="./img/bg_levels/lvl-bg-3-1.png" media="(min-width: 640px)" />
+          <img src="./img/bg_levels/lvl-bg-3-1-m.jpg" alt="image" />
+        </picture>
+        <picture>
+          <source srcset="./img/bg_levels/lvl-bg-2-1.png" media="(min-width: 640px)" />
+          <img src="./img/bg_levels/lvl-bg-2-1-m.jpg" alt="image" />
+        </picture>
+        <picture>
+          <source srcset="./img/bg_levels/lvl-bg-1-1.png" media="(min-width: 640px)" />
+          <img src="./img/bg_levels/lvl-bg-1-1-m.jpg" loading="lazy" decoding="async"  alt="image" />
+        </picture>
+      </div>
+     
     </div>
 
     <!-- prettier-ignore -->
     @@include('blocks/footer.html')
+    @@include('blocks/request.html')
     @@include('blocks/_links.html')
   </body>
 </html>

@@ -5,6 +5,8 @@ import LazyLoad from "./modules/lazyLoad.js";
 import Modal from "./modules/modal";
 import steps from "./modules/steps";
 import finalSteps from "./modules/finalSteps";
+import inputMasks from "./modules/input-masks.js";
+import requestForm from "./modules/requestForm.js";
 
 window.addEventListener("load", function () {
   // Переменные
@@ -13,6 +15,8 @@ window.addEventListener("load", function () {
 
   steps();
   finalSteps();
+  inputMasks();
+  requestForm();
 
   var plyr_options = {
     // autoplay: true,
