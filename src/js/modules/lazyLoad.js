@@ -1,55 +1,58 @@
-// export default class LazyLoad {
-//   constructor(select, config = {}) {
-//     this.images = select;
-//     this.options = config;
-
-//     this.images.forEach((img) => this.lazyLoadIframe(img));
-//   }
-
-//   lazyLoadIframe = (img) => {
-//     // console.log(this.options);
-
-//     const observer = new IntersectionObserver((items) => {
-//       items.forEach(({ isIntersecting }) => {
-//         if (isIntersecting) {
-//           img.src = img.dataset.src;
-
-//           observer.unobserve(img);
-//         }
-//       });
-//     }, this.options);
-
-//     observer.observe(img);
-//   };
-// }
-
 const lazyLoad = () => {
-  var lazyImages = [].slice.call(document.querySelectorAll(".lazy > source"));
+  let lazySources = [].slice.call(document.querySelectorAll(".lazy > source"));
+  let lazyImg = [].slice.call(document.querySelectorAll(".lazy-img img"));
 
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function (
+    // PICTURES WITH SOURCES
+    let lazySourceObserver = new IntersectionObserver(function (
+      entries,
+      observer
+    ) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          let lazySource = entry.target;
+          lazySource.srcset = lazySource.dataset.srcset;
+          lazySource.nextElementSibling.srcset = lazySource.dataset.srcset;
+          lazySource.nextElementSibling.classList.add("fade-in");
+          lazySource.parentElement.classList.remove("lazy");
+          lazySourceObserver.unobserve(lazySource);
+        }
+      });
+    });
+
+    lazySources.forEach(function (lazySource) {
+      lazySourceObserver.observe(lazySource);
+    });
+
+    // PICTURES WITHOUT SOURCES
+
+    let lazyImgObserver = new IntersectionObserver(function (
       entries,
       observer
     ) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.nextElementSibling.srcset = lazyImage.dataset.srcset;
-          lazyImage.nextElementSibling.classList.add("fade-in");
-          lazyImage.parentElement.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
+
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.parentElement.classList.remove("lazy-img");
+
+          lazyImgObserver.unobserve(lazyImage);
         }
       });
     });
 
-    lazyImages.forEach(function (lazyImage) {
-      lazyImageObserver.observe(lazyImage);
+    lazyImg.forEach(function (lazyImage) {
+      lazyImgObserver.observe(lazyImage);
     });
   } else {
     // Not supported, load all images immediately
-    lazyImages.forEach(function (image) {
+    lazySources.forEach(function (image) {
       image.nextElementSibling.src = image.nextElementSibling.dataset.srcset;
+    });
+    // Not supported, load all images immediately
+    lazyImg.forEach(function (image) {
+      image.src = image.dataset.srcset;
     });
   }
 };

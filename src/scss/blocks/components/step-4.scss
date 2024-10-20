@@ -74,6 +74,14 @@
                 }
               }
             }
+
+            &.cards_4 {
+              .card {
+                @media screen and (min-width: 640px) {
+                  max-width: 250px;
+                }
+              }
+            }
           }
         }
       }
