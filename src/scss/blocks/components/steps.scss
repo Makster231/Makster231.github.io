@@ -4,7 +4,7 @@
 
     .step_0,
     .step_1,
-    .step_2,
+    .step_questions,
     .step_next,
     .step_4 {
       padding: 20px 15px;
@@ -519,7 +519,7 @@
       }
     }
 
-    .step_2 {
+    .step_questions {
       &_top {
         .importants_list {
           @media screen and (max-width: 1025px) {
@@ -723,7 +723,7 @@
 
     &.step_0,
     &.step_1,
-    &.step_2,
+    &.step_questions,
     &.step_next,
     &.step_4 {
       z-index: 1;

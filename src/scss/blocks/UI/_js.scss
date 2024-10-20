@@ -140,12 +140,12 @@
     }
   }
 
-  .step_2 {
+  .step_questions {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
   }
 
-  .step_2,
+  .step_questions,
   .step_next,
   .step_4 {
     transform: translateY(100vh);
@@ -174,24 +174,24 @@
     transform: translateY(-100dvh);
     transform: translateY(-100svh);
   }
-  .step_2 {
+  .step_questions {
     transition-delay: 0.5s;
     transform: translateY(0);
 
     .bg_sky,
-    .step_2_top-content,
-    .step_2_top-bg {
+    .step_questions_top-content,
+    .step_questions_top-bg {
       opacity: 0;
     }
 
-    .step_2_top-content {
+    .step_questions_top-content {
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         2.2s;
       z-index: 5;
     }
 
     .bg_sky,
-    .step_2_top-bg {
+    .step_questions_top-bg {
       animation: fadeIn 0.8s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.7s;
     }
   }
@@ -236,14 +236,14 @@
   }
 
   .step_1,
-  .step_2 {
+  .step_questions {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
     transform: translateY(-100svh);
   }
 
   .step_4,
-  .step_2 {
+  .step_questions {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
@@ -281,7 +281,7 @@
     }
   }
   .step_1,
-  .step_2,
+  .step_questions,
   .step_next {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
@@ -543,7 +543,7 @@
       animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
     .step_1,
-    .step_2,
+    .step_questions,
     .step_next,
     .step_4 {
       display: none;
@@ -577,7 +577,7 @@
           visibility: hidden;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
@@ -589,7 +589,7 @@
             0s;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -601,7 +601,7 @@
 
       .lvl_2 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -618,7 +618,7 @@
           animation: none;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
@@ -630,7 +630,7 @@
   .lvls {
     .lvl_1 {
       .step_1,
-      .step_2,
+      .step_questions,
       .step_next {
         display: none;
       }
@@ -675,7 +675,7 @@
           visibility: hidden;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
@@ -687,7 +687,7 @@
             0s;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -698,7 +698,7 @@
       }
       .lvl_3 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           opacity: 0;
@@ -709,7 +709,7 @@
       .lvl_1,
       .lvl_2 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           visibility: hidden;
@@ -727,7 +727,7 @@
     .lvls {
       .lvl_3 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
@@ -740,7 +740,7 @@
     .lvl_1,
     .lvl_2 {
       .step_1,
-      .step_2,
+      .step_questions,
       .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
@@ -792,7 +792,7 @@
           visibility: hidden;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
@@ -804,7 +804,7 @@
             0s;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -815,7 +815,7 @@
       }
       .lvl_4 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -827,7 +827,7 @@
       .lvl_2,
       .lvl_3 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           visibility: hidden;
@@ -845,7 +845,7 @@
     .lvls {
       .lvl_4 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
@@ -859,7 +859,7 @@
     .lvl_2,
     .lvl_3 {
       .step_1,
-      .step_2,
+      .step_questions,
       .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
@@ -899,7 +899,7 @@
           visibility: hidden;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
@@ -911,7 +911,7 @@
             0s;
         }
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -922,7 +922,7 @@
       }
       .lvl_5 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -936,7 +936,7 @@
     .lvls {
       .lvl_5 {
         .step_1,
-        .step_2,
+        .step_questions,
         .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
@@ -953,7 +953,7 @@
     .lvl_4 {
       .step_0,
       .step_1,
-      .step_2,
+      .step_questions,
       .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;

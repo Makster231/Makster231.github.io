@@ -8,7 +8,7 @@ export default function steps() {
   const aside_btn = document.querySelector(".js_aside_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
   const step_1_btns = document.querySelectorAll(".js_step_1_btn");
-  const step_2_btns = document.querySelectorAll(".js_importants_list");
+  const step_questions_btns = document.querySelectorAll(".js_importants_list");
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
   const step_4_btns = document.querySelectorAll(".js_step_4_cards");
   // Проверка на тач скрины
@@ -19,7 +19,7 @@ export default function steps() {
 
   //  step 2 btns state
   let data_info = {
-    step_2_values: [],
+    step_questions_values: [],
     step_4_values: [],
   };
 
@@ -118,14 +118,14 @@ export default function steps() {
     }
 
     if (step > 2) {
-      if (!data_info.step_2_values[level - 1]) {
+      if (!data_info.step_questions_values[level - 1]) {
         step = 2;
         return false;
       }
     }
 
     if (level !== 5 && step < 3) {
-      if (data_info.step_2_values[level - 1]) {
+      if (data_info.step_questions_values[level - 1]) {
         step = 3;
         return false;
       }
@@ -237,12 +237,12 @@ export default function steps() {
   });
 
   // STEP 2
-  step_2_btns.forEach((btn) => {
+  step_questions_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // Проверка на кнопку списка
       if (!e.target.classList.contains("js_importants_list_btn")) return;
 
-      data_info.step_2_values[level - 1] = e.target.innerText;
+      data_info.step_questions_values[level - 1] = e.target.innerText;
 
       // Подсчёт Шага
       let flag = !stepCalc("down");
