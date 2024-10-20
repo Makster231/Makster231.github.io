@@ -4,6 +4,7 @@
 
     .step_0,
     .step_last,
+    .step_2,
     .step_questions,
     .step_next,
     .step_questions2 {
@@ -515,6 +516,7 @@
       }
     }
 
+    .step_2,
     .step_questions {
       &_top {
         .importants_list {
@@ -719,7 +721,8 @@
 
     &.step_0,
     &.step_last,
-    &.step_questions,
+    &.step_2,
+    .step_questions,
     &.step_next,
     &.step_questions2 {
       z-index: 1;

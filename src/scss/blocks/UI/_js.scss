@@ -140,11 +140,13 @@
     }
   }
 
+  .step_2,
   .step_questions {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
   }
 
+  .step_2,
   .step_questions,
   .step_next,
   .step_questions2 {
@@ -174,16 +176,20 @@
     transform: translateY(-100dvh);
     transform: translateY(-100svh);
   }
+  .step_2,
   .step_questions {
     transition-delay: 0.5s;
     transform: translateY(0);
 
     .bg_sky,
+    .step_2_top-content,
+    .step_2_top-bg,
     .step_questions_top-content,
     .step_questions_top-bg {
       opacity: 0;
     }
 
+    .step_2_top-content,
     .step_questions_top-content {
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         2.2s;
@@ -191,6 +197,7 @@
     }
 
     .bg_sky,
+    .step_2_top-bg,
     .step_questions_top-bg {
       animation: fadeIn 0.8s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.7s;
     }
@@ -236,6 +243,7 @@
   }
 
   .step_last,
+  .step_2,
   .step_questions {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
@@ -243,6 +251,7 @@
   }
 
   .step_questions2,
+  .step_2,
   .step_questions {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
@@ -281,6 +290,7 @@
     }
   }
   .step_last,
+  .step_2,
   .step_questions,
   .step_next {
     transform: translateY(-100vh);
@@ -548,6 +558,7 @@
       animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
     .step_last,
+    .step_2,
     .step_questions,
     .step_next,
     .step_questions2 {
@@ -582,6 +593,7 @@
           visibility: hidden;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -594,6 +606,7 @@
             0s;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -606,6 +619,7 @@
 
       .lvl_2 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -623,6 +637,7 @@
           animation: none;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -635,6 +650,7 @@
   .lvls {
     .lvl_1 {
       .step_last,
+      .step_2,
       .step_questions,
       .step_next {
         display: none;
@@ -680,6 +696,7 @@
           visibility: hidden;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -692,6 +709,7 @@
             0s;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -703,6 +721,7 @@
       }
       .lvl_3 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -714,6 +733,7 @@
       .lvl_1,
       .lvl_2 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -732,6 +752,7 @@
     .lvls {
       .lvl_3 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -745,6 +766,7 @@
     .lvl_1,
     .lvl_2 {
       .step_last,
+      .step_2,
       .step_questions,
       .step_next,
       .step_questions2 {
@@ -797,6 +819,7 @@
           visibility: hidden;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -809,6 +832,7 @@
             0s;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -820,6 +844,7 @@
       }
       .lvl_4 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -832,6 +857,7 @@
       .lvl_2,
       .lvl_3 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -850,6 +876,7 @@
     .lvls {
       .lvl_4 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -864,6 +891,7 @@
     .lvl_2,
     .lvl_3 {
       .step_last,
+      .step_2,
       .step_questions,
       .step_next,
       .step_questions2 {
@@ -904,6 +932,7 @@
           visibility: hidden;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -916,6 +945,7 @@
             0s;
         }
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -927,6 +957,7 @@
       }
       .lvl_5 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -941,6 +972,7 @@
     .lvls {
       .lvl_5 {
         .step_last,
+        .step_2,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -958,6 +990,7 @@
     .lvl_4 {
       .step_0,
       .step_last,
+      .step_2,
       .step_questions,
       .step_next,
       .step_questions2 {

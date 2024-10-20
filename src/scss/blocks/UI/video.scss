@@ -9,8 +9,8 @@
 
   &__control--overlaid {
     background-color: transparent;
-    width: 56px;
-    height: 56px;
+    width: 56px !important;
+    height: 56px !important;
     padding: 0;
     background: url(../img/icons/player-btn.svg) center no-repeat !important;
     background-size: 100% 100% !important;

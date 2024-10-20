@@ -44,7 +44,6 @@
     font-size: 16px;
 
     @media screen and (max-width: 640px) {
-      // @include toVh(font-size, 14svh);
       @include setProp(font-size, 14vh, 14dvh, 14svh);
     }
   }
