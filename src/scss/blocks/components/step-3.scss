@@ -1,6 +1,6 @@
 .lvls {
   .lvl {
-    .step_3 {
+    .step_next {
       &_top {
         .h2 {
           color: var(--color-white);
@@ -8,7 +8,7 @@
           margin-left: auto;
         }
 
-        .step_3_btn {
+        .step_next_btn {
           display: block;
           width: 60px;
           height: 60px;

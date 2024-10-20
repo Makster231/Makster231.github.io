@@ -146,7 +146,7 @@
   }
 
   .step_2,
-  .step_3,
+  .step_next,
   .step_4 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
@@ -195,7 +195,7 @@
       animation: fadeIn 0.8s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.7s;
     }
   }
-  .step_3,
+  .step_next,
   .step_4 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
@@ -248,11 +248,11 @@
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
-  .step_3 {
+  .step_next {
     transition-delay: 0.5s;
     transform: translateY(0);
 
-    .step_3_top-content {
+    .step_next_top-content {
       opacity: 0;
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
@@ -282,13 +282,13 @@
   }
   .step_1,
   .step_2,
-  .step_3 {
+  .step_next {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
     transform: translateY(-100svh);
   }
 
-  .step_3 {
+  .step_next {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
@@ -544,7 +544,7 @@
     }
     .step_1,
     .step_2,
-    .step_3,
+    .step_next,
     .step_4 {
       display: none;
     }
@@ -578,7 +578,7 @@
         }
         .step_1,
         .step_2,
-        .step_3 {
+        .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
@@ -590,7 +590,7 @@
         }
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -602,7 +602,7 @@
       .lvl_2 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -619,7 +619,7 @@
         }
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
@@ -631,7 +631,7 @@
     .lvl_1 {
       .step_1,
       .step_2,
-      .step_3 {
+      .step_next {
         display: none;
       }
       .step_4 {
@@ -676,7 +676,7 @@
         }
         .step_1,
         .step_2,
-        .step_3 {
+        .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
@@ -688,7 +688,7 @@
         }
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -699,7 +699,7 @@
       .lvl_3 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           opacity: 0;
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -710,7 +710,7 @@
       .lvl_2 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           visibility: hidden;
           display: none;
@@ -728,7 +728,7 @@
       .lvl_3 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
@@ -741,7 +741,7 @@
     .lvl_2 {
       .step_1,
       .step_2,
-      .step_3,
+      .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
@@ -793,7 +793,7 @@
         }
         .step_1,
         .step_2,
-        .step_3 {
+        .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
@@ -805,7 +805,7 @@
         }
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -816,7 +816,7 @@
       .lvl_4 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -828,7 +828,7 @@
       .lvl_3 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           visibility: hidden;
           display: none;
@@ -846,7 +846,7 @@
       .lvl_4 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
@@ -860,7 +860,7 @@
     .lvl_3 {
       .step_1,
       .step_2,
-      .step_3,
+      .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
@@ -900,7 +900,7 @@
         }
         .step_1,
         .step_2,
-        .step_3 {
+        .step_next {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
@@ -912,7 +912,7 @@
         }
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -923,7 +923,7 @@
       .lvl_5 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -937,7 +937,7 @@
       .lvl_5 {
         .step_1,
         .step_2,
-        .step_3,
+        .step_next,
         .step_4 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
@@ -954,7 +954,7 @@
       .step_0,
       .step_1,
       .step_2,
-      .step_3,
+      .step_next,
       .step_4 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }

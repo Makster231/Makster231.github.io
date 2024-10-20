@@ -5,7 +5,7 @@
     .step_0,
     .step_1,
     .step_2,
-    .step_3,
+    .step_next,
     .step_4 {
       padding: 20px 15px;
       &_wrapper {
@@ -598,7 +598,7 @@
       }
     }
 
-    .step_3 {
+    .step_next {
       &_top {
         &-content {
           @media screen and (max-width: 640px) {
@@ -615,7 +615,7 @@
           }
         }
 
-        .step_3_btn {
+        .step_next_btn {
           @media screen and (max-width: 1025px) {
             transform: unset;
           }
@@ -724,7 +724,7 @@
     &.step_0,
     &.step_1,
     &.step_2,
-    &.step_3,
+    &.step_next,
     &.step_4 {
       z-index: 1;
     }
