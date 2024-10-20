@@ -1,7 +1,7 @@
 // import isAvifWebp from "avif-webp-checker";
 // isAvifWebp({ mode: "webp", webpClass: "mywebpclass" });
 
-import LazyLoad from "./modules/lazyLoad.js";
+import lazyLoad from "./modules/lazyLoad.js";
 import Modal from "./modules/modal";
 import steps from "./modules/steps";
 import finalSteps from "./modules/finalSteps";
@@ -17,6 +17,7 @@ window.addEventListener("load", function () {
   finalSteps();
   inputMasks();
   requestForm();
+  lazyLoad();
 
   var plyr_options = {
     // autoplay: true,
