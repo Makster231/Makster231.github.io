@@ -9,7 +9,7 @@ export default function steps() {
   const step_0_btn = document.querySelector(".js_btn_start");
   const step_1_btns = document.querySelectorAll(".js_step_1_btn");
   const step_2_btns = document.querySelectorAll(".js_importants_list");
-  const step_3_btns = document.querySelectorAll(".js_step_3_btn");
+  const step_next_btns = document.querySelectorAll(".js_step_next_btn");
   const step_4_btns = document.querySelectorAll(".js_step_4_cards");
   // Проверка на тач скрины
   const isTouchEnabled = () =>
@@ -254,7 +254,7 @@ export default function steps() {
   });
 
   // STEP 3
-  step_3_btns.forEach((btn) => {
+  step_next_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // Подсчёт Шага
       let flag = !stepCalc("down");
