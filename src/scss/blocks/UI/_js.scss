@@ -121,9 +121,43 @@
 .js_active_1_1,
 .js_active_2_1,
 .js_active_3_1,
-.js_active_4_1,
+.js_active_4_1 {
+  .step_next {
+    transition-delay: 0.5s;
+    transform: translateY(0);
+    animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+
+    .step_next_top-content {
+      opacity: 0;
+      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+        1.7s;
+
+      @media screen and (max-width: 640px) {
+        animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+          0.5s;
+      }
+    }
+  }
+
+  .step_2,
+  .step_questions {
+    animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+    transition-delay: 0.5s;
+  }
+
+  .step_2,
+  .step_questions,
+  .step_questions2,
+  .step_last {
+    transform: translateY(100vh);
+    transform: translateY(100dvh);
+    transform: translateY(100svh);
+  }
+}
+
 .js_active_5_1 {
   .step_last {
+    opacity: 0;
     transition-delay: 0.5s;
     transform: translateY(0);
     animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
@@ -147,8 +181,8 @@
   }
 
   .step_2,
-  .step_questions,
   .step_next,
+  .step_questions,
   .step_questions2 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
@@ -156,19 +190,11 @@
   }
 }
 
-.js_active_5_1 {
-  .step_last {
-    .step_last_top-content {
-      animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 5s !important;
-    }
-  }
-}
-
 .js_active_1_2,
 .js_active_2_2,
 .js_active_3_2,
 .js_active_4_2 {
-  .step_last {
+  .step_next {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
@@ -202,8 +228,8 @@
       animation: fadeIn 0.8s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 1.7s;
     }
   }
-  .step_next,
-  .step_questions2 {
+  .step_questions2,
+  .step_last {
     transform: translateY(100vh);
     transform: translateY(100dvh);
     transform: translateY(100svh);
@@ -211,7 +237,7 @@
 }
 
 .js_active_5_2 {
-  .step_last {
+  .step_next {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
@@ -237,12 +263,12 @@
 .js_active_2_3,
 .js_active_3_3,
 .js_active_4_3 {
-  .aside_btn {
-    opacity: 0;
-    visibility: hidden;
-  }
+  // .aside_btn {
+  //   opacity: 0;
+  //   visibility: hidden;
+  // }
 
-  .step_last,
+  .step_next,
   .step_2,
   .step_questions {
     transform: translateY(-100vh);
@@ -250,25 +276,25 @@
     transform: translateY(-100svh);
   }
 
-  .step_questions2,
+  .step_last,
   .step_2,
   .step_questions {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
-  .step_next {
+  .step_questions2 {
     transition-delay: 0.5s;
     transform: translateY(0);
 
-    .step_next_top-content {
+    .step_questions2_top-content {
       opacity: 0;
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
     }
   }
 
-  .step_questions2 {
+  .step_last {
     transform: translateY(100vh);
     transform: translateY(100dvh);
     transform: translateY(100svh);
@@ -279,36 +305,36 @@
 .js_active_2_4,
 .js_active_3_4,
 .js_active_4_4 {
-  .aside_btn {
-    &.js_active {
-      opacity: 0;
-      visibility: hidden;
-      transition-delay: 0.5s;
-      animation:
-        fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s,
-        pulse 2s infinite;
-    }
-  }
-  .step_last,
+  // .aside_btn {
+  //   &.js_active {
+  //     opacity: 0;
+  //     visibility: hidden;
+  //     transition-delay: 0.5s;
+  //     animation:
+  //       fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s,
+  //       pulse 2s infinite;
+  //   }
+  // }
+  .step_next,
   .step_2,
   .step_questions,
-  .step_next {
+  .step_questions2 {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
     transform: translateY(-100svh);
   }
 
-  .step_next {
+  .step_questions2 {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
-  .step_questions2 {
+  .step_last {
     transform: translateY(0);
     transition-delay: 0.5s;
 
-    // .step_questions2_bottom-info,
-    .step_questions2_top-content {
+    // .step_last_bottom-info,
+    .step_last_top-content {
       opacity: 0;
 
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -557,17 +583,17 @@
     .step_0_top {
       animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
-    .step_last,
+    .step_next,
     .step_2,
     .step_questions,
-    .step_next,
-    .step_questions2 {
+    .step_questions2,
+    .step_last {
       display: none;
     }
   }
 
   &.lift {
-    .step_last_wrapper {
+    .step_next_wrapper {
       opacity: 0;
       animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
@@ -588,28 +614,28 @@
       transition-delay: 1s;
 
       .lvl_1 {
-        .aside_btn {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .step_last,
+        // .aside_btn {
+        //   opacity: 0;
+        //   visibility: hidden;
+        // }
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next {
+        .step_questions2 {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_questions2 {
+        .step_last {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -618,11 +644,11 @@
       }
 
       .lvl_2 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -633,14 +659,14 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_2 {
-        .step_last_top-content {
+        .step_next_top-content {
           animation: none;
         }
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -649,13 +675,13 @@
 
   .lvls {
     .lvl_1 {
-      .step_last,
+      .step_next,
       .step_2,
       .step_questions,
-      .step_next {
+      .step_questions2 {
         display: none;
       }
-      .step_questions2 {
+      .step_last {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -665,11 +691,11 @@
     .lvls {
       .lvl_2,
       .lvl_2 {
-        .step_last {
+        .step_next {
           opacity: 0;
         }
 
-        // .step_last_top-content {
+        // .step_next_top-content {
         //   animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         //   animation-delay: 1.7s;
         // }
@@ -691,28 +717,28 @@
       transition-delay: 1s;
       .lvl_1,
       .lvl_2 {
-        .aside_btn {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .step_last,
+        // .aside_btn {
+        //   opacity: 0;
+        //   visibility: hidden;
+        // }
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next {
+        .step_questions2 {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_questions2 {
+        .step_last {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -720,11 +746,11 @@
         }
       }
       .lvl_3 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           opacity: 0;
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -732,11 +758,11 @@
       }
       .lvl_1,
       .lvl_2 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           visibility: hidden;
           display: none;
           transition-delay: 0s !important;
@@ -751,11 +777,11 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_3 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -765,23 +791,23 @@
   .lvls {
     .lvl_1,
     .lvl_2 {
-      .step_last,
+      .step_next,
       .step_2,
       .step_questions,
-      .step_next,
-      .step_questions2 {
+      .step_questions2,
+      .step_last {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
 
     .lvl_3 {
-      .step_last {
+      .step_next {
         // transition-delay: 0.5s;
         // opacity: 0;
         // animation-iteration-count: 1;
         // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
 
-        .step_last_top-content {
+        .step_next_top-content {
           // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         }
       }
@@ -791,7 +817,7 @@
   &.js_active_3_1 {
     .lvls {
       .lvl_3 {
-        .step_last {
+        .step_next {
           opacity: 0;
         }
       }
@@ -814,28 +840,28 @@
       .lvl_1,
       .lvl_2,
       .lvl_3 {
-        .aside_btn {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .step_last,
+        // .aside_btn {
+        //   opacity: 0;
+        //   visibility: hidden;
+        // }
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next {
+        .step_questions2 {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_questions2 {
+        .step_last {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -843,11 +869,11 @@
         }
       }
       .lvl_4 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -856,11 +882,11 @@
       .lvl_1,
       .lvl_2,
       .lvl_3 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           visibility: hidden;
           display: none;
           transition-delay: 0s !important;
@@ -875,11 +901,11 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_4 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -890,11 +916,11 @@
     .lvl_1,
     .lvl_2,
     .lvl_3 {
-      .step_last,
+      .step_next,
       .step_2,
       .step_questions,
-      .step_next,
-      .step_questions2 {
+      .step_questions2,
+      .step_last {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -903,7 +929,7 @@
   &.js_active_4_1 {
     .lvls {
       .lvl_4 {
-        .step_last {
+        .step_next {
           opacity: 0;
         }
       }
@@ -927,28 +953,28 @@
       .lvl_2,
       .lvl_3,
       .lvl_4 {
-        .aside_btn {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .step_last,
+        // .aside_btn {
+        //   opacity: 0;
+        //   visibility: hidden;
+        // }
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next {
+        .step_questions2 {
           transform: translateY(-100vh);
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_questions2 {
+        .step_last {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -956,11 +982,11 @@
         }
       }
       .lvl_5 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -971,11 +997,11 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_5 {
-        .step_last,
+        .step_next,
         .step_2,
         .step_questions,
-        .step_next,
-        .step_questions2 {
+        .step_questions2,
+        .step_last {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -989,11 +1015,11 @@
     .lvl_3,
     .lvl_4 {
       .step_0,
-      .step_last,
+      .step_next,
       .step_2,
       .step_questions,
-      .step_next,
-      .step_questions2 {
+      .step_questions2,
+      .step_last {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -1002,7 +1028,7 @@
   &.js_active_5_1 {
     .lvls {
       .lvl_5 {
-        .step_last {
+        .step_next {
           opacity: 0;
         }
       }

@@ -52,4 +52,13 @@
       color: var(--color-white);
     }
   }
+
+  &:disabled,
+  &.js_disabled {
+    pointer-events: none !important;
+    background-color: var(--color-grey-m) !important;
+    border-color: var(--color-grey-m) !important;
+    color: var(--color-white) !important;
+    cursor: not-allowed !important;
+  }
 }

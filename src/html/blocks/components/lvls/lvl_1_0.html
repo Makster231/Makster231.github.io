@@ -3,7 +3,9 @@
     class="step_0_wrapper d-flex flex-column justify-center align-center w-100 h-100"
   >
     <div class="step_0_top d-flex flex-column h-100 w-100">
-      <div class="step_0_top-logo logo">@@include('../logo-w.html')</div>
+      <div class="step_0_top-logo logo container">
+        @@include('../logo-w.html')
+      </div>
 
       <div class="step_0_top-content container d-flex justify-center">
         <div class="step_0_top-left">
@@ -101,7 +103,10 @@
     </div>
 
     <picture class="step_0_bg lazy">
-      <source data-srcset="./img/step_0/step_0-bg.jpg" media="(min-width: 640px)" />
+      <source
+        data-srcset="./img/step_0/step_0-bg.jpg"
+        media="(min-width: 640px)"
+      />
       <img data-src="./img/step_0/step_0-bg-m.jpg" alt="image" />
     </picture>
 

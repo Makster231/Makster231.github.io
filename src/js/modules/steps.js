@@ -5,7 +5,7 @@ export default function steps() {
   const body = document.getElementById("body");
   //  BTNS
   const all_btns = document.querySelectorAll(".js_btn");
-  const aside_btn = document.querySelector(".js_aside_btn");
+  // const aside_btn = document.querySelector(".js_aside_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
 
   const step_last_btns = document.querySelectorAll(".js_step_last_btn");
@@ -13,8 +13,12 @@ export default function steps() {
 
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
 
-  const step_questions2_btns = document.querySelectorAll(
+  const step_questions2_cards = document.querySelectorAll(
     ".js_step_questions2_cards"
+  );
+
+  const step_questions2_btns = document.querySelectorAll(
+    ".js_step_questions2_btn"
   );
   // Проверка на тач скрины
   const isTouchEnabled = () =>
@@ -24,6 +28,8 @@ export default function steps() {
 
   //  step 2 btns state
   let data_info = {
+    // step_questions_values: ["das", "das", "das", "das"],
+    // step_questions2_values: ["das", "das", "das", "das"],
     step_questions_values: [],
     step_questions2_values: [],
   };
@@ -103,39 +109,57 @@ export default function steps() {
       return;
     }
 
-    let flag_start_screen = false;
+    if (step === 3 && !data_info.step_questions2_values[level - 1]) {
+      console.log(1231231);
+      return false;
+    }
 
     dir === "down" ? step++ : step--;
 
     if (level === 1 && step === -1) {
+      console.log(3);
       step = 0;
       return false;
     }
 
     if (step === 0) {
+      console.log(4);
       step = 1;
       return false;
     }
 
     if (step > 4) {
+      console.log(5);
       step = 4;
-      return false;
+      // return false;
     }
 
     if (step > 2) {
+      console.log(6);
       if (!data_info.step_questions_values[level - 1]) {
+        console.log(7);
         step = 2;
         return false;
       }
     }
 
     if (level !== 5 && step < 3) {
+      console.log(8);
       if (data_info.step_questions_values[level - 1]) {
+        console.log(9);
         step = 3;
         return false;
       }
     }
 
+    if (level === 5 && step === 2) {
+      if (data_info.step_questions_values[level - 1]) {
+        console.log(9);
+        step = 3;
+        return false;
+      }
+    }
+    console.log(10);
     return true;
   };
 
@@ -221,7 +245,7 @@ export default function steps() {
   indicator.getOption("preventMouse"); // true
 
   // ---------------------- EVENTS ----------------------
-  // LVL 1 STEP 0
+  // ---------------------- STEP 0 ----------------------
   step_0_btn.addEventListener("click", function () {
     // Подсчёт Шага
     let flag = !stepCalc("down");
@@ -230,8 +254,8 @@ export default function steps() {
     // changeSteps();
   });
 
-  // STEP 1
-  step_last_btns.forEach((btn) => {
+  // ---------------------- STEP 1 ----------------------
+  step_next_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // Подсчёт Шага
       let flag = !stepCalc("down");
@@ -241,7 +265,7 @@ export default function steps() {
     });
   });
 
-  // STEP 2
+  // ---------------------- STEP 2 ----------------------
   step_questions_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // Проверка на кнопку списка
@@ -258,57 +282,80 @@ export default function steps() {
     });
   });
 
-  // STEP 3
-  step_next_btns.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      // Подсчёт Шага
-      let flag = !stepCalc("down");
-      if (flag) return;
-      // Определение Слайда
-      changeSteps();
-    });
-  });
-
-  // LIFT BTN
-  const saveAndGo = () => {
-    // Переход на следующий уровень
-    let btn_val = document.querySelector(
-      `.js_lvl_${level} .js_step_4_cards .js_card.js_active`
-    );
-
-    if (btn_val) {
-      data_info.step_questions2_values.push(btn_val.dataset.value);
-      changeSteps(true);
-    }
-  };
-
-  // STEP 4
-  step_questions2_btns.forEach((btn) => {
+  // ---------------------- STEP 3 ----------------------
+  step_questions2_cards.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const card = e.target.closest(".js_card");
       // Проверка на клик по карточке
       if (!card) return;
 
-      const btns = e.target
-        .closest(".js_step_4_cards")
+      const cards = e.target
+        .closest(".js_step_questions2_cards")
         .querySelectorAll(".js_card");
 
-      btns.forEach((btn) => removeClass(btn, `js_active`));
-      addClass(card, `js_active`);
-      addClass(aside_btn, `js_active`);
+      cards.forEach((crd) => removeClass(crd, `js_active`));
 
-      if (isMobile) saveAndGo();
+      addClass(card, `js_active`);
+      // addClass(aside_btn, `js_active`);
+
+      data_info.step_questions2_values[level - 1] = card.dataset.value;
+
+      let step_btn = document.querySelector(
+        `.js_lvl_${level} .js_step_questions2_btn`
+      );
+
+      removeClass(step_btn, `js_disabled`);
     });
   });
 
-  aside_btn.addEventListener("click", function (e) {
-    // Скрываем кнопку
-    removeClass(aside_btn, `js_active`);
-    // Блокируем карточки для избежания повторного нажатия на них
-    step_questions2_btns.forEach((btn) => btn.setAttribute("disabled", true));
-    // Переход на след уровень
-    saveAndGo();
+  step_questions2_btns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      console.log(2222);
+      // Подсчёт Шага
+      let flag = !stepCalc("down");
+      if (flag) return;
+
+      console.log(1111);
+      // Переход на следующий уровень
+      // let btn_val = document.querySelector(
+      //   `.js_lvl_${level} .js_step_questions2_cards .js_card.js_active`
+      // );
+
+      // if (btn_val)
+      //   data_info.step_questions2_values[level - 1] = btn_val.dataset.value;
+
+      // Определение Слайда
+      changeSteps();
+    });
   });
+
+  // ---------------------- STEP 4 ----------------------
+  step_last_btns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      console.log(step);
+      console.log(level);
+      console.log(data_info);
+      // // Подсчёт Шага
+      // stepCalc("down");
+      let flag = !stepCalc("down");
+      if (flag) return;
+
+      if (step === 2 && level === 5) {
+        changeSteps();
+      } else {
+        changeSteps(true);
+      }
+    });
+  });
+
+  // aside_btn.addEventListener("click", function (e) {
+  //   // Скрываем кнопку
+  //   removeClass(aside_btn, `js_active`);
+  //   // Блокируем карточки для избежания повторного нажатия на них
+  //   step_questions2_cards.forEach((btn) => btn.setAttribute("disabled", true));
+  //   // Переход на след уровень
+  //   // saveAndGo();
+  // });
 
   // При Изменении размеров экрана
   window.addEventListener("resize", () => {
@@ -318,76 +365,76 @@ export default function steps() {
   });
 
   // Свайп на мобильных устройствах
-  if (isTouchEnabled()) {
-    let touchstartX = 0;
-    let touchstartY = 0;
-    let touchendX = 0;
-    let touchendY = 0;
+  // if (isTouchEnabled()) {
+  //   let touchstartX = 0;
+  //   let touchstartY = 0;
+  //   let touchendX = 0;
+  //   let touchendY = 0;
 
-    // Узнаем направление свайпа
-    const handleGesture = function (
-      touchstartX,
-      touchstartY,
-      touchendX,
-      touchendY
-    ) {
-      const delx = touchendX - touchstartX;
-      const dely = touchendY - touchstartY;
+  //   // Узнаем направление свайпа
+  //   const handleGesture = function (
+  //     touchstartX,
+  //     touchstartY,
+  //     touchendX,
+  //     touchendY
+  //   ) {
+  //     const delx = touchendX - touchstartX;
+  //     const dely = touchendY - touchstartY;
 
-      if (Math.abs(delx) > Math.abs(dely)) {
-        if (delx > 0) {
-          return "right";
-        } else {
-          return "left";
-        }
-      } else if (Math.abs(delx) < Math.abs(dely)) {
-        if (dely > 0) {
-          return "down";
-        } else {
-          return "up";
-        }
-      } else {
-        return "tap";
-      }
-    };
+  //     if (Math.abs(delx) > Math.abs(dely)) {
+  //       if (delx > 0) {
+  //         return "right";
+  //       } else {
+  //         return "left";
+  //       }
+  //     } else if (Math.abs(delx) < Math.abs(dely)) {
+  //       if (dely > 0) {
+  //         return "down";
+  //       } else {
+  //         return "up";
+  //       }
+  //     } else {
+  //       return "tap";
+  //     }
+  //   };
 
-    // Узнаем начальные точки свайпа
-    body.addEventListener(
-      "touchstart",
-      function (event) {
-        touchstartX = event.changedTouches[0].screenX;
-        touchstartY = event.changedTouches[0].screenY;
-      },
-      false
-    );
+  //   // Узнаем начальные точки свайпа
+  //   body.addEventListener(
+  //     "touchstart",
+  //     function (event) {
+  //       touchstartX = event.changedTouches[0].screenX;
+  //       touchstartY = event.changedTouches[0].screenY;
+  //     },
+  //     false
+  //   );
 
-    // Узнаем конечные точки свайпа
-    body.addEventListener(
-      "touchend",
-      function (event) {
-        touchendX = event.changedTouches[0].screenX;
-        touchendY = event.changedTouches[0].screenY;
-        let reverseDir = "";
+  //   // Узнаем конечные точки свайпа
+  //   body.addEventListener(
+  //     "touchend",
+  //     function (event) {
+  //       touchendX = event.changedTouches[0].screenX;
+  //       touchendY = event.changedTouches[0].screenY;
+  //       let reverseDir = "";
 
-        const direction = handleGesture(
-          touchstartX,
-          touchstartY,
-          touchendX,
-          touchendY
-        );
+  //       const direction = handleGesture(
+  //         touchstartX,
+  //         touchstartY,
+  //         touchendX,
+  //         touchendY
+  //       );
 
-        if (direction === "tap") return;
-        if (direction === "up") reverseDir = "down";
-        if (direction === "down") reverseDir = "up";
+  //       if (direction === "tap") return;
+  //       if (direction === "up") reverseDir = "down";
+  //       if (direction === "down") reverseDir = "up";
 
-        // Подсчёт Шага
-        let flag = !stepCalc(reverseDir);
-        if (flag) return;
+  //       // Подсчёт Шага
+  //       let flag = !stepCalc(reverseDir);
+  //       if (flag) return;
 
-        // Определение Слайда
-        changeSteps();
-      },
-      false
-    );
-  }
+  //       // Определение Слайда
+  //       changeSteps();
+  //     },
+  //     false
+  //   );
+  // }
 }
