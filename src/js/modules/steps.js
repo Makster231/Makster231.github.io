@@ -7,10 +7,15 @@ export default function steps() {
   const all_btns = document.querySelectorAll(".js_btn");
   const aside_btn = document.querySelector(".js_aside_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
+
   const step_1_btns = document.querySelectorAll(".js_step_1_btn");
   const step_questions_btns = document.querySelectorAll(".js_importants_list");
+
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
-  const step_4_btns = document.querySelectorAll(".js_step_4_cards");
+
+  const step_questions2_btns = document.querySelectorAll(
+    ".js_step_questions2_cards"
+  );
   // Проверка на тач скрины
   const isTouchEnabled = () =>
     "ontouchstart" in window ||
@@ -20,7 +25,7 @@ export default function steps() {
   //  step 2 btns state
   let data_info = {
     step_questions_values: [],
-    step_4_values: [],
+    step_questions2_values: [],
   };
 
   let isMobile = window.innerWidth <= 640;
@@ -272,13 +277,13 @@ export default function steps() {
     );
 
     if (btn_val) {
-      data_info.step_4_values.push(btn_val.dataset.value);
+      data_info.step_questions2_values.push(btn_val.dataset.value);
       changeSteps(true);
     }
   };
 
   // STEP 4
-  step_4_btns.forEach((btn) => {
+  step_questions2_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const card = e.target.closest(".js_card");
       // Проверка на клик по карточке
@@ -300,7 +305,7 @@ export default function steps() {
     // Скрываем кнопку
     removeClass(aside_btn, `js_active`);
     // Блокируем карточки для избежания повторного нажатия на них
-    step_4_btns.forEach((btn) => btn.setAttribute("disabled", true));
+    step_questions2_btns.forEach((btn) => btn.setAttribute("disabled", true));
     // Переход на след уровень
     saveAndGo();
   });

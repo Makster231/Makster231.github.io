@@ -147,7 +147,7 @@
 
   .step_questions,
   .step_next,
-  .step_4 {
+  .step_questions2 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
     transform: translateY(100svh);
@@ -196,7 +196,7 @@
     }
   }
   .step_next,
-  .step_4 {
+  .step_questions2 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
     transform: translateY(100svh);
@@ -242,7 +242,7 @@
     transform: translateY(-100svh);
   }
 
-  .step_4,
+  .step_questions2,
   .step_questions {
     transition-delay: 0.5s;
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
@@ -259,7 +259,7 @@
     }
   }
 
-  .step_4 {
+  .step_questions2 {
     transform: translateY(100vh);
     transform: translateY(100dvh);
     transform: translateY(100svh);
@@ -293,12 +293,12 @@
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
   }
 
-  .step_4 {
+  .step_questions2 {
     transform: translateY(0);
     transition-delay: 0.5s;
 
-    // .step_4_bottom-info,
-    .step_4_top-content {
+    // .step_questions2_bottom-info,
+    .step_questions2_top-content {
       opacity: 0;
 
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
@@ -506,6 +506,11 @@
   }
 }
 // 1111111111111111111111111111111111111111111111111111111111
+.js_active_lvl_0 {
+  .aside {
+    opacity: 0;
+  }
+}
 .js_active_lvl_1 {
   &.js_change_lvl {
     .aside_container {
@@ -545,7 +550,7 @@
     .step_1,
     .step_questions,
     .step_next,
-    .step_4 {
+    .step_questions2 {
       display: none;
     }
   }
@@ -583,7 +588,7 @@
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_4 {
+        .step_questions2 {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -591,7 +596,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -603,7 +608,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -620,7 +625,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -634,7 +639,7 @@
       .step_next {
         display: none;
       }
-      .step_4 {
+      .step_questions2 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -681,7 +686,7 @@
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_4 {
+        .step_questions2 {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -689,7 +694,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -700,7 +705,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           opacity: 0;
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -711,7 +716,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           visibility: hidden;
           display: none;
           transition-delay: 0s !important;
@@ -729,7 +734,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -742,7 +747,7 @@
       .step_1,
       .step_questions,
       .step_next,
-      .step_4 {
+      .step_questions2 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -798,7 +803,7 @@
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_4 {
+        .step_questions2 {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -806,7 +811,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -817,7 +822,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -829,7 +834,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           visibility: hidden;
           display: none;
           transition-delay: 0s !important;
@@ -847,7 +852,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -861,7 +866,7 @@
       .step_1,
       .step_questions,
       .step_next,
-      .step_4 {
+      .step_questions2 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }
@@ -905,7 +910,7 @@
           transform: translateY(-100dvh);
           transform: translateY(-100svh);
         }
-        .step_4 {
+        .step_questions2 {
           transform: translateY(0);
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
@@ -913,7 +918,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
           visibility: hidden;
@@ -924,7 +929,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
@@ -938,7 +943,7 @@
         .step_1,
         .step_questions,
         .step_next,
-        .step_4 {
+        .step_questions2 {
           animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) 0s;
         }
       }
@@ -955,7 +960,7 @@
       .step_1,
       .step_questions,
       .step_next,
-      .step_4 {
+      .step_questions2 {
         animation: hidden 4s cubic-bezier(0.25, 0.37, 0.67, 0.94) infinite;
       }
     }

@@ -6,7 +6,7 @@
     .step_1,
     .step_questions,
     .step_next,
-    .step_4 {
+    .step_questions2 {
       padding: 20px 15px;
       &_wrapper {
         width: calc(100% - 20px);
@@ -632,9 +632,9 @@
       }
     }
 
-    .step_4 {
+    .step_questions2 {
       &_top {
-        .step_4_cards {
+        .step_questions2_cards {
           @media screen and (max-width: 640px) {
             flex-direction: column;
             width: 100%;
@@ -725,7 +725,7 @@
     &.step_1,
     &.step_questions,
     &.step_next,
-    &.step_4 {
+    &.step_questions2 {
       z-index: 1;
     }
   }
