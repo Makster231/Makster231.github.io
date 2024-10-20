@@ -8,7 +8,7 @@ export default function steps() {
   const aside_btn = document.querySelector(".js_aside_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
 
-  const step_1_btns = document.querySelectorAll(".js_step_1_btn");
+  const step_last_btns = document.querySelectorAll(".js_step_last_btn");
   const step_questions_btns = document.querySelectorAll(".js_importants_list");
 
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
@@ -231,7 +231,7 @@ export default function steps() {
   });
 
   // STEP 1
-  step_1_btns.forEach((btn) => {
+  step_last_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // Подсчёт Шага
       let flag = !stepCalc("down");
