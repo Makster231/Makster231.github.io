@@ -123,12 +123,12 @@
 .js_active_3_1,
 .js_active_4_1,
 .js_active_5_1 {
-  .step_1 {
+  .step_last {
     transition-delay: 0.5s;
     transform: translateY(0);
     animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
 
-    .step_1_top-content {
+    .step_last_top-content {
       opacity: 0;
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
         1.7s;
@@ -155,8 +155,8 @@
 }
 
 .js_active_5_1 {
-  .step_1 {
-    .step_1_top-content {
+  .step_last {
+    .step_last_top-content {
       animation: fadeInTop 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 5s !important;
     }
   }
@@ -166,7 +166,7 @@
 .js_active_2_2,
 .js_active_3_2,
 .js_active_4_2 {
-  .step_1 {
+  .step_last {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
@@ -204,7 +204,7 @@
 }
 
 .js_active_5_2 {
-  .step_1 {
+  .step_last {
     animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     transition-delay: 0.5s;
 
@@ -235,7 +235,7 @@
     visibility: hidden;
   }
 
-  .step_1,
+  .step_last,
   .step_questions {
     transform: translateY(-100vh);
     transform: translateY(-100dvh);
@@ -280,7 +280,7 @@
         pulse 2s infinite;
     }
   }
-  .step_1,
+  .step_last,
   .step_questions,
   .step_next {
     transform: translateY(-100vh);
@@ -547,7 +547,7 @@
     .step_0_top {
       animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
-    .step_1,
+    .step_last,
     .step_questions,
     .step_next,
     .step_questions2 {
@@ -556,7 +556,7 @@
   }
 
   &.lift {
-    .step_1_wrapper {
+    .step_last_wrapper {
       opacity: 0;
       animation: fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
     }
@@ -581,7 +581,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -593,7 +593,7 @@
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -605,7 +605,7 @@
       }
 
       .lvl_2 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -619,10 +619,10 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_2 {
-        .step_1_top-content {
+        .step_last_top-content {
           animation: none;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -634,7 +634,7 @@
 
   .lvls {
     .lvl_1 {
-      .step_1,
+      .step_last,
       .step_questions,
       .step_next {
         display: none;
@@ -649,11 +649,11 @@
     .lvls {
       .lvl_2,
       .lvl_2 {
-        .step_1 {
+        .step_last {
           opacity: 0;
         }
 
-        // .step_1_top-content {
+        // .step_last_top-content {
         //   animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         //   animation-delay: 1.7s;
         // }
@@ -679,7 +679,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -691,7 +691,7 @@
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -702,7 +702,7 @@
         }
       }
       .lvl_3 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -713,7 +713,7 @@
       }
       .lvl_1,
       .lvl_2 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -731,7 +731,7 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_3 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -744,7 +744,7 @@
   .lvls {
     .lvl_1,
     .lvl_2 {
-      .step_1,
+      .step_last,
       .step_questions,
       .step_next,
       .step_questions2 {
@@ -753,13 +753,13 @@
     }
 
     .lvl_3 {
-      .step_1 {
+      .step_last {
         // transition-delay: 0.5s;
         // opacity: 0;
         // animation-iteration-count: 1;
         // animation: fadeIn 0.5s cubic-bezier(.52,1.05,.92,.92) forwards;
 
-        .step_1_top-content {
+        .step_last_top-content {
           // animation: fadeInTop 0.5s cubic-bezier(.52,1.05,.92,.92) forwards 1.7s;
         }
       }
@@ -769,7 +769,7 @@
   &.js_active_3_1 {
     .lvls {
       .lvl_3 {
-        .step_1 {
+        .step_last {
           opacity: 0;
         }
       }
@@ -796,7 +796,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -808,7 +808,7 @@
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -819,7 +819,7 @@
         }
       }
       .lvl_4 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -831,7 +831,7 @@
       .lvl_1,
       .lvl_2,
       .lvl_3 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -849,7 +849,7 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_4 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -863,7 +863,7 @@
     .lvl_1,
     .lvl_2,
     .lvl_3 {
-      .step_1,
+      .step_last,
       .step_questions,
       .step_next,
       .step_questions2 {
@@ -875,7 +875,7 @@
   &.js_active_4_1 {
     .lvls {
       .lvl_4 {
-        .step_1 {
+        .step_last {
           opacity: 0;
         }
       }
@@ -903,7 +903,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next {
           transform: translateY(-100vh);
@@ -915,7 +915,7 @@
           animation: fadeOut 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
             0s;
         }
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -926,7 +926,7 @@
         }
       }
       .lvl_5 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -940,7 +940,7 @@
   &.js_content_animation_hidden {
     .lvls {
       .lvl_5 {
-        .step_1,
+        .step_last,
         .step_questions,
         .step_next,
         .step_questions2 {
@@ -957,7 +957,7 @@
     .lvl_3,
     .lvl_4 {
       .step_0,
-      .step_1,
+      .step_last,
       .step_questions,
       .step_next,
       .step_questions2 {
@@ -969,7 +969,7 @@
   &.js_active_5_1 {
     .lvls {
       .lvl_5 {
-        .step_1 {
+        .step_last {
           opacity: 0;
         }
       }

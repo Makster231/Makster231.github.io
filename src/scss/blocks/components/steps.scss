@@ -3,7 +3,7 @@
     // border-radius: 18px;
 
     .step_0,
-    .step_1,
+    .step_last,
     .step_questions,
     .step_next,
     .step_questions2 {
@@ -53,8 +53,6 @@
           border-bottom: 18px solid var(--color-white);
           border-left: 18px solid var(--color-white);
           @media screen and (max-width: 640px) {
-            // @include toVh(border-width, 18svh);
-            // @include toVh(top, -30svh);
             @include setProp(border-width, 18vh, 18dvh, 18svh);
             @include setProp(top, -30vh, -30dvh, -30svh);
           }
@@ -69,8 +67,6 @@
           border-right: 18px solid var(--color-white);
           border-bottom: 18px solid var(--color-white);
           @media screen and (max-width: 640px) {
-            // @include toVh(border-width, 18svh);
-            // @include toVh(top, -30svh);
             @include setProp(border-width, 18vh, 18dvh, 18svh);
             @include setProp(top, -30vh, -30dvh, -30svh);
           }
@@ -382,7 +378,7 @@
       }
     }
 
-    .step_1 {
+    .step_last {
       &_top {
         &-content {
           &--tablet {
@@ -722,7 +718,7 @@
     }
 
     &.step_0,
-    &.step_1,
+    &.step_last,
     &.step_questions,
     &.step_next,
     &.step_questions2 {
