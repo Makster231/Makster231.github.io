@@ -53,6 +53,7 @@
           }
           @media screen and (min-width: 1025px) {
             max-width: unset;
+            width: unset;
           }
 
           @media screen and (min-width: 1200px) {
@@ -78,7 +79,7 @@
             @media screen and (min-width: 1025px) {
               min-width: 460px;
               margin-bottom: 10px;
-              height: 380px;
+              // height: 380px;
             }
 
             &-video {
@@ -95,6 +96,8 @@
           }
           .h6 {
             color: var(--color-white);
+            text-align: center;
+            width: 100%;
             @media screen and (max-width: 1025px) {
               display: none;
             }
@@ -222,37 +225,21 @@
       }
       &_bottom {
         &-info {
-          .d-flex {
-            .d-flex {
-              width: 100%;
-              max-width: 660px;
-            }
-          }
-          .h3 {
+          .h4 {
             font-weight: 500;
-          }
-
-          .h6 {
-            @media screen and (max-width: 1025px) {
-              font-size: 16px;
-            }
+            margin-right: auto;
+            width: 100%;
+            max-width: 660px;
+            line-height: 1;
           }
         }
 
         &-btn {
-          margin-top: 20px;
           max-width: 100%;
-          padding-top: 25px;
-          padding-bottom: 25px;
+          font-size: 16px;
 
-          @media screen and (min-width: 960px) {
-            max-width: 450px;
-          }
-          @media screen and (min-width: 1025px) {
-            max-width: 500px;
-          }
-          @media screen and (min-width: 1200px) {
-            max-width: 550px;
+          @media screen and (min-width: 640px) {
+            max-width: 368px;
           }
         }
       }

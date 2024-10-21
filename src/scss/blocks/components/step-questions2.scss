@@ -80,15 +80,28 @@
                 @media screen and (min-width: 640px) {
                   max-width: 250px;
                 }
+
+                .h5 {
+                  font-size: 20px;
+                }
               }
             }
           }
         }
       }
       &_bottom {
-        .h3 {
-          margin-right: 140px;
+        .h4 {
+          // margin-right: 140px;
           font-weight: 500;
+        }
+
+        .btn {
+          max-width: 368px;
+          margin-left: auto;
+
+          @media screen and (max-width: 640px) {
+            @include setProp(margin-top, 20vh, 20dvh, 20svh);
+          }
         }
       }
     }

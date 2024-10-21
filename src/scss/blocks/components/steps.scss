@@ -577,7 +577,7 @@
             @media screen and (max-width: 640px) {
               // @include toVh(font-size, 30svh);
               // @include toVh(margin-bottom, 10svh);
-              @include setProp(font-size, 30vh, 30dvh, 30svh);
+              @include setProp(font-size, 24vh, 24dvh, 24svh);
               @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
               text-align: left;
               // @include toVh(padding-bottom, 30svh);
