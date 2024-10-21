@@ -97,6 +97,13 @@
   }
 }
 
+
+.t-flex-column {
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+}
+
 .align-center {
   align-items: center;
 }

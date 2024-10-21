@@ -1,18 +1,23 @@
 const requestForm = function () {
   const formWrapper = document.querySelector(".js_request");
 
-  // const btnOpen = document.querySelectorAll(".js_request_open");
-  const btnOpen = document.querySelector(".js_request_open");
-  const btnClose = document.querySelector(".js_request_close");
+  const btnOpen = document.querySelectorAll(".js_request_open");
+  const btnClose = document.querySelectorAll(".js_request_close");
 
   let isOpened = false;
 
-  // btnOpen?.forEach((el) => {
-  //   el.addEventListener("click", () => handleClick("open"));
-  // });
+  // const btnOpen = document.querySelector(".js_request_open");
+  // const btnClose = document.querySelector(".js_request_close");
 
-  btnOpen?.addEventListener("click", () => handleClick("open"));
-  btnClose?.addEventListener("click", () => handleClick("close"));
+  btnOpen?.forEach((el) => {
+    el.addEventListener("click", () => handleClick("open"));
+  });
+  btnClose?.forEach((el) => {
+    el.addEventListener("click", () => handleClick("close"));
+  });
+
+  // btnOpen?.addEventListener("click", () => handleClick("open"));
+  // btnClose?.addEventListener("click", () => handleClick("close"));
 
   function handleClick(state) {
     if (state === "close") {
@@ -26,13 +31,22 @@ const requestForm = function () {
     }
   }
 
+  const isMobile = window.innerWidth <= 640;
+  const clickContains = !isMobile
+    ? formWrapper
+    : document.querySelector(".js_request_content");
+
   window.addEventListener("click", function (e) {
     if (!formWrapper.classList.contains("js_active")) return;
 
-    if (btnClose.contains(e.target) || btnOpen.contains(e.target) || !isOpened)
+    if (
+      e.target.matches(".js_request_close") ||
+      e.target.matches(".js_request_open") ||
+      !isOpened
+    )
       return;
 
-    if (!formWrapper.contains(e.target)) {
+    if (!clickContains.contains(e.target)) {
       handleClick("close");
     }
   });

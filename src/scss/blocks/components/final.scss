@@ -1166,6 +1166,22 @@
       }
     }
     .final_left-top:nth-of-type(4) {
+      .t-flex-column {
+        .btn {
+          max-width: 256px;
+          margin-left: auto;
+        }
+        @media screen and (max-width: 960px) {
+          margin-bottom: 20px;
+
+          .btn {
+            max-width: 368px;
+          }
+        }
+        @media screen and (max-width: 640px) {
+          @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
+        }
+      }
       h2,
       h4 {
         color: var(--color-white) !important;
