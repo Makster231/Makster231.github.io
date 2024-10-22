@@ -394,11 +394,11 @@
       transform: translateY(-800dvh);
       transform: translateY(-800svh);
     }
-    60% {
-      transform: translateY(-700vh);
-      transform: translateY(-700dvh);
-      transform: translateY(-700svh);
-    }
+    // 60% {
+    //   transform: translateY(-700vh);
+    //   transform: translateY(-700dvh);
+    //   transform: translateY(-700svh);
+    // }
     100% {
       transform: translateY(-600vh);
       transform: translateY(-600dvh);
@@ -407,7 +407,7 @@
   }
 
   .lvl_all_bgs {
-    animation: lvl2_anim_bg 4s forwards linear 0s;
+    animation: lvl2_anim_bg 4s forwards cubic-bezier(0.78, 0.78, 0.79, 0.96) 0s;
     transition-delay: 4s !important;
     transition-duration: 0s !important;
     transform: translateY(-600vh);
@@ -436,11 +436,11 @@
       transform: translateY(-600dvh);
       transform: translateY(-600svh);
     }
-    60% {
-      transform: translateY(-500vh);
-      transform: translateY(-500dvh);
-      transform: translateY(-500svh);
-    }
+    // 60% {
+    //   transform: translateY(-500vh);
+    //   transform: translateY(-500dvh);
+    //   transform: translateY(-500svh);
+    // }
     100% {
       transform: translateY(-400vh);
       transform: translateY(-400dvh);
@@ -449,7 +449,7 @@
   }
 
   .lvl_all_bgs {
-    animation: lvl3_anim_bg 4s forwards linear 0s;
+    animation: lvl3_anim_bg 4s forwards cubic-bezier(0.78, 0.78, 0.79, 0.96) 0s;
     transition-delay: 4s !important;
     transition-duration: 0s !important;
     transform: translateY(-400vh);
@@ -491,7 +491,7 @@
   }
 
   .lvl_all_bgs {
-    animation: lvl4_anim_bg 4s forwards linear 0s;
+    animation: lvl4_anim_bg 4s forwards cubic-bezier(0.78, 0.78, 0.79, 0.96) 0s;
   }
 }
 
@@ -526,7 +526,7 @@
   }
 
   .lvl_all_bgs {
-    animation: lvl5_anim_bg 4s forwards linear 0s;
+    animation: lvl5_anim_bg 4s forwards cubic-bezier(0.78, 0.78, 0.79, 0.96) 0s;
   }
 }
 
