@@ -375,6 +375,7 @@
     .final_left-bottom:nth-of-type(4) {
       display: block;
       opacity: 1;
+      animation: fadeIn 2s;
     }
     .final_right_btn {
       &:nth-of-type(4) {
