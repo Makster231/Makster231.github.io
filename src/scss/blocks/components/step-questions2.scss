@@ -73,6 +73,9 @@
                 .h5 {
                   color: var(--color-white);
                   font-weight: 500;
+                  @media screen and (max-width: 960px) {
+                    font-size: 18px;
+                  }
                 }
               }
             }
