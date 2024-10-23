@@ -4,16 +4,34 @@
       &_top {
         .step_questions2 {
           &_cards {
+            max-width: 1060px;
+            width: 100%;
             .card {
               position: relative;
-              margin-right: 20px;
+              margin-right: 2%;
               width: 100%;
-              max-width: 330px;
+              // max-width: 330px;
               height: 460px;
               cursor: pointer;
 
               @media screen and (min-width: 1200px) {
-                max-width: 340px;
+                // max-width: 340px;
+              }
+
+              &:last-of-type {
+                margin-right: 0;
+              }
+
+              &.js_active,
+              &:hover {
+                picture {
+                  &:after {
+                    opacity: 1;
+                  }
+                  img {
+                    transform: scale(1.1);
+                  }
+                }
               }
 
               &_media {
@@ -55,22 +73,6 @@
                 .h5 {
                   color: var(--color-white);
                   font-weight: 500;
-                }
-              }
-
-              &:last-of-type {
-                margin-right: 0;
-              }
-
-              &.js_active,
-              &:hover {
-                picture {
-                  &:after {
-                    opacity: 1;
-                  }
-                  img {
-                    transform: scale(1.1);
-                  }
                 }
               }
             }

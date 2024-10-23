@@ -157,6 +157,7 @@
       border-radius: 16px;
       display: inline-block;
       margin-left: auto;
+      animation: show_f_b 0.5s linear forwards 0.5s;
       .h5 {
         color: var(--color-white);
         font-weight: 500;
