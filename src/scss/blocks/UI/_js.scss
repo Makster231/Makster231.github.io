@@ -263,11 +263,6 @@
 .js_active_2_3,
 .js_active_3_3,
 .js_active_4_3 {
-  // .aside_btn {
-  //   opacity: 0;
-  //   visibility: hidden;
-  // }
-
   .step_next,
   .step_2,
   .step_questions {
@@ -305,16 +300,6 @@
 .js_active_2_4,
 .js_active_3_4,
 .js_active_4_4 {
-  // .aside_btn {
-  //   &.js_active {
-  //     opacity: 0;
-  //     visibility: hidden;
-  //     transition-delay: 0.5s;
-  //     animation:
-  //       fadeIn 0.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s,
-  //       pulse 2s infinite;
-  //   }
-  // }
   .step_next,
   .step_2,
   .step_questions,
@@ -478,11 +463,11 @@
       transform: translateY(-400dvh);
       transform: translateY(-400svh);
     }
-    60% {
-      transform: translateY(-300vh);
-      transform: translateY(-300dvh);
-      transform: translateY(-300svh);
-    }
+    // 60% {
+    //   transform: translateY(-300vh);
+    //   transform: translateY(-300dvh);
+    //   transform: translateY(-300svh);
+    // }
     100% {
       transform: translateY(-200vh);
       transform: translateY(-200dvh);
@@ -515,11 +500,11 @@
       transform: translateY(-200dvh);
       transform: translateY(-200svh);
     }
-    60% {
-      transform: translateY(-100vh);
-      transform: translateY(-100dvh);
-      transform: translateY(-100svh);
-    }
+    // 60% {
+    //   transform: translateY(-100vh);
+    //   transform: translateY(-100dvh);
+    //   transform: translateY(-100svh);
+    // }
     100% {
       transform: translateY(0vh);
     }
@@ -614,10 +599,6 @@
       transition-delay: 1s;
 
       .lvl_1 {
-        // .aside_btn {
-        //   opacity: 0;
-        //   visibility: hidden;
-        // }
         .step_next,
         .step_2,
         .step_questions,
@@ -717,10 +698,6 @@
       transition-delay: 1s;
       .lvl_1,
       .lvl_2 {
-        // .aside_btn {
-        //   opacity: 0;
-        //   visibility: hidden;
-        // }
         .step_next,
         .step_2,
         .step_questions,
@@ -840,10 +817,6 @@
       .lvl_1,
       .lvl_2,
       .lvl_3 {
-        // .aside_btn {
-        //   opacity: 0;
-        //   visibility: hidden;
-        // }
         .step_next,
         .step_2,
         .step_questions,
@@ -953,10 +926,6 @@
       .lvl_2,
       .lvl_3,
       .lvl_4 {
-        // .aside_btn {
-        //   opacity: 0;
-        //   visibility: hidden;
-        // }
         .step_next,
         .step_2,
         .step_questions,

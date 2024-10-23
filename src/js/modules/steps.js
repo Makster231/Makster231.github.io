@@ -3,6 +3,7 @@ import WheelIndicator from "./wheel-indicator.js";
 export default function steps() {
   // ---------------------- CONSTS ----------------------
   const body = document.getElementById("body");
+  const wrapper = document.querySelector(".wrapper");
   //  BTNS
   const all_btns = document.querySelectorAll(".js_btn");
   // const aside_btn = document.querySelector(".js_aside_btn");
@@ -177,9 +178,11 @@ export default function steps() {
       step = 1;
       firstLoad ? (level = 1) : level++;
 
-      if (isMobile) {
-        addClass(body, "js_aside_animation");
-      }
+      // if (isMobile) {
+      removeClass(body, "js_aside_animation");
+      await sleep(50);
+      addClass(body, "js_aside_animation");
+      // }
 
       // если моб, то доб анимацию и паузу
       // await sleep(isMobile ? 8500 : 0);
@@ -208,17 +211,18 @@ export default function steps() {
 
     //  Анимация
     if (changeLvl) {
-      await sleep(firstLoad ? 1500 : 3000);
-      if (isMobile) {
-        await sleep(firstLoad ? 4000 : 3000);
-      }
+      await sleep(isMobile ? 6000 : 4500);
+      // if (isMobile) {
+      // await sleep(1500);
+      // await sleep(firstLoad ? 3000 : 2000);
+      // }
     }
 
     firstLoad = false;
     enableAllClikable();
     // Завершаем Анимацию
     animationProcessing = false;
-    removeClass(body, "js_aside_animation");
+    if (isMobile) removeClass(body, "js_aside_animation");
     await sleep(isMobile ? 0 : 750);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);

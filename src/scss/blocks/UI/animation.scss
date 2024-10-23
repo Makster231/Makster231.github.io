@@ -1,17 +1,3 @@
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(#a9ff40, 0.7);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(#a9ff40, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(#a9ff40, 0);
-  }
-}
-
 @keyframes show_f_r {
   0% {
     transform: translateX(100px);
@@ -91,19 +77,6 @@
     visibility: hidden;
   }
 }
-@keyframes fadeOutTop {
-  0% {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-50%);
-  }
-}
 
 @keyframes hidden {
   0% {
@@ -141,49 +114,81 @@
   }
 }
 
-#arrowAnim {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: calc(50% - 15px);
-  width: 140px;
-  height: 30px;
-  transform: scale(-1);
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
 
-  opacity: 0;
-  visibility: hidden;
-
-  transform: rotate(90deg);
-  width: 30px;
-  height: 15px;
-  top: 19px;
+  100% {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
-.arrow {
-  width: 7px;
-  height: 7px;
-  border: 3px solid;
-  border-color: white transparent transparent white;
-  transform: rotate(-45deg);
+@keyframes scaleAndShow {
+  0% {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
 }
 
-.arrowSliding {
-  position: absolute;
-  animation: slide 3s linear infinite;
+@keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    display: none;
+    // position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-.delay1 {
-  animation-delay: 1s;
-}
-.delay2 {
-  animation-delay: 2s;
-}
-.delay3 {
-  animation-delay: 3s;
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes slide {
+@keyframes slide_desktop {
+  0% {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+@keyframes slide_mob {
   0% {
     opacity: 0;
     transform: translateX(12px);
