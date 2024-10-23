@@ -206,3 +206,13 @@
     transform: translateX(-12px);
   }
 }
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.75);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
