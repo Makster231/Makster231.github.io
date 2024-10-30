@@ -1043,10 +1043,8 @@
         padding: 10px;
         border-radius: 32px;
         overflow: hidden;
-        background-color: var(--color-white);
-        @media screen and (min-width: 1025px) {
-          background-color: var(--color-grey-w);
-        }
+        background-color: #f1f6ff;
+        
         @media screen and (max-width: 640px) {
           @include setProp(padding-top, 5vh, 5dvh, 5svh, !important);
           @include setProp(padding-bottom, 5vh, 5dvh, 5svh, !important);
