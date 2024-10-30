@@ -157,6 +157,7 @@
           line-height: 1.5;
           color: var(--color-grey-m);
           display: block;
+          max-width: 760px;
           @media screen and (max-width: 1024px) {
             @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
             text-align: center;
@@ -1173,7 +1174,7 @@
     .final_left-top:nth-of-type(4) {
       .t-flex-column {
         .btn {
-          max-width: 256px;
+          max-width: 245px;
           margin-left: auto;
         }
         @media screen and (max-width: 960px) {
