@@ -236,22 +236,27 @@
       }
 
       &_img {
-        @media screen and (max-width: 1025px) {
-          padding-left: 0;
-          margin: 0 auto;
-        }
-        @media screen and (max-width: 960px) {
-          width: 190px;
-        }
-        @media screen and (max-width: 780px) {
-          width: 120px;
-        }
+        // @media screen and (max-width: 1025px) {
+        //   padding-left: 0;
+        //   margin: 0 auto;
+        // }
+        // @media screen and (max-width: 960px) {
+        //   width: 190px;
+        // }
+        // @media screen and (max-width: 780px) {
+        //   width: 120px;
+        // }
         @media screen and (max-width: 1025px) and (orientation: landscape) {
           width: 120px;
+          margin: 0 auto;
+
+          img {
+            width: 100%;
+          }
         }
         @media screen and (max-width: 640px) {
           @include setProp(width, 150vh, 150dvh, 150svh);
-          animation: fadeIn 1s linear forwards 0.5s;
+          margin: 0 auto;
 
           img {
             width: 100%;
