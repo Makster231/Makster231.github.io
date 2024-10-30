@@ -52,16 +52,16 @@
     z-index: 5;
     left: 0;
     top: 0;
-    width: 65px;
-    height: 181px;
+    height: 190px;
+    width: 140px;
 
     transform: translate(-50%, 120vh);
     transform: translate(-50%, 120dvh);
     transform: translate(-50%, 120svh);
 
     @media screen and (max-width: 640px) {
-      height: 415px;
-      width: 215px;
+      height: 330px;
+      width: 255px;
       left: 50%;
       opacity: 1;
       visibility: visible;
@@ -95,11 +95,11 @@
 
   &_picture {
     position: relative;
-    height: 151px;
-    width: 65px;
+    height: 190px;
+    width: 140px;
     @media screen and (max-width: 640px) {
-      height: 415px;
-      width: 215px;
+      height: 330px;
+      width: 255px;
     }
 
     img {
@@ -124,18 +124,18 @@
 
   &_icons {
     position: absolute;
-    top: calc(50% - 30px);
-    left: calc(50% - 20px);
+    top: calc(50% - 15px);
+    left: calc(50% - 23px);
     display: block;
 
     @media screen and (max-width: 640px) {
-      top: calc(50% - 20px);
-      left: calc(50% - 40px);
+      top: calc(50% - 45px);
+      left: calc(50% - 45px);
     }
 
     .icon-svg {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       opacity: 0;
       visibility: hidden;
       position: absolute;
@@ -143,18 +143,22 @@
       transition-timing-function: cubic-bezier(0.25, 0.37, 0.67, 0.94);
 
       @media screen and (max-width: 640px) {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
       }
 
       svg {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        border-radius: 10px;
+        // border-radius: 10px;
+
+        path {
+          fill: var(--color-white);
+        }
 
         @media screen and (max-width: 640px) {
-          border-radius: 20px;
+          // border-radius: 20px;
         }
       }
     }
@@ -162,30 +166,42 @@
     &-name {
       display: block;
       position: absolute;
-      top: 0;
       left: 0;
+      width: 100%;
+      height: 20px;
+      top: 12px;
 
       @media screen and (max-width: 640px) {
-        top: 17px;
+        height: 25px;
+        top: 23px;
       }
 
       .icon-svg {
-        width: 65px;
-        height: 8px;
+        font-size: 12px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
         opacity: 0;
         visibility: hidden;
-        position: absolute;
         transition-timing-function: cubic-bezier(0.25, 0.37, 0.67, 0.94);
 
         @media screen and (max-width: 640px) {
-          width: 215px;
-          height: 20px;
+          font-size: 18px;
         }
 
-        svg {
-          width: 100%;
-          height: 100%;
-        }
+        // @media screen and (max-width: 640px) {
+        //   width: 215px;
+        //   height: 20px;
+        // }
+
+        // svg {
+        //   width: 100%;
+        //   height: 100%;
+        // }
       }
     }
   }
@@ -200,22 +216,26 @@
     width: 20px;
     height: 10px;
     left: calc(50% - 10px);
-    top: 5px;
+    top: 17px;
 
     @media screen and (max-width: 640px) {
       left: calc(50% - 15px);
       width: 30px;
       height: 15px;
-      top: 19px;
+      top: 28px;
     }
   }
 
   .arrow {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     border: 2px solid;
     border-color: white transparent transparent white !important;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    // animation: blinker2 1.5s ease infinite;
 
     @media screen and (max-width: 640px) {
       width: 7px;
@@ -267,37 +287,60 @@
     }
     &_picture {
       img {
+        height: 100%;
+        width: 100%;
         &:nth-of-type(1) {
           transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-duration: 0.2s;
           opacity: 0;
           visibility: hidden;
         }
 
         &:nth-of-type(2) {
           transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-duration: 0.2s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(3) {
-          transition-delay: 4.4s;
-          transition-duration: 0.4s;
+          transition-delay: 4.2s;
+          transition-duration: 0.2s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(4) {
-          transition-delay: 4.8s;
-          transition-duration: 0.4s;
+          transition-delay: 4.4s;
+          transition-duration: 0.2s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(5) {
+          transition-delay: 4.6s;
+          transition-duration: 0.2s;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:nth-of-type(6) {
+          transition-delay: 4.8s;
+          transition-duration: 0.2s;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:nth-of-type(7) {
+          transition-delay: 5s;
+          transition-duration: 0.2s;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:nth-of-type(8) {
           transition-delay: 5.2s;
-          transition-duration: 0.4s;
+          transition-duration: 0.2s;
           opacity: 1;
           visibility: visible;
         }

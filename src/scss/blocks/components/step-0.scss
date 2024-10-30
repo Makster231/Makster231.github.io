@@ -129,6 +129,10 @@
 
         @media screen and (max-width: 1025px) {
           display: block;
+
+          img {
+            width: 100%;
+          }
         }
 
         &-block {
@@ -186,7 +190,9 @@
         width: 194px;
         left: 0;
         @media screen and (max-width: 640px) {
-          left: -25%;
+          @include setProp(left, -20vh, -20dvh, -20svh);
+          @include setProp(width, 200vh, 200dvh, 200svh);
+          @include setProp(font-size, 10vh, 10dvh, 10svh);
           text-align: center;
         }
       }

@@ -170,6 +170,18 @@
   }
 }
 
+@keyframes blinker2 {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slide_desktop {
   0% {
     opacity: 0;

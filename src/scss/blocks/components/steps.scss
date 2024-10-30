@@ -543,7 +543,7 @@
             @media screen and (max-width: 640px) {
               margin-right: 0;
               max-width: 100%;
-              @include setProp(height, 145vh, 145dvh, 145svh);
+              @include setProp(height, 130vh, 130dvh, 130svh);
               @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
 
               &.js_active {
@@ -572,13 +572,13 @@
             }
           }
 
-          &.cards_4 {
-            .card {
-              @media screen and (max-width: 640px) {
-                @include setProp(height, 130vh, 130dvh, 130svh);
-              }
-            }
-          }
+          // &.cards_4 {
+          //   .card {
+          //     @media screen and (max-width: 640px) {
+          //       @include setProp(height, 130vh, 130dvh, 130svh);
+          //     }
+          //   }
+          // }
         }
       }
       &_bottom {
