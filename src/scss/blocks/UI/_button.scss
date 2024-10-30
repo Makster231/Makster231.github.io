@@ -37,7 +37,7 @@
     &.js_active,
     &:hover {
       background-color: var(--color-white);
-      color: var(--color-blue);
+      color: var(--color-blue) !important;
       border-color: var(--color-blue);
     }
   }
