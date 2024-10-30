@@ -40,8 +40,8 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 2;
-  let level = 5;
+  let step = 1;
+  let level = 1;
   let firstLoad = 0;
 
   //  Animation flag
