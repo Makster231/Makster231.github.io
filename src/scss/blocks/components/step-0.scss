@@ -10,7 +10,8 @@
           }
           .h2 {
             color: var(--color-white);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1;
             @media screen and (max-width: 640px) {
               text-align: left;
               @include setProp(font-size, 32vh, 32dvh, 32svh);
@@ -29,8 +30,19 @@
         }
 
         &-picture {
-          animation: show_f_b 0.5s linear forwards 0.5s;
-          width: 280px;
+          animation: fadeIn 1s linear forwards 0.5s;
+          width: 255px;
+          height: 365px;
+          margin-left: auto;
+          display: block;
+          transform: translateY(-70px) !important;
+
+          img {
+            display: block;
+            margin-left: auto;
+            width: 100%;
+            height: 100%;
+          }
         }
 
         &-right {
@@ -95,7 +107,8 @@
           animation: show_f_b 0.5s linear forwards 0.5s;
         }
         &-btn {
-          max-width: 368px;
+          max-width: 176px;
+          font-size: 16px;
         }
         .h5 {
           @media screen and (max-width: 640px) {
@@ -111,22 +124,6 @@
       }
 
       &_img {
-        height: 80%;
-        padding-left: 80px;
-        position: relative;
-        z-index: 5;
-        opacity: 0;
-        animation: show_f_b 0.5s linear forwards 0.5s;
-
-        @media screen and (min-width: 1367px) {
-          height: 87%;
-          padding-left: 40px;
-        }
-
-        img {
-          height: 100%;
-          width: 100%;
-        }
         &-block {
           position: absolute;
           z-index: 10;
@@ -158,6 +155,7 @@
       display: inline-block;
       margin-left: auto;
       animation: show_f_b 0.5s linear forwards 0.5s;
+      position: relative;
       .h5 {
         color: var(--color-white);
         font-weight: 500;
@@ -167,6 +165,22 @@
 
         @media screen and (max-width: 640px) {
           @include setProp(font-size, 18vh, 18dvh, 18svh);
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 130%;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 1.1;
+        letter-spacing: -0.0015em;
+        color: #ffffff;
+        width: 194px;
+        left: 0;
+        @media screen and (max-width: 640px) {
+          left: -25%;
+          text-align: center;
         }
       }
     }

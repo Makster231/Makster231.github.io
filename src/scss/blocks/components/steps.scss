@@ -205,7 +205,7 @@
         }
 
         &-info {
-          @media screen and (max-width: 1025px) and (orientation: portrait) {
+          @media screen and (max-width: 640px) {
             flex-direction: column;
             text-align: center;
           }
@@ -226,7 +226,7 @@
 
           .btn {
             @media screen and (max-width: 1025px) and (orientation: portrait) {
-              max-width: 60%;
+              // max-width: 60%;
             }
             @media screen and (max-width: 640px) {
               max-width: 100%;
@@ -250,7 +250,12 @@
           width: 120px;
         }
         @media screen and (max-width: 640px) {
-          @include setProp(width, 90vh, 90dvh, 90svh);
+          @include setProp(width, 150vh, 150dvh, 150svh);
+          animation: fadeIn 1s linear forwards 0.5s;
+
+          img {
+            width: 100%;
+          }
         }
 
         &-block {

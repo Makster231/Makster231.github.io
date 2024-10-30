@@ -111,6 +111,7 @@
 
           @media screen and (max-width: 640px) {
             @include setProp(margin-top, 20vh, 20dvh, 20svh);
+            max-width: 100%;
           }
         }
       }
