@@ -33,69 +33,69 @@
   }
 }
 
-.js_active_video {
-  .block_media {
-    position: unset !important;
-  }
-  .step_last_top-content {
-    max-width: 100%;
-    transition: 0s !important;
-  }
-  .step_last_top {
-    transition: 1s ease;
-    z-index: 11 !important;
-  }
+// .js_active_video {
+//   .block_media {
+//     position: unset !important;
+//   }
+//   .step_last_top-content {
+//     max-width: 100%;
+//     transition: 0s !important;
+//   }
+//   .step_last_top {
+//     transition: 1s ease;
+//     z-index: 11 !important;
+//   }
 
-  .bg_black {
-    opacity: 1;
-    visibility: visible;
-  }
+//   .bg_black {
+//     opacity: 1;
+//     visibility: visible;
+//   }
 
-  .block_media-video {
-    position: absolute;
+//   .block_media-video {
+//     position: absolute;
 
-    z-index: 100;
-    border-radius: 0;
-    z-index: 999;
-    left: 0;
-    top: 0;
+//     z-index: 100;
+//     border-radius: 0;
+//     z-index: 999;
+//     left: 0;
+//     top: 0;
 
-    animation: 1s scaleUp forwards;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-  }
-  .block_media-text,
-  .step_last_top-left .h6,
-  .step_last_top-right {
-    opacity: 0;
-  }
-}
-.step_last_top-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg_black {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  transition: 1s ease;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
-}
+//     animation: 1s scaleUp forwards;
+//     width: 100%;
+//     max-width: 100%;
+//     height: 100%;
+//   }
+//   .block_media-text,
+//   .step_last_top-left .h6,
+//   .step_last_top-right {
+//     opacity: 0;
+//   }
+// }
+// .step_last_top-content {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .bg_black {
+//   opacity: 0;
+//   visibility: hidden;
+//   position: fixed;
+//   transition: 1s ease;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   z-index: 10;
+// }
 
-.step_last_top {
-  transition: 1s ease;
-}
+// .step_last_top {
+//   transition: 1s ease;
+// }
 
-.block_media-video {
-  transition: 1s ease !important;
-}
-.step_last_top-content {
-  z-index: 999 !important;
-}
+// .block_media-video {
+//   transition: 1s ease !important;
+// }
+// .step_last_top-content {
+//   z-index: 999 !important;
+// }
