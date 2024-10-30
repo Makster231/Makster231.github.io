@@ -160,10 +160,10 @@
       transform: translateY(-500dvh);
       transform: translateY(-500svh);
       &-2 {
-        background-color: var(--color-grey-w);
-        @media screen and (min-width: 1025px) {
-          background-color: var(--color-white);
-        }
+        background-color: #F4F6FB;
+        // @media screen and (min-width: 1025px) {
+        //   background-color: var(--color-white);
+        // }
       }
     }
 

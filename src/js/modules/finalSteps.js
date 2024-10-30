@@ -46,13 +46,20 @@ const finalSteps = function () {
   }
 
   const lvl_5_2 = document.querySelector(".js_lvl_5-2");
-  const final_tabs = document.querySelector(".js_final_right_btns");
+  const final_tabs = document.querySelectorAll(".js_final_right_btns button");
   const final_mob_tabs = document.querySelectorAll(".js_final_mob_tabs--btn");
 
   if (final_tabs) {
-    final_tabs.addEventListener("click", function (e) {
-      if (!e.target.classList.contains("btn")) return;
-      lvl_5_2.dataset.tab = e.target.dataset.role;
+    final_tabs.forEach((el) => {
+      el.addEventListener("click", function (e) {
+        const target = e.target;
+        const role = target.dataset.role || target.closest(".btn").dataset.role;
+
+        final_tabs.forEach((el) => el.classList.remove("js_active"));
+        target.classList.add("js_active");
+
+        lvl_5_2.dataset.tab = role;
+      });
     });
   }
 

@@ -1,6 +1,0 @@
-/**
- * Generates event when user makes new movement (like a swipe on a touchscreen).
- * @version 1.2.2
- * @link https://github.com/Promo/wheel-indicator
- * @license MIT
- */
