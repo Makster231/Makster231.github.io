@@ -641,7 +641,8 @@
 
           &--bottom {
             .btn {
-              max-width: 120px;
+              max-width: 122px;
+              min-width: 122px;
               margin-left: 30px;
             }
             * {
