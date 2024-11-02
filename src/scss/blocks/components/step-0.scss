@@ -29,6 +29,13 @@
           animation: fadeInTop 0.5s linear forwards 0.5s;
         }
 
+        &-content {
+          @media screen and (min-height: 900px) and (min-width: 1440px) {
+            height: 75%;
+            align-items: center;
+          }
+        }
+
         &-picture {
           animation: fadeIn 1s linear forwards 0.5s;
           width: 255px;
@@ -36,6 +43,10 @@
           margin-left: auto;
           display: block;
           transform: translateY(-70px) !important;
+
+          @media screen and (min-height: 900px) and (min-width: 1440px) {
+            transform: none !important;
+          }
 
           img {
             display: block;

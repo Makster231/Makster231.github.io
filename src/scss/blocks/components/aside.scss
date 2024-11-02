@@ -9,6 +9,9 @@
     left: unset;
   }
 
+  @media screen and (max-width: 1025px) {
+    left: 65px;
+  }
   @media screen and (max-width: 640px) {
     position: fixed;
     right: 0;

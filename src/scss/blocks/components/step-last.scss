@@ -8,6 +8,10 @@
             justify-content: center;
           }
 
+          @media screen and (min-width: 960px) and (max-width: 1025px) {
+            max-width: 85%;
+          }
+
           &--mobile,
           &--tablet {
             display: none;

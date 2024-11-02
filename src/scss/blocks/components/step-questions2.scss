@@ -6,6 +6,11 @@
           &_cards {
             max-width: 1060px;
             width: 100%;
+
+            @media screen and (min-width: 640px) and (max-width: 1025px) {
+              max-width: 85%;
+            }
+
             .card {
               position: relative;
               margin-right: 2%;

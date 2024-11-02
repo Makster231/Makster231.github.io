@@ -588,7 +588,7 @@
           @include setProp(min-height, 194vh, 194dvh, 194svh);
         }
         &-info {
-          @media screen and (max-width: 1025px) {
+          @media screen and (max-width: 640px) {
             flex-direction: column;
             width: 100%;
           }
