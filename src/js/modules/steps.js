@@ -29,10 +29,10 @@ export default function steps() {
 
   //  step 2 btns state
   let data_info = {
-    // step_questions_values: ["das", "das", "das", "das"],
-    // step_questions2_values: ["das", "das", "das", "das"],
-    step_questions_values: [],
-    step_questions2_values: [],
+    step_questions_values: ["das", "das", "das", "das"],
+    step_questions2_values: ["das", "das", "das", "das"],
+    // step_questions_values: [],
+    // step_questions2_values: [],
   };
 
   let isMobile = window.innerWidth <= 640;
@@ -40,9 +40,9 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
-  let level = 0;
-  let firstLoad = 1;
+  let step = 4;
+  let level = 4;
+  let firstLoad = 0;
 
   //  Animation flag
   let animationProcessing = false;
