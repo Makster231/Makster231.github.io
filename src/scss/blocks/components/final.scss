@@ -200,7 +200,6 @@
             border-radius: 50%;
             border-color: transparent !important;
 
-            &.js_active,
             &:hover {
               background-color: var(--color-blue);
 
@@ -227,10 +226,14 @@
       animation: fadeIn 2s;
     }
     // DESK BTNS
-    .final_right_btns {
-      .btn {
-        &:nth-of-type(1) {
-          opacity: 1;
+    .js_final_right_btn {
+      &:nth-of-type(1) {
+        background-color: var(--color-blue);
+
+        svg {
+          path {
+            fill: var(--color-white);
+          }
         }
       }
     }
@@ -278,11 +281,17 @@
       opacity: 1;
       animation: fadeIn 2s;
     }
-    .final_right_btns {
-      .btn {
-        background-color: #f4f6fb;
-        &:nth-of-type(2) {
-          opacity: 1;
+
+    // DESK BTNS
+    .js_final_right_btn {
+      background-color: var(--color-grey-w);
+      &:nth-of-type(2) {
+        background-color: var(--color-blue);
+
+        svg {
+          path {
+            fill: var(--color-white);
+          }
         }
       }
     }
@@ -330,11 +339,17 @@
       opacity: 1;
       animation: fadeIn 2s;
     }
-    .final_right_btns {
-      .btn {
-        background-color: #f4f6fb;
-        &:nth-of-type(3) {
-          opacity: 1;
+
+    // DESK BTNS
+    .js_final_right_btn {
+      background-color: var(--color-grey-w);
+      &:nth-of-type(3) {
+        background-color: var(--color-blue);
+
+        svg {
+          path {
+            fill: var(--color-white);
+          }
         }
       }
     }
@@ -381,10 +396,16 @@
       opacity: 1;
       animation: fadeIn 2s;
     }
-    .final_right_btns {
-      .btn {
-        &:nth-of-type(4) {
-          opacity: 1;
+
+    // DESK BTNS
+    .js_final_right_btn {
+      &:nth-of-type(4) {
+        background-color: var(--color-blue);
+
+        svg {
+          path {
+            fill: var(--color-white);
+          }
         }
       }
     }
@@ -493,6 +514,10 @@
               max-width: 100%;
               margin-right: 0;
             }
+
+            .final_1_list-item--subTitle {
+              display: none;
+            }
           }
 
           &--secondary {
@@ -520,8 +545,6 @@
                   }
 
                   &_price {
-                    margin-left: auto;
-                    font-size: 12px;
                     color: var(--color-white);
                   }
                 }
@@ -640,10 +663,20 @@
           }
 
           &--bottom {
+            @media screen and (max-width: 640px) {
+              flex-wrap: wrap;
+            }
             .btn {
               max-width: 122px;
               min-width: 122px;
               margin-left: 30px;
+
+              @media screen and (max-width: 640px) {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                margin-top: 10px;
+              }
             }
             * {
               font-size: 14px !important;
@@ -662,7 +695,7 @@
               margin-left: auto;
 
               @media screen and (max-width: 640px) {
-                transform: translateY(-30px);
+                // transform: translateY(-30px);
                 margin-left: auto;
                 text-align: right;
               }
@@ -1273,9 +1306,7 @@
 
           @media screen and (max-width: 640px) {
             max-width: 100%;
-          }
-
-          @media screen and (max-width: 640px) {
+            @include setProp(min-height, 300vh, 300dvh, 300svh);
             @include setProp(padding-top, 30vh, 30dvh, 30svh);
             @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
             @include setProp(padding-left, 20vh, 20dvh, 20svh);
@@ -1293,9 +1324,9 @@
             @media screen and (max-width: 640px) {
               @include setProp(margin-top, 15vh, 15dvh, 15svh);
               @include setProp(margin-bottom, 15vh, 15dvh, 15svh);
-              @include setProp(min-height, 170vh, 170dvh, 170svh);
-              @include setProp(height, 170vh, 170dvh, 170svh);
-              flex: 1;
+              @include setProp(min-height, 130vh, 130dvh, 130svh);
+              @include setProp(height, 130vh, 130dvh, 130svh);
+              // flex: 1;
             }
             img {
               width: 100%;

@@ -8,7 +8,6 @@
 
 // // ================= LIFT ANIMATION =================
 
-// 10% - 0.5 sek
 @keyframes lift {
   0% {
     transform: translate(-50%, 45vh);
@@ -53,27 +52,57 @@
   }
 }
 
+@keyframes liftEnd {
+  0% {
+    transform: translate(-50%, 45vh);
+    transform: translate(-50%, 45dvh);
+    transform: translate(-50%, 45svh);
+  }
+
+  40% {
+    transform: translate(-50%, -30vh);
+    transform: translate(-50%, -30dvh);
+    transform: translate(-50%, -30svh);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -30vh);
+    transform: translate(-50%, -30dvh);
+    transform: translate(-50%, -30svh);
+  }
+}
+
 #body {
-  &:not(.js_active_lvl_1) {
+  &.js_active_lvl_1 {
     &.lift {
       .aside_container {
-        animation: lift 4.2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
-      }
-
-      button {
-        // pointer-events: none !important;
+        animation: liftStart 2.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+          0.5s;
       }
     }
   }
 
-  &.lift {
-    .aside_container {
-      animation: liftStart 2.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
-        0.5s;
+  &.js_active_lvl_2,
+  &.js_active_lvl_3,
+  &.js_active_lvl_4 {
+    &.lift {
+      .aside_container {
+        animation: lift 4.2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+      }
     }
+  }
 
-    button {
-      // pointer-events: none !important;
+  &.js_active_lvl_5 {
+    &.lift {
+      .aside_container {
+        animation: liftEnd 4.2s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+      }
     }
   }
 }
@@ -500,11 +529,7 @@
       transform: translateY(-200dvh);
       transform: translateY(-200svh);
     }
-    // 60% {
-    //   transform: translateY(-100vh);
-    //   transform: translateY(-100dvh);
-    //   transform: translateY(-100svh);
-    // }
+
     100% {
       transform: translateY(0vh);
     }
@@ -801,7 +826,6 @@
     }
   }
 }
-
 // 4444444444444444444444444444444444444444444444444444444444
 .js_active_lvl_4 {
   .aside_container {
@@ -912,11 +936,15 @@
 
 // 5555555555555555555555555555555555555555555555555555555555
 .js_active_lvl_5 {
-  .aside_container {
-    @media screen and (max-width: 640px) {
-      transform: translate(-50%, 20vh) !important;
-      transform: translate(-50%, 20dvh) !important;
-      transform: translate(-50%, 20svh) !important;
+  .aside {
+    transition-delay: 3s;
+    opacity: 0;
+    &_container {
+      @media screen and (max-width: 640px) {
+        transform: translate(-50%, 20vh) !important;
+        transform: translate(-50%, 20dvh) !important;
+        transform: translate(-50%, 20svh) !important;
+      }
     }
   }
   &.js_change_lvl {

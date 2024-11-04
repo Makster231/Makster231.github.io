@@ -55,8 +55,8 @@ const finalSteps = function () {
         const target = e.target;
         const role = target.dataset.role || target.closest(".btn").dataset.role;
 
-        final_tabs.forEach((el) => el.classList.remove("js_active"));
-        target.classList.add("js_active");
+        // final_tabs.forEach((el) => el.classList.remove("js_active"));
+        // target.classList.add("js_active");
 
         lvl_5_2.dataset.tab = role;
       });
