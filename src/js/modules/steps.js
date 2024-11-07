@@ -6,7 +6,6 @@ export default function steps() {
   const wrapper = document.querySelector(".wrapper");
   //  BTNS
   const all_btns = document.querySelectorAll(".js_btn");
-  // const aside_btn = document.querySelector(".js_aside_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
 
   const step_last_btns = document.querySelectorAll(".js_step_last_btn");
@@ -38,9 +37,9 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
-  let level = 0;
-  let firstLoad = 1;
+  let step = 1;
+  let level = 2;
+  let firstLoad = 0;
 
   //  Animation flag
   let animationProcessing = false;
