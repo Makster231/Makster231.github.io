@@ -13,16 +13,26 @@ const video = function () {
     const poster = document.querySelectorAll(".plyr__poster");
 
     video.on("play", (e) => {
+      if (isMobile) body.classList.add("js_load");
+
       body.classList.add("js_active_video");
       poster.forEach((el) => (el.style.opacity = 0));
     });
     video.on("pause", (e) => {
       body.classList.remove("js_active_video");
       poster.forEach((el) => (el.style.opacity = 1));
+
+      setTimeout(() => {
+        body.classList.remove("js_load");
+      }, 100);
     });
     video.on("end", (e) => {
       body.classList.remove("js_active_video");
       poster.forEach((el) => (el.style.opacity = 1));
+
+      setTimeout(() => {
+        body.classList.remove("js_load");
+      }, 100);
     });
   });
 

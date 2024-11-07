@@ -568,16 +568,9 @@
               max-width: 100%;
               @include setProp(height, 130vh, 130dvh, 130svh);
               @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
-
-              &.js_active {
-                .card_media::after {
-                  background-color: rgba(0, 0, 0, 0.5);
-                }
-              }
             }
             &_media::after {
               @media screen and (max-width: 640px) {
-                background-color: rgba(0, 0, 0, 0.2);
                 opacity: 1;
               }
             }

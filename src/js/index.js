@@ -20,6 +20,13 @@ window.addEventListener("load", function () {
   lazyLoad();
   video();
 
+  window.addEventListener("change", function () {
+    body.classList.add("js_load");
+    setTimeout(() => {
+      body.classList.remove("js_load");
+    }, 50);
+  });
+
   // Показываем страницу после загрузки
   body.classList.remove("js_load");
   body.style.opacity = 1;
