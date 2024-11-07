@@ -15,13 +15,12 @@
               position: relative;
               margin-right: 2%;
               width: 100%;
-              // max-width: 330px;
               height: 460px;
               cursor: pointer;
-
-              @media screen and (min-width: 1200px) {
-                // max-width: 340px;
-              }
+              border-radius: 24px;
+              overflow: hidden;
+              border: 1px solid var(--color-white);
+              transition: 0.5s ease;
 
               &:last-of-type {
                 margin-right: 0;
@@ -29,14 +28,13 @@
 
               &.js_active,
               &:hover {
-                picture {
-                  &:after {
-                    opacity: 1;
-                  }
-                  img {
-                    transform: scale(1.1);
-                  }
+                img {
+                  transform: scale(1.1);
                 }
+              }
+
+              &.js_active {
+                border-color: var(--color-blue);
               }
 
               &_media {
@@ -55,16 +53,15 @@
                   left: 0;
                   width: 100%;
                   height: 100%;
-                  background-color: rgba(0, 0, 0, 0.3);
-                  opacity: 0;
-                  transition: 0.3s linear;
+                  background-color: rgba(0, 0, 0, 0.4);
+                  transition: 0.5s ease;
                 }
 
                 img {
-                  transition: 0.3s linear;
+                  transition: 0.5s ease;
                   width: 100%;
-                  object-fit: cover;
                   height: 100%;
+                  object-fit: cover;
                 }
               }
 
