@@ -268,6 +268,13 @@
         // flex-direction: row-reverse;
 
         &--item {
+          @media screen and (min-width: 960px) {
+            min-height: 140px !important;
+
+            p {
+              font-size: 16px;
+            }
+          }
           &:nth-of-type(5) {
             margin-left: auto;
             display: flex;

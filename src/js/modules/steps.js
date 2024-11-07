@@ -10,6 +10,9 @@ export default function steps() {
 
   const step_last_btns = document.querySelectorAll(".js_step_last_btn");
   const step_questions_btns = document.querySelectorAll(".js_importants_list");
+  const step_questions_btns_btn = document.querySelectorAll(
+    ".js_importants_list_btn"
+  );
 
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
 
@@ -37,9 +40,9 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 1;
-  let level = 2;
-  let firstLoad = 0;
+  let step = 0;
+  let level = 0;
+  let firstLoad = 1;
 
   //  Animation flag
   let animationProcessing = false;
@@ -282,6 +285,40 @@ export default function steps() {
       changeSteps();
     });
   });
+  // if (!isMobile) {
+  step_questions_btns_btn.forEach((btn) => {
+    btn.addEventListener("mouseenter", function (e) {
+      const img = e.target
+        .closest(".step_questions_top")
+        .querySelector(".step_questions_top-bg img");
+      const source = e.target
+        .closest(".step_questions_top")
+        .querySelector(".step_questions_top-bg source");
+
+      let newSrc = e.target.dataset.img + (isMobile ? "-m.jpg" : ".jpg");
+
+      if (isMobile) {
+        changeImg(img, newSrc);
+      } else {
+        changeImg(source, newSrc);
+      }
+    });
+  });
+
+  function changeImg(domImg, srcImage) {
+    var img = new Image();
+    // domImg.nextElementSibling.classList.remove("fade-in");
+    // domImg.nextElementSibling.classList.add("fade-out");
+
+    img.onload = function () {
+      domImg.srcset = this.src;
+    };
+
+    // domImg.nextElementSibling.classList.remove("fadeOut");
+    img.src = srcImage;
+    // domImg.nextElementSibling.classList.add("fadeIn");
+  }
+  // }
 
   // ---------------------- STEP 3 ----------------------
   step_questions2_cards.forEach((btn) => {
