@@ -178,14 +178,9 @@ export default function steps() {
       step = 1;
       firstLoad ? (level = 1) : level++;
 
-      // if (isMobile) {
       removeClass(body, "js_aside_animation");
       await sleep(50);
       addClass(body, "js_aside_animation");
-      // }
-
-      // если моб, то доб анимацию и паузу
-      // await sleep(isMobile ? 8500 : 0);
     }
 
     // Удаление Всех классов состояний
@@ -210,20 +205,14 @@ export default function steps() {
     enableAllClikable();
 
     //  Анимация
-    if (changeLvl) {
-      await sleep(isMobile ? 6000 : 4500);
-      // if (isMobile) {
-      // await sleep(1500);
-      // await sleep(firstLoad ? 3000 : 2000);
-      // }
-    }
+    if (changeLvl) await sleep(isMobile ? 4000 : 2500);
 
     firstLoad = false;
     enableAllClikable();
     // Завершаем Анимацию
     animationProcessing = false;
     if (isMobile) removeClass(body, "js_aside_animation");
-    await sleep(isMobile ? 0 : 750);
+    // await sleep(isMobile ? 0 : 750);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
 
@@ -285,9 +274,10 @@ export default function steps() {
       changeSteps();
     });
   });
-  // if (!isMobile) {
+
+  let eventTrigger = isMobile ? "touchstart" : "mouseenter";
   step_questions_btns_btn.forEach((btn) => {
-    btn.addEventListener("mouseenter", function (e) {
+    btn.addEventListener(eventTrigger, function (e) {
       const img = e.target
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg img");
@@ -318,7 +308,6 @@ export default function steps() {
     img.src = srcImage;
     // domImg.nextElementSibling.classList.add("fadeIn");
   }
-  // }
 
   // ---------------------- STEP 3 ----------------------
   step_questions2_cards.forEach((btn) => {
