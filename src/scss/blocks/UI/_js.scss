@@ -93,7 +93,7 @@
   &.js_active_lvl_4 {
     &.lift {
       .aside_container {
-        animation: lift 3.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+        animation: lift 3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
       }
     }
   }
@@ -101,7 +101,7 @@
   &.js_active_lvl_5 {
     &.lift {
       .aside_container {
-        animation: liftEnd 3.5s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+        animation: liftEnd 3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
       }
     }
   }
