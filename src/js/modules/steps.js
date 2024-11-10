@@ -111,43 +111,34 @@ export default function steps() {
     }
 
     if (step === 3 && !data_info.step_questions2_values[level - 1]) {
-      console.log(1231231);
       return false;
     }
 
     dir === "down" ? step++ : step--;
 
     if (level === 1 && step === -1) {
-      console.log(3);
       step = 0;
       return false;
     }
 
     if (step === 0) {
-      console.log(4);
       step = 1;
       return false;
     }
 
     if (step > 4) {
-      console.log(5);
       step = 4;
-      // return false;
     }
 
     if (step > 2) {
-      console.log(6);
       if (!data_info.step_questions_values[level - 1]) {
-        console.log(7);
         step = 2;
         return false;
       }
     }
 
     if (level !== 5 && step < 3) {
-      console.log(8);
       if (data_info.step_questions_values[level - 1]) {
-        console.log(9);
         step = 3;
         return false;
       }
@@ -155,12 +146,10 @@ export default function steps() {
 
     if (level === 5 && step === 2) {
       if (data_info.step_questions_values[level - 1]) {
-        console.log(9);
         step = 3;
         return false;
       }
     }
-    console.log(10);
     return true;
   };
 
@@ -275,7 +264,7 @@ export default function steps() {
     });
   });
 
-  let eventTrigger = isMobile ? "touchstart" : "mouseenter";
+  const eventTrigger = isMobile ? "touchstart" : "mouseenter";
   step_questions_btns_btn.forEach((btn) => {
     btn.addEventListener(eventTrigger, function (e) {
       const img = e.target
@@ -285,7 +274,7 @@ export default function steps() {
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg source");
 
-      let newSrc = e.target.dataset.img + (isMobile ? "-m.jpg" : ".jpg");
+      const newSrc = e.target.dataset.img + (isMobile ? "-m.jpg" : ".jpg");
 
       if (isMobile) {
         changeImg(img, newSrc);
@@ -296,17 +285,27 @@ export default function steps() {
   });
 
   function changeImg(domImg, srcImage) {
+    if (domImg.srcset === window.location.href + srcImage.slice(2)) return;
+
     var img = new Image();
-    // domImg.nextElementSibling.classList.remove("fade-in");
-    // domImg.nextElementSibling.classList.add("fade-out");
+    const imgOp = domImg.closest("picture").querySelector("img");
 
     img.onload = function () {
       domImg.srcset = this.src;
     };
 
-    // domImg.nextElementSibling.classList.remove("fadeOut");
     img.src = srcImage;
-    // domImg.nextElementSibling.classList.add("fadeIn");
+    imgOp.style.opacity = 0.3;
+    // Интервал анимации
+    const interval = setInterval(() => {
+      // Увеличиваем прозрачность элемента на 0.1
+      imgOp.style.opacity = parseFloat(imgOp.style.opacity) + 0.1;
+
+      // Если прозрачность достигла максимального значения, останавливаем анимацию
+      if (imgOp.style.opacity >= 1) {
+        clearInterval(interval);
+      }
+    }, 75);
   }
 
   // ---------------------- STEP 3 ----------------------
@@ -337,19 +336,9 @@ export default function steps() {
 
   step_questions2_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
-      console.log(2222);
       // Подсчёт Шага
       let flag = !stepCalc("down");
       if (flag) return;
-
-      console.log(1111);
-      // Переход на следующий уровень
-      // let btn_val = document.querySelector(
-      //   `.js_lvl_${level} .js_step_questions2_cards .js_card.js_active`
-      // );
-
-      // if (btn_val)
-      //   data_info.step_questions2_values[level - 1] = btn_val.dataset.value;
 
       // Определение Слайда
       changeSteps();
@@ -359,11 +348,7 @@ export default function steps() {
   // ---------------------- STEP 4 ----------------------
   step_last_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
-      console.log(step);
-      console.log(level);
-      console.log(data_info);
       // // Подсчёт Шага
-      // stepCalc("down");
       let flag = !stepCalc("down");
       if (flag) return;
 
