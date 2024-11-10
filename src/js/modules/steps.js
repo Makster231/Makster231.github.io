@@ -286,8 +286,9 @@ export default function steps() {
 
   async function changeImg(domImg, srcImage) {
     console.log(domImg.srcset);
-    console.log(window.location.href + srcImage.slice(2));
-    if (domImg.srcset === window.location.href + srcImage.slice(2)) return;
+    console.log(window.location.origin + "/" + srcImage.slice(2));
+    if (domImg.srcset === window.location.origin + "/" + srcImage.slice(2))
+      return;
 
     var img = new Image();
     const imgOp = domImg.closest("picture").querySelector("img");
