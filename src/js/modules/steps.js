@@ -284,28 +284,26 @@ export default function steps() {
     });
   });
 
-  function changeImg(domImg, srcImage) {
+  async function changeImg(domImg, srcImage) {
     if (domImg.srcset === window.location.href + srcImage.slice(2)) return;
 
     var img = new Image();
     const imgOp = domImg.closest("picture").querySelector("img");
 
+    removeClass(imgOp, "js_fadeInHalf");
+    removeClass(imgOp, "js_fadeOutHalf");
+    await sleep(25);
+    addClass(imgOp, "js_fadeOutHalf");
+
     img.onload = function () {
       domImg.srcset = this.src;
     };
 
-    img.src = srcImage;
-    imgOp.style.opacity = 0.3;
-    // Интервал анимации
-    const interval = setInterval(() => {
-      // Увеличиваем прозрачность элемента на 0.1
-      imgOp.style.opacity = parseFloat(imgOp.style.opacity) + 0.1;
+    await sleep(300);
 
-      // Если прозрачность достигла максимального значения, останавливаем анимацию
-      if (imgOp.style.opacity >= 1) {
-        clearInterval(interval);
-      }
-    }, 75);
+    img.src = srcImage;
+    removeClass(imgOp, "js_fadeOutHalf");
+    addClass(imgOp, "js_fadeInHalf");
   }
 
   // ---------------------- STEP 3 ----------------------

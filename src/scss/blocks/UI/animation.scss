@@ -42,12 +42,34 @@
     opacity: 1;
   }
 }
-// .fadeIn {
-//   animation: fadeIn 0.15s ease forwards;
-// }
-// .fadeOut {
-//   animation: fadeOut 0.15s ease forwards;
-// }
+.js_fadeInHalf {
+  animation: fadeInHalf 0.4s linear forwards;
+}
+.js_fadeOutHalf {
+  animation: fadeOutHalf 0.4s linear forwards;
+}
+@keyframes fadeOutHalf {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0.5;
+    visibility: hidden;
+  }
+}
+@keyframes fadeInHalf {
+  0% {
+    opacity: 0.5;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
