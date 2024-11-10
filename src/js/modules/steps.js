@@ -285,9 +285,10 @@ export default function steps() {
   });
 
   async function changeImg(domImg, srcImage) {
-    console.log(domImg.srcset);
-    console.log(window.location.origin + "/" + srcImage.slice(2));
-    if (domImg.srcset === window.location.origin + "/" + srcImage.slice(2))
+    if (
+      domImg.srcset.split("/")[domImg.srcset.split("/").length - 1] ===
+      srcImage.split("/")[srcImage.split("/").length - 1]
+    )
       return;
 
     var img = new Image();
@@ -302,7 +303,7 @@ export default function steps() {
       domImg.srcset = this.src;
     };
 
-    await sleep(300);
+    await sleep(200);
 
     img.src = srcImage;
     removeClass(imgOp, "js_fadeOutHalf");
