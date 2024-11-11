@@ -274,13 +274,7 @@ export default function steps() {
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg source");
 
-      const newSrc = e.target.dataset.img + (isMobile ? "-m.jpg" : ".jpg");
-
-      if (isMobile) {
-        changeImg(img, newSrc);
-      } else {
-        changeImg(source, newSrc);
-      }
+      changeImg(isMobile ? img : source, e.target.dataset.img);
     });
   });
 
