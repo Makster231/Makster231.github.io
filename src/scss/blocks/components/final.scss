@@ -84,6 +84,27 @@
   opacity: 0;
 }
 
+.social-panel {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(255 255 255 / 35%);
+  margin-top: 20px;
+  padding: 16px 25px;
+  max-width: fit-content;
+  border-radius: 40px;
+  position: relative;
+  display: none;
+
+  &-wrapper {
+    display: flex;
+    gap: 5px;
+  }
+}
+
 .final {
   &[data-tab="1"],
   &[data-tab="2"],
@@ -395,6 +416,10 @@
       display: block;
       opacity: 1;
       animation: fadeIn 2s;
+    }
+
+    .social-panel {
+      display: flex;
     }
 
     // DESK BTNS
@@ -1342,9 +1367,9 @@
 
           @media screen and (max-width: 640px) {
             max-width: 100%;
-            @include setProp(min-height, 300vh, 300dvh, 300svh);
-            @include setProp(padding-top, 30vh, 30dvh, 30svh);
-            @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+            @include setProp(min-height, 240vh, 240dvh, 240svh);
+            @include setProp(padding-top, 20vh, 20dvh, 20svh);
+            @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
             @include setProp(padding-left, 20vh, 20dvh, 20svh);
             @include setProp(padding-right, 20vh, 20dvh, 20svh);
           }
@@ -1358,11 +1383,10 @@
             margin-bottom: 15px;
 
             @media screen and (max-width: 640px) {
-              @include setProp(margin-top, 15vh, 15dvh, 15svh);
-              @include setProp(margin-bottom, 15vh, 15dvh, 15svh);
-              @include setProp(min-height, 130vh, 130dvh, 130svh);
-              @include setProp(height, 130vh, 130dvh, 130svh);
-              // flex: 1;
+              @include setProp(margin-top, 10vh, 10dvh, 10svh);
+              @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
+              @include setProp(min-height, 110vh, 110dvh, 110svh);
+              @include setProp(height, 110vh, 110dvh, 110svh);
             }
             img {
               width: 100%;
@@ -1404,6 +1428,7 @@
             margin-bottom: 20px;
 
             @media screen and (max-width: 640px) {
+              @include setProp(margin-bottom, 15vh, 15dvh, 15svh, !important);
               @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
             }
           }
