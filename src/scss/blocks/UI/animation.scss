@@ -48,9 +48,6 @@
 .js_fadeInHalf {
   animation: fadeInHalf 0.6s linear forwards;
 }
-.js_fadeOutHalf {
-  animation: fadeOutHalf 0.6s linear forwards;
-}
 @keyframes fadeOutHalf {
   0% {
     opacity: 1;

@@ -55,16 +55,6 @@ export default function steps() {
   const removeClass = (block, cls) => block.classList.remove(cls);
   const setClassState = () => addClass(body, `js_active_${level}_${step}`);
 
-  const getCurLvl = () => {
-    body.classList.value.split(" ").forEach((el) => {
-      if (el.indexOf("js_active_lvl_") === 0) {
-        level = el.split("_")[el.split("_").length - 1];
-      }
-    });
-
-    return +level;
-  };
-
   function questionBgImagesPreload() {
     step_questions_btns_btn.forEach((btn) => {
       btn.dataset.img =
@@ -218,7 +208,6 @@ export default function steps() {
     // Завершаем Анимацию
     animationProcessing = false;
     if (isMobile) removeClass(body, "js_aside_animation");
-    // await sleep(isMobile ? 0 : 750);
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
 
@@ -291,38 +280,24 @@ export default function steps() {
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg source");
 
-      if (isMobile) {
-        img.src = e.target.dataset.img;
-      } else {
-        img.source = e.target.dataset.img;
-      }
+      changeImg(isMobile ? img : source, img, e.target.dataset.img);
     });
   });
 
-  // async function changeImg(domImg, srcImage) {
-  //   if (
-  //     domImg.srcset.split("/")[domImg.srcset.split("/").length - 1] ===
-  //     srcImage.split("/")[srcImage.split("/").length - 1]
-  //   )
-  //     return;
+  async function changeImg(el, animEl, newSrc) {
+    if (
+      el.srcset.split("/")[el.srcset.split("/").length - 1] ===
+      newSrc.split("/")[newSrc.split("/").length - 1]
+    )
+      return;
 
-  //   var img = new Image();
-  //   const imgOp = domImg.closest("picture").querySelector("img");
+    animEl.style.opacity = 0.5;
 
-  //   removeClass(imgOp, "js_fade_in_out");
-  //   await sleep(25);
-  //   addClass(imgOp, "js_fade_in_out");
+    el.srcset = newSrc;
+    await sleep(300);
 
-  //   img.onload = function () {
-  //     domImg.srcset = this.src;
-  //     addClass(imgOp, "js_fade_in_out");
-  //   };
-
-  //   await sleep(300);
-  //   removeClass(imgOp, "js_fade_in_out");
-
-  //   img.src = srcImage;
-  // }
+    animEl.style.opacity = 1;
+  }
 
   // ---------------------- STEP 3 ----------------------
   step_questions2_cards.forEach((btn) => {
