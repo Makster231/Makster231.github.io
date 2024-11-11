@@ -32,7 +32,6 @@ window.addEventListener("load", function () {
     const step_questions_btns_btn = document.querySelectorAll(
       ".js_importants_list_btn"
     );
-    const arr = [];
     step_questions_btns_btn.forEach((btn) => {
       btn.dataset.img =
         window.location.origin +
@@ -40,30 +39,18 @@ window.addEventListener("load", function () {
         btn.dataset.img +
         (isMobile ? "-m.jpg" : ".jpg");
 
-      // arr.unshift(btn.dataset.img);
-
       const link = document.createElement("link");
       link.setAttribute("as", "image");
       link.setAttribute("rel", "preload");
       link.setAttribute("href", btn.dataset.img);
       document.head.appendChild(link);
-
-      // const preloadedImages = arr.map((url) => {
-      //   let img = new Image();
-      //   img.src = url;
-      //   img.onload = () =>
-      //     console.log(`image url [${url}] has been loaded successfully`);
-
-      //   return img;
-      // });
-
-      // console.log(preloadedImages);
     });
   }
 
   setTimeout(() => {
     runExample();
-  }, 5000);
+  }, 2000);
+
   // Показываем страницу после загрузки
   body.classList.remove("js_load");
   body.style.opacity = 1;
