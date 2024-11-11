@@ -59,7 +59,6 @@ export default function steps() {
     step_questions_btns_btn.forEach((btn) => {
       btn.dataset.img =
         window.location.origin +
-        "/build" +
         btn.dataset.img +
         (isMobile ? "-m.jpg" : ".jpg");
 
