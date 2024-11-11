@@ -65,6 +65,22 @@ export default function steps() {
     return +level;
   };
 
+  function questionBgImagesPreload() {
+    step_questions_btns_btn.forEach((btn) => {
+      btn.dataset.img =
+        window.location.origin +
+        "/build" +
+        btn.dataset.img +
+        (isMobile ? "-m.jpg" : ".jpg");
+
+      const link = document.createElement("link");
+      link.setAttribute("as", "image");
+      link.setAttribute("rel", "preload");
+      link.setAttribute("href", btn.dataset.img);
+      document.head.appendChild(link);
+    });
+  }
+
   const disableAllClikable = () =>
     all_btns.forEach((btn) => btn.setAttribute("disabled", true));
   const enableAllClikable = () =>
@@ -166,6 +182,7 @@ export default function steps() {
     if (changeLvl) {
       step = 1;
       firstLoad ? (level = 1) : level++;
+      firstLoad ? questionBgImagesPreload() : false;
 
       removeClass(body, "js_aside_animation");
       await sleep(50);
@@ -274,36 +291,37 @@ export default function steps() {
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg source");
 
-      changeImg(isMobile ? img : source, e.target.dataset.img);
+      // changeImg(isMobile ? img : source, e.target.dataset.img);
+
+      (isMobile ? img : source).src = e.target.dataset.img;
+      // img.src = e.target.dataset.img;
     });
   });
 
-  async function changeImg(domImg, srcImage) {
-    if (
-      domImg.srcset.split("/")[domImg.srcset.split("/").length - 1] ===
-      srcImage.split("/")[srcImage.split("/").length - 1]
-    )
-      return;
+  // async function changeImg(domImg, srcImage) {
+  //   if (
+  //     domImg.srcset.split("/")[domImg.srcset.split("/").length - 1] ===
+  //     srcImage.split("/")[srcImage.split("/").length - 1]
+  //   )
+  //     return;
 
-    var img = new Image();
-    const imgOp = domImg.closest("picture").querySelector("img");
+  //   var img = new Image();
+  //   const imgOp = domImg.closest("picture").querySelector("img");
 
-    removeClass(imgOp, "js_fadeInHalf");
-    removeClass(imgOp, "js_fadeOutHalf");
-    await sleep(25);
+  //   removeClass(imgOp, "js_fade_in_out");
+  //   await sleep(25);
+  //   addClass(imgOp, "js_fade_in_out");
 
-    addClass(imgOp, "js_fadeOutHalf");
+  //   img.onload = function () {
+  //     domImg.srcset = this.src;
+  //     addClass(imgOp, "js_fade_in_out");
+  //   };
 
-    img.onload = function () {
-      domImg.srcset = this.src;
-    };
+  //   await sleep(300);
+  //   removeClass(imgOp, "js_fade_in_out");
 
-    await sleep(300);
-
-    img.src = srcImage;
-    removeClass(imgOp, "js_fadeOutHalf");
-    addClass(imgOp, "js_fadeInHalf");
-  }
+  //   img.src = srcImage;
+  // }
 
   // ---------------------- STEP 3 ----------------------
   step_questions2_cards.forEach((btn) => {

@@ -28,29 +28,6 @@ window.addEventListener("load", function () {
     }, 50);
   });
 
-  function runExample() {
-    const step_questions_btns_btn = document.querySelectorAll(
-      ".js_importants_list_btn"
-    );
-    step_questions_btns_btn.forEach((btn) => {
-      btn.dataset.img =
-        window.location.origin +
-        "/build" +
-        btn.dataset.img +
-        (isMobile ? "-m.jpg" : ".jpg");
-
-      const link = document.createElement("link");
-      link.setAttribute("as", "image");
-      link.setAttribute("rel", "preload");
-      link.setAttribute("href", btn.dataset.img);
-      document.head.appendChild(link);
-    });
-  }
-
-  setTimeout(() => {
-    runExample();
-  }, 2000);
-
   // Показываем страницу после загрузки
   body.classList.remove("js_load");
   body.style.opacity = 1;
