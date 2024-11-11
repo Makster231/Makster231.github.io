@@ -28,26 +28,11 @@ window.addEventListener("load", function () {
     }, 50);
   });
 
-  // function imageLoaded(src, alt = "image") {
-  //   return new Promise(function (resolve) {
-  //     const image = document.createElement("img");
-
-  //     image.setAttribute("alt", alt);
-  //     image.setAttribute("src", src);
-
-  //     image.addEventListener("load", function () {
-  //       resolve(image);
-  //     });
-  //   });
-  // }
-
-  const step_questions_btns_btn = document.querySelectorAll(
-    ".js_importants_list_btn"
-  );
-  const arr = [];
-  const preloadedImages = [];
-
   function runExample() {
+    const step_questions_btns_btn = document.querySelectorAll(
+      ".js_importants_list_btn"
+    );
+    const arr = [];
     step_questions_btns_btn.forEach((btn) => {
       btn.dataset.img =
         window.location.origin +
@@ -55,25 +40,30 @@ window.addEventListener("load", function () {
         btn.dataset.img +
         (isMobile ? "-m.jpg" : ".jpg");
 
-      arr.push(btn.dataset.img);
+      // arr.unshift(btn.dataset.img);
+
+      const link = document.createElement("link");
+      link.setAttribute("as", "image");
+      link.setAttribute("rel", "preload");
+      link.setAttribute("href", btn.dataset.img);
+      document.head.appendChild(link);
+
+      // const preloadedImages = arr.map((url) => {
+      //   let img = new Image();
+      //   img.src = url;
+      //   img.onload = () =>
+      //     console.log(`image url [${url}] has been loaded successfully`);
+
+      //   return img;
+      // });
+
+      // console.log(preloadedImages);
     });
   }
 
-  console.log(112323);
-
-  function preloadImages(arr, urls) {
-    arr = urls.map((url) => {
-      let img = new Image();
-      img.src = url;
-      img.onload = () =>
-        console.log(`image url [${url}] has been loaded successfully`);
-
-      return img;
-    });
-  }
-
-  runExample();
-  preloadImages(preloadedImages, arr);
+  setTimeout(() => {
+    runExample();
+  }, 5000);
   // Показываем страницу после загрузки
   body.classList.remove("js_load");
   body.style.opacity = 1;
