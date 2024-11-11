@@ -291,10 +291,11 @@ export default function steps() {
         .closest(".step_questions_top")
         .querySelector(".step_questions_top-bg source");
 
-      // changeImg(isMobile ? img : source, e.target.dataset.img);
-
-      (isMobile ? img : source).src = e.target.dataset.img;
-      // img.src = e.target.dataset.img;
+      if (isMobile) {
+        img.src = e.target.dataset.img;
+      } else {
+        img.source = e.target.dataset.img;
+      }
     });
   });
 
