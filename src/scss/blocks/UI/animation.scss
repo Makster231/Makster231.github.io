@@ -51,23 +51,19 @@
 @keyframes fadeOutHalf {
   0% {
     opacity: 1;
-    visibility: visible;
   }
 
   100% {
-    opacity: 0.5;
-    visibility: hidden;
+    opacity: 0;
   }
 }
 @keyframes fadeInHalf {
   0% {
-    opacity: 0.5;
-    visibility: hidden;
+    opacity: 0;
   }
 
   100% {
     opacity: 1;
-    visibility: visible;
   }
 }
 @keyframes fadeIn {

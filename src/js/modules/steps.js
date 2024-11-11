@@ -291,13 +291,14 @@ export default function steps() {
     removeClass(imgOp, "js_fadeInHalf");
     removeClass(imgOp, "js_fadeOutHalf");
     await sleep(25);
+
     addClass(imgOp, "js_fadeOutHalf");
 
     img.onload = function () {
       domImg.srcset = this.src;
     };
 
-    await sleep(200);
+    await sleep(300);
 
     img.src = srcImage;
     removeClass(imgOp, "js_fadeOutHalf");
