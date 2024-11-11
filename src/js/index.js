@@ -51,13 +51,15 @@ window.addEventListener("load", function () {
     step_questions_btns_btn.forEach((btn) => {
       btn.dataset.img =
         window.location.origin +
-        // "/build" +
+        "/build" +
         btn.dataset.img +
         (isMobile ? "-m.jpg" : ".jpg");
 
       arr.push(btn.dataset.img);
     });
   }
+
+  console.log(112323);
 
   function preloadImages(arr, urls) {
     arr = urls.map((url) => {
