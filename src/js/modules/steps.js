@@ -173,6 +173,8 @@ export default function steps() {
       firstLoad ? (level = 1) : level++;
       firstLoad ? questionBgImagesPreload() : false;
 
+      document.getElementById(`video-poster-${level}`).play();
+
       removeClass(body, "js_aside_animation");
       await sleep(50);
       addClass(body, "js_aside_animation");

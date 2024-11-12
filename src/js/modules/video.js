@@ -1,20 +1,11 @@
 const video = function () {
   let isMobile = window.innerWidth <= 640;
   const videos = document.querySelectorAll(".block_media-video .video-main");
-  const posters = document.querySelectorAll(".block_media-video .video-poster");
 
   var plyr_video_options = {
     fullscreen: { enabled: true },
     clickToPlay: true,
   };
-  // var plyr_poster_options = {
-  //   fullscreen: { enabled: false },
-  //   playsinline: false,
-  //   controls: false,
-  //   muted: true,
-  //   autoplay: true,
-  //   loop: true,
-  // };
 
   videos.forEach((vid) => {
     const video = new Plyr(vid, plyr_video_options);
@@ -86,10 +77,6 @@ const video = function () {
       }, 100);
     });
   });
-
-  // posters.forEach((poster) => {
-  //   const pst = new Plyr(poster, plyr_poster_options);
-  // });
 
   document.addEventListener("fullscreenchange", function () {
     if (window.screenTop == 0) {
