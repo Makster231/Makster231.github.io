@@ -242,7 +242,7 @@
           .h6 {
             margin-right: auto;
             width: 100%;
-            max-width: 660px;
+            max-width: 560px;
           }
           .h4 {
             line-height: 1;
@@ -269,7 +269,7 @@
 
         &--item {
           @media screen and (min-width: 960px) {
-            min-height: 140px !important;
+            min-height: 120px !important;
 
             p {
               font-size: 16px;
@@ -319,6 +319,14 @@
               @include setProp(font-size, 14vh, 14dvh, 14svh);
             }
           }
+
+          span {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 1.1;
+            letter-spacing: -0.0015em;
+            color: #ffffff;
+          }
         }
       }
 
@@ -327,6 +335,22 @@
           @media screen and (max-width: 640px) {
             @include setProp(height, 150vh, 150dvh, 150svh);
           }
+        }
+      }
+
+      .step_last_bottom-info {
+        .h4,
+        .h6 {
+          line-height: 1.1;
+        }
+      }
+    }
+
+    &.lvl_4-1 {
+      .step_last_bottom-info {
+        .h4,
+        .h6 {
+          max-width: 660px;
         }
       }
     }

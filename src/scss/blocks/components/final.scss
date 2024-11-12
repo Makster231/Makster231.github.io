@@ -10,7 +10,7 @@
 .final_mob_tabs {
   @media screen and (max-width: 1025px) {
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
     button {
       display: flex;
       justify-content: center;
@@ -58,7 +58,7 @@
   }
 
   @media screen and (max-width: 640px) {
-    @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
+    @include setProp(margin-top, 20vh, 20dvh, 20svh);
     button {
       @include setProp(width, 60vh, 60dvh, 60svh);
       @include setProp(height, 60vh, 60dvh, 60svh);
@@ -97,13 +97,9 @@
   display: none;
   width: 280px;
   max-width: 280px;
-  // -webkit-backdrop-filter: blur(25px);
-  // backdrop-filter: blur(25px);
   background-color: rgb(255 255 255 / 15%);
-  background-image: url(../img/blur.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-origin: url(../img/blur-1.png) center/cover no-repeat !important;
+
   .icon-svg {
     margin-left: 5px;
   }
@@ -165,6 +161,7 @@
         @media screen and (max-width: 1025px) {
           max-width: 100%;
         }
+
         h2 {
           margin-bottom: 24px;
           display: block;
@@ -187,14 +184,12 @@
         }
 
         h4 {
-          margin-bottom: 30px;
           font-size: 24px;
-          line-height: 1.5;
+          line-height: 1.1;
           color: var(--color-grey-m);
           display: block;
           max-width: 760px;
           @media screen and (max-width: 1024px) {
-            @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
             text-align: center;
             max-width: 75%;
             margin-left: auto;
@@ -203,12 +198,23 @@
 
           @media screen and (max-width: 640px) {
             @include setProp(font-size, 18vh, 18dvh, 18svh);
-            @include setProp(margin-bottom, 30vh, 30dvh, 30svh);
             max-width: 100% !important;
 
             br {
               display: none;
             }
+          }
+        }
+
+        &-bottom {
+          margin-top: 30px;
+
+          @media screen and (max-width: 1025px) {
+            @include setProp(margin-top, 20vh, 20dvh, 20svh);
+          }
+
+          @media screen and (max-width: 640px) {
+            @include setProp(margin-top, 30vh, 30dvh, 30svh);
           }
         }
       }
@@ -483,6 +489,7 @@
   &[data-tab="1"] {
     @media screen and (max-width: 640px) {
       overflow-y: auto;
+      overflow-x: hidden;
     }
     .final {
       &_left {
@@ -555,7 +562,7 @@
             }
 
             .final_1_list-item--subTitle {
-              display: none;
+              // display: none;
             }
           }
 
@@ -640,7 +647,7 @@
               left: 0;
               width: 100%;
               height: 100%;
-              background-color: rgba(0, 0, 0, 0.4);
+              background-color: rgba(0, 0, 0, 0.5);
               transition: 0.3s ease;
             }
           }
@@ -707,8 +714,8 @@
             color: var(--color-white);
 
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 24vh, 24dvh, 24svh);
-              @include setProp(padding-right, 100vh, 100dvh, 100svh);
+              // @include setProp(font-size, 24vh, 24dvh, 24svh);
+              // @include setProp(padding-right, 100vh, 100dvh, 100svh);
               margin-bottom: 5px;
             }
           }
@@ -735,6 +742,7 @@
 
               @media screen and (max-width: 640px) {
                 @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+                align-items: center;
               }
             }
 
@@ -762,6 +770,10 @@
   }
 
   &[data-tab="2"] {
+    @media screen and (max-width: 640px) {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
     .final {
       &_left {
         h4 {
@@ -789,6 +801,7 @@
           margin-left: 1%;
           flex-direction: column;
           min-height: 196px;
+          height: unset;
           position: relative;
           border-radius: 24px;
           overflow: hidden;
@@ -818,6 +831,7 @@
 
             img {
               transition: 0.3s ease;
+              object-fit: cover;
             }
 
             &::after {
@@ -958,6 +972,7 @@
   &[data-tab="3"] {
     @media screen and (max-width: 640px) {
       overflow-y: auto;
+      overflow-x: hidden;
     }
     .final {
       &_left {
@@ -1013,6 +1028,10 @@
             @include setProp(min-height, 160vh, 160dvh, 160svh);
             @include setProp(padding, 20vh, 20dvh, 20svh);
             position: relative;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
           }
 
           &--title {
@@ -1249,6 +1268,10 @@
   }
 
   &[data-tab="4"] {
+    @media screen and (max-width: 640px) {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
     .final {
       &_left {
         @media screen and (max-width: 640px) {

@@ -93,8 +93,10 @@
         .h4,
         .h3 {
           font-weight: 500;
-          max-width: 660px;
+          max-width: 560px;
+          width: 100%;
           margin-right: 20px;
+          line-height: 1;
 
           @media screen and (max-width: 640px) {
             margin-right: 0;
@@ -103,7 +105,6 @@
             width: 100%;
           }
         }
-
 
         .btn {
           max-width: 196px;
@@ -114,6 +115,15 @@
             @include setProp(margin-top, 20vh, 20dvh, 20svh);
             max-width: 100%;
           }
+        }
+      }
+    }
+
+    &.lvl_3-4 {
+      .step_questions2_bottom-info {
+        .h4,
+        .h6 {
+          max-width: 660px;
         }
       }
     }
