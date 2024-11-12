@@ -12,7 +12,6 @@ import video from "./modules/video.js";
 window.addEventListener("load", function () {
   // Переменные
   const body = document.querySelector("body");
-  const isMobile = window.innerWidth <= 640;
 
   steps();
   finalSteps();

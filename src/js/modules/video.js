@@ -1,16 +1,23 @@
 const video = function () {
   let isMobile = window.innerWidth <= 640;
-  const videos = document.querySelectorAll(".block_media-video video");
+  const videos = document.querySelectorAll(".block_media-video .video-main");
+  const posters = document.querySelectorAll(".block_media-video .video-poster");
 
-  var plyr_options = {
-    showPosterOnEnd: true,
-    // fullscreen: { enabled: isMobile ? false : true },
+  var plyr_video_options = {
     fullscreen: { enabled: true },
     clickToPlay: true,
   };
+  // var plyr_poster_options = {
+  //   fullscreen: { enabled: false },
+  //   playsinline: false,
+  //   controls: false,
+  //   muted: true,
+  //   autoplay: true,
+  //   loop: true,
+  // };
 
   videos.forEach((vid) => {
-    const video = new Plyr(vid, plyr_options);
+    const video = new Plyr(vid, plyr_video_options);
     const poster = document.querySelectorAll(".plyr__poster");
     const close =
       video.elements.container.parentNode.querySelector(".close-video");
@@ -22,9 +29,21 @@ const video = function () {
         close.classList.remove("close-video-active");
       });
 
+      video.stop();
+
       setTimeout(() => {
         body.classList.remove("js_load");
+        if (video.fullscreen.active) {
+          video.fullscreen.exit();
+        }
       }, 100);
+    });
+    video.on("enterfullscreen", () => {
+      body.classList.add("js_active_video");
+      poster.forEach((el) => {
+        el.style.opacity = 0;
+        close.classList.add("close-video-active");
+      });
     });
     video.on("play", (e) => {
       if (isMobile) {
@@ -47,6 +66,9 @@ const video = function () {
 
       setTimeout(() => {
         body.classList.remove("js_load");
+        if (video.fullscreen.active) {
+          video.fullscreen.exit();
+        }
       }, 100);
     });
     video.on("end", (e) => {
@@ -58,9 +80,16 @@ const video = function () {
 
       setTimeout(() => {
         body.classList.remove("js_load");
+        if (video.fullscreen.active) {
+          video.fullscreen.exit();
+        }
       }, 100);
     });
   });
+
+  // posters.forEach((poster) => {
+  //   const pst = new Plyr(poster, plyr_poster_options);
+  // });
 
   document.addEventListener("fullscreenchange", function () {
     if (window.screenTop == 0) {

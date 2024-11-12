@@ -86,22 +86,36 @@
 
 .social-panel {
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 25px;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
-  background-color: rgb(255 255 255 / 35%);
-  margin-top: 20px;
-  padding: 16px 25px;
-  max-width: fit-content;
+  margin-top: 10px;
+  padding: 13px 20px;
   border-radius: 40px;
   position: relative;
   display: none;
+  width: 280px;
+  max-width: 280px;
+  // -webkit-backdrop-filter: blur(25px);
+  // backdrop-filter: blur(25px);
+  background-color: rgb(255 255 255 / 15%);
+  background-image: url(../img/blur.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .icon-svg {
+    margin-left: 5px;
+  }
+
+  a {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   &-wrapper {
     display: flex;
-    gap: 5px;
   }
 }
 
@@ -1218,13 +1232,6 @@
             max-width: 320px;
           }
 
-          @media screen and (min-width: 1025px) {
-            max-width: 190px;
-
-            &:hover {
-              max-width: 260px;
-            }
-          }
           @media screen and (max-width: 640px) {
             @include setProp(font-size, 13vh, 13dvh, 13svh, !important);
             @include setProp(width, 146vh, 146dvh, 146svh, !important);
@@ -1395,6 +1402,8 @@
 
               @media screen and (max-width: 640px) {
                 object-fit: fill;
+                width: auto;
+                margin: 0 auto;
               }
             }
           }
