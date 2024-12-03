@@ -36,6 +36,11 @@ const video = function () {
         close.classList.add("close-video-active");
       });
     });
+    video.on("exitFullscreen", () => {
+      poster.forEach((el) => {
+        close.classList.add("close-video-active");
+      });
+    });
     video.on("play", (e) => {
       if (isMobile) {
         body.classList.add("js_load");
@@ -82,6 +87,7 @@ const video = function () {
     if (window.screenTop == 0) {
       setTimeout(() => {
         body.classList.remove("js_load");
+        // close?.classList.add("close-video-active");
       }, 100);
     } else {
       body.classList.add("js_load");

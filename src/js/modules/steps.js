@@ -20,9 +20,6 @@ export default function steps() {
     ".js_step_questions2_cards"
   );
 
-  const step_questions2_btns = document.querySelectorAll(
-    ".js_step_questions2_btn"
-  );
   // Проверка на тач скрины
   const isTouchEnabled = () =>
     "ontouchstart" in window ||
@@ -33,6 +30,8 @@ export default function steps() {
   let data_info = {
     step_questions_values: [],
     step_questions2_values: [],
+    // step_questions_values: ["1", "1", "1", "1"],
+    // step_questions2_values: ["1", "1", "1", "1"],
   };
 
   let isMobile = window.innerWidth <= 640;
@@ -170,10 +169,14 @@ export default function steps() {
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
+      if(typeof _tmr !== "undefined" && level == 0 ) {
+         _tmr.push({ type: 'reachGoal', id: 3579847, goal: 'start'}); !function(){__GetI.push({type:'VIEW',site_id:'10033',product_id:'',product_price:'',category_id:'',pixel_id:'start'});var t='undefined'==typeof __GetI_domain?'px.adhigh.net':__GetI_domain,e=('https:'==document.location.protocol?'https://':'http://')+t+'/t.js',i=document.createElement('script');i.type='text/javascript',i.src=e;var o=document.getElementsByTagName('script')[0];o.parentNode.insertBefore(i,o)}();ym(98918300,'reachGoal','start');
+      }
       firstLoad ? (level = 1) : level++;
       firstLoad ? questionBgImagesPreload() : false;
 
       document.getElementById(`video-poster-${level}`).play();
+      document.getElementById(`video-${level}`).load();
 
       removeClass(body, "js_aside_animation");
       await sleep(50);
@@ -202,7 +205,7 @@ export default function steps() {
     enableAllClikable();
 
     //  Анимация
-    if (changeLvl) await sleep(isMobile ? 4000 : 2500);
+    if (changeLvl) await sleep(isMobile ? 3500 : 2200);
 
     firstLoad = false;
     enableAllClikable();
@@ -314,20 +317,9 @@ export default function steps() {
       cards.forEach((crd) => removeClass(crd, `js_active`));
 
       addClass(card, `js_active`);
-      // addClass(aside_btn, `js_active`);
 
       data_info.step_questions2_values[level - 1] = card.dataset.value;
 
-      let step_btn = document.querySelector(
-        `.js_lvl_${level} .js_step_questions2_btn`
-      );
-
-      removeClass(step_btn, `js_disabled`);
-    });
-  });
-
-  step_questions2_btns.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
       // Подсчёт Шага
       let flag = !stepCalc("down");
       if (flag) return;
@@ -336,7 +328,6 @@ export default function steps() {
       changeSteps();
     });
   });
-
   // ---------------------- STEP 4 ----------------------
   step_last_btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {

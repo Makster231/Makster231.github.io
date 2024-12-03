@@ -60,8 +60,10 @@
   @media screen and (max-width: 640px) {
     @include setProp(margin-top, 20vh, 20dvh, 20svh);
     button {
-      @include setProp(width, 60vh, 60dvh, 60svh);
-      @include setProp(height, 60vh, 60dvh, 60svh);
+      // @include setProp(width, 56vh, 56dvh, 56svh);
+      // @include setProp(height, 60vh, 60dvh, 60svh);
+      width: 56px;
+      height: 56px;
       @include setProp(margin-right, 15vh, 15dvh, 15svh);
     }
 
@@ -112,6 +114,19 @@
 
   &-wrapper {
     display: flex;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 6px 15px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 100%;
+    transform: translateY(40px);
+    margin: 0;
+
+    @media screen and (max-height: 700px) {
+      transform: translateY(40px);
+    }
   }
 }
 
@@ -179,7 +194,7 @@
           @media screen and (max-width: 640px) {
             max-width: 100% !important;
             @include setProp(font-size, 36vh, 36dvh, 36svh);
-            @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
+            margin-bottom: 10px;
           }
         }
 
@@ -198,6 +213,7 @@
 
           @media screen and (max-width: 640px) {
             @include setProp(font-size, 18vh, 18dvh, 18svh);
+            margin-bottom: 30px;
             max-width: 100% !important;
 
             br {
@@ -288,6 +304,12 @@
         background-color: var(--color-blue);
         padding-right: 10px;
         .icon-svg {
+          max-width: 20px;
+
+          img {
+            max-width: 100%;
+          }
+
           path {
             fill: var(--color-white);
           }
@@ -303,7 +325,8 @@
 
     @media screen and (max-width: 640px) {
       .final_mob_tabs button:nth-of-type(1) {
-        @include setProp(width, 120vh, 120dvh, 120svh);
+        // @include setProp(width, 120vh, 120dvh, 120svh);
+        width: 120px;
         padding-right: 0;
         p {
           @include setProp(width, 70vh, 70dvh, 70svh);
@@ -361,7 +384,8 @@
 
     @media screen and (max-width: 640px) {
       .final_mob_tabs button:nth-of-type(2) {
-        @include setProp(width, 120vh, 120dvh, 120svh);
+        // @include setProp(width, 120vh, 120dvh, 120svh);
+        width: 120px;
         padding-right: 0;
         p {
           @include setProp(width, 70vh, 70dvh, 70svh);
@@ -418,7 +442,8 @@
     }
     @media screen and (max-width: 640px) {
       .final_mob_tabs button:nth-of-type(3) {
-        @include setProp(width, 120vh, 120dvh, 120svh);
+        // @include setProp(width, 120vh, 120dvh, 120svh);
+        width: 120px;
         padding-right: 0;
         p {
           @include setProp(width, 70vh, 70dvh, 70svh);
@@ -475,7 +500,8 @@
     }
     @media screen and (max-width: 640px) {
       .final_mob_tabs button:nth-of-type(4) {
-        @include setProp(width, 120vh, 120dvh, 120svh);
+        // @include setProp(width, 120vh, 120dvh, 120svh);
+        width: 120px;
         padding-right: 0;
         p {
           @include setProp(width, 70vh, 70dvh, 70svh);
@@ -762,6 +788,11 @@
             .icon-svg {
               margin-right: 10px;
               display: inline-block;
+              max-width: 20px;
+
+              img {
+                max-width: 100%;
+              }
             }
           }
         }
@@ -811,7 +842,7 @@
           @media screen and (max-width: 640px) {
             max-width: 100%;
             margin-left: 0;
-            @include setProp(min-height, 320vh, 320dvh, 320svh, !important);
+            @include setProp(min-height, 360vh, 360dvh, 360svh, !important);
           }
 
           &--bg {
@@ -863,8 +894,9 @@
 
             @media screen and (max-width: 640px) {
               align-items: flex-end;
+              font-weight: 500;
               margin-bottom: 0;
-              @include setProp(font-size, 20vh, 20dvh, 20svh, !important);
+              max-width: 220px;
             }
           }
 
@@ -875,7 +907,6 @@
             margin-right: auto;
 
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 16vh, 16dvh, 16svh, !important);
             }
           }
 
@@ -939,11 +970,15 @@
           }
 
           @media screen and (max-width: 640px) {
-            @include setProp(font-size, 12vh, 12dvh, 12svh, !important);
+            font-size: 13px !important;
             @include setProp(height, 47vh, 47dvh, 47svh, !important);
             @include setProp(margin-right, 4vh, 4dvh, 4svh, !important);
             margin-left: 0;
             padding: 0 !important;
+          }
+
+          @media screen and (max-width: 340px) {
+            font-size: 11px !important;
           }
         }
       }
@@ -1044,8 +1079,9 @@
             margin-bottom: 10px;
 
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 20vh, 20dvh, 20svh, !important);
+              font-size: 20px !important;
               font-weight: 500;
+              line-height: 1;
               @include setProp(margin-bottom, 5vh, 5dvh, 5svh, !important);
             }
           }
@@ -1058,7 +1094,8 @@
             flex: auto;
 
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+              font-size: 14px !important;
+              line-height: 1;
               @include setProp(margin-bottom, 20vh, 20dvh, 20svh, !important);
             }
           }
@@ -1081,7 +1118,7 @@
               .btn {
                 @media screen and (max-width: 640px) {
                   padding: 0;
-                  @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+                  font-size: 14px !important;
                   @include setProp(width, 142vh, 142dvh, 142svh, !important);
                   @include setProp(height, 46vh, 46dvh, 46svh, !important);
                 }
@@ -1156,7 +1193,7 @@
 
             .final_3_list-item--content {
               @media screen and (max-width: 640px) {
-                @include setProp(margin-top, 5vh, 5dvh, 5svh);
+                margin-top: 10px;
                 @include setProp(padding-right, 65vh, 65dvh, 65svh);
                 margin-bottom: 0 !important;
                 order: 3;
@@ -1175,7 +1212,10 @@
             .icon-svg {
               &:first-of-type {
                 background-color: var(--color-blue);
-                transform: translateX(15px);
+                @media screen and (min-width: 640px) {
+                  transform: translateX(15px);
+                }
+
                 svg {
                   path {
                     stroke: var(--color-white);
@@ -1269,8 +1309,22 @@
 
   &[data-tab="4"] {
     @media screen and (max-width: 640px) {
-      overflow-y: auto;
-      overflow-x: hidden;
+      @media screen and (max-height: 700px) {
+        .container.h-100 {
+          padding: 0;
+        }
+
+        .final_left {
+          @include setProp(padding-left, 16vh, 16dvh, 16svh);
+          @include setProp(padding-right, 16vh, 16dvh, 16svh);
+          padding-bottom: 20px;
+        }
+        .final_wrapper {
+          overflow-y: scroll;
+          overflow-x: hidden;
+          padding-bottom: 40px;
+        }
+      }
     }
     .final {
       &_left {
@@ -1278,7 +1332,12 @@
           position: relative;
 
           .swiper-pagination {
-            transform: translateY(40px);
+            transform: translateY(-25px);
+
+            @media screen and (max-height: 700px) {
+              transform: translateY(-40px);
+            }
+
             &-bullet {
               background-color: var(--color-white);
 
@@ -1304,6 +1363,15 @@
               display: none;
             }
           }
+          @media screen and (max-width: 640px) {
+            margin-bottom: 20px;
+          }
+        }
+
+        &-bottom {
+          @media screen and (max-width: 640px) {
+            margin-top: 30px;
+          }
         }
       }
     }
@@ -1328,7 +1396,14 @@
           }
         }
         @media screen and (max-width: 640px) {
-          @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
+          // @include setProp(margin-bottom, 20vh, 20dvh, 20svh);
+          margin-bottom: 30px;
+
+          .btn {
+            padding: 0;
+            height: 56px;
+            font-size: 16px;
+          }
         }
       }
       h2,
@@ -1413,10 +1488,12 @@
             margin-bottom: 15px;
 
             @media screen and (max-width: 640px) {
-              @include setProp(margin-top, 10vh, 10dvh, 10svh);
-              @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
-              @include setProp(min-height, 110vh, 110dvh, 110svh);
-              @include setProp(height, 110vh, 110dvh, 110svh);
+              @include setProp(margin-bottom, 5vh, 5dvh, 5svh);
+              @include setProp(margin-top, 5vh, 5dvh, 5svh);
+              @include setProp(min-height, 170vh, 170dvh, 170svh);
+              @include setProp(height, 170vh, 170dvh, 170svh);
+              display: flex;
+              align-items: center;
             }
             img {
               width: 100%;
@@ -1427,6 +1504,7 @@
                 object-fit: fill;
                 width: auto;
                 margin: 0 auto;
+                max-width: 100%;
               }
             }
           }
@@ -1444,7 +1522,8 @@
               color: var(--color-black);
 
               @media screen and (max-width: 640px) {
-                @include setProp(font-size, 22vh, 22dvh, 22svh, !important);
+                font-size: 20px !important;
+                // @include setProp(font-size, 22vh, 22dvh, 22svh, !important);
                 flex: 0;
               }
             }
@@ -1461,7 +1540,8 @@
 
             @media screen and (max-width: 640px) {
               @include setProp(margin-bottom, 15vh, 15dvh, 15svh, !important);
-              @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+              font-size: 14px !important;
+              // @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
             }
           }
 
@@ -1482,7 +1562,8 @@
                 font-size: 12px !important;
               }
               @media screen and (max-width: 640px) {
-                @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
+                font-size: 14px !important;
+                // @include setProp(font-size, 14vh, 14dvh, 14svh, !important);
                 @include setProp(margin-right, 20vh, 20dvh, 20svh, !important);
               }
 

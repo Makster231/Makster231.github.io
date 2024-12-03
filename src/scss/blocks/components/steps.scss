@@ -329,7 +329,12 @@
         &-content {
           &--tablet {
             @media screen and (max-width: 640px) {
+              margin-bottom: 0;
               max-width: 100%;
+
+              .h4{
+                font-weight: 500;
+              }
             }
             .h3 {
               @media screen and (max-width: 640px) {
@@ -515,7 +520,7 @@
 
           .h6 {
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 18vh, 18dvh, 18svh);
+              @include setProp(font-size, 24vh, 24dvh, 24svh);
               text-align: left;
               width: 100%;
             }
@@ -560,14 +565,20 @@
           @media screen and (max-width: 640px) {
             flex-direction: column;
             width: 100%;
+            height: 100%;
+            gap: 10px;
+            padding: 10px 0;
+            box-sizing: border-box;
           }
 
           .card {
             @media screen and (max-width: 640px) {
               margin-right: 0;
               max-width: 100%;
-              @include setProp(height, 130vh, 130dvh, 130svh);
-              @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
+              height: 100%;
+              margin-bottom: 0;
+              // @include setProp(height, 130vh, 130dvh, 130svh);
+              // @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
             }
             &_media::after {
               @media screen and (max-width: 640px) {
@@ -614,10 +625,10 @@
         }
         .h6 {
           @media screen and (max-width: 640px) {
-            @include setProp(font-size, 18vh, 18dvh, 18svh);
+            @include setProp(font-size, 24vh, 24dvh, 24svh);
             text-align: left;
             width: 100%;
-            max-width: 70%;
+            // max-width: 70%;
             margin-right: auto;
 
             br {

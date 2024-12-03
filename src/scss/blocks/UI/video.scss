@@ -1,6 +1,10 @@
 .plyr {
   height: 100%;
 
+  & > button {
+    max-width: 90px;
+  }
+
   &__poster {
     background-size: cover;
     border-radius: 24px 24px 0 0 !important;
@@ -28,8 +32,8 @@
     }
 
     @media screen and (max-width: 640px) {
-      @include setProp(width, 40vh, 40dvh, 40vh, !important);
-      @include setProp(height, 40vh, 40dvh, 40vh, !important);
+      width: 100% !important;
+      height: 100% !important;
     }
   }
 

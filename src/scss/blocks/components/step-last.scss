@@ -77,9 +77,11 @@
             border-radius: 24px;
             overflow: hidden;
             position: relative;
-            // aspect-ratio: 16 / 9;
             margin-bottom: 3%;
             @include setProp(height, 180vh, 180dvh, 180svh);
+            @media screen and (max-width: 640px) {
+              @include setProp(height, 250vh, 250dvh, 250svh);
+            }
 
             @media screen and (min-width: 960px) {
               margin-bottom: unset;
@@ -95,8 +97,15 @@
             }
 
             &-video {
-              border-radius: 24px;
               height: 100%;
+              border-radius: 24px;
+              overflow: hidden;
+
+              video {
+                border-radius: 24px; 
+                object-position: center;
+                overflow: hidden;
+              }
             }
 
             &-text {
@@ -110,6 +119,7 @@
             color: var(--color-white);
             text-align: center;
             width: 100%;
+            max-width: 460px;
             @media screen and (max-width: 1025px) {
               display: none;
             }
@@ -148,6 +158,12 @@
               border: 1px solid #ffffff;
               -webkit-backdrop-filter: blur(2px);
               backdrop-filter: blur(2px);
+
+              div > span {
+                @media screen and (max-width: 640px) {
+                  display: none;
+                }
+              }
             }
 
             &:nth-of-type(5),
@@ -206,17 +222,21 @@
                 margin-left: 4%;
                 margin-bottom: 10px;
                 order: 2;
+                justify-content: center;
               }
               &:nth-of-type(2) {
                 margin-bottom: 10px;
                 order: 1;
+                justify-content: center;
               }
               &:nth-of-type(3) {
                 margin-left: 4%;
                 order: 4;
+                justify-content: center;
               }
               &:nth-of-type(4) {
                 order: 3;
+                justify-content: center;
               }
             }
 
@@ -262,8 +282,27 @@
         }
       }
     }
+    
 
     &.lvl_5-1 {
+      .step_last_top-content > p {
+        display: none;
+      }
+      @media screen and (max-width: 640px) {
+        .step_last_top-content > p {
+          display: block;
+          margin-top: 1.5svh;
+          padding: 0 10px;
+          font-size: 1.75svh;
+          color: #fff;
+        }
+        .step_last_top-content--mobile {
+          display: none !important;
+        }
+        .h6 {
+          display: none;
+        }
+      }
       .step_last_top-right {
         // flex-direction: row-reverse;
 
@@ -300,23 +339,36 @@
           @media screen and (max-width: 960px) {
             &:nth-of-type(5) {
               max-width: 100%;
+              transform: translate(0, -10px);
             }
           }
           @media screen and (max-width: 640px) {
             @include setProp(min-height, 100vh, 100dvh, 100svh);
-            @include setProp(padding-top, 15vh, 15dvh, 15svh);
-            @include setProp(padding-bottom, 15vh, 15dvh, 15svh);
+            @include setProp(padding-top, 10vh, 10dvh, 10svh);
+            @include setProp(padding-bottom, 10vh, 10dvh, 10svh);
             &:nth-of-type(5) {
               @include setProp(min-height, 60vh, 60dvh, 60svh);
               transform: translate(0, -10px);
-              margin-top: 2%;
+              margin-top: 3%;
+              padding: 15px 20px;
               p {
+                @include setProp(font-size, 19vh, 19dvh, 19svh);
                 text-align: left;
+              }
+
+              .icon-svg {
+                margin-bottom: 0;
               }
             }
 
             p {
               @include setProp(font-size, 14vh, 14dvh, 14svh);
+            }
+
+            .d-flex {
+              flex-direction: column-reverse;
+              text-align: center;
+              align-items: center;
             }
           }
 
@@ -326,14 +378,20 @@
             line-height: 1.1;
             letter-spacing: -0.0015em;
             color: #ffffff;
+            @media screen and (max-width: 640px) {
+              @include setProp(font-size, 8vh, 8dvh, 8svh);
+            }
           }
         }
       }
 
       .step_last_top-left {
+        .h6 {
+          display: none;
+        }
         .block_media {
           @media screen and (max-width: 640px) {
-            @include setProp(height, 150vh, 150dvh, 150svh);
+            @include setProp(height, 220vh, 220dvh, 220svh);
           }
         }
       }

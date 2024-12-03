@@ -283,56 +283,56 @@
         height: 100%;
         width: 100%;
         &:nth-of-type(1) {
-          transition-delay: 3s;
+          transition-delay: 2.7s;
           transition-duration: 0.1s;
           opacity: 0;
           visibility: hidden;
         }
 
         &:nth-of-type(2) {
-          transition-delay: 3s;
+          transition-delay: 2.7s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(3) {
-          transition-delay: 3.1s;
+          transition-delay: 2.8s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(4) {
-          transition-delay: 3.2s;
+          transition-delay: 2.9s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(5) {
-          transition-delay: 3.3s;
+          transition-delay: 3s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(6) {
-          transition-delay: 3.4s;
+          transition-delay: 3.1s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(7) {
-          transition-delay: 3.5s;
+          transition-delay: 3.2s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
         }
 
         &:nth-of-type(8) {
-          transition-delay: 3.6s;
+          transition-delay: 3.3s;
           transition-duration: 0.1s;
           opacity: 1;
           visibility: visible;
@@ -343,18 +343,18 @@
     #arrowAnim {
       animation:
         visible 1s linear forwards 0s,
-        hidden 0.1s linear forwards 3s;
+        hidden 0.1s linear forwards 2.7s;
 
-      transition-delay: 3s;
-      transition-duration: 0.4s;
+      transition-delay: 2.7s;
+      transition-duration: 0.3s;
     }
   }
 
   &.js_active_lvl_1 {
     .aside_icons {
       .icon-svg:nth-of-type(1) {
-        transition-delay: 4s;
-        transition-duration: 0.4s;
+        transition-delay: 3.7s;
+        transition-duration: 0.3s;
         transform: scale(1);
         opacity: 1;
         visibility: visible;
@@ -362,8 +362,8 @@
 
       &-name {
         .icon-svg:nth-of-type(1) {
-          transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-delay: 3.7s;
+          transition-duration: 0.3s;
           opacity: 1;
           visibility: visible;
         }
@@ -373,8 +373,8 @@
   &.js_active_lvl_2 {
     .aside_icons {
       .icon-svg:nth-of-type(2) {
-        transition-delay: 4s;
-        transition-duration: 0.4s;
+        transition-delay: 3.7s;
+        transition-duration: 0.3s;
         transform: scale(1);
         opacity: 1;
         visibility: visible;
@@ -382,8 +382,8 @@
 
       &-name {
         .icon-svg:nth-of-type(2) {
-          transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-delay: 3.7s;
+          transition-duration: 0.3s;
           opacity: 1;
           visibility: visible;
         }
@@ -393,8 +393,8 @@
   &.js_active_lvl_3 {
     .aside_icons {
       .icon-svg:nth-of-type(3) {
-        transition-delay: 4s;
-        transition-duration: 0.4s;
+        transition-delay: 3.7s;
+        transition-duration: 0.3s;
         transform: scale(1);
         opacity: 1;
         visibility: visible;
@@ -402,8 +402,8 @@
 
       &-name {
         .icon-svg:nth-of-type(3) {
-          transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-delay: 3.7s;
+          transition-duration: 0.3s;
           opacity: 1;
           visibility: visible;
         }
@@ -413,8 +413,8 @@
   &.js_active_lvl_4 {
     .aside_icons {
       .icon-svg:nth-of-type(4) {
-        transition-delay: 4s;
-        transition-duration: 0.4s;
+        transition-delay: 3.7s;
+        transition-duration: 0.3s;
         transform: scale(1);
         opacity: 1;
         visibility: visible;
@@ -422,8 +422,8 @@
 
       &-name {
         .icon-svg:nth-of-type(4) {
-          transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-delay: 3.7s;
+          transition-duration: 0.3s;
           opacity: 1;
           visibility: visible;
         }
@@ -433,8 +433,8 @@
   &.js_active_lvl_5 {
     .aside_icons {
       .icon-svg:nth-of-type(5) {
-        transition-delay: 4s;
-        transition-duration: 0.4s;
+        transition-delay: 3.7s;
+        transition-duration: 0.3s;
         transform: scale(1);
         opacity: 1;
         visibility: visible;
@@ -442,8 +442,8 @@
 
       &-name {
         .icon-svg:nth-of-type(5) {
-          transition-delay: 4s;
-          transition-duration: 0.4s;
+          transition-delay: 3.7s;
+          transition-duration: 0.3s;
           opacity: 1;
           visibility: visible;
         }
