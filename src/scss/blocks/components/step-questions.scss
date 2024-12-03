@@ -10,6 +10,9 @@
           text-align: center;
           display: block;
 
+          max-width: 1060px;
+          margin-left: auto;
+
           @media screen and (max-width: 640px) {
             font-size: 30px;
             margin-bottom: 20px;
@@ -17,7 +20,9 @@
         }
         .importants_list {
           z-index: 5;
-          padding-right: 60px;
+          max-width: 1060px;
+          margin-left: auto;
+
           &_btn {
             margin-right: 45px;
             min-height: 70px;

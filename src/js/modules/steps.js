@@ -39,9 +39,12 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let step = 0;
+  // let level = 1;
+  // let step = 3;
+  // let firstLoad = 0;
   let level = 0;
-  let firstLoad = 1;
+  let step = 0;
+  let firstLoad = true;
 
   //  Animation flag
   let animationProcessing = false;
@@ -77,27 +80,27 @@ export default function steps() {
   const removeAllStates = () => {
     body.classList.remove(
       ...[
-        "js_active_0_0",
         "js_active_1_0",
+
         "js_active_1_1",
         "js_active_1_2",
         "js_active_1_3",
-        "js_active_1_4",
+        // "js_active_1_4",
 
         "js_active_2_1",
         "js_active_2_2",
         "js_active_2_3",
-        "js_active_2_4",
+        // "js_active_2_4",
 
         "js_active_3_1",
         "js_active_3_2",
         "js_active_3_3",
-        "js_active_3_4",
+        // "js_active_3_4",
 
         "js_active_4_1",
         "js_active_4_2",
         "js_active_4_3",
-        "js_active_4_4",
+        // "js_active_4_4",
 
         "js_active_5_1",
         "js_active_5_2",
@@ -130,8 +133,8 @@ export default function steps() {
       return false;
     }
 
-    if (step > 4) {
-      step = 4;
+    if (step > 3) {
+      step = 3;
     }
 
     if (step > 2) {
@@ -322,23 +325,23 @@ export default function steps() {
       if (flag) return;
 
       // Определение Слайда
-      changeSteps();
+      changeSteps(true);
     });
   });
   // ---------------------- STEP 4 ----------------------
-  step_last_btns.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      // // Подсчёт Шага
-      let flag = !stepCalc("down");
-      if (flag) return;
+  // step_last_btns.forEach((btn) => {
+  //   btn.addEventListener("click", function (e) {
+  //     // // Подсчёт Шага
+  //     let flag = !stepCalc("down");
+  //     if (flag) return;
 
-      if (step === 2 && level === 5) {
-        changeSteps();
-      } else {
-        changeSteps(true);
-      }
-    });
-  });
+  //     if (step === 2 && level === 5) {
+  //       changeSteps();
+  //     } else {
+  //       changeSteps(true);
+  //     }
+  //   });
+  // });
 
   // При Изменении размеров экрана
   window.addEventListener("resize", () => {
