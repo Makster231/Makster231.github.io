@@ -43,32 +43,26 @@
         z-index: 6;
         position: relative;
 
+        &::after,
         &::before {
           content: "";
           position: absolute;
-          top: -30px;
-          left: 0;
           border: 18px solid transparent;
+          top: -30px;
           border-bottom: 18px solid var(--color-white);
-          border-left: 18px solid var(--color-white);
           @media screen and (max-width: 640px) {
             @include setProp(border-width, 18vh, 18dvh, 18svh);
             @include setProp(top, -30vh, -30dvh, -30svh);
           }
         }
+        &::before {
+          left: 0;
+          border-left: 18px solid var(--color-white);
+        }
 
         &::after {
-          content: "";
-          position: absolute;
-          top: -30px;
           right: 0;
-          border: 18px solid transparent;
           border-right: 18px solid var(--color-white);
-          border-bottom: 18px solid var(--color-white);
-          @media screen and (max-width: 640px) {
-            @include setProp(border-width, 18vh, 18dvh, 18svh);
-            @include setProp(top, -30vh, -30dvh, -30svh);
-          }
         }
       }
       &_bg {
@@ -103,6 +97,8 @@
           padding-bottom: 0;
         }
         @media screen and (max-width: 640px) {
+          border-bottom: 0;
+          border-radius: 24px 24px 0 0;
           @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
         }
 
@@ -163,11 +159,13 @@
 
             p {
               @media screen and (max-width: 640px) {
-                @include setProp(font-size, 14vh, 14dvh, 14svh);
-                @include setProp(line-height, 18vh, 18dvh, 18svh);
+                font-size: 14px;
+                line-height: 1.3;
+                // @include setProp(font-size, 14vh, 14dvh, 14svh);
+                // @include setProp(line-height, 18vh, 18dvh, 18svh);
 
                 br {
-                  display: none;
+                  // display: none;
                 }
               }
             }
@@ -202,6 +200,11 @@
         @media screen and (max-width: 640px) {
           @include setProp(padding-top, 20vh, 20dvh, 20svh);
           @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+
+          &::after,
+          &::before {
+            content: none;
+          }
         }
 
         &-info {
@@ -263,7 +266,7 @@
         }
         @media screen and (max-width: 640px) {
           @include setProp(width, 150vh, 150dvh, 150svh);
-          margin: 0 auto;
+          margin: 20px auto 0;
 
           img {
             width: 100%;
@@ -332,7 +335,7 @@
               margin-bottom: 0;
               max-width: 100%;
 
-              .h4{
+              .h4 {
                 font-weight: 500;
               }
             }

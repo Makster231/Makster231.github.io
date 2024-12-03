@@ -169,9 +169,6 @@ export default function steps() {
     // Если меняем уровень то обнуляем шаги и увеличиваем уровень
     if (changeLvl) {
       step = 1;
-      if(typeof _tmr !== "undefined" && level == 0 ) {
-         _tmr.push({ type: 'reachGoal', id: 3579847, goal: 'start'}); !function(){__GetI.push({type:'VIEW',site_id:'10033',product_id:'',product_price:'',category_id:'',pixel_id:'start'});var t='undefined'==typeof __GetI_domain?'px.adhigh.net':__GetI_domain,e=('https:'==document.location.protocol?'https://':'http://')+t+'/t.js',i=document.createElement('script');i.type='text/javascript',i.src=e;var o=document.getElementsByTagName('script')[0];o.parentNode.insertBefore(i,o)}();ym(98918300,'reachGoal','start');
-      }
       firstLoad ? (level = 1) : level++;
       firstLoad ? questionBgImagesPreload() : false;
 

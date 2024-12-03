@@ -13,8 +13,8 @@
             margin-bottom: 20px;
             line-height: 1;
             @media screen and (max-width: 640px) {
-              text-align: left;
-              @include setProp(font-size, 32vh, 32dvh, 32svh);
+              font-size: 36px;
+              text-align: center;
             }
           }
           .block-slogan {
@@ -200,13 +200,7 @@
         }
         .h5 {
           @media screen and (max-width: 640px) {
-            text-align: left;
-            @include setProp(font-size, 20vh, 20dvh, 20svh);
-            @include setProp(margin-bottom, 10vh, 10dvh, 10svh);
-
-            br {
-              display: none;
-            }
+            display: none;
           }
         }
       }
@@ -287,6 +281,9 @@
               display: block;
               margin-right: auto;
               margin-top: 10px;
+            }
+            @media screen and (max-width: 640px) {
+              display: none;
             }
           }
 
