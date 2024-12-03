@@ -3,6 +3,18 @@
     .step_2,
     .step_questions {
       &_top {
+        .h2 {
+          color: var(--color-white);
+          margin-bottom: 60px;
+          width: 100%;
+          text-align: center;
+          display: block;
+
+          @media screen and (max-width: 640px) {
+            font-size: 30px;
+            margin-bottom: 20px;
+          }
+        }
         .importants_list {
           z-index: 5;
           padding-right: 60px;
@@ -190,10 +202,7 @@
           margin-bottom: 0;
         }
         .h6 {
-          // white-space: nowrap;
-          @media screen and (min-width: 1025px) {
-            margin-left: auto;
-          }
+          display: none;
         }
       }
     }

@@ -31,7 +31,7 @@
 
         @media screen and (max-width: 640px) {
           border-width: 8px;
-          border-radius: 32px;
+          border-radius: 28px;
           // @include setProp(border-width, 9vh, 9dvh, 9svh);
           // @include setProp(border-radius, 32vh, 32dvh, 32svh);
         }
@@ -503,8 +503,11 @@
 
       &_bottom {
         @media screen and (max-width: 640px) {
-          @include setProp(padding-top, 20vh, 20dvh, 20svh);
-          @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+          // @include setProp(padding-top, 20vh, 20dvh, 20svh);
+          // @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+          padding-bottom: 10px;
+          padding-top: 2px;
+          min-height: unset;
         }
         &-info {
           @media screen and (max-width: 1025px) {
@@ -527,11 +530,19 @@
             }
           }
 
+          .h4 {
+            @media screen and (max-width: 640px) {
+              display: none;
+            }
+          }
+
           .h6 {
             @media screen and (max-width: 640px) {
-              @include setProp(font-size, 24vh, 24dvh, 24svh);
-              text-align: left;
               width: 100%;
+              text-align: center;
+              display: block;
+              font-size: 16px;
+              line-height: 1.3;
             }
           }
         }
