@@ -101,7 +101,7 @@
     @media screen and (max-width: 640px) {
       // @include toVh(font-size, 18svh);
       @include setProp(font-size, 26vh, 26dvh, 26svh);
-      @include setProp(margin-bottom, 15vh, 15dvh, 15svh, !important);
+      // @include setProp(margin-bottom, 15vh, 15dvh, 15svh, !important);
     }
   }
   .h5 {

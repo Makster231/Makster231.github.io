@@ -30,8 +30,10 @@
         position: relative;
 
         @media screen and (max-width: 640px) {
-          @include setProp(border-width, 9vh, 9dvh, 9svh);
-          @include setProp(border-radius, 32vh, 32dvh, 32svh);
+          border-width: 8px;
+          border-radius: 32px;
+          // @include setProp(border-width, 9vh, 9dvh, 9svh);
+          // @include setProp(border-radius, 32vh, 32dvh, 32svh);
         }
       }
       &_bottom {
@@ -198,8 +200,12 @@
           min-height: unset;
         }
         @media screen and (max-width: 640px) {
-          @include setProp(padding-top, 20vh, 20dvh, 20svh);
-          @include setProp(padding-bottom, 30vh, 30dvh, 30svh);
+          // @include setProp(padding-top, 20vh, 20dvh, 20svh);
+          @include setProp(padding-bottom, 20vh, 20dvh, 20svh);
+          padding-top: 0;
+          background-color: transparent;
+          border: 8px solid var(--color-white);
+          border-top: none;
 
           &::after,
           &::before {
@@ -280,12 +286,12 @@
           }
 
           &-icons {
-            top: calc(50% - 30px);
-            left: calc(50% - 30px);
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
 
             .icon-svg {
-              width: 60px;
-              height: 60px;
+              width: 40px;
+              height: 40px;
             }
           }
         }

@@ -8,8 +8,8 @@
   margin-right: auto;
 
   @media screen and (max-width: 640px) {
-    @include setProp(padding-left, 16vh, 16dvh, 16svh);
-    @include setProp(padding-right, 16vh, 16dvh, 16svh);
+    // @include setProp(padding-left, 16vh, 16dvh, 16svh);
+    // @include setProp(padding-right, 16vh, 16dvh, 16svh);
   }
 }
 
@@ -96,7 +96,6 @@
     flex-direction: column;
   }
 }
-
 
 .t-flex-column {
   @media (max-width: 960px) {
