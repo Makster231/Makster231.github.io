@@ -53,8 +53,10 @@
           top: -30px;
           border-bottom: 18px solid var(--color-white);
           @media screen and (max-width: 640px) {
-            @include setProp(border-width, 18vh, 18dvh, 18svh);
-            @include setProp(top, -30vh, -30dvh, -30svh);
+          top: -26px;
+          // border-width: 18px;
+            // @include setProp(border-width, 18vh, 18dvh, 18svh);
+            // @include setProp(top, -30vh, -30dvh, -30svh);
           }
         }
         &::before {
@@ -355,12 +357,6 @@
                 @include setProp(margin-bottom, 30vh, 30dvh, 30svh);
               }
             }
-          }
-        }
-        &-left,
-        &-right {
-          @media screen and (max-width: 640px) {
-            max-width: 100%;
           }
         }
 
