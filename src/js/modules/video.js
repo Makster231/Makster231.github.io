@@ -13,22 +13,22 @@ const video = function () {
     const close =
       video.elements.container.parentNode.querySelector(".close-video");
 
-    // close.addEventListener("click", () => {
-    //   body.classList.remove("js_active_video");
-    //   poster.forEach((el) => {
-    //     el.style.opacity = 1;
-    //     close.classList.remove("close-video-active");
-    //   });
+    close.addEventListener("click", () => {
+      body.classList.remove("js_active_video");
+      poster.forEach((el) => {
+        el.style.opacity = 1;
+        close.classList.remove("close-video-active");
+      });
 
-    //   video.stop();
+      video.stop();
 
-    //   setTimeout(() => {
-    //     body.classList.remove("js_load");
-    //     if (video.fullscreen.active) {
-    //       video.fullscreen.exit();
-    //     }
-    //   }, 100);
-    // });
+      setTimeout(() => {
+        body.classList.remove("js_load");
+        if (video.fullscreen.active) {
+          video.fullscreen.exit();
+        }
+      }, 100);
+    });
     video.on("enterfullscreen", () => {
       body.classList.add("js_active_video");
       poster.forEach((el) => {
