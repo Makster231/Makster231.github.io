@@ -327,39 +327,39 @@
   }
 }
 
-.js_active_1_4,
-.js_active_2_4,
-.js_active_3_4,
-.js_active_4_4 {
-  .step_next,
-  .step_2,
-  .step_questions,
-  .step_questions2 {
-    transform: translateY(-100vh);
-    transform: translateY(-100dvh);
-    transform: translateY(-100svh);
-  }
+// .js_active_1_4,
+// .js_active_2_4,
+// .js_active_3_4,
+// .js_active_4_4 {
+//   .step_next,
+//   .step_2,
+//   .step_questions,
+//   .step_questions2 {
+//     transform: translateY(-100vh);
+//     transform: translateY(-100dvh);
+//     transform: translateY(-100svh);
+//   }
 
-  .step_questions2 {
-    transition-delay: 0.3s;
-    animation: fadeOut 0.3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
-  }
+//   .step_questions2 {
+//     transition-delay: 0.3s;
+//     animation: fadeOut 0.3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards 0s;
+//   }
 
-  .step_last {
-    transform: translateY(0);
-    transition-delay: 0.3s;
-    background: #00000073;
+//   .step_last {
+//     transform: translateY(0);
+//     transition-delay: 0.3s;
+//     background: #00000073;
 
-    // .step_last_bottom-info,
-    .step_last_top-content {
-      opacity: 0;
+//     // .step_last_bottom-info,
+//     .step_last_top-content {
+//       opacity: 0;
 
-      animation: fadeInTop 0.3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
-        1.25s;
-      z-index: 5;
-    }
-  }
-}
+//       animation: fadeInTop 0.3s cubic-bezier(0.25, 0.37, 0.67, 0.94) forwards
+//         1.25s;
+//       z-index: 5;
+//     }
+//   }
+// }
 
 .js_active_lvl_1 {
   &:not(.js_change_lvl) {

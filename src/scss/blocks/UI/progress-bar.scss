@@ -1,29 +1,15 @@
-.progress-bar {
+.progress_bar {
   position: fixed;
   bottom: 0;
   height: 5px;
-  width: 10%;
+  width: 0;
   z-index: 9999;
   background: #0f80e9;
   box-shadow: 0px -4px 4px rgba(15, 128, 233, 0.3);
-  transition: 0.3s ease;
+  transition: 0.5s ease;
+  // opacity: 0;
 
   @media screen and (min-width: 640px) {
     height: 15px;
-  }
-}
-.js_active_1_1 {
-  .progress-bar {
-    width: 10%;
-  }
-}
-.js_active_1_2 {
-  .progress-bar {
-    width: 20%;
-  }
-}
-.js_active_1_3 {
-  .progress-bar {
-    width: 30%;
   }
 }

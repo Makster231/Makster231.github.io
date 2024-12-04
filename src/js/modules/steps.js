@@ -4,6 +4,7 @@ export default function steps() {
   // ---------------------- CONSTS ----------------------
   const body = document.getElementById("body");
   const wrapper = document.querySelector(".wrapper");
+  const progressBar = document.querySelector(".js_progress_bar");
   //  BTNS
   const all_btns = document.querySelectorAll(".js_btn");
   const step_0_btn = document.querySelector(".js_btn_start");
@@ -16,6 +17,9 @@ export default function steps() {
 
   const step_next_btns = document.querySelectorAll(".js_step_next_btn");
 
+  const step_questions2_btns_change = document.querySelectorAll(
+    ".js_step_questions2_top-change"
+  );
   const step_questions2_cards = document.querySelectorAll(
     ".js_step_questions2_cards"
   );
@@ -45,6 +49,7 @@ export default function steps() {
   let level = 0;
   let step = 0;
   let firstLoad = true;
+  let progressBarCounter = 0;
 
   //  Animation flag
   let animationProcessing = false;
@@ -56,6 +61,8 @@ export default function steps() {
   const addClass = (block, cls) => block.classList.add(cls);
   const removeClass = (block, cls) => block.classList.remove(cls);
   const setClassState = () => addClass(body, `js_active_${level}_${step}`);
+  const progressBarUpdate = () =>
+    (progressBar.style.width = (100 / 13) * progressBarCounter + "%");
 
   function questionBgImagesPreload() {
     step_questions_btns_btn.forEach((btn) => {
@@ -80,6 +87,8 @@ export default function steps() {
   const removeAllStates = () => {
     body.classList.remove(
       ...[
+        "js_active_0_0",
+
         "js_active_1_0",
 
         "js_active_1_1",
@@ -117,46 +126,63 @@ export default function steps() {
       return;
     }
 
-    if (step === 3 && !data_info.step_questions2_values[level - 1]) {
-      return false;
+    // if (step === 3 && !data_info.step_questions2_values[level - 1]) {
+    //   console.log(1);
+    //   return false;
+    // }
+
+    if (dir === "down") {
+      console.log(2);
+      step++;
+    } else {
+      console.log(3);
+      step--;
     }
 
-    dir === "down" ? step++ : step--;
+    console.log(step);
 
     if (level === 1 && step === -1) {
+      console.log(4);
       step = 0;
       return false;
     }
 
     if (step === 0) {
+      console.log(5);
       step = 1;
       return false;
     }
 
-    if (step > 3) {
-      step = 3;
-    }
+    if (step > 3) step = 3;
 
     if (step > 2) {
+      console.log(7);
       if (!data_info.step_questions_values[level - 1]) {
+        console.log(8);
         step = 2;
         return false;
       }
     }
 
-    if (level !== 5 && step < 3) {
+    // if (level !== 5 && step < 3) {
+    //   console.log(9);
+    //   if (data_info.step_questions_values[level - 1]) {
+    //     console.log(10);
+    //     step = 3;
+    //     return false;
+    //   }
+    // }
+
+    if (level === 5 && step === 2) {
+      console.log(11);
       if (data_info.step_questions_values[level - 1]) {
+        console.log(12);
         step = 3;
         return false;
       }
     }
 
-    if (level === 5 && step === 2) {
-      if (data_info.step_questions_values[level - 1]) {
-        step = 3;
-        return false;
-      }
-    }
+    console.log(13);
     return true;
   };
 
@@ -214,6 +240,7 @@ export default function steps() {
     if (isMobile) removeClass(body, "js_aside_animation");
     removeClass(body, `js_change_lvl`);
     removeClass(body, `js_content_animation_hidden`);
+    progressBarUpdate();
 
     if (changeLvl & !isMobile) {
       await sleep(500);
@@ -328,6 +355,17 @@ export default function steps() {
       changeSteps(true);
     });
   });
+
+  step_questions2_btns_change.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      // Подсчёт Шага
+      let flag = !stepCalc("up");
+      if (flag) return;
+      // Определение Слайда
+      changeSteps();
+    });
+  });
+
   // ---------------------- STEP 4 ----------------------
   // step_last_btns.forEach((btn) => {
   //   btn.addEventListener("click", function (e) {
