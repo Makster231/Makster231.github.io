@@ -43,14 +43,15 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  let level = 1;
-  let step = 3;
-  let firstLoad = 0;
+  let level = 0;
+  let step = 0;
+  let firstLoad = 1;
 
   //  Animation flag
   let animationProcessing = false;
   //  Progress Bar Counter
   let progressBarCounter = 0;
+  let btnAnimationProgressing = false;
 
   // ---------------------- FUNCTIONS ----------------------
 
@@ -67,18 +68,21 @@ export default function steps() {
 
     if (progress_track >= 100) {
       lastStepBtn.setAttribute("disabled", true);
+      btnAnimationProgressing = true;
 
       await sleep(500);
+
       addClass(lastStepBtn, "js_active");
 
       await sleep(500);
+
       addClass(body, "js_fullProgress");
 
       await sleep(4500);
 
       lastStepBtn.querySelector("span").textContent = "Узнать результат";
-      // removeClass(lastStepBtn, "js_active");
       lastStepBtn.removeAttribute("disabled");
+      btnAnimationProgressing = false;
     }
   };
 
@@ -137,6 +141,7 @@ export default function steps() {
 
   const stepCalc = (dir) => {
     if (animationProcessing) return;
+    if (btnAnimationProgressing) return;
     if (level === 5 && step === 2) return;
 
     if (firstLoad) {
