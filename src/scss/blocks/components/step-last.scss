@@ -166,6 +166,69 @@
           padding-left: 5px;
           padding-right: 5px;
 
+          background-color: #81befd;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid transparent;
+
+          span {
+            position: relative;
+            z-index: 5;
+            transition: 0.3s ease;
+            transition-timing-function: ease;
+            color: var(--color-blue);
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: -100%;
+            top: 0;
+            z-index: 0;
+            width: 100%;
+            transition-delay: 0s !important;
+            height: 100%;
+            background-color: var(--color-white);
+          }
+          &:disabled {
+            cursor: not-allowed !important;
+            pointer-events: unset !important;
+            background-color: #81befd !important;
+            border-color: #81befd !important;
+            color: var(--color-white) !important;
+          }
+
+          &.js_active {
+            &:disabled {
+              &:before {
+                transition-delay: 0.5s !important;
+                transition-duration: 5s;
+              }
+            }
+
+            &:before {
+              left: 0;
+            }
+
+            &:not(:disabled) {
+              &:before {
+                transition-duration: 0.3s;
+              }
+            }
+
+            &:not(:disabled):hover {
+              border-color: var(--color-white) !important;
+              background-color: transparent !important;
+              span {
+                color: var(--color-white);
+              }
+
+              &::before {
+                opacity: 0;
+              }
+            }
+          }
+
           @media screen and (max-width: 640px) {
             max-width: 100%;
           }

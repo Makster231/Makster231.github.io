@@ -32,10 +32,10 @@ export default function steps() {
 
   //  step 2 btns state
   let data_info = {
-    // step_questions_values: [],
-    // step_questions2_values: [],
-    step_questions_values: ["1", "1", "1", "1"],
-    step_questions2_values: ["1", "1", "1", "1"],
+    step_questions_values: [],
+    step_questions2_values: [],
+    // step_questions_values: ["1", "1", "1", "1"],
+    // step_questions2_values: ["1", "1", "1", "1"],
   };
 
   let isMobile = window.innerWidth <= 640;
@@ -43,16 +43,14 @@ export default function steps() {
     !window.matchMedia("(orientation: portrait)").matches && isMobile;
 
   //  Step
-  // let level = 1;
-  // let step = 3;
-  // let firstLoad = 0;
-  let level = 4;
-  let step = 4;
-  let firstLoad = false;
+  let level = 1;
+  let step = 3;
+  let firstLoad = 0;
 
   //  Animation flag
   let animationProcessing = false;
-  let progressBarCounter = 12;
+  //  Progress Bar Counter
+  let progressBarCounter = 0;
 
   // ---------------------- FUNCTIONS ----------------------
 
@@ -63,11 +61,24 @@ export default function steps() {
   const setClassState = () => addClass(body, `js_active_${level}_${step}`);
   const progressBarUpdate = async () => {
     let progress_track = (100 / 13) * progressBarCounter;
+    let lastStepBtn = document.querySelector(".step_last_bottom-btn");
+
     progressBar.style.width = progress_track + "%";
 
     if (progress_track >= 100) {
-      await sleep(750);
+      lastStepBtn.setAttribute("disabled", true);
+
+      await sleep(500);
+      addClass(lastStepBtn, "js_active");
+
+      await sleep(500);
       addClass(body, "js_fullProgress");
+
+      await sleep(4500);
+
+      lastStepBtn.querySelector("span").textContent = "Узнать результат";
+      // removeClass(lastStepBtn, "js_active");
+      lastStepBtn.removeAttribute("disabled");
     }
   };
 
