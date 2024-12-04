@@ -80,6 +80,15 @@ const finalSteps = function () {
       });
     });
   }
+
+  // lvl 5 step 1
+
+  const swiperVideos = new Swiper(".swiperVideos", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 };
 
 export default finalSteps;

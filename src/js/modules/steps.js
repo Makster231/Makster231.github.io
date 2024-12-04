@@ -46,13 +46,13 @@ export default function steps() {
   // let level = 1;
   // let step = 3;
   // let firstLoad = 0;
-  let level = 0;
-  let step = 0;
-  let firstLoad = true;
-  let progressBarCounter = 0;
+  let level = 4;
+  let step = 4;
+  let firstLoad = false;
 
   //  Animation flag
   let animationProcessing = false;
+  let progressBarCounter = 0;
 
   // ---------------------- FUNCTIONS ----------------------
 
