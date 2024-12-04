@@ -3,7 +3,6 @@
     // border-radius: 18px;
 
     .step_0,
-    .step_last,
     .step_2,
     .step_questions,
     .step_next,
@@ -22,6 +21,29 @@
           margin-top: 20px;
         }
       }
+    }
+
+    .step_last {
+      padding: 20px 15px;
+      &_wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        @media screen and (min-width: 960px) {
+          padding: 15px;
+        }
+      }
+    }
+
+    .step_0,
+    .step_last,
+    .step_2,
+    .step_questions,
+    .step_next,
+    .step_questions2 {
+      padding: 20px 15px;
+
       &_top {
         border: 10px solid var(--color-white);
         overflow: hidden;
@@ -53,8 +75,8 @@
           top: -30px;
           border-bottom: 18px solid var(--color-white);
           @media screen and (max-width: 640px) {
-          top: -26px;
-          // border-width: 18px;
+            top: -26px;
+            // border-width: 18px;
             // @include setProp(border-width, 18vh, 18dvh, 18svh);
             // @include setProp(top, -30vh, -30dvh, -30svh);
           }

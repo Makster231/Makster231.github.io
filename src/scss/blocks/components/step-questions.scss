@@ -20,10 +20,11 @@
         }
         .importants_list {
           z-index: 5;
-          max-width: 1060px;
+          // max-width: 1060px;
           margin-left: auto;
-          padding-right: 60px;
-          
+          padding-right: 10px;
+          max-width: 1060px;
+
           &_btn {
             margin-right: 45px;
             min-height: 70px;

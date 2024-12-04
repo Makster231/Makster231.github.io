@@ -32,10 +32,10 @@ export default function steps() {
 
   //  step 2 btns state
   let data_info = {
-    step_questions_values: [],
-    step_questions2_values: [],
-    // step_questions_values: ["1", "1", "1", "1"],
-    // step_questions2_values: ["1", "1", "1", "1"],
+    // step_questions_values: [],
+    // step_questions2_values: [],
+    step_questions_values: ["1", "1", "1", "1"],
+    step_questions2_values: ["1", "1", "1", "1"],
   };
 
   let isMobile = window.innerWidth <= 640;
@@ -52,7 +52,7 @@ export default function steps() {
 
   //  Animation flag
   let animationProcessing = false;
-  let progressBarCounter = 0;
+  let progressBarCounter = 12;
 
   // ---------------------- FUNCTIONS ----------------------
 
@@ -61,8 +61,15 @@ export default function steps() {
   const addClass = (block, cls) => block.classList.add(cls);
   const removeClass = (block, cls) => block.classList.remove(cls);
   const setClassState = () => addClass(body, `js_active_${level}_${step}`);
-  const progressBarUpdate = () =>
-    (progressBar.style.width = (100 / 13) * progressBarCounter + "%");
+  const progressBarUpdate = async () => {
+    let progress_track = (100 / 13) * progressBarCounter;
+    progressBar.style.width = progress_track + "%";
+
+    if (progress_track >= 100) {
+      await sleep(750);
+      addClass(body, "js_fullProgress");
+    }
+  };
 
   function questionBgImagesPreload() {
     step_questions_btns_btn.forEach((btn) => {
@@ -122,6 +129,7 @@ export default function steps() {
     if (level === 5 && step === 2) return;
 
     if (firstLoad) {
+      progressBarCounter++;
       changeSteps(true);
       return;
     }
@@ -132,10 +140,8 @@ export default function steps() {
     // }
 
     if (dir === "down") {
-      console.log(2);
       step++;
     } else {
-      console.log(3);
       step--;
     }
 
@@ -183,6 +189,12 @@ export default function steps() {
     }
 
     console.log(13);
+
+    if (dir === "down") {
+      progressBarCounter++;
+    } else {
+      progressBarCounter--;
+    }
     return true;
   };
 
@@ -367,19 +379,19 @@ export default function steps() {
   });
 
   // ---------------------- STEP 4 ----------------------
-  // step_last_btns.forEach((btn) => {
-  //   btn.addEventListener("click", function (e) {
-  //     // // Подсчёт Шага
-  //     let flag = !stepCalc("down");
-  //     if (flag) return;
+  step_last_btns.forEach((btn) => {
+    btn.addEventListener("click", async function (e) {
+      // // Подсчёт Шага
+      let flag = !stepCalc("down");
+      if (flag) return;
 
-  //     if (step === 2 && level === 5) {
-  //       changeSteps();
-  //     } else {
-  //       changeSteps(true);
-  //     }
-  //   });
-  // });
+      if (step === 2 && level === 5) {
+        changeSteps();
+        await sleep(1000);
+        removeClass(body, "js_fullProgress");
+      }
+    });
+  });
 
   // При Изменении размеров экрана
   window.addEventListener("resize", () => {
