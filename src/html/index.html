@@ -6,7 +6,7 @@
     <title>Главная</title>
   </head>
 
-  <body id="body" class="js_load js_active_lvl_5 js_active_5_1 ">
+  <body id="body" class="js_load js_active_lvl_5 js_active_5_2 ">
     @@include('blocks/header.html')
 
     <div class="wrapper">
@@ -76,9 +76,16 @@
     <div class="progress_bar js_progress_bar">
     </div>
 
+    <div class="dialog_open_btn js_dialog_open mob-active">
+      <picture class="lazy">
+        <img src="./img/videos/poster-1.jpg" alt="image" />
+      </picture>
+    </div>
+
     <!-- prettier-ignore -->
     @@include('blocks/footer.html')
     @@include('blocks/modal.html')
+    @@include('blocks/dialog.html')
     @@include('blocks/_links.html')
   </body>
 </html>

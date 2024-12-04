@@ -45,13 +45,16 @@
 .d-none {
   display: none;
 }
+.d-none-i {
+  display: none !important;
+}
 .d-block {
   display: block;
 }
 
 .m-d-block {
   @media (max-width: 640px) {
-    display: block;
+    display: block !important;
   }
 }
 .d-flex {

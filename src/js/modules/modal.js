@@ -1,6 +1,7 @@
 export default class Modal {
   elements;
   body = document.querySelector("body");
+  videos = document.querySelectorAll(".video-main");
 
   constructor(wrapper, config) {
     this.elements = {
@@ -31,5 +32,9 @@ export default class Modal {
   closeModal() {
     this.elements.dialog.close();
     body.classList.remove("js_scroll-disable");
+
+    this.videos.forEach((el) => {
+      el.pause();
+    });
   }
 }

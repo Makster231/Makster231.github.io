@@ -12,6 +12,7 @@ import video from "./modules/video.js";
 window.addEventListener("load", function () {
   // Переменные
   const body = document.querySelector("body");
+  const dialog = document.querySelector(".js_dialog");
 
   steps();
   finalSteps();
@@ -19,6 +20,10 @@ window.addEventListener("load", function () {
   requestForm();
   lazyLoad();
   video();
+
+  new Modal(dialog, {
+    openBtn: document.querySelectorAll(".js_dialog_open"),
+  });
 
   window.addEventListener("change", function () {
     body.classList.add("js_load");

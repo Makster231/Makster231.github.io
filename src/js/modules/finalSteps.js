@@ -54,7 +54,6 @@ const finalSteps = function () {
       el.addEventListener("click", function (e) {
         const target = e.target;
         const role = target.dataset.role || target.closest(".btn").dataset.role;
-
         lvl_5_2.dataset.tab = role;
       });
     });
@@ -64,9 +63,18 @@ const finalSteps = function () {
     final_mob_tabs.forEach((el) => {
       el.addEventListener("click", function (e) {
         if (!e.target.closest(".js_final_mob_tabs--btn")) return;
+
         lvl_5_2.dataset.tab = e.target.closest(
           ".js_final_mob_tabs--btn"
         ).dataset.role;
+
+        let btn = document.querySelector(".dialog_open_btn.mob-active");
+
+        if (lvl_5_2.dataset.tab != 1) {
+          btn.classList.add("d-none-i");
+        } else {
+          btn.classList.remove("d-none-i");
+        }
       });
     });
   }
